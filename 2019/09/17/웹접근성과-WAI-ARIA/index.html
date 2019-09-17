@@ -7,14 +7,18 @@
   
   <title>웹접근성과 WAI-ARIA | Hello jaehun World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="웹 접근성이란 웹 사이트에서 제공하는 정보를 차별없이 동등하게 이용 할 수 있도록하는 보장하는 것을 말한다. 신제적(고령층 ,장애인,비장애인 ) 환경적 요건(다양한 플랫폼,웹 브라우져,장치)을 모두 포함한다. WAI ; Web Accessibility InitiativeWAI는 시각·청각 기능 등에 장애를 지닌 사람도 일반인과 동등하게 웹에 접근하여 이용">
+<meta name="keywords" content="웹 접근성과 WAI-ARIA">
+<meta property="og:type" content="article">
 <meta property="og:title" content="웹접근성과 WAI-ARIA">
 <meta property="og:url" content="https://zg78899.github.io/2019/09/17/웹접근성과-WAI-ARIA/index.html">
 <meta property="og:site_name" content="Hello jaehun World">
+<meta property="og:description" content="웹 접근성이란 웹 사이트에서 제공하는 정보를 차별없이 동등하게 이용 할 수 있도록하는 보장하는 것을 말한다. 신제적(고령층 ,장애인,비장애인 ) 환경적 요건(다양한 플랫폼,웹 브라우져,장치)을 모두 포함한다. WAI ; Web Accessibility InitiativeWAI는 시각·청각 기능 등에 장애를 지닌 사람도 일반인과 동등하게 웹에 접근하여 이용">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-17T14:54:19.978Z">
+<meta property="og:updated_time" content="2019-09-17T16:01:59.383Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="웹접근성과 WAI-ARIA">
+<meta name="twitter:description" content="웹 접근성이란 웹 사이트에서 제공하는 정보를 차별없이 동등하게 이용 할 수 있도록하는 보장하는 것을 말한다. 신제적(고령층 ,장애인,비장애인 ) 환경적 요건(다양한 플랫폼,웹 브라우져,장치)을 모두 포함한다. WAI ; Web Accessibility InitiativeWAI는 시각·청각 기능 등에 장애를 지닌 사람도 일반인과 동등하게 웹에 접근하여 이용">
   
     <link rel="alternate" href="/atom.xml" title="Hello jaehun World" type="application/atom+xml">
   
@@ -87,13 +91,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p> 웹 접근성이란 웹 사이트에서 제공하는 정보를 차별없이 동등하게 이용 할 수 있도록하는 보장하는 것을 말한다. 신제적(고령층 ,장애인,비장애인 ) 환경적 요건(다양한 플랫폼,웹 브라우져,장치)을 모두 포함한다.</p>
+<p>WAI ; Web Accessibility InitiativeWAI는 시각·청각 기능 등에 장애를 지닌 사람도 일반인과 동등하게 웹에 접근하여 이용할 수 있도록 관련 지침을 개발하고 웹 접근성 향상을 위한 노력을 기울이는 W3C의 산하 단체를 말한다</p>
+<p>ARIA:Accessible Rich Internet Applications’의 약자로 리치 인터넷을 위한 W3C 접근성 명세입니다.</p>
+<p>RIA:정적인 HTMl과 단순한 자바스크립트 환경의 웹이 아닌 동적인 자바스크립트와 Ajax와 같은 기술을 사용한 환경에서 수준 높은 UX(User eXperience)를 제공하는 웹 애플리케이션을 의미한다.</p>
+<p>WAI-ARIA는 RIA에서 스크린 리더기 및 보조기기 등에서 접근성 및 운용성을 향상시키기 위한 목적으로 탄생했으며 웹 애플리케이션에 역할,속성,상태 정보를 추가하여 이를 개선 할 수 있도록 제공하고 있다.</p>
+<p>1)대표적인 역할( role):tablist,button,tab,tooltip,list,</p>
+<p>application,abnner,navigation,form,search..</p>
+<p>2)Property &amp; State:(상태와 속성):aria-labelledby=”” : 레이블 제공을 위한 aria-속성. 상태 값은 연결시킬 레이블 id를 입력한다.</p>
+<p>aria-haspopup=”” : 팝업요소가 하위에 존재하고 있다는걸 인식 시켜주는 aria-속성. 상태 값은 false(default) / true / menu / listbox / tree / gird / dialog</p>
+<p>aria-live : 페이지의 어떤 위치에 있든 업데이트된 정보를 사용자에게 알려주는 aria-속성. 상태 값은 assertive / off(default) / polite</p>
+<p>aria-labelledby=”” : 레이블 제공을 위한 aria-속성. 상태 값은 연결시킬 레이블 id를 입력한다.</p>
+<p>aria-selected=”” : 탭메뉴 선택 유무를 알려준다. 상태 값은 선택되었을 때 true / 선택되지 않았을 때 false 입력</p>
+<p>ria-controls=”” : 현재 요소가 제어하는 대상을 명시하는 속성으로 탭메뉴와 본문을 연결시켜준다. 상태 값은 tabpanel의 id명 입력</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zg78899.github.io/2019/09/17/웹접근성과-WAI-ARIA/" data-id="ck0nyl46i0003b35ll82pzzjr" class="article-share-link">Share</a>
+      <a data-url="https://zg78899.github.io/2019/09/17/웹접근성과-WAI-ARIA/" data-id="ck0o1044y0003f75li3qxa1m3" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/웹-접근성과-WAI-ARIA/">웹 접근성과 WAI-ARIA</a></li></ul>
+
     </footer>
   </div>
   
@@ -122,7 +141,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR기법-활용에-대해/">IR기법 활용에 대해</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/처음으로-글을-남겨-봅니다/">처음으로 글을 남겨 봅니다.</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR기법-활용에-대해/">IR기법 활용에 대해</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹-접근성과-WAI-ARIA/">웹 접근성과 WAI-ARIA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/처음으로-글을-남겨-봅니다/">처음으로 글을 남겨 봅니다.</a></li></ul>
     </div>
   </div>
 
@@ -132,7 +151,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/IR기법-활용에-대해/" style="font-size: 10px;">IR기법 활용에 대해</a> <a href="/tags/처음으로-글을-남겨-봅니다/" style="font-size: 10px;">처음으로 글을 남겨 봅니다.</a>
+      <a href="/tags/IR기법-활용에-대해/" style="font-size: 10px;">IR기법 활용에 대해</a> <a href="/tags/웹-접근성과-WAI-ARIA/" style="font-size: 10px;">웹 접근성과 WAI-ARIA</a> <a href="/tags/처음으로-글을-남겨-봅니다/" style="font-size: 10px;">처음으로 글을 남겨 봅니다.</a>
     </div>
   </div>
 
