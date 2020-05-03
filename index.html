@@ -195,86 +195,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/03/11/CSR :SSR :SPA 차이점/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello -J- World">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            
-            <a href="/2020/03/11/CSR :SSR :SPA 차이점/" class="post-title-link" itemprop="url">Untitled</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2020-03-11 21:53:26 / Modified: 21:53:31" itemprop="dateCreated datePublished" datetime="2020-03-11T21:53:26+09:00">2020-03-11</time>
-            </span>
-          
-            
-
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1.CSR(클라이언트 사이드 렌더링)<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943424/CSR.png" alt="CSR"></p>
-<p>-1.Server Sending Response to Browser<br>-2.Browser Downloads JS<br>-3.Browser executes React<br>-4.Page Now Viewable and Interatable</p>
-<p>서버에서 비어있는 html와  js파일들을 받아오고 , 데이터는 서비스에 필요한 리소스를 다운로드한후 브라우저에서 렌더링한다.그렇기 때문에 초기 View을 보기가지 SSR보다 시간이 더 걸린다. 하지만 사용자에게 보여진 view의 기능은 동시에 동작한다.</p>
-<p>2.SSR(서버사이드 렌더링)<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943426/SSR.png" alt="SSR"></p>
-<p>-1.Server Sending Ready tobe redered HTML Response to Browser<br>-2.Browser Renders the page,Now Viewable,andBrowser Downloads JS<br>-3.Browser execute React<br>-4.Page Now interatable</p>
-<p>서버에서 렌더링해 가져오기 때문에 ,첫 로딩 매우 짧다.<br>그러나 클라이언트가 js파일을 모두 다운로드하고 적용하기전가지는 각각의 기능은 동작하지않는다는 단점이 있다</p>
-<p>3.SPA(Single page application)</p>
-<p>서버로 부터 처음에만 페이지를 받아오고 이후에는 동적으로 페이지를 구성해서 새로운 페이지를 받아오지않는 웹 애플리케이션을 의미한다.<br> 페이지가 한번 로딩된 이후 데이터를 수정하거나 조회할때. 페이지가 새로고침이 되지않고 다른 페이지로 넘어가지 않습니다.</p>
-<p>4.MPA(Multi Page Application)</p>
-<p>서버로 부터 완전한 페이지를 받아오고 이후에 데이터를 수정하거나 조회할때 다른 완전한 페이지로 이동합니다.단 URL이 바뀔수있습니다.</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-    
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2019/10/14/10월 14일 수업내용(스코프,let,const)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1212,6 +1132,104 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
   
 
     
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2019/09/17/IR-기법/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -J- World">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/2019/09/17/IR-기법/" class="post-title-link" itemprop="url">IR 기법</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-09-17 00:02:13 / Modified: 00:51:44" itemprop="dateCreated datePublished" datetime="2019-09-17T00:02:13+09:00">2019-09-17</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>홈페이지를 만들때 이미지를 사용할 경우 img태그를 사용해 alt로 이미를 부여 합니다.</p>
+<p>IR(image replacement)은 웹표준 및 접근성을 위한 기법입니다. 이미지를 배경으로 처리하고 이미지의 의미를 텍스트화 하여 CSS로  숨겨, 이미지 대체 텍스트를 제공하기 위한 기법 입니다. IR기법은 앞에서 얘기한 대로 접근성이 매우 유용하기 때문에 검색시에 검색엔진으로 부터 높은 가중치를 받을 수 있습니다.</p>
+<p>IR을 사용하는 방법으로는 크게 </p>
+<ol>
+<li><p>padding을 사용하는 방법(가로 250px,세로 195px인 이미지)</p>
+<h2 class="brand1">CSS ZenGarden</h2>
+
+<p> .brand1{ background:pink url()no-repeat;height: 0;width: 250px;padding-left: 195px;overflow: hidden;}</p>
+</li>
+<li><p>text-indent 를 사용하는 방법</p>
+<h2 class="brand2">CSS ZenGarden</h2>
+
+<p>.brand2{background: pink url(/images/title.png)no-repeat;height: 195px;width: 290px;text-indent: 290px;</p>
+<p>​    <em>/\</em> text-indent: -9999px; */*white-space: nowrap;overflow: hidden;}</p>
+<p>*text-indent의 값을 -9999px을 주어 텍스트를 아예 화면 밖으로 밀어 버리는 경우도 있지만, 이 경우에는 성능상 좋지 않으므로 white-space:nowrap와 overflow:hidden을 사용한다.</p>
+</li>
+<li><p>postion을 활용하는 방법</p>
+<h1 class="brand3">CSS ZenGarden</h1>
+
+<p>.brand3{background: lime ;height: 195px;width: 290px;text-align: center;line-height: 195px; font-size: 16px;font-weight: 400;position: relative;} .brand3::after{ content: “”;position: absolute;top: 0;left: 0;background: url(/images/title.png)no-repeat;width: 100%;height: 100%;}</p>
+</li>
+</ol>
+<p>이외에도 숨기고자하는 텍스트를 span태그로 감싸 준 후 화면에서 안보이게 처리해주는 방법도 있고, 방법은 다양하다.</p>
+<p>그리고 Daum은 이런 여러기법중에서  Phark Method와WA IR 기법을 주로 사용하여 대체텍스트를 제공해주고 있다.</p>
+<p>Phark Method (권장): 이미지로 대체할 엘리먼트에 배경이미지를 설정하고 글자는 text-indent를 이용하여 화면 바깥으로(-9999px만큼 내어 쓰기) 빼내어 보이지 않게 하는 방법.</p>
+<p>장점:스크린 리더기가 읽어주고,추가적인 태그사용을 하지 않는다.</p>
+<p>WA IR 기법(권장):이미지로 대체할 엘리먼트에 배경이미지를 설정하고 글자는 span 태그로 감싼 후 z-index:-1을 이용하여 화면에 안보이게 처리하는 방법.</p>
+<p>장점:스크린 리더기 가 읽어줌,CSS on / Image off 시 텍스트 보임.</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+    
   </div>
 
   
@@ -1261,7 +1279,7 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
