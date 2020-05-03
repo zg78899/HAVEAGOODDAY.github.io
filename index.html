@@ -195,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2019/10/14/10월 14일 수업내용(스코프,let,const)/">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/05/03/10월 14일 수업내용(스코프,let,const)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -210,7 +210,7 @@
         <h1 class="post-title" itemprop="name headline">
           
             
-            <a href="/2019/10/14/10월 14일 수업내용(스코프,let,const)/" class="post-title-link" itemprop="url">Untitled</a>
+            <a href="/2020/05/03/10월 14일 수업내용(스코프,let,const)/" class="post-title-link" itemprop="url">스코프</a>
           
         </h1>
 
@@ -225,8 +225,12 @@
                 
               
 
-              <time title="Created: 2019-10-14 19:46:14" itemprop="dateCreated datePublished" datetime="2019-10-14T19:46:14+09:00">2019-10-14</time>
+              <time title="Created: 2020-05-03 23:46:57 / Modified: 23:56:00" itemprop="dateCreated datePublished" datetime="2020-05-03T23:46:57+09:00">2020-05-03</time>
             </span>
+          
+            
+
+            
           
 
           
@@ -240,7 +244,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>스코프</p>
+          <p><strong>스코프</strong></p>
 <p>식별자(변수)가 유효한 범위,식별자와 깊은 관련,함수와 관련<br>어떨때 유효하고 어떨때 유효하지 않은가?<br>함수는 스코프를 만든다.(var키워드로 선언한 경우)</p>
 <p>var 키워드는 함수의 코드블록만을 코드 블록으로 인정하는 함수레벨 스코프를 따른다. var 키워드는 함수가 스코프를 만든다.</p>
 <p>중첩함수-스코프도 중첩이 된다.(어떤 우선순위를 가지는 가?을 아는 것이 중요)<br>스코프는 간단하게 말하면 자바스크립트엔진이 식별자를 찾는 규칙이다. </p>
@@ -253,14 +257,16 @@
 <p>2.비순수함수 -외부함수에 영향을 받음</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">increase</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> ++num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p> 스코프 함수</p>
+<p> <strong>스코프 함수</strong></p>
 <p>변수가 어디에서 선언이 됐느냐가 즉 선언 위치가 스코프를 만든다.<br>class는 함수이다.<br>자신이 선언된 위치에 의해 다른 식벼자를 참조할 유효범위가 결정된다.</p>
 <p>function foo(){}는 식별자가 2개이다. 1.암묵적으로 자바스크립트 엔진이 변수이름으로 만든 식별자.</p>
 <p>2.지역함수의 식별자. 그런데 에러를 일으키지않는다. 그리고 foo는 전역 함수이다. 또한 호출하는 foo()에서 foo는 함수이름이 아니고 자바스크립트엔진이 생성한 암묵적인 식별자다.</p>
 <p>스코프는 자카스크립트엔진이 식별자는 찾는 규칙이다. 코드와 가장 근접한 곳에있는 스코프를 본다.<br>자바스크립트 코드의 문맥과 환경이있따. 코드를 실행하기 위한 문맥을 기억한다. 자바스크립트는 전역과 지역을 어떻게 구분하는걸까?</p>
-<p>식별자는 스코프내에서 유니크하다.<br>전역은 어디근 참조(문맥을 찾는다.)가 가능하다. 코드가 해당하는 스코프부터 식별자를 찾는다. 그후에 상위로 간다.<br>쉐도잉-그림자 처럼 가져려진다.<br>식별자는 자바스크립트엔진에 등록이된다.<br>이때 스코프가 정해진다.<br>식별자는 스코프 체인에서 찾는다. 함수는 변수와 저장되는 매카니즘이 같다. 찾는 매카니즘도 동일하다.<br>7렉스컬 시코프<br>자바스크립트엔진이 함수를 정의할때 어디서 호출될지 알수없다.<br>언제 함수의 상위 스코프가 오는냐? 함수의를 할때 취치에 의해 상위 스코프가정해진다. 어디서 호출되든지 간에 정의위치에 ㄱ따라 사우이스코프가 정해져버린다.<br>동적스코프와 /렉시컬스코프의 차이</p>
-<p>매개변수가 값을 할당하는 것은 호출할때, 호출된 직후 매개변수undefined 선언된다. 이후에 할당된다.<br>변수도 어디에서 선언되는지에 따라 스코프가 정해진다.함수도 마찬가지<br>8.암묵적 전역변수<br>전역함수에서 선언하지않은 변수는 전역변수가 된다.<br>모듈(자바스크립트 엔진은 파일 스코프를 가지지않는다.)-&gt;한개의 파일로 함ㅍ쳐진다. 같은 이름의 변숙가 있다면 재할다잉 된다.이런 문제 따문에 전역변수를 사용하지않는다.<br>자바스크립트에는 순서가 있다.엄청 여러개의 스크립트파일들을  webpack 번들링 로 하나로 묶고 그 안에서 스코프를 줘서 나눈다.</p>
-<p>변수의 생명주기- 변수 생명주기는 직역변수일때 함수의 생명주기가 짧다.리소스가 빨리 해방이 된다.<br> 반대로 전역변수의 생명주기(스코프가 길다.)는 길기 때문에 재할당 수정등의 여러가지 문제를 야기한다.</p>
+<p>식별자는 스코프내에서 유니크하다.<br>전역은 어디근 참조(문맥을 찾는다.)가 가능하다. 코드가 해당하는 스코프부터 식별자를 찾는다. 그후에 상위로 간다.<br>쉐도잉-그림자 처럼 가져려진다.<br>식별자는 자바스크립트엔진에 등록이된다.<br>이때 스코프가 정해진다.<br>식별자는 스코프 체인에서 찾는다. 함수는 변수와 저장되는 매카니즘이 같다. 찾는 매카니즘도 동일하다.</p>
+<p><strong>렉시컬 시코프</strong><br>자바스크립트엔진이 함수를 정의할때 어디서 호출될지 알수없다.<br>언제 함수의 상위 스코프가 오는냐? 함수의를 할때 취치에 의해 상위 스코프가정해진다. 어디서 호출되든지 간에 정의위치에 ㄱ따라 사우이스코프가 정해져버린다.<br>동적스코프와 /렉시컬스코프의 차이</p>
+<p>매개변수가 값을 할당하는 것은 호출할때, 호출된 직후 매개변수undefined 선언된다. 이후에 할당된다.<br>변수도 어디에서 선언되는지에 따라 스코프가 정해진다.함수도 마찬가지</p>
+<p><strong>암묵적 전역변수</strong><br>전역함수에서 선언하지않은 변수는 전역변수가 된다.<br>모듈(자바스크립트 엔진은 파일 스코프를 가지지않는다.)-&gt;한개의 파일로 함ㅍ쳐진다. 같은 이름의 변숙가 있다면 재할다잉 된다.이런 문제 따문에 전역변수를 사용하지않는다.<br>자바스크립트에는 순서가 있다.엄청 여러개의 스크립트파일들을  webpack 번들링 로 하나로 묶고 그 안에서 스코프를 줘서 나눈다.</p>
+<p><strong>변수의 생명주기</strong>- 변수 생명주기는 직역변수일때 함수의 생명주기가 짧다.리소스가 빨리 해방이 된다.<br> 반대로 전역변수의 생명주기(스코프가 길다.)는 길기 때문에 재할당 수정등의 여러가지 문제를 야기한다.</p>
 <p>짧고 생명주기가 짧은 함수가 가독성이 좋다. 그리고  한가지 일만 을 시킬수있어서 좋다.</p>
 <p>전역변수의 생명주기는 스크립트 로드가 되자마자 생성되고 애플리케이션이 종료될때 까지 (브라우저 종료) 전역변수는 리소스 할당이 적다.,암묵적 결함을 하고,네이밍스페이스를 오염시킨다. </p>
 <p>모둘패턴 (문법이 아닌 디자인 패턴이다.)<br>즉시실행함수는 코드가 실행되면 바로 실행이 된다. 객체 리터럴이 바로 함수에 할당이 된다. 모듈패턴은 자바스크립트에는 자바에서 public,private,protected같은 접근제한자가 없다. 따라서 이를 상요함으로써 변수에 접근을 하지못하게하는 역할을 하기위해 사용한다.<br>let,const 블록레벨 스코프</p>
@@ -269,13 +275,93 @@
 <p>let/const 변수 선언 중복선언애러,변수는 스코프가 분리되있으면 다른 변수이다.</p>
 <p>for문()의 소괄호의 부분은 코드블록안에 있다고 생각을 하는 것이 좋다.</p>
 <p>const/let은 호이스팅이 안하는 것 처럼 보이지만 한다.-런타임이전에 변수는 선언이 된다. 하지만 런타임에 선언문을 만나야지 값이 할당된다. 그렇기 때문에 선언문이전에 호출을 하면 에러를 발생시킨다. 즉 선언된 것을 자바스크립트엔진이 알지만 이에 접근하지 말라는 의미다.</p>
-<p>전역객체</p>
+<p><strong>전역객체</strong></p>
 <p>브라우저의 전역객체는 :window이다.<br>node.js의 전역객체는 :gloabal이다.<br>var키워드로 선언한 모든 전역변수는 window객체릐 프로퍼티가 된다.</p>
 <p>브라우저의 페이지를 바꾸면 전역객체또한 리셋이 된다.<br>전역객체는 var키워드로 선언한다.<br>function foo(){}와 var foo=funciton(){}모두 window의 객체이다.</p>
 <p>let으로 선언한 전역변수는 더이상 읽어들을 전역변수가 없다면 생명주기를 다하고 죽는다.<br>var와 let키워드를 섞어서 사용하지만고 한가지만을 통일해서 사용하자.<br>window객체의프로퍼티는 전역변수와 같게 사용 할 수 있다.</p>
-<p>const키워드<br>재할당을 할수없다. 변수 선언과 동시에 값을 할당해 주어야한다.<br>상수도 변수이다. 재할당을 금지시킨다.(스네이크 케이스,대문자로 사용한다.).</p>
-<p>const 키워드의 객체<br>재할당을 하는 일은 극히 드물다.<br>대부분 변수 const 사용한다. 변수 재할당 할일 이 없다.<br>객체는 변경가능한 값이다. 객체를 가지는 변수는 let을 사용할 이유가 없다. 객체는 기본적으로 재할당하지 않는다. es6/const ,let을 사용한다. 재할당 필요한 경우에만 let을 사용한다. </p>
+<p><strong>const키워드</strong><br>재할당을 할수없다. 변수 선언과 동시에 값을 할당해 주어야한다.<br>상수도 변수이다. 재할당을 금지시킨다.(스네이크 케이스,대문자로 사용한다.).</p>
+<p><strong>const 키워드의 객체</strong><br>재할당을 하는 일은 극히 드물다.<br>대부분 변수 const 사용한다. 변수 재할당 할일 이 없다.<br>객체는 변경가능한 값이다. 객체를 가지는 변수는 let을 사용할 이유가 없다. 객체는 기본적으로 재할당하지 않는다. es6/const ,let을 사용한다. 재할당 필요한 경우에만 let을 사용한다. </p>
 <p>전역 코드의 실행이 종료되면 let종료,window는 살아있다. 완료값은 변수에 할당되는 값이 아니다.</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/05/03/CSR SSR SPA 복사본/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -J- World">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/2020/05/03/CSR SSR SPA 복사본/" class="post-title-link" itemprop="url">CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2020-05-03 22:59:43 / Modified: 23:55:55" itemprop="dateCreated datePublished" datetime="2020-05-03T22:59:43+09:00">2020-05-03</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>1.CSR(클라이언트 사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943424/CSR.png" alt="CSR"></p>
+<p>-1.Server Sending Response to Browser<br>-2.Browser Downloads JS<br>-3.Browser executes React<br>-4.Page Now Viewable and Interatable</p>
+<p>서버에서 비어있는 html와  js파일들을 받아오고 , 데이터는 서비스에 필요한 리소스를 다운로드한후 브라우저에서 렌더링한다.그렇기 때문에 초기 View을 보기가지 SSR보다 시간이 더 걸린다. 하지만 사용자에게 보여진 view의 기능은 동시에 동작한다.</p>
+<p><strong>2.SSR(서버사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943426/SSR.png" alt="SSR"></p>
+<p>-1.Server Sending Ready tobe redered HTML Response to Browser<br>-2.Browser Renders the page,Now Viewable,andBrowser Downloads JS<br>-3.Browser execute React<br>-4.Page Now interatable</p>
+<p>서버에서 렌더링해 가져오기 때문에 ,첫 로딩 매우 짧다.<br>그러나 클라이언트가 js파일을 모두 다운로드하고 적용하기전가지는 각각의 기능은 동작하지않는다는 단점이 있다</p>
+<p><strong>3.SPA(Single page application)</strong></p>
+<p>서버로 부터 처음에만 페이지를 받아오고 이후에는 동적으로 페이지를 구성해서 새로운 페이지를 받아오지않는 웹 애플리케이션을 의미한다.<br> 페이지가 한번 로딩된 이후 데이터를 수정하거나 조회할때. 페이지가 새로고침이 되지않고 다른 페이지로 넘어가지 않습니다.</p>
+<p><strong>4.MPA(Multi Page Application)</strong></p>
+<p>서버로 부터 완전한 페이지를 받아오고 이후에 데이터를 수정하거나 조회할때 다른 완전한 페이지로 이동합니다.단 URL이 바뀔수있습니다.</p>
 
         
       
@@ -827,94 +913,6 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2019/09/29/CSR SSR SPA 복사본/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello -J- World">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            
-            <a href="/2019/09/29/CSR SSR SPA 복사본/" class="post-title-link" itemprop="url">CSR(클라이언트 사이드 렌더링)과</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-29 22:59:43" itemprop="dateCreated datePublished" datetime="2019-09-29T22:59:43+09:00">2019-09-29</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-03 23:48:42" itemprop="dateModified" datetime="2020-05-03T23:48:42+09:00">2020-05-03</time>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1.CSR(클라이언트 사이드 렌더링)<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943424/CSR.png" alt="CSR"></p>
-<p>-1.Server Sending Response to Browser<br>-2.Browser Downloads JS<br>-3.Browser executes React<br>-4.Page Now Viewable and Interatable</p>
-<p>서버에서 비어있는 html와  js파일들을 받아오고 , 데이터는 서비스에 필요한 리소스를 다운로드한후 브라우저에서 렌더링한다.그렇기 때문에 초기 View을 보기가지 SSR보다 시간이 더 걸린다. 하지만 사용자에게 보여진 view의 기능은 동시에 동작한다.</p>
-<p>2.SSR(서버사이드 렌더링)<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943426/SSR.png" alt="SSR"></p>
-<p>-1.Server Sending Ready tobe redered HTML Response to Browser<br>-2.Browser Renders the page,Now Viewable,andBrowser Downloads JS<br>-3.Browser execute React<br>-4.Page Now interatable</p>
-<p>서버에서 렌더링해 가져오기 때문에 ,첫 로딩 매우 짧다.<br>그러나 클라이언트가 js파일을 모두 다운로드하고 적용하기전가지는 각각의 기능은 동작하지않는다는 단점이 있다</p>
-<p>3.SPA(Single page application)</p>
-<p>서버로 부터 처음에만 페이지를 받아오고 이후에는 동적으로 페이지를 구성해서 새로운 페이지를 받아오지않는 웹 애플리케이션을 의미한다.<br> 페이지가 한번 로딩된 이후 데이터를 수정하거나 조회할때. 페이지가 새로고침이 되지않고 다른 페이지로 넘어가지 않습니다.</p>
-<p>4.MPA(Multi Page Application)</p>
-<p>서버로 부터 완전한 페이지를 받아오고 이후에 데이터를 수정하거나 조회할때 다른 완전한 페이지로 이동합니다.단 URL이 바뀔수있습니다.</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-    
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2019/09/29/프론트엔드-개발공부를-한-한달의-감상/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1286,7 +1284,7 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
       
       <div class="site-state-item site-state-tags">
         
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">tags</span>
         
       </div>
