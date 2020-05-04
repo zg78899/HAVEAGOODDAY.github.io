@@ -190,7 +190,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/04/setandmap-md/" class="post-title-link" itemprop="url">Set</a>
+            <a href="/2020/05/04/setandmap-md/" class="post-title-link" itemprop="url">Set 과 Map</a>
         </h2>
 
         <div class="post-meta">
@@ -199,10 +199,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-04 21:46:01 / Modified: 23:53:03" itemprop="dateCreated datePublished" datetime="2020-05-04T21:46:01+09:00">2020-05-04</time>
+              <time title="Created: 2020-05-04 21:46:01" itemprop="dateCreated datePublished" datetime="2020-05-04T21:46:01+09:00">2020-05-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-05 01:35:29" itemprop="dateModified" datetime="2020-05-05T01:35:29+09:00">2020-05-05</time>
+              </span>
 
           
   
@@ -255,91 +261,21 @@
 </tr>
 </tbody></table>
 <p>이러한 Set 객체의 특성은 <a href="https://ko.wikipedia.org/wiki/집합" target="_blank" rel="noopener">수학적 집합</a>의 특성과 일치한다. Set은 수학적 집합을 구현하기 위한 자료 구조이다. Set을 통해 교집합, 합집합, 차집합, 여집합 등을 구현할 수 있다.</p>
-<h2 id="1-1-Set-객체의-생성"><a href="#1-1-Set-객체의-생성" class="headerlink" title="#1.1. Set 객체의 생성"></a><a href="https://poiemaweb.com/fastcampus/set-map#11-set-객체의-생성" target="_blank" rel="noopener">#</a>1.1. Set 객체의 생성</h2><p>Set 객체는 Set 생성자 함수로 생성한다. Set 생성자 함수에 인수를 전달하지 않으면 빈 Set 객체가 생성된다.</p>
+<h2 id="1-1-Set-객체의-생성"><a href="#1-1-Set-객체의-생성" class="headerlink" title="1.1. Set 객체의 생성"></a>1.1. Set 객체의 생성</h2><p>Set 객체는 Set 생성자 함수로 생성한다. Set 생성자 함수에 인수를 전달하지 않으면 빈 Set 객체가 생성된다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">set</span> = new Set();</span><br><span class="line">console.log(<span class="keyword">set</span>); // Set(0) &#123;&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Set 생성자 함수는 이터러블을 인수로 전달받아 Set 객체를 생성한다. 이때 이터러블의 중복된 값은 Set 객체에 요소로 저장되지 않는다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> set1 = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(set1); <span class="comment">// Set(3) &#123;1, 2, 3&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> set2 = <span class="keyword">new</span> <span class="built_in">Set</span>(<span class="string">'hello'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(set2); <span class="comment">// Set(4) &#123;"h", "e", "l", "o"&#125;</span></span><br></pre></td></tr></table></figure>
 
 <p>중복을 허용하지 않는 Set 객체의 특성을 활용하여 배열에서 중복된 요소를 제거할 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 배열의 중복 요소 제거</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> array.filter(<span class="function">(<span class="params">v, i, self</span>) =&gt;</span> self.indexOf(v) === i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(uniq([<span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">4</span>])); <span class="comment">// [2, 1, 3, 4]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Set을 사용한 배열의 중복 요소 제거</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [...new <span class="built_in">Set</span>(array)];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(uniq([<span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">4</span>])); <span class="comment">// [2, 1, 3, 4]</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-요소-개수-확인"><a href="#1-2-요소-개수-확인" class="headerlink" title="#1.2. 요소 개수 확인"></a><a href="https://poiemaweb.com/fastcampus/set-map#12-요소-개수-확인" target="_blank" rel="noopener">#</a>1.2. 요소 개수 확인</h2><p>Set 객체의 요소 개수를 확인할 때는 Set.prototype.size 프로퍼티를 사용한다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">set</span> = new Set([1, 2, 3]);</span><br><span class="line"></span><br><span class="line">console.log(<span class="keyword">set</span>); // Set(3) &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">set</span>.size); // 3</span><br></pre></td></tr></table></figure>
-
-<p>Set.prototype.size 프로퍼티는 setter 함수없이 getter 함수만 존재하는 접근자 프로퍼티이다. 따라서 Set.prototype.size 프로퍼티에 숫자를 할당하여 Set 객체의 요소 개수를 변경할 수 없다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">set</span> = new Set([1, 2, 3]);</span><br><span class="line"></span><br><span class="line">console.log(Object.getOwnPropertyDescriptor(Set.prototype, 'size'));</span><br><span class="line">// &#123;<span class="keyword">set</span>: undefined, enumerable: false, configurable: true, <span class="keyword">get</span>: ƒ&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>.size = 10; // 무시된다.</span><br><span class="line">console.log(<span class="keyword">set</span>.size); // 3</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-3-요소-추가"><a href="#1-3-요소-추가" class="headerlink" title="#1.3. 요소 추가"></a><a href="https://poiemaweb.com/fastcampus/set-map#13-요소-추가" target="_blank" rel="noopener">#</a>1.3. 요소 추가</h2><p>Set 객체에 요소를 추가할 때는 Set.prototype.add 메소드를 사용한다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">set</span> = new Set();</span><br><span class="line">console.log(<span class="keyword">set</span>); // Set(0) &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>.add(1);</span><br><span class="line">console.log(<span class="keyword">set</span>); // Set(1) &#123;<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Set.prototype.add 메소드는 새로운 요소가 추가된 Set 객체를 반환한다. 따라서 연속적으로 Set.prototype.add 메소드를 호출할 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">set</span> = new Set();</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>.add(1).add(2);</span><br><span class="line">console.log(<span class="keyword">set</span>); // Set(2) &#123;<span class="number">1</span>, <span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Set 객체에 중복된 요소의 추가는 허용되지 않는다. 단, 이때 에러가 발생하지는 않고 무시된다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">set</span> = new Set();</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>.add(1).add(2).add(2);</span><br><span class="line">console.log(<span class="keyword">set</span>); // Set(2) &#123;<span class="number">1</span>, <span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>일치 비교 연산자 <code>===</code>을 사용하면 NaN과 NaN을 다르다고 평가한다.(“7.3.1. 동등/일치 비교 연산자” 참고) 하지만 Set 객체는 NaN과 NaN을 같다고 평가하여 중복 추가를 허용하지 않는다. 또한 일치 비교 연산자 <code>===</code>와 마찬가지로 +0과 -0도 같다고 평가하여 중복 추가를 허용하지 않는다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">set</span> = new Set();</span><br><span class="line"></span><br><span class="line">console.log(NaN === NaN); // false</span><br><span class="line">console.log(0 === -0); // true</span><br><span class="line"></span><br><span class="line">// NaN과 NaN을 같다고 평가하여 중복 추가를 허용하지 않는다.</span><br><span class="line"><span class="keyword">set</span>.add(NaN).add(NaN);</span><br><span class="line">console.log(<span class="keyword">set</span>); // Set(1) &#123;<span class="literal">NaN</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// +0과 -0을 같다고 평가하여 중복 추가를 허용하지 않는다.</span></span><br><span class="line"><span class="keyword">set</span>.add(0).add(-0);</span><br><span class="line">console.log(<span class="keyword">set</span>); // Set(2) &#123;<span class="literal">NaN</span>, <span class="number">0</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Set 객체는 자바스크립트의 모든 값을 요소로 저장할 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">set</span> = new Set();</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span></span><br><span class="line">  .add(1)</span><br><span class="line">  .add('a')</span><br><span class="line">  .add(true)</span><br><span class="line">  .add(undefined)</span><br><span class="line">  .add(null)</span><br><span class="line">  .add(&#123;&#125;)</span><br><span class="line">  .add([]);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">set</span>); // Set(7) &#123;<span class="number">1</span>, <span class="string">"a"</span>, <span class="literal">true</span>, <span class="literal">undefined</span>, <span class="literal">null</span>, &#123;&#125;, []&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-4-요소-존재-여부-확인"><a href="#1-4-요소-존재-여부-확인" class="headerlink" title="#1.4. 요소 존재 여부 확인"></a><a href="https://poiemaweb.com/fastcampus/set-map#14-요소-존재-여부-확인" target="_blank" rel="noopener">#</a>1.4. 요소 존재 여부 확인</h2><p>Set 객체에 특정 요소가 존재하는지 확인하려면 Set.prototype.has 메소드를 사용한다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">set</span> = new Set([1, 2, 3]);</span><br><span class="line"></span><br><span class="line">console.log(<span class="keyword">set</span>.has(2)); // true</span><br><span class="line">console.log(<span class="keyword">set</span>.has(4)); // false</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-5-요소-삭제"><a href="#1-5-요소-삭제" class="headerlink" title="#1.5. 요소 삭제"></a><a href="https://poiemaweb.com/fastcampus/set-map#15-요소-삭제" target="_blank" rel="noopener">#</a>1.5. 요소 삭제</h2><p>Set 객체의 요소를 삭제할 때는 Set.prototype.delete 메소드를 사용한다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">set</span> = new Set([1, 2, 3]);</span><br><span class="line"></span><br><span class="line">// 요소 2를 삭제한다.</span><br><span class="line"><span class="keyword">set</span>.delete(2);</span><br><span class="line">console.log(<span class="keyword">set</span>); // Set(2) &#123;<span class="number">1</span>, <span class="number">3</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 요소 1을 삭제한다.</span></span><br><span class="line"><span class="keyword">set</span>.delete(1);</span><br><span class="line">console.log(<span class="keyword">set</span>); // Set(1) &#123;<span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Set.prototype.delete 메소드에는 인덱스가 아니라 삭제하려는 요소값을 전달하여야 한다. Set 객체는 순서에 의미가 없다. 다시 말해 배열과 같이 인덱스를 갖지 않는다.</p>
-<p>만약 존재하지 않는 Set 객체의 요소를 삭제하려하면 에러없이 무시된다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">set</span> = new Set([1, 2, 3]);</span><br><span class="line"></span><br><span class="line">// 존재하지 않는 요소 0를 삭제한다.</span><br><span class="line"><span class="keyword">set</span>.delete(0); // 무시된다</span><br><span class="line">console.log(<span class="keyword">set</span>); // Set(3) &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Set.prototype.delete 메소드는 삭제 성공 여부를 나타내는 불리언 값을 반환한다. 따라서 Set.prototype.add 메소드와 같이 연속적으로 호출할 수 없다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">set</span> = new Set([1, 2, 3]);</span><br><span class="line"></span><br><span class="line">// delete는 불리언 값을 반환한다.</span><br><span class="line"><span class="keyword">set</span>.delete(1).delete(2); // TypeError: <span class="keyword">set</span>.delete(...).delete is not a function</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-6-요소-일괄-삭제"><a href="#1-6-요소-일괄-삭제" class="headerlink" title="#1.6. 요소 일괄 삭제"></a><a href="https://poiemaweb.com/fastcampus/set-map#16-요소-일괄-삭제" target="_blank" rel="noopener">#</a>1.6. 요소 일괄 삭제</h2><p>Set 객체의 요소를 일괄 삭제할 때는 Set.prototype.clear 메소드를 사용한다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">set</span> = new Set([1, 2, 3]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>.clear();</span><br><span class="line">console.log(<span class="keyword">set</span>); // Set(0) &#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-7-요소-순회"><a href="#1-7-요소-순회" class="headerlink" title="#1.7. 요소 순회"></a><a href="https://poiemaweb.com/fastcampus/set-map#17-요소-순회" target="_blank" rel="noopener">#</a>1.7. 요소 순회</h2><p>Set 객체의 요소를 순회할 때는 Set.prototype.forEach 메소드를 사용한다. Set.prototype.forEach 메소드는 Array.prototype.forEach 메소드와 유사하게 콜백함수와 forEach 메소드 내부에서 this로 사용될 객체(옵션)를 전달한다. 이때 콜백함수는 아래와 같이 3개의 인수를 전달받는디.</p>
-<ul>
-<li>첫번재 인수 : 현재 순회중인 요소값</li>
-<li>두번재 인수 : 현재 순회중인 요소값</li>
-<li>세번재 인수 : 현재 순회중인 Set 객체(this)</li>
-</ul>
-<p>첫번재 인수와 두번재 인수는 같은 값이다. 이처럼 동작하는 이유는 Array.prototype.forEach 메소드와 인터페이스를 통일하기 위함으로 다른 의미는 없다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">set</span> = new Set([1, 2, 3]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>.forEach((v, v2, <span class="keyword">set</span>) =&gt; console.log(v, v2, <span class="keyword">set</span>));</span><br><span class="line">/*</span><br><span class="line">1 1 Set(3) &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line"><span class="number">2</span> <span class="number">2</span> <span class="built_in">Set</span>(<span class="number">3</span>) &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line"><span class="number">3</span> <span class="number">3</span> <span class="built_in">Set</span>(<span class="number">3</span>) &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">*<span class="regexp">/</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>Set 객체는 이터러블이다</strong>. 따라서 for…of문으로 순회할 수 있으며 스프레드 문법의 대상이 될 수도 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">set</span> = new Set([1, 2, 3]);</span><br><span class="line"></span><br><span class="line">// Set 객체는 Set.prototype의 Symbol.iterator 메소드를 상속받는 이터러블이다.</span><br><span class="line">console.log(Symbol.iterator in <span class="keyword">set</span>); // true</span><br><span class="line"></span><br><span class="line">// 이터러블인 Set 객체는 for...of 문으로 순회할 수 있다.</span><br><span class="line">for (const value of <span class="keyword">set</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value); <span class="comment">// 1 2 3</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 이터러블인 Set 객체는 스프레드 문법의 대상이 될 수 있다.</span></span><br><span class="line"><span class="built_in">console</span>.log([...set]); <span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure>
-
-<p>Set 객체는 요소의 순서에 의미를 갖지 않지만 Set 객체를 순회하는 순서는 요소가 추가된 순서를 따른다. 이는 ECMAScript 사양에 규정되어 있지는 않지만 다른 이터러블의 순회와 호환성을 유지하기 위함이다.</p>
-<h2 id="1-8-집합-연산"><a href="#1-8-집합-연산" class="headerlink" title="#1.8. 집합 연산"></a><a href="https://poiemaweb.com/fastcampus/set-map#18-집합-연산" target="_blank" rel="noopener">#</a>1.8. 집합 연산</h2><p>Set은 수학적 집합을 구현하기 위한 자료 구조이다. Set을 통해 교집합, 합집합, 차집합 등을 구현할 수 있다. 이들 프로토타입 메소드를 구현하면 아래와 같다.</p>
-<h3 id="1-8-1-교집합"><a href="#1-8-1-교집합" class="headerlink" title="#1.8.1. 교집합"></a><a href="https://poiemaweb.com/fastcampus/set-map#181-교집합" target="_blank" rel="noopener">#</a>1.8.1. 교집합</h3><p>교집합(A∩B)은 집합 A와 집합 B의 공통 요소로 구성된다</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set</span>.prototype.intersection = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> value <span class="keyword">of</span> <span class="keyword">set</span>) &#123;</span><br><span class="line">    <span class="comment">// 2개의 set의 요소가 공통되는 요소이면 교집합의 대상이다.</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.has(value)) result.add(value);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>, <span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// setA와 setB의 교집합</span></span><br><span class="line"><span class="built_in">console</span>.log(setA.intersection(setB)); <span class="comment">// Set(2) &#123;2, 4&#125;</span></span><br><span class="line"><span class="comment">// setB와 setA의 교집합</span></span><br><span class="line"><span class="built_in">console</span>.log(setB.intersection(setA)); <span class="comment">// Set(2) &#123;2, 4&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>또는 아래와 같은 방법으로도 가능하다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set</span>.prototype.intersection = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Set</span>([...this].filter(<span class="function"><span class="params">v</span> =&gt;</span> <span class="keyword">set</span>.has(v)));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const setA = new Set([1, 2, 3, 4]);</span><br><span class="line">const setB = new Set([2, 4]);</span><br><span class="line"></span><br><span class="line">// setA와 setB의 교집합</span><br><span class="line">console.log(setA.intersection(setB)); // Set(2) &#123;<span class="number">2</span>, <span class="number">4</span>&#125;</span><br><span class="line"><span class="comment">// setB와 setA의 교집합</span></span><br><span class="line"><span class="built_in">console</span>.log(setB.intersection(setA)); <span class="comment">// Set(2) &#123;2, 4&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-8-2-합집합"><a href="#1-8-2-합집합" class="headerlink" title="#1.8.2. 합집합"></a><a href="https://poiemaweb.com/fastcampus/set-map#182-합집합" target="_blank" rel="noopener">#</a>1.8.2. 합집합</h3><p>합집합(A∪B)은 집합 A와 집합 B의 중복없는 모든 요소로 구성된다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set</span>.prototype.union = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// this(Set 객체)를 복사</span></span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="built_in">Set</span>(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> value <span class="keyword">of</span> <span class="keyword">set</span>) &#123;</span><br><span class="line">    <span class="comment">// 합집합은 2개의 Set 객체의 모든 요소로 구성된 집합이다. 중복된 요소는 포함되지 않는다.</span></span><br><span class="line">    result.add(value);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>, <span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// setA와 setB의 합집합</span></span><br><span class="line"><span class="built_in">console</span>.log(setA.union(setB)); <span class="comment">// Set(4) &#123;1, 2, 3, 4&#125;</span></span><br><span class="line"><span class="comment">// setB와 setA의 합집합</span></span><br><span class="line"><span class="built_in">console</span>.log(setB.union(setA)); <span class="comment">// Set(4) &#123;2, 4, 1, 3&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>또는 아래와 같은 방법으로도 가능하다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set</span>.prototype.union = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Set</span>([...this, ...set]);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>, <span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// setA와 setB의 합집합</span></span><br><span class="line"><span class="built_in">console</span>.log(setA.union(setB)); <span class="comment">// Set(4) &#123;1, 2, 3, 4&#125;</span></span><br><span class="line"><span class="comment">// setB와 setA의 합집합</span></span><br><span class="line"><span class="built_in">console</span>.log(setB.union(setA)); <span class="comment">// Set(4) &#123;2, 4, 1, 3&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-8-3-차집합"><a href="#1-8-3-차집합" class="headerlink" title="#1.8.3. 차집합"></a><a href="https://poiemaweb.com/fastcampus/set-map#183-차집합" target="_blank" rel="noopener">#</a>1.8.3. 차집합</h3><p>차집합(A-B)은 집합 A에는 존재하지만 집합 B에는 존재하지 않는 요소들의 집합이다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set</span>.prototype.difference = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// this(Set 객체)를 복사</span></span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="built_in">Set</span>(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> value <span class="keyword">of</span> <span class="keyword">set</span>) &#123;</span><br><span class="line">    <span class="comment">// 차집합은 어느 한쪽 집합에는 존재하지만 다른 한쪽 집합에는 존재하지 않는 요소로 구성된 집합이다.</span></span><br><span class="line">    result.delete(value);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>, <span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// setA에 대한 setB의 차집합</span></span><br><span class="line"><span class="built_in">console</span>.log(setA.difference(setB)); <span class="comment">// Set(2) &#123;1, 3&#125;</span></span><br><span class="line"><span class="comment">// setB에 대한 setA의 차집합</span></span><br><span class="line"><span class="built_in">console</span>.log(setB.difference(setA)); <span class="comment">// Set(0) &#123;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>또는 아래와 같은 방법으로도 가능하다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set</span>.prototype.difference = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Set</span>([...this].filter(<span class="function"><span class="params">v</span> =&gt;</span> !<span class="keyword">set</span>.has(v)));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const setA = new Set([1, 2, 3, 4]);</span><br><span class="line">const setB = new Set([2, 4]);</span><br><span class="line"></span><br><span class="line">// setA에 대한 setB의 차집합</span><br><span class="line">console.log(setA.difference(setB)); // Set(2) &#123;<span class="number">1</span>, <span class="number">3</span>&#125;</span><br><span class="line"><span class="comment">// setB에 대한 setA의 차집합</span></span><br><span class="line"><span class="built_in">console</span>.log(setB.difference(setA)); <span class="comment">// Set(0) &#123;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-8-4-부분-집합과-상위-집합"><a href="#1-8-4-부분-집합과-상위-집합" class="headerlink" title="#1.8.4. 부분 집합과 상위 집합"></a><a href="https://poiemaweb.com/fastcampus/set-map#184-부분-집합과-상위-집합" target="_blank" rel="noopener">#</a>1.8.4. 부분 집합과 상위 집합</h3><p>집합 A가 집합 B에 포함되는 경우(A⊆B), 집합 A는 집합 B의 부분 집합이며 집합 B는 집합 A의 상위 집합이다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// this가 subset의 상위 집합인지 확인한다.</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.isSuperset = <span class="function"><span class="keyword">function</span> (<span class="params">subset</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> value <span class="keyword">of</span> subset) &#123;</span><br><span class="line">    <span class="comment">// superset의 모든 요소가 subset의 모든 요소를 포함하는지 확인</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.has(value)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>, <span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// setA가 setB의 상위 집합인지 확인한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(setA.isSuperset(setB)); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// setB가 setA의 상위 집합인지 확인한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(setB.isSuperset(setA)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
-
-<p>또는 아래와 같은 방법으로도 가능하다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// this가 subset의 상위 집합인지 확인한다.</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.isSuperset = <span class="function"><span class="keyword">function</span> (<span class="params">subset</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> supersetArr = [...this];</span><br><span class="line">  <span class="keyword">return</span> [...subset].every(<span class="function"><span class="params">v</span> =&gt;</span> supersetArr.includes(v));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>, <span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// setA가 setB의 상위 집합인지 확인한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(setA.isSuperset(setB)); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// setB가 setA의 상위 집합인지 확인한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(setB.isSuperset(setA)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/04/setandmap-md/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -428,34 +364,14 @@
 <p>함수는 재사용을 한다. 변수를 왜쓰는가?-어떤 상태를 유지해야할때 사용한다.<br>변수를 공용으로 쓸때는(전역변수와 관련하여)? 고정되어 변하지 않는 값ㅇ르 가지는 경우에 사용한다.<br>상수는 재할당을 금지시킨다. 따라서  전역변수는 상수개념이 아니면 사용하지 않는것이 좋다.</p>
 <p>1.순수함수-1언제나 동일 한 반환값(return x+y)<br>x(2,3)=5</p>
 <p>2.비순수함수 -외부함수에 영향을 받음</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">increase</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> ++num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p> <strong>스코프 함수</strong></p>
-<p>변수가 어디에서 선언이 됐느냐가 즉 선언 위치가 스코프를 만든다.<br>class는 함수이다.<br>자신이 선언된 위치에 의해 다른 식벼자를 참조할 유효범위가 결정된다.</p>
-<p>function foo(){}는 식별자가 2개이다. 1.암묵적으로 자바스크립트 엔진이 변수이름으로 만든 식별자.</p>
-<p>2.지역함수의 식별자. 그런데 에러를 일으키지않는다. 그리고 foo는 전역 함수이다. 또한 호출하는 foo()에서 foo는 함수이름이 아니고 자바스크립트엔진이 생성한 암묵적인 식별자다.</p>
-<p>스코프는 자카스크립트엔진이 식별자는 찾는 규칙이다. 코드와 가장 근접한 곳에있는 스코프를 본다.<br>자바스크립트 코드의 문맥과 환경이있따. 코드를 실행하기 위한 문맥을 기억한다. 자바스크립트는 전역과 지역을 어떻게 구분하는걸까?</p>
-<p>식별자는 스코프내에서 유니크하다.<br>전역은 어디근 참조(문맥을 찾는다.)가 가능하다. 코드가 해당하는 스코프부터 식별자를 찾는다. 그후에 상위로 간다.<br>쉐도잉-그림자 처럼 가져려진다.<br>식별자는 자바스크립트엔진에 등록이된다.<br>이때 스코프가 정해진다.<br>식별자는 스코프 체인에서 찾는다. 함수는 변수와 저장되는 매카니즘이 같다. 찾는 매카니즘도 동일하다.</p>
-<p><strong>렉시컬 시코프</strong><br>자바스크립트엔진이 함수를 정의할때 어디서 호출될지 알수없다.<br>언제 함수의 상위 스코프가 오는냐? 함수의를 할때 취치에 의해 상위 스코프가정해진다. 어디서 호출되든지 간에 정의위치에 ㄱ따라 사우이스코프가 정해져버린다.<br>동적스코프와 /렉시컬스코프의 차이</p>
-<p>매개변수가 값을 할당하는 것은 호출할때, 호출된 직후 매개변수undefined 선언된다. 이후에 할당된다.<br>변수도 어디에서 선언되는지에 따라 스코프가 정해진다.함수도 마찬가지</p>
-<p><strong>암묵적 전역변수</strong><br>전역함수에서 선언하지않은 변수는 전역변수가 된다.<br>모듈(자바스크립트 엔진은 파일 스코프를 가지지않는다.)-&gt;한개의 파일로 함ㅍ쳐진다. 같은 이름의 변숙가 있다면 재할다잉 된다.이런 문제 따문에 전역변수를 사용하지않는다.<br>자바스크립트에는 순서가 있다.엄청 여러개의 스크립트파일들을  webpack 번들링 로 하나로 묶고 그 안에서 스코프를 줘서 나눈다.</p>
-<p><strong>변수의 생명주기</strong>- 변수 생명주기는 직역변수일때 함수의 생명주기가 짧다.리소스가 빨리 해방이 된다.<br> 반대로 전역변수의 생명주기(스코프가 길다.)는 길기 때문에 재할당 수정등의 여러가지 문제를 야기한다.</p>
-<p>짧고 생명주기가 짧은 함수가 가독성이 좋다. 그리고  한가지 일만 을 시킬수있어서 좋다.</p>
-<p>전역변수의 생명주기는 스크립트 로드가 되자마자 생성되고 애플리케이션이 종료될때 까지 (브라우저 종료) 전역변수는 리소스 할당이 적다.,암묵적 결함을 하고,네이밍스페이스를 오염시킨다. </p>
-<p>모둘패턴 (문법이 아닌 디자인 패턴이다.)<br>즉시실행함수는 코드가 실행되면 바로 실행이 된다. 객체 리터럴이 바로 함수에 할당이 된다. 모듈패턴은 자바스크립트에는 자바에서 public,private,protected같은 접근제한자가 없다. 따라서 이를 상요함으로써 변수에 접근을 하지못하게하는 역할을 하기위해 사용한다.<br>let,const 블록레벨 스코프</p>
-<p>var키워드는 전역 변수의 분제점으로 귀결된다. 왜var키워드를 사용할 수없는가?-&gt;함수레벨 스코프,전역변수 문제점,재할당 등의 이유.</p>
-<p>변수 호이스팅은 나쁜점이다. 지양해야하는 부분.<br>변수는 선언하고 참조해라</p>
-<p>let/const 변수 선언 중복선언애러,변수는 스코프가 분리되있으면 다른 변수이다.</p>
-<p>for문()의 소괄호의 부분은 코드블록안에 있다고 생각을 하는 것이 좋다.</p>
-<p>const/let은 호이스팅이 안하는 것 처럼 보이지만 한다.-런타임이전에 변수는 선언이 된다. 하지만 런타임에 선언문을 만나야지 값이 할당된다. 그렇기 때문에 선언문이전에 호출을 하면 에러를 발생시킨다. 즉 선언된 것을 자바스크립트엔진이 알지만 이에 접근하지 말라는 의미다.</p>
-<p><strong>전역객체</strong></p>
-<p>브라우저의 전역객체는 :window이다.<br>node.js의 전역객체는 :gloabal이다.<br>var키워드로 선언한 모든 전역변수는 window객체릐 프로퍼티가 된다.</p>
-<p>브라우저의 페이지를 바꾸면 전역객체또한 리셋이 된다.<br>전역객체는 var키워드로 선언한다.<br>function foo(){}와 var foo=funciton(){}모두 window의 객체이다.</p>
-<p>let으로 선언한 전역변수는 더이상 읽어들을 전역변수가 없다면 생명주기를 다하고 죽는다.<br>var와 let키워드를 섞어서 사용하지만고 한가지만을 통일해서 사용하자.<br>window객체의프로퍼티는 전역변수와 같게 사용 할 수 있다.</p>
-<p><strong>const키워드</strong><br>재할당을 할수없다. 변수 선언과 동시에 값을 할당해 주어야한다.<br>상수도 변수이다. 재할당을 금지시킨다.(스네이크 케이스,대문자로 사용한다.).</p>
-<p><strong>const 키워드의 객체</strong><br>재할당을 하는 일은 극히 드물다.<br>대부분 변수 const 사용한다. 변수 재할당 할일 이 없다.<br>객체는 변경가능한 값이다. 객체를 가지는 변수는 let을 사용할 이유가 없다. 객체는 기본적으로 재할당하지 않는다. es6/const ,let을 사용한다. 재할당 필요한 경우에만 let을 사용한다. </p>
-<p>전역 코드의 실행이 종료되면 let종료,window는 살아있다. 완료값은 변수에 할당되는 값이 아니다.</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/03/스코프/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -543,7 +459,14 @@
 <p>서버로 부터 처음에만 페이지를 받아오고 이후에는 동적으로 페이지를 구성해서 새로운 페이지를 받아오지않는 웹 애플리케이션을 의미한다.<br> 페이지가 한번 로딩된 이후 데이터를 수정하거나 조회할때. 페이지가 새로고침이 되지않고 다른 페이지로 넘어가지 않습니다.</p>
 <p><strong>4.MPA(Multi Page Application)</strong></p>
 <p>서버로 부터 완전한 페이지를 받아오고 이후에 데이터를 수정하거나 조회할때 다른 완전한 페이지로 이동합니다.단 URL이 바뀔수있습니다.</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/03/CSR SSR SPA /#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -632,100 +555,14 @@
 
 <p><strong>데이터 타입</strong>(7가지-숫자,문자열,불리언,undefined,null,symbol,객체 혹은 참조)</p>
 <p>-데이터 타입이 필요하다-&gt;할당할때 변수에 확보해야하는 메모리 공간을 확보할 수있다.</p>
-<p>1.타입을 알아야-메모리 공간을 확보한다.<br>2.몇 바이트 공간이 필요한가<br>3.가져온 값을 어떻게 해석해야하는가?</p>
-<p>숫자값 저장(8byte 사용) 타입마다 확보해야하는 메모리 공간 제각각이다. 타입을 모르면 확보해야할 메모리를 모른다.</p>
-<p>score을 선두에 접근한다. 8byte만큼 가져옴-&gt;가져온 데이터 2진수(문자/숫자/불리언 등으로 어떻게 알것이냐?)<br>-&gt;따라서 식별자는 타입을 알아야한다.</p>
-<hr>
-
-<p><strong>값</strong>:현재 메모리에 들어있는 데이터<br><strong>값의 특징:</strong>타입을 가지고 있다(7가지 타입중하나)<br><strong>값이란?</strong> 더이산 평가 할 수 없는 하나의 표현식이다.<br>ex)30-리터럴/리터럴 표기법(10진수)/값을 만들어낸느 가장 시초<br><strong>평가란?</strong>식을 하나의 값으로 계산한다.ex)10+20평가의 대상 -평가의 결과물은 <strong>값</strong>이다.<br>표현식은 평가가 되어 값이 되는 것이다.<br>10(피연산자,리터럴)+(산술 연산자)20(피연산자,리터럴)</p>
-<p>값을 표기하는 방법 크게 두가지다</p>
-<p>1.<strong>리터럴</strong>(ex)30.<br><strong>2.표현식</strong>(ex)10+20-&gt;하나 이상의 리터럴,하나 이상의 표현식 연산자로 만들어진 ‘문(statement)’이다.</p>
-<p>10+20:표현식-&gt; 자바스크립트엔진에서 평가-&gt;값 30을 만듦/리터럴 표기법를 평가해야 값을 만들어낸다.(평가 전에는 값이 만들어지지않는다.)</p>
-<p>숫자 리터럴/문자열 리터럴/불리언 리터럴/null리터럴/undefined리터럴/객체 리터럴/배열 리터럴/함수 리터럴/정규표현식 리터럴</p>
-<p>리터럴은 사람이 이해하기 편하게 하기 위해서 만들었다.</p>
-<p><strong>데이터 타입</strong><br><strong>원시타입</strong>(숫자/문자열/불리언/undefined/null/symbol)</p>
-<p><strong>객체 타입</strong>(object/reference type):객체,함수,배열</p>
-<p>정수/실수-모든숫자를 실수 타입으로 처리를 한다.</p>
-<ul>
-<li>Infinity : 양의 무한대</li>
-<li>-Infinity : 음의 무한대</li>
-<li>NaN : 산술 연산 불가(not-a-number)</li>
-</ul>
-<p>표현식은 평가 되어져서 하나의 값을 만든다.<br>식별자는 결국 표현식이다.<br>(ex)var a=10;var a=b;b=a+10;표현식은 하나의 값으로 표현할 수있다.</p>
-<p><strong>문자열</strong><br>작은 따옴표,큰 따옴표-개행하기 위해서는 이스케이프 시퀀스를 사용한다.(개행:\n);</p>
-<p>백틱문자는 엔터나 띄어쓰기 같은 것,’’,””을 모두 동시에 사용할 수 있다는 장점이 있다.</p>
-<p>console.log(‘My name is’+frist+’’+second+’!’);</p>
-<p>+은 문자열 연산자-좌우항에 하나라도 문자열이 있다면 + 연산자로 결합하여 문자열이 된다.<br><code>${문자열}</code> ex)console.log(<code>1+1=${1+1}</code>);</p>
-<p>‘2’는 문자열이다. 이는 암묵적인 타입변환이 일어났단는 것을 알수있다. 이러한 암묵적인 변환은 에러의 온상이 된다.</p>
-<p><strong>불리언 타입</strong><br>논리적인 참,거짓을 나타내는 true 와 false를 가진다.</p>
-<p><strong>undefined타입</strong><br>undefined타입 값은 undefined가 유일 하다.선언 이후에 명시적으로 값을 할당하지 은 변수는 자바스크립트 엔진의 암묵적 초기화에 의해서 undefined값을 가진다. 따라서 선언은 되었지만 아직 값을 할당하지 낳은 변수에 접근하면 undefined가 반환된다.</p>
-<p><strong>선언</strong>:변수는 선언이라고 부를 것이다.<br><strong>정의</strong> :무언가를 할당해서 그 변수에 어떤 값을 가지고있는지 명확히 나타냄<br>함수,클래스는 ‘정의’로 부르겠다. 선언과 동시에 객체가 생성됨</p>
-<p><strong>null타입</strong></p>
-<p>변수에는 값이 없다는 것을 명확히 나타냄.<br>ex)var foo=’lee’; foo=null(가비지 컬렉터가 로 ‘lee ‘를 해제해 주세요)</p>
-<p><strong>동적 타이핑(타입이 동적이다.)</strong><br>동적타입언어(자바스크립트)-변수의 타입이 없다(값에 타입이 있다.)-편하지만 신뢰성이 떨어진다(변수의 타입이 암묵적으로 변환이 된다.).</p>
-<p>값에 의해서 변수의 타입이 결정이 된다.변수는 선언이 아닌 할당에 의해 타입이 결정된다. 재할당에 의해 변수의 타입은 언제든지 동적으로 바뀔 수 있다.-&gt;하나의 변수에 여러가지 값을 마구마구 집어널을 수있다.</p>
-<p><strong>정적타입의 언어</strong>(자바,c)-변수자체가 타입이 있다=엄격하다(정해진타입의 값만이 들어갈수있기 때문에 )그래서 안정성이 있다.</p>
-<p>언제나 변수의 타입의 값을 확정할 수있다.</p>
-<p>Typescript -&gt;자바스크립트 에 정적 타입을 도입한것.</p>
-<p>동적 타입언어는 편리함,but위험이 도사리고 있다.</p>
-<p>동적으로 변화하는 데이터타입을 추측하기 어려운데 ,안정적인 프로그램을 만들기 위해서<br>1.변수를 최소화 한다.<br>2.전역변수(라이프 주기가 길다)사용x<br>변수의 생명주기를 짧게 만든다.<br>3.변수보다 상수를 사용해서 값의 변경을 억제 하자.<br>4.변수의 이름을 존재를 파악할 수있도록 명명한다.</p>
-<hr>
-<p><strong>표현식과 연산자</strong></p>
-<p><strong>표현식</strong> :하나의 값을 표현할 수있는 문<br>표현식에 리터럴,식별자,연산자를 사용할 수있다.</p>
-<p><strong>리터럴</strong>-사람이 이해할 수있는 값으로 나타냄<br>리럴은 표현식을 만드는 요소중에 하나이다.리터럴은 표현식이 될수있지만, 표현식은 리터럴 일수도 아닐 수도 있다.</p>
-<p><strong>문</strong>-표현식일수도 아닐수도 있다.(문&gt;표현식)</p>
-<p><strong>표현식인 문</strong>-값으로 표현(변수에 할당)<br><strong>표현식이 아닌 문</strong>-값으로 표현 (변수에 할당x)<br> 표현식인 문과 표현식이 아닌 문을 확인하는 가장 쉬운 방법은 변수에 할당해보는 방법이다.</p>
-<p><strong>변수선언문</strong>-표현식이 아닌 문<br><strong>할당문**</strong>-(ex)x=5; 어떤 변수에 할당할 수있다.</p>
-<p>문은 세미콜론으로 끝나야한다. 그러나 단 코드 블록 뒤에는 붙이지 않는다. 자동 삽입 기능이있지만 붙이는 것이 권고 된다.</p>
-<p><strong>연산자</strong>:표현식을 만드는 연산자.피연산자에는 식이 올수도 있다.</p>
-<p><strong>이항 연산자</strong>는 부수효과가 없다.<br>그러나 단항 연산자++,–부수효과가 있다.</p>
-<p>+’10’숫자로 암묵적으로 변한이 일어남</p>
-<p><strong>비교연산자</strong><br>===타입이 다르면 false이다.==타입이 달라도 같은 결과라고 나오는 경우가 있기에 ===을 사용해야함.<br>!==와 !==도 마찬가지</p>
-<p>NaN===NaN은 false을 반황하는대   NaNdㅡㄴ 자신과 일치하지 않은 유일한 값이다. 따라서 NaN인지를 조사하려면 빌트인 함수를 isNaN을 사용해여한다.</p>
-<p><strong>대소 연산자</strong>도 true와 false값을 받는다.</p>
-<p><strong>3항 조건 연산자</strong><br>조건식? 조건식 이 true일때 반환하는 값 :조건식이 false일때 반환하는 값<br>var x=2;</p>
-<p>var result=x%2? ‘홀수’:’짝수’;</p>
-<p>console.log(result);</p>
-<p>var x=2,result;</p>
-<p>if(x%2){<br>result=’홀수’;</p>
-<p>}else{</p>
-<p>result=’짝수’</p>
-<p>}console.log(result);</p>
-<p><strong>논리연산자</strong></p>
-<p>or(논리합:||)and(논리곱:&amp;&amp;) not(!)</p>
-<p><strong>드모르간의 법칙</strong> !(x || y)===(!x &amp;&amp; !y)</p>
-<p><strong>단축평가</strong>-피연산자가 불리언이 아닐수도 있다 어느 한쪽을 선택함</p>
-<table>
-<thead>
-<tr>
-<th>단축 평가 표현식</th>
-<th>평가 결과</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>true||anything</td>
-<td>true</td>
-</tr>
-<tr>
-<td>false||anything</td>
-<td>anything</td>
-</tr>
-<tr>
-<td>true&amp;&amp;anything</td>
-<td>anything</td>
-</tr>
-<tr>
-<td>false&amp;&amp;anything</td>
-<td>false</td>
-</tr>
-</tbody></table>
-<p><strong>typeof연산자</strong> </p>
-<p>typeof funciton(){}-함수 리터럴-&gt;function을 받는다<br>생성자 함수=new 객체와 새로운 함수를 만든다.<br>typeof null은 object를 반환한다.</p>
-<p><strong>지수연산자</strong></p>
-<p>5 ** 2-&gt;25;</p>
-<p>var num=5;<br>num ** =2-&gt;25</p>
-<p>1.연산자 ++/–변수 ㄱ밧을 고친 다 부수효과가 존재한다.<br>2.동등연산자의 차이(===/==);<br>3.삼항조건연산자,if문 대신 사용할 수 있다.</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/10/08/변수데이터타입 연산자/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -810,13 +647,14 @@
 <h3 id="3-변수와-선언"><a href="#3-변수와-선언" class="headerlink" title="3.변수와 선언:"></a><strong>3.변수와 선언:</strong></h3><p><strong>변수-</strong>데이터를 다룬다. 하나의 값을 저장할 수있는 메모리 공간에 붙은 이름 혹은 메모리 자체를 의미한다.</p>
 <p>변수를 사용하려면 반드시 선언을 해줘야한다.</p>
 <p><strong>변수의 선언-</strong><br>변수를 생성한다. 변수란 컴퓨터의 메모리 와 관련있다.<br>자바스크립크엔진에 변수이름 등록,값 저장을 위한 메모리 공간을 확보하기위함.</p>
-<h3 id="4-메모리와-주소"><a href="#4-메모리와-주소" class="headerlink" title="4.메모리와 주소:"></a><strong>4.메모리와 주소:</strong></h3><p>메모리:데이터를 저장할 수 있는 데이터 셀들의 집합체.<br>메모리주소: 메모리 공간의 위치를 나타내며 0부터 시작하여 메모리의 크기만큼 정수로 표현된다. </p>
-<p>값을 입력하면 메모리 임의의 공간에 저장이 된다.하지만 메모리의 주소는 알여주지 않는데 저장된 데이터를 재사용하기 위해서는 변수를 제공해야하고 변수는 저장되는 곳의 메모리 주소를 기억한다.</p>
-<p>매니지드:(자바스크립트):<br>언매니지드(c언어):</p>
-<h3 id="5-할당"><a href="#5-할당" class="headerlink" title="5.할당:"></a><strong>5.할당</strong>:</h3><p> 변수에 값을 저장한다. 할당한다(저장한다.대입한다.assign한다)<br>논리적으로 기본적으로 변수를 선언하고 할당해야한다. 변수만을 선언하고 할당하지 않으면 값이 정의 되지 않았기 때문에 undefined가 출력이 된다.</p>
-<p>변수선언은 소소코드가 순차적으로 실행되기 이전,즉 런타임 이전에 먼저실행되지만,값의 할당은 소스코드가 순차적으로 실행되는 시점인 런타임에 실행된다.</p>
-<h3 id="6-호이스팅"><a href="#6-호이스팅" class="headerlink" title="6.호이스팅-"></a><strong>6.호이스팅-</strong></h3><p>왜 호이스팅이 발생하는가?-&gt;**선언문은 실행될때 가장먼저 골라져서 실행되기대문에 발생한다.위 끌어올려서 실행된 실행문은 또 실행되지 않는다.</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/10/07/10월7일러버덕/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -904,45 +742,14 @@
 <p>따라서 변수는 데이터가 저장되는 곳의 메모리 주소를 기억한다.(반드시 변수에는 하나의 값만 저장할 수 있다.)</p>
 <p><strong>변수란</strong> 하나의 값을 저장할 수 있는 메모리공간에 붙인 이름 또는 메모리공간 자체를 말한다.</p>
 <p><strong>여기서 값이란(하나의값)?</strong> 메모리에 들어가는 대상.컴퓨터가 인식할 수있는 값의 종류. 7가지 (숫자 문자열 불리언 undefined null symbol 객체-값의 유형)</p>
-<p>자료구조-데이터 구조(여러 개의 값이 들어있는,연관된 데이터의 그룹) ex)객체,배열</p>
-<hr>
-<p>자바스크립트 엔진은 변수이름 result (식별자-고유한 이름,일종의 카드 키)을 안다.<br>키워드-명령어(뒤에 값을 준다.) 자바스크립트에게 내리는 명령<br>변수에 저장된 값을 읽어들이는 것을 참조라한다.</p>
-<p><strong>변수의 이름</strong>-&gt;할당값/값을 의미해야함<br>변수의 이름은 저장된 값의 의미를 이해 할 수있는 이름은 가독성을 높여주는 부수효과 .변수이름을 신중하게 정해야한다.</p>
-<p>var result=10+20; 각 값10,20 메모리에 저장하고 30이라는 결과를 가져옴(평가)<br>10,20이라는 값은 필요없는 값-가비지컬렉터에의해 쓰지않는 값이기 때문에 다른값이 들어갈수있게 해준다. 가비지 ㅌ컬렉터는 값을 지우는 것이아니다.</p>
-<p><strong>var(키워드) result(변수이름/식별자)=10+20(표현식);</strong><br><strong>표현식을 변수에 할당(assign,저장,대입)</strong></p>
-<p>code-runner(dom api가 없으면 사용해도 괜찮다.)<br>quokka(command shift p);</p>
-<hr>
-<p><strong>식별자(변수이름)</strong> -메모리에 있는 값을 구별해서 끄집어낼 수  있는 값./식별자는 어떤 값을 구별하여 식별해낼 수있는 고유한 이름</p>
-<p><strong>함수는값이다</strong>.함수덩어리 메모리에 그대로 들어감ex)foo();</p>
-<p>클래스-객체를 만들어냄 ex)class Bar(){} new Bar();<br>식별자는 메모리 주소를 알고 있다.<br>변수,함수,클래스 네이밍있다.</p>
-<p><strong>변수선언</strong>-변수를 생성한다.<br>변수란 컴퓨터에서 메모리와 관련있다.</p>
-<p><strong>변수선언</strong>-변수생성한다(변수이음,메모리공간-매핑된 상황) 자바스크립트 엔진에 변수이름 등록 ,값 저장을 위한 메모리 공간 확보위함</p>
-<p>변수선언 var result 변수이름을 자바스크립크 엔진에 등록해 알린다.</p>
-<p><strong>변수의 이름은 어디에 저장이 되는 가?</strong>  변수이름을 비롯한 모든 식별자는 실행 컨텍스트에 등록이된다. 또한 자바 스크립트 엔진은 실행 컨텍스트를 통해서 식별자와 스코프를 관리한다. 변수이름과  변수값은 실행 컨텍스트내의 key와  value형식으로 등록되어 관리된다.<br>변수 선언 키워드 사용(var,let,const)</p>
-<p>var 키워드를 사용한 변수선언은 선언단계와 초기화 단계가 동시에 일어난다.</p>
-<p><strong>변수선언(메모리 공간을 확보하기 위해)=할당1.논리적 선이된후2.할당</strong></p>
-<p>기본적 변수는 선언을 하고 할당해야함.</p>
-<p>변수를 선언만하고,할당을 하지 않으면 -undefined값이나옴. 값이 정의되지않는다. 변수는 암묵적으로 undefined값을 가진다 .자바스크립트엔진에 부여. 알아서 할당한다 .undefined라는 값으로-우리가 일부로 할당하는 경우는 없다. 자바스크립트엔진이 쓰기위한 값,변수가 선언만되고 할당되지 않았다는것을 알려주기 위함이 크다.-인터프리터 언어는 런타임에 에러가 발생해서 볼 수있기 때문에 최대한 에러가 나지 않게한다.</p>
-<p> 할당하지 않고 변수선언마저하지 않음 에러를 일으킨다.</p>
-<hr>
-<p><strong>변수 호이스팅(중요함)</strong>-변수선언이 위로 끌어올려진것처럼 동작한다.</p>
-<p>console.log(score);//원래 에러가 나야함.<br>var score;//변수선언</p>
-<p><strong>모든(식별자와 관련있다.)선언문은 먼저 실행한다.</strong><br>인터프리터가 코드를 한줄한줄 해석하기 전에 쭉 일고 선언문만을 골라서 먼저 실행한다. 이는 코드를 실행하기 전에 평가를 한다고 말한다.-이후 실행될 수있는 환경을 만들어냄.<br>변수의 선언이 코드가 순차적으로 실행되는 런타임 이전에 먼저 실행된다는 것에 주목하자.</p>
-<p>위 끌어올려서 실행된 실행문은 또 실행되지 않는다.<br>(let,const호이스팅이 되지만 안되는것 처럼 작동한다.이후에 수업할 내용이다.)<br>위의 내용은 변수 호이스팅의 내용이고,함수 호이스팅이 따로 존재한다.<br>**이런식으로 코드를 짜지 말아야하는 예시가 될 수있다.-&gt;최소한 선언을 하고 참조해라.</p>
-<p><strong>왜 호이스팅이 발생하는가?-&gt;</strong>선언문은 실행될때 가장먼저 골라져서 실행되기대문에 발생한다.<br>console.log(result);// undefined을 출력한다.<br>var result=100;(var result;<br>                                 result=100;)으로 해석될수있다.</p>
-<p>선언문과 할당 ,선언문이전에 참조를 하지 말아라.</p>
-<p>console.log(result);//undefined.<br>var result=100;<br>console.log(result)//100출력</p>
-<hr>
-<p><strong><em>값의 할당-</em></strong>변수 선언은 소스 코드가 순차적으로 실행되기 이전, 즉 런타임 이전에 먼저 실행되지만 값의 할당은 소스 코드가 순차적으로 실행되는 시점인 런타임에 실행된다.**</p>
-<p><strong>값의 재할당-</strong>이미 할당되어있는 면수에 새로운 값을 또ㄱ디시 할당하는 것을 말한다.<br>var 키워드로 선언한 변수는 값을 재할당할 수 있따.</p>
-<p>원시값(6가지 타입:undefined,null,불리언,문자열,숫자,symbol,)은 값을 변경할 수 없다.리뮤터블(한번 값을 설정하면 바꿀수없다.)</p>
-<p><strong>언매니지드/ 매니지드</strong><br><strong>가비지 컬렉터</strong>는 지우는 역할이 아니라 값이 할당될때 다른 값이 들어가지 못하도록 블락한것을 풀어주어 다른 값이 들어갈 수 있도록하는 역할을 한다고 생각하면 쉽다.</p>
-<p><strong>힌트는 :변수를 하나를 더만들어서 사용하라.</strong></p>
-<p>var x=1;<br>var y=2;</p>
-<hr>
-<p>var z=y;</p>
-<p>x=z;<br>y=x;<br>console.log(x,y);// 2,1로 출력되도록 값을 바꾸어라.</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/10/04/메모리참조키워드/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1030,50 +837,14 @@
 <p><strong>인터프리터</strong>-컴파일러가 결합해서 처리속도느린것을 해결-but토끼굴 </p>
 <p><strong>명령어</strong>-절차지향형,함수,프로토타입기반 객체지향 (프로토 타입기반 객체기반을 중심으로 공부를 한다.)-멀티 프로그래밍/객체기반 언어-클래스기반(c#,java).</p>
 <hr>
-<p> <strong>web api(web aplication progamming interface)</strong>가 들어있는 환경에서는 웹브라우저에서만 적용한다. node.js에서 실행x</p>
-<p>html은 크게 2개의 태그를 가진다.(<head><meta name="generator" content="Hexo 3.9.0">,</head><body>)<br>head-meta date=설정 정보(애플리케이션을 위한 데이터) 기본적으로 시멘틱을 생각했을때 sciprt태그가 head에 들어가야한다고 생각하지만, html은 인터프리터 언어이기때문에 스크립트 태그는 body끝나기 전에 사용한다.이는 DOM을 생성하는 것과 관련이있다. script태그가 앞에나오게 되면 html은 순차적으로 위에서 아래도 일고 해석하는 인터프리터 언어인데 scipt태그에서 DOM과 관련된 내용을 건드리게 되고 아직html의 DOM은 생성되어있는 상태가 아니기 때문에 에러를 발생시킨다.</body></p>
-<script>안의 document.querySelecotr와 같은 요소 관련 내용은 html,css와 관련된 web api이다-> 그래서 웹 브라우저에서 실행하고 ,node.js에서는 실행하지 못한다.
-
- **ECMAScript는 (node/브라우저)모두 포함하는 코어이다.**
-
-### 웹 브라우저는 어떻게 동작하는가?
-
-client(웹브라우저)---server(회사의 서버)
-request(client->server)------------response(server->client)
-
-**loading(로딩)**-브라우저가 서버로 부터 다운로드하여 파일을 가져온다. 웹서버는 루트(대문)로 접근하면 index.html(html파일 안에는 javascript와 css등이 링크로 연결이 되어있다.)을 받을 수있다. 
-
-www.naver.com/(index.html주소창에 생략이가능하다).-도메인 주소(서버가 식별 할 수 있는 주소)
-
-------
-
-모든 웹애플리케이션은 **HTTP**(htper text transfer protocol)프로토콜을 규약으로 동작한다.(request/response).서버의 파일은 0,1로 구성되어있는 데이터이다.이를 웹브라우저로  보낼때 서버에있는 정보를 패킷으로 잘게 쪼갠 정보를 보내고 이를 받아서 하나의 파일로 뭉치는 과정을 겪는다.
-
-
-
-![3-3](https://poiemaweb.com/assets/fs-images/3-3.png)
-
-load HTML을 한 상태가 (resquest와 response를 해서 index.html을 파일을 받은 상태)---Read(메모리상에 데이터를 올린다.)----Parse(html데이터를 읽어들여서 컴퓨터가 실행할 수있는 형식으로 만든다.)----->(결과물)Dom tree(부자관계 부모와 자식의 구조를 가진다.)
-
-기본 html은 중첩된 구조를 가지고 있다.크게 html의 자식으로 head와 body태그가 있다.(이는 부모와 자식이라는  구조화 할 수있다.)그리고 container라는 div태그를 만들어서 그 안에 자식을 넣고 그 자식의 형제들을 넣는다. 그렇게 하는 것이 부모의 속성을 자식에게 상속시켜서 한번에 무엇인가를 처리하기 좋다. html의 중첩 같이 html의 자료구조를 배열하는것이 DOM tree를 구성하는 것이다. 
-
-**이렇게 트리구조를 만드는 이유는?**-그래야 부모로 올라가고 자식으로 내려가고 왔다 갔다하면서 자료에 접근하기가 용이하다. 조작을 하려면 접근해야하는 메모리상 트리구조에서 조작을 한다. parsing은 rendering engine(html과 css)에서한다. http 1.1. connection은 한번에 자료를 하나씩 가져옴을 의미한다
-
-html의 link에 css가 있으면 다시 서버에 요청을 보내서 그것을 가져와야한다. 그렇게 되면 html에서 parsing되며 만들고있던 Dom만들기를 일시 중단을 한다. css도 Dom tree를 형성하는데 이를 cssom tree라고 한다. 그후 DOM를 생성하는 작업을 계속 수행한다.(pasing 작업) 작업이 진행되면서 내려가다가 자바스크립트 링크를 만나면 다시 parsing를 중단하고  자바스크립트 엔진에서 이를 parsing한다 그러고 javascript DOM(syantax tree)을 만든다. 이런과정을 거치면서 만들어진html Dom 와 CSS DOM를 합쳐서 render tree라고 부른다.
-
-render tree가 만들어지면은 이제 웹 브라우저에 그릴 준비가 끝났다.이후 그림을 그릴때 그림을 그리는것은 부담이 큰작업이기 때문에 변화가 없는 데이터에 대해서는 그리지 말아야한다.
-
-**http특징은 단방향통신이다.**(ex무전기 양쪽에서 동시에 이야기를 할 수 없다.)/양방향통신(휴대전화)
-**http특징 단방향 통신이지만 쌍으로 이루어져있다**.(request를 보내면 반드시 response가 있다. 요청을 받아서 그림을 그린다.)
-Dom tree와 CSSOM TREE가 합쳐지고 render tree가 생성되는데 javascript의 sytax tree는 render tree의 내용을 지우거나 내용을 갈아낀운다던가 혹은 글자의 속성을 바꾼다 던지의 수행을 한다.
-
-
-
-파일로 된 javascript 소스코드
-token(더이산 나눌수 없는 원소-으미를 가지고 있는 최소단위인 형태소의 의미를 가진다.)
-구문분석=문법들을 추가한다(어셈블리어로 만든다.)
-자바스키립트 엔진의 소스코드 실행과정
-script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔 트리를 건드리면  DOM이 구성되지 상태이기 때문에 오류를 발생한다. body tag밑으로 와야한다.</script>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/10/03/10월2일수업내용정리/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1153,6 +924,14 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
       
           <p>처음에 학원에 들어오게 되었을때,학원의 광고에 이끌려 이제는 쉽게 개발자로서 나의 커리어를 시작할 도약이 되겠구나 생각했다.하지만 처음에 수업을 듣고 난 후, 나의 생각은 정말 오만하고 생각이 없었다는것을 느꼈다.이세상에 쉬운것은 절대 없었다. 내가 알고있던것은 정말 일부에 지나지 않았다. 처음 수업을 들은 후 나는 굉장히 충격과 좌절을 느꼈다. 수업을 따라가는 것 조차 너무나도 버거웠다. 굉장히 불안하고 힘들었다. 내가 그나마 할 수있는 것은 학원 매니져님을 붙잡고 하나하나 질문하는것 뿐이었다. 그래서 첫 수업이 끝난 후 나는 학원 문을 닫을 때 까지 학원을 떠나지 못했다. 집에 가는 중에도 계속생각했다.내가 잘 할 수 있을까?하는 생각을 끊임없이했다.<br>처음에는 어떻게 공부해야 할 지도 너무 막막했다.이게 맞는지 저게 맞는지..몇일 동안을 수업이 끝나고 집으로 돌아가는 내내 기분이 안좋았다. 심지어 학원을 환불받아야하나 하는 생각도 했다.하지만 나에게는 포기했을때 선택할 수 있는 다른 선택지가 없다고 느꼈다. 나에게 프론트엔드 개발자의 길은 너무도 멀리있어서 보이지도 않는 하나의 점처럼 느껴졌다.<br>하지만 조금씩 수업을 듣고 공부를 하면서 조금씩 나아진다는 것을 느꼈다.주말에도 공부를 하고 하다보니까 수업을 듣는것도 이해하는 것도 조금은 수월해 졌다.<br>내가 항상 걱정했던것은 다른사람들은 잘하는데 나만 제일 못하는 것같고 도퇴되면 어쩌지 하는 두려움이었다. 그러다 문득 느낀것이 다른사람들과 나는 출발점이 달랐던 것이었다.컴퓨터 관련 전공자,현업에서 뛰던 경험이 있는 사람들, 비 전공에 혼자서만 공부를 했던 나와는 출발점이 달랐다.그렇기에 다른 사람과 비교하면 차이가 나는것은 당연한 것 이였다.<br>어느날 인터넷에서 개발자와 관련된 글을 읽다가 한가지 글이 굉장히 인상에 남았다.’개발자의 길은 남들과 비교하는 순간 끝이다’라는 글이었다.<br>남들과 비교를 하면서 스스로의 성취에 무뎠었다. 앞으로  나는 나에게만 집중해야겠다 생각했다. 그리고 다른 출발점을 따라 잡기 위해서 더 많은 노력을 할 것이다. 비록 지금은 더디고 느리지만, 나보다 앞선 사람들을 훨씬 추월하고 싶다.그리고 작은 성취를 느끼며 조금씩 조금씩 나아갈 것이다.작은 성취 하나하나가 나를 앞으로 나가게 하는 원동력이 된다. 처음 느꼈던 좌절을 발판삼아 앞으로 나아갈 것이다.앞으로 좌절 보다는 도전하고 극복하겠다.<br>지켜봐라. </p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/29/개발공부감상/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1240,7 +1019,14 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 <p>display:flex 의 order속성은 기본 값이 :0 기본 값보다 작으면 -1이면 기본 보다 먼저 값은 값이 있으면 순서대로 정의 한다.</p>
 <p>flex-flow:row wrap은 축은 바꾸지 않고 wrap 을 사용함으로서 줄을 바꿈.</p>
 <p>breakpoint는 쉽게 생각하면 추가될때 바뀌는 구간이라고 생각하면 된다.<br>@media screen and (min-width:801px)::801이 되면서 내용을 덮어씌우겠다.</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/22/반응형웹수업내용정리/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1324,6 +1110,14 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 <p>웹페이지를 구성하다 보면 페이지 탐색에 논리적 순서를 부여하는 사용자가 자연스럽게 페이지를 탐색할 수 있도록합니다.</p>
 <p>tabindex속성은 양의정수값 이외에 0과 -1의 값을 가질 수도 있습니다. 먼저 tabindex=”0”은 tab키를 눌렀을때 포커스를 받을 수없는 요소 이를테면 <span>등의 요소에 포커스를 받게 할 수 있습니다.  반면 -1은 기본적으로 tab키를 눌렀을때 포커스받을 수있는 폼 요소나 링크 요소를 강제로  포커스 받지 못하도록 하는 값입니다. </span></p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/22/tabindex을이용한키보드접근성/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1412,7 +1206,7 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
