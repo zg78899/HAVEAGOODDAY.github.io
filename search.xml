@@ -47,6 +47,67 @@
       </tags>
   </entry>
   <entry>
+    <title>10월 2일 수업내용정리</title>
+    <url>/2019/10/03/10%E1%84%8B%E1%85%AF%E1%86%AF-2%E1%84%8B%E1%85%B5%E1%86%AF-%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5/</url>
+    <content><![CDATA[<p><strong>자바스크립트의 특징</strong> - 웹브라우저에서 동작하는 유일한 언어/고속으로 동작하는(웹 브라우저로 돌리는 게임) 어플리케이션에선 불리함</p>
+<p>기계어 프로그래밍 언어(어셈블리언어)-만국공용어-&gt;어셈블리어 cpu종류마다 실행파일이 다름.그에따라 실질적인 언어 사용</p>
+<p>웹 어셈블리어(보통 게임에서 사용) c#,c++뭐로코딩하든 중간으로 떨려서 브라우저를 돌리자.</p>
+<p><strong>대부분의 언어 객체지향</strong>-&gt; 클래스로함(<strong>클래스 기반 객체지향언어</strong>)<br><strong>자바스크립트</strong>는-<strong>프로토 타입기반의 객체지향</strong></p>
+<p>c(절차지향)/java(객체지향)/<strong>javascript(멀티 패러다임,객체 절차(명령),함수형 언어)</strong></p>
+<p><strong>자바스크립트의 함수는 값이다</strong>.(값이란 서로 주고받을 수 있는 특성을 의미한다.why:함수형 프로그래밍을 가능하게 하기 위해)</p>
+<p><strong>자바스크립트엔진</strong>-자바스크립트를 실행할 수있는 환경</p>
+<p><strong>인터프리터</strong>-컴파일러가 결합해서 처리속도느린것을 해결-but토끼굴 </p>
+<p><strong>명령어</strong>-절차지향형,함수,프로토타입기반 객체지향 (프로토 타입기반 객체기반을 중심으로 공부를 한다.)-멀티 프로그래밍/객체기반 언어-클래스기반(c#,java).</p>
+<hr>
+<p> <strong>web api(web aplication progamming interface)</strong>가 들어있는 환경에서는 웹브라우저에서만 적용한다. node.js에서 실행x</p>
+<p>html은 크게 2개의 태그를 가진다.(<head><meta name="generator" content="Hexo 3.9.0">,</head><body>)<br>head-meta date=설정 정보(애플리케이션을 위한 데이터) 기본적으로 시멘틱을 생각했을때 sciprt태그가 head에 들어가야한다고 생각하지만, html은 인터프리터 언어이기때문에 스크립트 태그는 body끝나기 전에 사용한다.이는 DOM을 생성하는 것과 관련이있다. script태그가 앞에나오게 되면 html은 순차적으로 위에서 아래도 일고 해석하는 인터프리터 언어인데 scipt태그에서 DOM과 관련된 내용을 건드리게 되고 아직html의 DOM은 생성되어있는 상태가 아니기 때문에 에러를 발생시킨다.</body></p>
+<script>안의 document.querySelecotr와 같은 요소 관련 내용은 html,css와 관련된 web api이다-> 그래서 웹 브라우저에서 실행하고 ,node.js에서는 실행하지 못한다.
+
+ **ECMAScript는 (node/브라우저)모두 포함하는 코어이다.**
+
+### 웹 브라우저는 어떻게 동작하는가?
+
+client(웹브라우저)---server(회사의 서버)
+request(client->server)------------response(server->client)
+
+**loading(로딩)**-브라우저가 서버로 부터 다운로드하여 파일을 가져온다. 웹서버는 루트(대문)로 접근하면 index.html(html파일 안에는 javascript와 css등이 링크로 연결이 되어있다.)을 받을 수있다. 
+
+www.naver.com/(index.html주소창에 생략이가능하다).-도메인 주소(서버가 식별 할 수 있는 주소)
+
+------
+
+모든 웹애플리케이션은 **HTTP**(htper text transfer protocol)프로토콜을 규약으로 동작한다.(request/response).서버의 파일은 0,1로 구성되어있는 데이터이다.이를 웹브라우저로  보낼때 서버에있는 정보를 패킷으로 잘게 쪼갠 정보를 보내고 이를 받아서 하나의 파일로 뭉치는 과정을 겪는다.
+
+
+
+![3-3](https://poiemaweb.com/assets/fs-images/3-3.png)
+
+load HTML을 한 상태가 (resquest와 response를 해서 index.html을 파일을 받은 상태)---Read(메모리상에 데이터를 올린다.)----Parse(html데이터를 읽어들여서 컴퓨터가 실행할 수있는 형식으로 만든다.)----->(결과물)Dom tree(부자관계 부모와 자식의 구조를 가진다.)
+
+기본 html은 중첩된 구조를 가지고 있다.크게 html의 자식으로 head와 body태그가 있다.(이는 부모와 자식이라는  구조화 할 수있다.)그리고 container라는 div태그를 만들어서 그 안에 자식을 넣고 그 자식의 형제들을 넣는다. 그렇게 하는 것이 부모의 속성을 자식에게 상속시켜서 한번에 무엇인가를 처리하기 좋다. html의 중첩 같이 html의 자료구조를 배열하는것이 DOM tree를 구성하는 것이다. 
+
+**이렇게 트리구조를 만드는 이유는?**-그래야 부모로 올라가고 자식으로 내려가고 왔다 갔다하면서 자료에 접근하기가 용이하다. 조작을 하려면 접근해야하는 메모리상 트리구조에서 조작을 한다. parsing은 rendering engine(html과 css)에서한다. http 1.1. connection은 한번에 자료를 하나씩 가져옴을 의미한다
+
+html의 link에 css가 있으면 다시 서버에 요청을 보내서 그것을 가져와야한다. 그렇게 되면 html에서 parsing되며 만들고있던 Dom만들기를 일시 중단을 한다. css도 Dom tree를 형성하는데 이를 cssom tree라고 한다. 그후 DOM를 생성하는 작업을 계속 수행한다.(pasing 작업) 작업이 진행되면서 내려가다가 자바스크립트 링크를 만나면 다시 parsing를 중단하고  자바스크립트 엔진에서 이를 parsing한다 그러고 javascript DOM(syantax tree)을 만든다. 이런과정을 거치면서 만들어진html Dom 와 CSS DOM를 합쳐서 render tree라고 부른다.
+
+render tree가 만들어지면은 이제 웹 브라우저에 그릴 준비가 끝났다.이후 그림을 그릴때 그림을 그리는것은 부담이 큰작업이기 때문에 변화가 없는 데이터에 대해서는 그리지 말아야한다.
+
+**http특징은 단방향통신이다.**(ex무전기 양쪽에서 동시에 이야기를 할 수 없다.)/양방향통신(휴대전화)
+**http특징 단방향 통신이지만 쌍으로 이루어져있다**.(request를 보내면 반드시 response가 있다. 요청을 받아서 그림을 그린다.)
+Dom tree와 CSSOM TREE가 합쳐지고 render tree가 생성되는데 javascript의 sytax tree는 render tree의 내용을 지우거나 내용을 갈아낀운다던가 혹은 글자의 속성을 바꾼다 던지의 수행을 한다.
+
+
+
+파일로 된 javascript 소스코드
+token(더이산 나눌수 없는 원소-으미를 가지고 있는 최소단위인 형태소의 의미를 가진다.)
+구문분석=문법들을 추가한다(어셈블리어로 만든다.)
+자바스키립트 엔진의 소스코드 실행과정
+script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔 트리를 건드리면  DOM이 구성되지 상태이기 때문에 오류를 발생한다. body tag밑으로 와야한다.</script>]]></content>
+      <tags>
+        <tag>10월 2일 수업내용 정리</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>10월 7일 수업내용</title>
     <url>/2019/10/08/10%E1%84%8B%E1%85%AF%E1%86%AF-7%E1%84%8B%E1%85%B5%E1%86%AF-%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC/</url>
     <content><![CDATA[<p>var person,$elem,_name,first_name,val1;</p>
@@ -180,107 +241,6 @@
       </tags>
   </entry>
   <entry>
-    <title>10월 2일 수업내용정리</title>
-    <url>/2019/10/03/10%E1%84%8B%E1%85%AF%E1%86%AF-2%E1%84%8B%E1%85%B5%E1%86%AF-%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5/</url>
-    <content><![CDATA[<p><strong>자바스크립트의 특징</strong> - 웹브라우저에서 동작하는 유일한 언어/고속으로 동작하는(웹 브라우저로 돌리는 게임) 어플리케이션에선 불리함</p>
-<p>기계어 프로그래밍 언어(어셈블리언어)-만국공용어-&gt;어셈블리어 cpu종류마다 실행파일이 다름.그에따라 실질적인 언어 사용</p>
-<p>웹 어셈블리어(보통 게임에서 사용) c#,c++뭐로코딩하든 중간으로 떨려서 브라우저를 돌리자.</p>
-<p><strong>대부분의 언어 객체지향</strong>-&gt; 클래스로함(<strong>클래스 기반 객체지향언어</strong>)<br><strong>자바스크립트</strong>는-<strong>프로토 타입기반의 객체지향</strong></p>
-<p>c(절차지향)/java(객체지향)/<strong>javascript(멀티 패러다임,객체 절차(명령),함수형 언어)</strong></p>
-<p><strong>자바스크립트의 함수는 값이다</strong>.(값이란 서로 주고받을 수 있는 특성을 의미한다.why:함수형 프로그래밍을 가능하게 하기 위해)</p>
-<p><strong>자바스크립트엔진</strong>-자바스크립트를 실행할 수있는 환경</p>
-<p><strong>인터프리터</strong>-컴파일러가 결합해서 처리속도느린것을 해결-but토끼굴 </p>
-<p><strong>명령어</strong>-절차지향형,함수,프로토타입기반 객체지향 (프로토 타입기반 객체기반을 중심으로 공부를 한다.)-멀티 프로그래밍/객체기반 언어-클래스기반(c#,java).</p>
-<hr>
-<p> <strong>web api(web aplication progamming interface)</strong>가 들어있는 환경에서는 웹브라우저에서만 적용한다. node.js에서 실행x</p>
-<p>html은 크게 2개의 태그를 가진다.(<head><meta name="generator" content="Hexo 3.9.0">,</head><body>)<br>head-meta date=설정 정보(애플리케이션을 위한 데이터) 기본적으로 시멘틱을 생각했을때 sciprt태그가 head에 들어가야한다고 생각하지만, html은 인터프리터 언어이기때문에 스크립트 태그는 body끝나기 전에 사용한다.이는 DOM을 생성하는 것과 관련이있다. script태그가 앞에나오게 되면 html은 순차적으로 위에서 아래도 일고 해석하는 인터프리터 언어인데 scipt태그에서 DOM과 관련된 내용을 건드리게 되고 아직html의 DOM은 생성되어있는 상태가 아니기 때문에 에러를 발생시킨다.</body></p>
-<script>안의 document.querySelecotr와 같은 요소 관련 내용은 html,css와 관련된 web api이다-> 그래서 웹 브라우저에서 실행하고 ,node.js에서는 실행하지 못한다.
-
- **ECMAScript는 (node/브라우저)모두 포함하는 코어이다.**
-
-### 웹 브라우저는 어떻게 동작하는가?
-
-client(웹브라우저)---server(회사의 서버)
-request(client->server)------------response(server->client)
-
-**loading(로딩)**-브라우저가 서버로 부터 다운로드하여 파일을 가져온다. 웹서버는 루트(대문)로 접근하면 index.html(html파일 안에는 javascript와 css등이 링크로 연결이 되어있다.)을 받을 수있다. 
-
-www.naver.com/(index.html주소창에 생략이가능하다).-도메인 주소(서버가 식별 할 수 있는 주소)
-
-------
-
-모든 웹애플리케이션은 **HTTP**(htper text transfer protocol)프로토콜을 규약으로 동작한다.(request/response).서버의 파일은 0,1로 구성되어있는 데이터이다.이를 웹브라우저로  보낼때 서버에있는 정보를 패킷으로 잘게 쪼갠 정보를 보내고 이를 받아서 하나의 파일로 뭉치는 과정을 겪는다.
-
-
-
-![3-3](https://poiemaweb.com/assets/fs-images/3-3.png)
-
-load HTML을 한 상태가 (resquest와 response를 해서 index.html을 파일을 받은 상태)---Read(메모리상에 데이터를 올린다.)----Parse(html데이터를 읽어들여서 컴퓨터가 실행할 수있는 형식으로 만든다.)----->(결과물)Dom tree(부자관계 부모와 자식의 구조를 가진다.)
-
-기본 html은 중첩된 구조를 가지고 있다.크게 html의 자식으로 head와 body태그가 있다.(이는 부모와 자식이라는  구조화 할 수있다.)그리고 container라는 div태그를 만들어서 그 안에 자식을 넣고 그 자식의 형제들을 넣는다. 그렇게 하는 것이 부모의 속성을 자식에게 상속시켜서 한번에 무엇인가를 처리하기 좋다. html의 중첩 같이 html의 자료구조를 배열하는것이 DOM tree를 구성하는 것이다. 
-
-**이렇게 트리구조를 만드는 이유는?**-그래야 부모로 올라가고 자식으로 내려가고 왔다 갔다하면서 자료에 접근하기가 용이하다. 조작을 하려면 접근해야하는 메모리상 트리구조에서 조작을 한다. parsing은 rendering engine(html과 css)에서한다. http 1.1. connection은 한번에 자료를 하나씩 가져옴을 의미한다
-
-html의 link에 css가 있으면 다시 서버에 요청을 보내서 그것을 가져와야한다. 그렇게 되면 html에서 parsing되며 만들고있던 Dom만들기를 일시 중단을 한다. css도 Dom tree를 형성하는데 이를 cssom tree라고 한다. 그후 DOM를 생성하는 작업을 계속 수행한다.(pasing 작업) 작업이 진행되면서 내려가다가 자바스크립트 링크를 만나면 다시 parsing를 중단하고  자바스크립트 엔진에서 이를 parsing한다 그러고 javascript DOM(syantax tree)을 만든다. 이런과정을 거치면서 만들어진html Dom 와 CSS DOM를 합쳐서 render tree라고 부른다.
-
-render tree가 만들어지면은 이제 웹 브라우저에 그릴 준비가 끝났다.이후 그림을 그릴때 그림을 그리는것은 부담이 큰작업이기 때문에 변화가 없는 데이터에 대해서는 그리지 말아야한다.
-
-**http특징은 단방향통신이다.**(ex무전기 양쪽에서 동시에 이야기를 할 수 없다.)/양방향통신(휴대전화)
-**http특징 단방향 통신이지만 쌍으로 이루어져있다**.(request를 보내면 반드시 response가 있다. 요청을 받아서 그림을 그린다.)
-Dom tree와 CSSOM TREE가 합쳐지고 render tree가 생성되는데 javascript의 sytax tree는 render tree의 내용을 지우거나 내용을 갈아낀운다던가 혹은 글자의 속성을 바꾼다 던지의 수행을 한다.
-
-
-
-파일로 된 javascript 소스코드
-token(더이산 나눌수 없는 원소-으미를 가지고 있는 최소단위인 형태소의 의미를 가진다.)
-구문분석=문법들을 추가한다(어셈블리어로 만든다.)
-자바스키립트 엔진의 소스코드 실행과정
-script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔 트리를 건드리면  DOM이 구성되지 상태이기 때문에 오류를 발생한다. body tag밑으로 와야한다.</script>]]></content>
-      <tags>
-        <tag>10월 2일 수업내용 정리</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>My frist message</title>
-    <url>/2019/09/16/My-frist-message/</url>
-    <content><![CDATA[<p>아직은 익숙하지 않아서 연습삼아서 글을 남겨 봅니다.</p>
-]]></content>
-      <tags>
-        <tag>처음으로 글을 남겨 봅니다.</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</title>
-    <url>/2020/05/03/CSR%20SSR%20SPA%20/</url>
-    <content><![CDATA[<p><strong>1.CSR(클라이언트 사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943424/CSR.png" alt="CSR"></p>
-<p>-1.Server Sending Response to Browser<br>-2.Browser Downloads JS<br>-3.Browser executes React<br>-4.Page Now Viewable and Interatable</p>
-<p>서버에서 비어있는 html와  js파일들을 받아오고 , 데이터는 서비스에 필요한 리소스를 다운로드한후 브라우저에서 렌더링한다.그렇기 때문에 초기 View을 보기가지 SSR보다 시간이 더 걸린다. 하지만 사용자에게 보여진 view의 기능은 동시에 동작한다.</p>
-<p><strong>2.SSR(서버사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943426/SSR.png" alt="SSR"></p>
-<p>-1.Server Sending Ready tobe redered HTML Response to Browser<br>-2.Browser Renders the page,Now Viewable,andBrowser Downloads JS<br>-3.Browser execute React<br>-4.Page Now interatable</p>
-<p>서버에서 렌더링해 가져오기 때문에 ,첫 로딩 매우 짧다.<br>그러나 클라이언트가 js파일을 모두 다운로드하고 적용하기전가지는 각각의 기능은 동작하지않는다는 단점이 있다</p>
-<p><strong>3.SPA(Single page application)</strong></p>
-<p>서버로 부터 처음에만 페이지를 받아오고 이후에는 동적으로 페이지를 구성해서 새로운 페이지를 받아오지않는 웹 애플리케이션을 의미한다.<br> 페이지가 한번 로딩된 이후 데이터를 수정하거나 조회할때. 페이지가 새로고침이 되지않고 다른 페이지로 넘어가지 않습니다.</p>
-<p><strong>4.MPA(Multi Page Application)</strong></p>
-<p>서버로 부터 완전한 페이지를 받아오고 이후에 데이터를 수정하거나 조회할때 다른 완전한 페이지로 이동합니다.단 URL이 바뀔수있습니다.</p>
-]]></content>
-      <tags>
-        <tag>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>tabindex을 이용한 키보드 접근성</title>
-    <url>/2019/09/22/tabindex%E1%84%8B%E1%85%B3%E1%86%AF-%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB-%E1%84%8F%E1%85%B5%E1%84%87%E1%85%A9%E1%84%83%E1%85%B3-%E1%84%8C%E1%85%A5%E1%86%B8%E1%84%80%E1%85%B3%E1%86%AB%E1%84%89%E1%85%A5%E1%86%BC/</url>
-    <content><![CDATA[<p>키보드의 접근성을 고려한 tabindex의 사용.</p>
-<p>tabindex는 기본적으로  키보드의 tab키를 눌렀을 때 이동순서를 임의로 조정 할 수 있는 html의 속성 입니다. tabindex의 포커스의 순서를 부여하는 방식을 tabintdex 값에 양의정수를 넣어주면 됩니다. 예를 들어 어떤 html요소에 taindex=”1”을 주었다면 해당 웹 페이지 상에서 tab키를 눌렀을때 tabindex=”1”이 부여하는 요소가 가장 먼저 포커스 됩니다. 그러나 taindex는 신중하게 사용해야 할 필 요가 있습니다. 일반적으로 키보드의  tab키를 눌렀을때 포커스는 html의 마크업 순서를 따르며 링크요소 또는 폼 요소등 tab키로 포커스를 가질 수  있는 요소에 마크업 순서에 따라 자연스럽게 이동합니다. 기본적으로 마크업이 논리적으로 이루어져 있다면 굳이 tabindex을 사용할 이유가 없습니다. 오히려 잘못된 tabindex를 사용함으로써 스크린 리더 사용자가 웹 페이지의 구조를 이해하는데 어려움으로 작용하게 될 수 있습니다.</p>
-<p>tabindex는 위에서 설명한것 같이 마크업 순서가 논리적으로 잘 구성되어있다면 대체로 사용할 필요가 없습니다. 임의의 페이지에 처음  접속하는 필수 회원 로그인을 행하는 경우 폼 요소에 tabindex를 부여하여 먼저 회원 로그인을 유도하는등의 이유로 사용할 수는 있습니다. 그러나 이러한 경우에도 페이지 로딩 시autofocus기능을 사용하여 회원 로그인을 유도하는 것이 바람직하다고 생각합니다. 그럼 tabindex는 언제 사용할까요?</p>
-<p>웹페이지를 구성하다 보면 페이지 탐색에 논리적 순서를 부여하는 사용자가 자연스럽게 페이지를 탐색할 수 있도록합니다.</p>
-<p>tabindex속성은 양의정수값 이외에 0과 -1의 값을 가질 수도 있습니다. 먼저 tabindex=”0”은 tab키를 눌렀을때 포커스를 받을 수없는 요소 이를테면 <span>등의 요소에 포커스를 받게 할 수 있습니다.  반면 -1은 기본적으로 tab키를 눌렀을때 포커스받을 수있는 폼 요소나 링크 요소를 강제로  포커스 받지 못하도록 하는 값입니다. </span></p>
-]]></content>
-      <tags>
-        <tag>tabindex을 이용한 키보드 접근성 및 간단한 내용 정리</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IR 기법</title>
     <url>/2019/09/17/IR-%E1%84%80%E1%85%B5%E1%84%87%E1%85%A5%E1%86%B8/</url>
     <content><![CDATA[<p>홈페이지를 만들때 이미지를 사용할 경우 img태그를 사용해 alt로 이미를 부여 합니다.</p>
@@ -314,6 +274,24 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>IR기법 활용에 대해</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</title>
+    <url>/2020/05/03/CSR%20SSR%20SPA%20/</url>
+    <content><![CDATA[<p><strong>1.CSR(클라이언트 사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943424/CSR.png" alt="CSR"></p>
+<p>-1.Server Sending Response to Browser<br>-2.Browser Downloads JS<br>-3.Browser executes React<br>-4.Page Now Viewable and Interatable</p>
+<p>서버에서 비어있는 html와  js파일들을 받아오고 , 데이터는 서비스에 필요한 리소스를 다운로드한후 브라우저에서 렌더링한다.그렇기 때문에 초기 View을 보기가지 SSR보다 시간이 더 걸린다. 하지만 사용자에게 보여진 view의 기능은 동시에 동작한다.</p>
+<p><strong>2.SSR(서버사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943426/SSR.png" alt="SSR"></p>
+<p>-1.Server Sending Ready tobe redered HTML Response to Browser<br>-2.Browser Renders the page,Now Viewable,andBrowser Downloads JS<br>-3.Browser execute React<br>-4.Page Now interatable</p>
+<p>서버에서 렌더링해 가져오기 때문에 ,첫 로딩 매우 짧다.<br>그러나 클라이언트가 js파일을 모두 다운로드하고 적용하기전가지는 각각의 기능은 동작하지않는다는 단점이 있다</p>
+<p><strong>3.SPA(Single page application)</strong></p>
+<p>서버로 부터 처음에만 페이지를 받아오고 이후에는 동적으로 페이지를 구성해서 새로운 페이지를 받아오지않는 웹 애플리케이션을 의미한다.<br> 페이지가 한번 로딩된 이후 데이터를 수정하거나 조회할때. 페이지가 새로고침이 되지않고 다른 페이지로 넘어가지 않습니다.</p>
+<p><strong>4.MPA(Multi Page Application)</strong></p>
+<p>서버로 부터 완전한 페이지를 받아오고 이후에 데이터를 수정하거나 조회할때 다른 완전한 페이지로 이동합니다.단 URL이 바뀔수있습니다.</p>
+]]></content>
+      <tags>
+        <tag>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</tag>
       </tags>
   </entry>
   <entry>
@@ -373,21 +351,16 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
       </tags>
   </entry>
   <entry>
-    <title>반응형웹 수업내용 간단한 정리</title>
-    <url>/2019/09/22/%E1%84%87%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%92%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%B0%E1%86%B8-%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC-%E1%84%80%E1%85%A1%E1%86%AB%E1%84%83%E1%85%A1%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB-%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5/</url>
-    <content><![CDATA[<p>반응형 웹 디자인(responsive Web design) 모바일디바이스와 타블렛 같은 다양한 디바이스들이 등장하게 되었고, 그에 환경에 따른 별도의 대응이 필요하게 되었다.</p>
-<p> RWD vs AWD(적응형):view port에 따라 증가하다가 특정 크기에서 고정형(데스크탑 +모바일)<br>반응형 웹의 100(width를  특정한 너비를 설정하지 않는다.)</p>
-<p>컨텐츠는 물과 같다.용기는 다르더라도 내용물은 물은 그대로다.</p>
-<p>미디어 쿼리 배치중요하다. 추천하는 방법은 모바일 환경에 대한 선형 디자인을 처음으로 고려하고 brekpoint를 추가하면서 너비나 상황 변하였을때의 값을 설정해주는 것이 좋은 방법이 된다.(모바일에서 데스크탑으로)<br> mobile first:컨텐츠 전략 선택 선형적인 기본작업을 모바일에서 만들고 그것을 데스크탑 컨텐츠로 순서로 최적화를 한다.</p>
-<p>max-width:너비를 자신의 이상으로 안하겠다.너비가 줄수도 있지만 증가하진않는다.<br>height:auto:높이를 너비가 변호하는 것에 따에 자동으로 맞춘다.</p>
-<p><picture>&lt;source min-width:40em srcset:big-jpg 1x:big -jpg 2x&gt;최소의 너비에서 다음으로 srcset의 값을 보여주겠다. 배율이 1일때와 2배율일때 각각 상황에 맞게 사용하겠다.<picture>은 재사용과 수정에 용이하다.<br></picture><br></picture></p>
-<p>10vh(view height)화면 view port의 1/10을 높이로 정하겠다. 앞에서 이야기했듯이 모바일 first 선형화</p>
-<p>display:flex 의 order속성은 기본 값이 :0 기본 값보다 작으면 -1이면 기본 보다 먼저 값은 값이 있으면 순서대로 정의 한다.</p>
-<p>flex-flow:row wrap은 축은 바꾸지 않고 wrap 을 사용함으로서 줄을 바꿈.</p>
-<p>breakpoint는 쉽게 생각하면 추가될때 바뀌는 구간이라고 생각하면 된다.<br>@media screen and (min-width:801px)::801이 되면서 내용을 덮어씌우겠다.</p>
+    <title>tabindex을 이용한 키보드 접근성</title>
+    <url>/2019/09/22/tabindex%E1%84%8B%E1%85%B3%E1%86%AF-%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB-%E1%84%8F%E1%85%B5%E1%84%87%E1%85%A9%E1%84%83%E1%85%B3-%E1%84%8C%E1%85%A5%E1%86%B8%E1%84%80%E1%85%B3%E1%86%AB%E1%84%89%E1%85%A5%E1%86%BC/</url>
+    <content><![CDATA[<p>키보드의 접근성을 고려한 tabindex의 사용.</p>
+<p>tabindex는 기본적으로  키보드의 tab키를 눌렀을 때 이동순서를 임의로 조정 할 수 있는 html의 속성 입니다. tabindex의 포커스의 순서를 부여하는 방식을 tabintdex 값에 양의정수를 넣어주면 됩니다. 예를 들어 어떤 html요소에 taindex=”1”을 주었다면 해당 웹 페이지 상에서 tab키를 눌렀을때 tabindex=”1”이 부여하는 요소가 가장 먼저 포커스 됩니다. 그러나 taindex는 신중하게 사용해야 할 필 요가 있습니다. 일반적으로 키보드의  tab키를 눌렀을때 포커스는 html의 마크업 순서를 따르며 링크요소 또는 폼 요소등 tab키로 포커스를 가질 수  있는 요소에 마크업 순서에 따라 자연스럽게 이동합니다. 기본적으로 마크업이 논리적으로 이루어져 있다면 굳이 tabindex을 사용할 이유가 없습니다. 오히려 잘못된 tabindex를 사용함으로써 스크린 리더 사용자가 웹 페이지의 구조를 이해하는데 어려움으로 작용하게 될 수 있습니다.</p>
+<p>tabindex는 위에서 설명한것 같이 마크업 순서가 논리적으로 잘 구성되어있다면 대체로 사용할 필요가 없습니다. 임의의 페이지에 처음  접속하는 필수 회원 로그인을 행하는 경우 폼 요소에 tabindex를 부여하여 먼저 회원 로그인을 유도하는등의 이유로 사용할 수는 있습니다. 그러나 이러한 경우에도 페이지 로딩 시autofocus기능을 사용하여 회원 로그인을 유도하는 것이 바람직하다고 생각합니다. 그럼 tabindex는 언제 사용할까요?</p>
+<p>웹페이지를 구성하다 보면 페이지 탐색에 논리적 순서를 부여하는 사용자가 자연스럽게 페이지를 탐색할 수 있도록합니다.</p>
+<p>tabindex속성은 양의정수값 이외에 0과 -1의 값을 가질 수도 있습니다. 먼저 tabindex=”0”은 tab키를 눌렀을때 포커스를 받을 수없는 요소 이를테면 <span>등의 요소에 포커스를 받게 할 수 있습니다.  반면 -1은 기본적으로 tab키를 눌렀을때 포커스받을 수있는 폼 요소나 링크 요소를 강제로  포커스 받지 못하도록 하는 값입니다. </span></p>
 ]]></content>
       <tags>
-        <tag>반응형 웹 수업내용</tag>
+        <tag>tabindex을 이용한 키보드 접근성 및 간단한 내용 정리</tag>
       </tags>
   </entry>
   <entry>
@@ -409,6 +382,24 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>웹 접근성과 WAI-ARIA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>반응형웹 수업내용 간단한 정리</title>
+    <url>/2019/09/22/%E1%84%87%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%92%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%B0%E1%86%B8-%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC-%E1%84%80%E1%85%A1%E1%86%AB%E1%84%83%E1%85%A1%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB-%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5/</url>
+    <content><![CDATA[<p>반응형 웹 디자인(responsive Web design) 모바일디바이스와 타블렛 같은 다양한 디바이스들이 등장하게 되었고, 그에 환경에 따른 별도의 대응이 필요하게 되었다.</p>
+<p> RWD vs AWD(적응형):view port에 따라 증가하다가 특정 크기에서 고정형(데스크탑 +모바일)<br>반응형 웹의 100(width를  특정한 너비를 설정하지 않는다.)</p>
+<p>컨텐츠는 물과 같다.용기는 다르더라도 내용물은 물은 그대로다.</p>
+<p>미디어 쿼리 배치중요하다. 추천하는 방법은 모바일 환경에 대한 선형 디자인을 처음으로 고려하고 brekpoint를 추가하면서 너비나 상황 변하였을때의 값을 설정해주는 것이 좋은 방법이 된다.(모바일에서 데스크탑으로)<br> mobile first:컨텐츠 전략 선택 선형적인 기본작업을 모바일에서 만들고 그것을 데스크탑 컨텐츠로 순서로 최적화를 한다.</p>
+<p>max-width:너비를 자신의 이상으로 안하겠다.너비가 줄수도 있지만 증가하진않는다.<br>height:auto:높이를 너비가 변호하는 것에 따에 자동으로 맞춘다.</p>
+<p><picture>&lt;source min-width:40em srcset:big-jpg 1x:big -jpg 2x&gt;최소의 너비에서 다음으로 srcset의 값을 보여주겠다. 배율이 1일때와 2배율일때 각각 상황에 맞게 사용하겠다.<picture>은 재사용과 수정에 용이하다.<br></picture><br></picture></p>
+<p>10vh(view height)화면 view port의 1/10을 높이로 정하겠다. 앞에서 이야기했듯이 모바일 first 선형화</p>
+<p>display:flex 의 order속성은 기본 값이 :0 기본 값보다 작으면 -1이면 기본 보다 먼저 값은 값이 있으면 순서대로 정의 한다.</p>
+<p>flex-flow:row wrap은 축은 바꾸지 않고 wrap 을 사용함으로서 줄을 바꿈.</p>
+<p>breakpoint는 쉽게 생각하면 추가될때 바뀌는 구간이라고 생각하면 된다.<br>@media screen and (min-width:801px)::801이 되면서 내용을 덮어씌우겠다.</p>
+]]></content>
+      <tags>
+        <tag>반응형 웹 수업내용</tag>
       </tags>
   </entry>
   <entry>
