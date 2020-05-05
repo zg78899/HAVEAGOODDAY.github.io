@@ -83,6 +83,24 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
       </tags>
   </entry>
   <entry>
+    <title>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</title>
+    <url>/2020/05/03/CSR%20SSR%20SPA%20/</url>
+    <content><![CDATA[<p><strong>1.CSR(클라이언트 사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943424/CSR.png" alt="CSR"></p>
+<p>-1.Server Sending Response to Browser<br>-2.Browser Downloads JS<br>-3.Browser executes React<br>-4.Page Now Viewable and Interatable</p>
+<p>서버에서 비어있는 html와  js파일들을 받아오고 , 데이터는 서비스에 필요한 리소스를 다운로드한후 브라우저에서 렌더링한다.그렇기 때문에 초기 View을 보기가지 SSR보다 시간이 더 걸린다. 하지만 사용자에게 보여진 view의 기능은 동시에 동작한다.</p>
+<p><strong>2.SSR(서버사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943426/SSR.png" alt="SSR"></p>
+<p>-1.Server Sending Ready tobe redered HTML Response to Browser<br>-2.Browser Renders the page,Now Viewable,andBrowser Downloads JS<br>-3.Browser execute React<br>-4.Page Now interatable</p>
+<p>서버에서 렌더링해 가져오기 때문에 ,첫 로딩 매우 짧다.<br>그러나 클라이언트가 js파일을 모두 다운로드하고 적용하기전가지는 각각의 기능은 동작하지않는다는 단점이 있다</p>
+<p><strong>3.SPA(Single page application)</strong></p>
+<p>서버로 부터 처음에만 페이지를 받아오고 이후에는 동적으로 페이지를 구성해서 새로운 페이지를 받아오지않는 웹 애플리케이션을 의미한다.<br> 페이지가 한번 로딩된 이후 데이터를 수정하거나 조회할때. 페이지가 새로고침이 되지않고 다른 페이지로 넘어가지 않습니다.</p>
+<p><strong>4.MPA(Multi Page Application)</strong></p>
+<p>서버로 부터 완전한 페이지를 받아오고 이후에 데이터를 수정하거나 조회할때 다른 완전한 페이지로 이동합니다.단 URL이 바뀔수있습니다.</p>
+]]></content>
+      <tags>
+        <tag>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>IR 기법</title>
     <url>/2019/09/17/IR%EA%B8%B0%EB%B2%95/</url>
     <content><![CDATA[<p>홈페이지를 만들때 이미지를 사용할 경우 img태그를 사용해 alt로 이미를 부여 합니다.</p>
@@ -116,6 +134,66 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>IR기법 활용에 대해</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>제너레이터와 async-await</title>
+    <url>/2020/05/05/generator-aync-await-md/</url>
+    <content><![CDATA[<h1 id="1-제네레이터"><a href="#1-제네레이터" class="headerlink" title="1.제네레이터"></a>1.제네레이터</h1><p>es6에서 도입된 제너레이터 함수는  이터러블을 생성하는 함수이다. 제너레이터 함수를 사용하면 이터레이션 프로토콜을 준수해 이터러블을 생성하는 방식보다 간편하게 이터러블을 구현 할 수 있다. 또한 제너레이터 함수는 비동기 처리에 유용하게 사용된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//이터레이션 ㅍ,로토콜을 구현하여 무한 이터러블을 생성하는 함수</span></span><br><span class="line"><span class="keyword">const</span> createInfinittbyIteration = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> i =<span class="number">0</span>;<span class="comment">//자유 변수</span></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    [<span class="built_in">Symbol</span>.iterator]()&#123;<span class="keyword">return</span> <span class="keyword">this</span>;&#125;,</span><br><span class="line">    next()&#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;<span class="attr">value</span>:++i&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> n <span class="keyword">of</span> createInfinitbyIteration())&#123;</span><br><span class="line">  <span class="keyword">if</span>(n&gt;<span class="number">5</span>)<span class="keyword">break</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(n)<span class="comment">//1 2 3 4 5</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//무한 이터러블을 생성하는 제너레이터 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">createInfinittbyIteration</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> i =<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>)&#123;<span class="keyword">yield</span> ++i;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> n <span class="keyword">of</span> createInfinittbyIteration())&#123;</span><br><span class="line">  <span class="keyword">if</span>(n&gt;<span class="number">5</span>) <span class="keyword">break</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(n) <span class="comment">// 1 2 3 4 5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>제너레이터 함수는 일반 함수와는 다른 독특한 동작을 한다. 제너레이터 함수는 일반 함수와 같이 함수의 코드 블로그을 한번에 실행하지 않고 함수 코드 블록의 실행을 일시 중단했다가 필요한 시점에 재시작 할 수 있는 특수한 함수이다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">counter</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'첫번째 호출'</span>);</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span>;								<span class="comment">//첫번째 호출시에 이 지점까지 실행된다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'두 번째 호출'</span>);</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">2</span>;								<span class="comment">//두번째 호출 시에 이 지점까지 실행된다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'세번째 호출'</span>)<span class="comment">// 세번째 호출 시에 이 지점까지 실행한다</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> generatorObj = counter();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next());<span class="comment">//첫번째 호출 &#123;value:1,done:false&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next());<span class="comment">//두번째 호출 &#123;value:2,done:false&#125;;</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next());<span class="comment">//세번째 호출 &#123;value:undefined,done:true&#125;;</span></span><br></pre></td></tr></table></figure>
+
+<p>일반 함수를 호출하면 return 문으로 반환값을 리턴하지만 제너레이터 함수를 호출하면 제너레이터를 반환한다. 이 제너레이터는 이터러블이면서 동시에 이터레이터인 객체이다. 다시 말해 제너레이터 함수가 생성한 제너레이터는 Symbol.iterator메소드를 소유한 이터러블이다. 그리고 제너레이터는 next()메소드를 소유하며 next메소드를 호출하면 value,done 프로퍼티를 갖는 이터레이터 객체를 반환하는 이터레이터이다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//제너레이터 함수 정의</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">counter</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">const</span> v <span class="keyword">of</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])<span class="keyword">yield</span> v;</span><br><span class="line">  <span class="comment">//=&gt;yield* [1,2,3];</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//제너레이터 함수를 호출하면 제너레이터를 반환한다.</span></span><br><span class="line"><span class="keyword">let</span> generatorObj = counter();</span><br><span class="line"></span><br><span class="line"><span class="comment">//제너레이터는 이터러블이다.</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Symbol</span>.iterator <span class="keyword">in</span> generatorObj) <span class="comment">//true;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> i int generatorObj)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i)<span class="comment">// 1 2 3 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">generatorObj = counter();</span><br><span class="line"></span><br><span class="line"><span class="comment">//제너레이터는 이터레이터이다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'next'</span> <span class="keyword">in</span> generatoroBJ)	<span class="comment">//true;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next()) <span class="comment">//&#123;value:1,done:false&#125;;</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next()) <span class="comment">//&#123;value:2,done:false&#125;;</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next()) <span class="comment">//&#123;value:3,done:false&#125;;</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next()) <span class="comment">//&#123;value:undefined,done:true&#125;;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="2-제너레이터-함수의-정의"><a href="#2-제너레이터-함수의-정의" class="headerlink" title="2.제너레이터 함수의 정의"></a>2.제너레이터 함수의 정의</h1><p>제너레이터 함수는 function* 키워드로 선언을 한다. 그리고 하나 이상의 yield문을 포함한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//제너레이터 함수 선언문</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">genDecFunc</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> generatorObj = genDecFunc();</span><br><span class="line"></span><br><span class="line"><span class="comment">//제너레이터 함수 표현식</span></span><br><span class="line"><span class="keyword">const</span> genExpFunc = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//제너레이터 메소드 </span></span><br><span class="line"><span class="keyword">const</span> obj =&#123;</span><br><span class="line">  *generatorObjMethod()&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">generatorObj = obj.generatorObjMethod();</span><br><span class="line"></span><br><span class="line"><span class="comment">//제너레이터 클래스 메소드</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span></span>&#123;</span><br><span class="line">  *generatorClsMethod()&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> myClass = <span class="keyword">new</span> MyClass();</span><br><span class="line">generatorObj = myClass.generatorClsMethod();</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-제너리이터-함수의-호출과-제너레이터-객체"><a href="#3-제너리이터-함수의-호출과-제너레이터-객체" class="headerlink" title="3.제너리이터 함수의 호출과 제너레이터 객체"></a>3.제너리이터 함수의 호출과 제너레이터 객체</h1><p>제너레이터 함수를 호출하면 제너레이터 함수의 코드 블록이 실행되는 것이 아니라 제너레이터 객체를 반환한다. 앞에서 살펴본 바와 같이 제너레이터 객체는 이터러블이며 동시에 이터레이터이다. 따라서 next메소드를 호출하기 위해 Symbol.iterator 메소드로 이터레이터를 별도로 생성할 필요가 없다. </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//제너레이터 함수 정의 </span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">counter</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Point 1'</span>);</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span>; <span class="comment">//첫번째 next메소드 호출시 여기 까지 실행된다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Point 2'</span>)</span><br><span class="line"> 	<span class="keyword">yield</span> <span class="number">2</span>; <span class="comment">//두번째 next메소드 호출시 여기 까지 실행된다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Point 3'</span>)</span><br><span class="line"> 	<span class="keyword">yield</span> <span class="number">3</span>; <span class="comment">//세번째 next메소드 호출시 여기 까지 실행된다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Point 4'</span>)</span><br><span class="line"> 	</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 제너레이터 함수를 호출하면 제너레이터 객체를 반환한다.</span></span><br><span class="line"><span class="comment">//제너레이터 객체는 이터러블이며 동시에 이터레이터이다.</span></span><br><span class="line">.<span class="comment">//따라서 Symbol.iterator 메소드로 이터레이터를 별도 생성할 필요가 없다.</span></span><br><span class="line"><span class="keyword">const</span> generatorObj = counter();</span><br><span class="line"></span><br><span class="line"><span class="comment">//첫번째 next 메소드 호출:첫번째 yield문까지 실행되고 일시 중단된다.</span></span><br><span class="line"><span class="comment">// Point 1</span></span><br><span class="line"><span class="comment">// &#123;value: 1, done: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 두번째 next 메소드 호출: 두번째 yield 문까지 실행되고 일시 중단된다.</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next());</span><br><span class="line"><span class="comment">// Point 2</span></span><br><span class="line"><span class="comment">// &#123;value: 2, done: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 세번째 next 메소드 호출: 세번째 yield 문까지 실행되고 일시 중단된다.</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next());</span><br><span class="line"><span class="comment">// Point 3</span></span><br><span class="line"><span class="comment">// &#123;value: 3, done: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 네번째 next 메소드 호출: 제너레이터 함수 내의 모든 yield 문이 실행되면 done 프로퍼티 값은 true가 된다.</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next());</span><br><span class="line"><span class="comment">// Point 4</span></span><br><span class="line"><span class="comment">// &#123;value: undefined, done: true&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>제너레이터 함수가 생성한 제너레이터 객체의 next메소드를 호출하면 처음만나는 yield문까지 실행되고 실시 중단된다. 또 다시 next메소드를 호출하면 중단된 위치에서 다시 실행이 시작하여 다음 만나는  yieldㅁ누 까지 실행되고 또 다시 일시 중단 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">start -&gt; generatorObj.next() -&gt; <span class="keyword">yield</span> <span class="number">1</span> -&gt; generatorObj.next() -&gt; <span class="keyword">yield</span> <span class="number">2</span> -&gt; ... -&gt; end</span><br></pre></td></tr></table></figure>
+
+<p>next 메소드는 이터레이터 결과 객체와 가티이 value,done이라는 프로퍼티를 갖는 객체를 반환한다.vlaue프로퍼티는 yield문이 실행되었는지를 나타내는 boolean타입의 값이다. 마지막 yield문까지 실행된 상태에서 next메소드를 호출하면 done프로퍼티 값을 true가 된다.</p>
+<h1 id="4-제너레이터의-활용"><a href="#4-제너레이터의-활용" class="headerlink" title="4.제너레이터의 활용"></a>4.제너레이터의 활용</h1><h2 id="4-1-이터러블의-구현"><a href="#4-1-이터러블의-구현" class="headerlink" title="4.1. 이터러블의 구현"></a>4.1. 이터러블의 구현</h2><p>제너레이터는 함수를 사용하면 이터레이션 프로토콜을 준수해 이터러블을 생성하는 방식보다 간편하게 이터러블을 구현할 수 있다. 이터레이션 프로토콜을 준수하여 무한 피보나치 수열을 생성하는 함수를 구현해 보겠다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//무한 이터러블을 생성하는 함수</span></span><br><span class="line"><span class="keyword">const</span> infinityFibonacci =(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> [pre,cur] =[<span class="number">0</span>,<span class="number">1</span>];</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    [sYMBOL.iterator]()&#123;<span class="keyword">return</span> <span class="keyword">this</span>;&#125;,</span><br><span class="line">    next()&#123;</span><br><span class="line">      [pre,cur] = [cur,pre+cur];</span><br><span class="line">      <span class="comment">//done프로퍼티를 생략한다.</span></span><br><span class="line">      <span class="keyword">return</span> &#123;<span class="attr">value</span>:cur&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line"><span class="comment">//infinityFibonacci는 무한 이터러블이다.</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> num <span class="keyword">of</span> infinityFibonacci)&#123;</span><br><span class="line">  <span class="keyword">if</span>(num &gt; <span class="number">10000</span>) <span class="keyword">break</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(num) <span class="comment">//1 2 3 5 8..</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>이터레이션 프로토콜을 보다 간단하게 처리하기 위해 제너레이터를 활용할 수 있다. 제너레이터는 활용하여 무한 피보나치수열을 구현한 이터러블을 만들어보자.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//무한 이터러블틀 생성하는 제너레이터 함수</span></span><br><span class="line"><span class="keyword">const</span> infinityFibonacci =(<span class="function"><span class="keyword">function</span>* (<span class="params"></span>)</span>&#123;</span><br><span class="line">  	<span class="keyword">let</span> [pre,cur] = [<span class="number">0</span>,<span class="number">1</span>];</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    [pre,cur] = [cur,pre+cur];</span><br><span class="line">    <span class="keyword">yield</span> cur;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;());</span><br><span class="line"><span class="comment">//infinityFibonacci는 무한 이터러블이다.</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> num <span class="keyword">of</span> infinityFibonacci)&#123;</span><br><span class="line">  <span class="keyword">if</span>(num &gt;<span class="number">10000</span>) <span class="keyword">break</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>제너레이터 함수에 최대값을 인수를 전달해보자</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//무한 이터러블을 생성하는 제너레이터 함수</span></span><br><span class="line"><span class="keyword">const</span> createInfiniteFibByGen =<span class="function"><span class="keyword">function</span>* (<span class="params">max</span>)</span>&#123;</span><br><span class="line">  	<span class="keyword">let</span> [prec,curr] = [<span class="number">0</span>,<span class="number">1</span>];</span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    [prev,curr] =[curr,prev+curr];</span><br><span class="line">    <span class="keyword">if</span>(curr &gt;= max)<span class="keyword">return</span><span class="comment">//제너레이터 함수 종료</span></span><br><span class="line">    <span class="keyword">yield</span> curr;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> num <span class="keyword">of</span> createInfiniteFibByGen(<span class="number">10000</span>))&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>이터레이터의 next메소드와 다르게 제너레이터 객체의next메소드에는 인수를 전달할 수도 있다. 이를 통해서 제너레이터 객체에 데이터를 전달 할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">let</span> res;</span><br><span class="line">  res = <span class="keyword">yield</span> n <span class="comment">//n:0&lt;= gen함수에 전달한 인수</span></span><br><span class="line">  </span><br><span class="line">  <span class="built_in">console</span>.log(res) <span class="comment">//res:1 &lt;= 두번째 next 호출 시 전달한 데이터</span></span><br><span class="line">  res = <span class="keyword">yield</span> res;</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">console</span>.log(res) <span class="comment">//res:2 &lt;= 세번째 next 호출 시 전달한 데이터</span></span><br><span class="line">  res = <span class="keyword">yield</span> res;</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">console</span>.log(res); <span class="comment">// res: 3 ⟸ 네번째 next 호출 시 전달한 데이터</span></span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> generatorObj = gen(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next());  <span class="comment">// 제너레이터 함수 시작</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next(<span class="number">1</span>)); <span class="comment">// 제너레이터 객체에 1 전달</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next(<span class="number">2</span>)); <span class="comment">// 제너레이터 객체에 2 전달</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next(<span class="number">3</span>)); <span class="comment">// 제너레이터 객체에 3 전달</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">&#123; value: 0, done: false &#125;</span></span><br><span class="line"><span class="comment">&#123; value: 1, done: false &#125;</span></span><br><span class="line"><span class="comment">&#123; value: 2, done: false &#125;</span></span><br><span class="line"><span class="comment">&#123; value: 3, done: true &#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>이터레이터의 next메소드는 이터러블의 데이터를 꺼내 온다. 이에 반해 제너레이터의 next메소드에 인수를 전달하면 제너레이터 객체에 데이터를 밀어 넣는 다. 제너레이터의 이런 특성은 동시성 프로그래밍을 가능케 한다.</p>
+<h1 id="4-비동기-처리"><a href="#4-비동기-처리" class="headerlink" title="4.비동기 처리"></a>4.비동기 처리</h1><p> 제너레이터를 사용해 비동기 처리를 동기 처리처럼 구현할 수 있다. 다시말해 비동기 처리 함수가 처리 결과를 반환하도록 구현할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> fetch = <span class="built_in">require</span>(<span class="string">'node-fetch'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUsers</span>(<span class="params">genObj,username</span>)</span>&#123;</span><br><span class="line">  fetch(<span class="string">`https://api.github.com/users/<span class="subst">$&#123;username&#125;</span>`</span>)</span><br><span class="line">  .then(<span class="function"><span class="params">res</span> =&gt;</span>res.json())</span><br><span class="line">  <span class="comment">//1.제너레이터 객체에 비동기 처리 결과를 전달한다.</span></span><br><span class="line">  .then(<span class="function"><span class="params">user</span>=&gt;</span> genObj.next(user.name));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//제너레이터 객체 생성</span></span><br><span class="line"><span class="keyword">const</span> g =(<span class="function"><span class="keyword">function</span>* (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> user;</span><br><span class="line">  <span class="comment">//2.비동기 처리 함수가 결과를 반환한다.</span></span><br><span class="line">  <span class="comment">//비동기 처리의 숭성가 보장된다.</span></span><br><span class="line">  user = <span class="keyword">yield</span> getUser(g,<span class="string">'kim'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(user); <span class="comment">//</span></span><br><span class="line">  </span><br><span class="line">  user =<span class="keyword">yield</span> getUser(g,<span class="string">'lee'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(user);</span><br><span class="line">  </span><br><span class="line">  user = <span class="keyword">yield</span> getUser(g,<span class="string">'park'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(user);</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line"><span class="comment">//제너레이터 함수 시작</span></span><br><span class="line">g.next();</span><br></pre></td></tr></table></figure>
+
+<p>1.비동기 처리가 완료되면 next메소드를 통해 제너레이터 객체에 비동기 처리 결과를 전달한다.<br>2.제너레이터 객체에 전달된 비동기 처리 결과는 user 변수에 할당한다.<br>제너레이터를 통해 비동기 처리를 동기 처럼 구현 할 수 있으나 코드는 장황해졌다. 따라서 좀더 간편하게 비동기 처리를 구현할 수있는 async/await가 es7에 도입되었다.</p>
+<p><strong>async -await 을 통한 비동기 처리</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> fetch = <span class="built_in">require</span>(<span class="string">'node-fetch'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Promise을 반환하는 함수정의</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUsers</span>(<span class="params">username</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> fetch(<span class="string">`https://api.github.com/users/<span class="subst">$&#123;username&#125;</span>`</span>)</span><br><span class="line">  .then(<span class="function"><span class="params">res</span>=&gt;</span>res.json())</span><br><span class="line">  .then(<span class="function"><span class="params">user</span> =&gt;</span>user.name);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">async</span> fucntion getUsersAll()&#123;</span><br><span class="line">  <span class="keyword">let</span> user;</span><br><span class="line">  user = <span class="keyword">await</span> getUsers(<span class="string">'kim'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(user);</span><br><span class="line">  </span><br><span class="line">  user = <span class="keyword">await</span> getUsers(<span class="string">'park'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(user);</span><br><span class="line">  </span><br><span class="line">  user = <span class="keyword">await</span> getUsers(<span class="string">'lee'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(user);</span><br><span class="line">&#125;</span><br><span class="line">getUsersAll();</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>제어레이터와 async-await에 대해</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tabindex을 이용한 키보드 접근성</title>
+    <url>/2019/09/22/tabindex%EC%9D%84%EC%9D%B4%EC%9A%A9%ED%95%9C%ED%82%A4%EB%B3%B4%EB%93%9C%EC%A0%91%EA%B7%BC%EC%84%B1/</url>
+    <content><![CDATA[<p>키보드의 접근성을 고려한 tabindex의 사용.</p>
+<p>tabindex는 기본적으로  키보드의 tab키를 눌렀을 때 이동순서를 임의로 조정 할 수 있는 html의 속성 입니다. tabindex의 포커스의 순서를 부여하는 방식을 tabintdex 값에 양의정수를 넣어주면 됩니다. 예를 들어 어떤 html요소에 taindex=”1”을 주었다면 해당 웹 페이지 상에서 tab키를 눌렀을때 tabindex=”1”이 부여하는 요소가 가장 먼저 포커스 됩니다. 그러나 taindex는 신중하게 사용해야 할 필 요가 있습니다. 일반적으로 키보드의  tab키를 눌렀을때 포커스는 html의 마크업 순서를 따르며 링크요소 또는 폼 요소등 tab키로 포커스를 가질 수  있는 요소에 마크업 순서에 따라 자연스럽게 이동합니다. 기본적으로 마크업이 논리적으로 이루어져 있다면 굳이 tabindex을 사용할 이유가 없습니다. 오히려 잘못된 tabindex를 사용함으로써 스크린 리더 사용자가 웹 페이지의 구조를 이해하는데 어려움으로 작용하게 될 수 있습니다.</p>
+<p>tabindex는 위에서 설명한것 같이 마크업 순서가 논리적으로 잘 구성되어있다면 대체로 사용할 필요가 없습니다. 임의의 페이지에 처음  접속하는 필수 회원 로그인을 행하는 경우 폼 요소에 tabindex를 부여하여 먼저 회원 로그인을 유도하는등의 이유로 사용할 수는 있습니다. 그러나 이러한 경우에도 페이지 로딩 시autofocus기능을 사용하여 회원 로그인을 유도하는 것이 바람직하다고 생각합니다. 그럼 tabindex는 언제 사용할까요?</p>
+<p>웹페이지를 구성하다 보면 페이지 탐색에 논리적 순서를 부여하는 사용자가 자연스럽게 페이지를 탐색할 수 있도록합니다.</p>
+<p>tabindex속성은 양의정수값 이외에 0과 -1의 값을 가질 수도 있습니다. 먼저 tabindex=”0”은 tab키를 눌렀을때 포커스를 받을 수없는 요소 이를테면 <span>등의 요소에 포커스를 받게 할 수 있습니다.  반면 -1은 기본적으로 tab키를 눌렀을때 포커스받을 수있는 폼 요소나 링크 요소를 강제로  포커스 받지 못하도록 하는 값입니다. </span></p>
+]]></content>
+      <tags>
+        <tag>tabindex을 이용한 키보드 접근성 및 간단한 내용 정리</tag>
       </tags>
   </entry>
   <entry>
@@ -334,34 +412,59 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
       </tags>
   </entry>
   <entry>
-    <title>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</title>
-    <url>/2020/05/03/CSR%20SSR%20SPA%20/</url>
-    <content><![CDATA[<p><strong>1.CSR(클라이언트 사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943424/CSR.png" alt="CSR"></p>
-<p>-1.Server Sending Response to Browser<br>-2.Browser Downloads JS<br>-3.Browser executes React<br>-4.Page Now Viewable and Interatable</p>
-<p>서버에서 비어있는 html와  js파일들을 받아오고 , 데이터는 서비스에 필요한 리소스를 다운로드한후 브라우저에서 렌더링한다.그렇기 때문에 초기 View을 보기가지 SSR보다 시간이 더 걸린다. 하지만 사용자에게 보여진 view의 기능은 동시에 동작한다.</p>
-<p><strong>2.SSR(서버사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943426/SSR.png" alt="SSR"></p>
-<p>-1.Server Sending Ready tobe redered HTML Response to Browser<br>-2.Browser Renders the page,Now Viewable,andBrowser Downloads JS<br>-3.Browser execute React<br>-4.Page Now interatable</p>
-<p>서버에서 렌더링해 가져오기 때문에 ,첫 로딩 매우 짧다.<br>그러나 클라이언트가 js파일을 모두 다운로드하고 적용하기전가지는 각각의 기능은 동작하지않는다는 단점이 있다</p>
-<p><strong>3.SPA(Single page application)</strong></p>
-<p>서버로 부터 처음에만 페이지를 받아오고 이후에는 동적으로 페이지를 구성해서 새로운 페이지를 받아오지않는 웹 애플리케이션을 의미한다.<br> 페이지가 한번 로딩된 이후 데이터를 수정하거나 조회할때. 페이지가 새로고침이 되지않고 다른 페이지로 넘어가지 않습니다.</p>
-<p><strong>4.MPA(Multi Page Application)</strong></p>
-<p>서버로 부터 완전한 페이지를 받아오고 이후에 데이터를 수정하거나 조회할때 다른 완전한 페이지로 이동합니다.단 URL이 바뀔수있습니다.</p>
+    <title>메모리,참조,키워드,변수,선언,할당,재할당,호이스팅</title>
+    <url>/2019/10/04/%EB%A9%94%EB%AA%A8%EB%A6%AC%EC%B0%B8%EC%A1%B0%ED%82%A4%EC%9B%8C%EB%93%9C/</url>
+    <content><![CDATA[<p><strong>변수</strong>-값을 다룬다.(데이터를 다룬다.)</p>
+<p><strong>참조</strong>-변수에 저장된 값을 읽어들이는것을 참조라한다.</p>
+<p>함수/객체 (변수를 모르면 못함)</p>
+<p>10(리터럴)+(연산자)20(리터럴):좌변과 우변의 값 +연산자를 메모리에 저장한다.</p>
+<p><strong>메모리셀</strong>:1byte짜리 방이 존재한다.1byte단위로 저장<br><strong>메모리주소</strong>:각각 셀마다 주소가있다.<br>인간에게 유의미한 데이터는 최소 1byte이상</p>
+<p>숫자를 기억하여 메모리에 저장한다. 연산을 cpu에서 한다. cpu에서 연산 한 후 이를 메모리에 저장을 한다.<br>메모리에 저장되는 모든 값은 2진수이다.</p>
+<p><strong>1+2 안 쓴다표현식(unuse-expression)? 쓴다는 의미?</strong> 메모리 어딘가에 저장함.(10과20) 30이라는 값을 더한이유는 이 값을 ‘사용하겠다’는 의미이다.곧 재사용을 할 수없다는 것이다.  값이 메모리에 저장이 됐지만 주소를 알아야 접근할 수있는데,<br>위치 안알려줌(잘못 저장하면 문제가 생김)/알려준다고해도 문제가 됨.(같은 곳에 저장될 보장이없다.임의의 공간에 저장이 되기때문이다.) 저장된 데이터를 재사용하기 위해서 프로그래밍 언어는 변수를 제공한다.</p>
+<p>따라서 변수는 데이터가 저장되는 곳의 메모리 주소를 기억한다.(반드시 변수에는 하나의 값만 저장할 수 있다.)</p>
+<p><strong>변수란</strong> 하나의 값을 저장할 수 있는 메모리공간에 붙인 이름 또는 메모리공간 자체를 말한다.</p>
+<p><strong>여기서 값이란(하나의값)?</strong> 메모리에 들어가는 대상.컴퓨터가 인식할 수있는 값의 종류. 7가지 (숫자 문자열 불리언 undefined null symbol 객체-값의 유형)</p>
+<p>자료구조-데이터 구조(여러 개의 값이 들어있는,연관된 데이터의 그룹) ex)객체,배열</p>
+<hr>
+<p>자바스크립트 엔진은 변수이름 result (식별자-고유한 이름,일종의 카드 키)을 안다.<br>키워드-명령어(뒤에 값을 준다.) 자바스크립트에게 내리는 명령<br>변수에 저장된 값을 읽어들이는 것을 참조라한다.</p>
+<p><strong>변수의 이름</strong>-&gt;할당값/값을 의미해야함<br>변수의 이름은 저장된 값의 의미를 이해 할 수있는 이름은 가독성을 높여주는 부수효과 .변수이름을 신중하게 정해야한다.</p>
+<p>var result=10+20; 각 값10,20 메모리에 저장하고 30이라는 결과를 가져옴(평가)<br>10,20이라는 값은 필요없는 값-가비지컬렉터에의해 쓰지않는 값이기 때문에 다른값이 들어갈수있게 해준다. 가비지 ㅌ컬렉터는 값을 지우는 것이아니다.</p>
+<p><strong>var(키워드) result(변수이름/식별자)=10+20(표현식);</strong><br><strong>표현식을 변수에 할당(assign,저장,대입)</strong></p>
+<p>code-runner(dom api가 없으면 사용해도 괜찮다.)<br>quokka(command shift p);</p>
+<hr>
+<p><strong>식별자(변수이름)</strong> -메모리에 있는 값을 구별해서 끄집어낼 수  있는 값./식별자는 어떤 값을 구별하여 식별해낼 수있는 고유한 이름</p>
+<p><strong>함수는값이다</strong>.함수덩어리 메모리에 그대로 들어감ex)foo();</p>
+<p>클래스-객체를 만들어냄 ex)class Bar(){} new Bar();<br>식별자는 메모리 주소를 알고 있다.<br>변수,함수,클래스 네이밍있다.</p>
+<p><strong>변수선언</strong>-변수를 생성한다.<br>변수란 컴퓨터에서 메모리와 관련있다.</p>
+<p><strong>변수선언</strong>-변수생성한다(변수이음,메모리공간-매핑된 상황) 자바스크립트 엔진에 변수이름 등록 ,값 저장을 위한 메모리 공간 확보위함</p>
+<p>변수선언 var result 변수이름을 자바스크립크 엔진에 등록해 알린다.</p>
+<p><strong>변수의 이름은 어디에 저장이 되는 가?</strong>  변수이름을 비롯한 모든 식별자는 실행 컨텍스트에 등록이된다. 또한 자바 스크립트 엔진은 실행 컨텍스트를 통해서 식별자와 스코프를 관리한다. 변수이름과  변수값은 실행 컨텍스트내의 key와  value형식으로 등록되어 관리된다.<br>변수 선언 키워드 사용(var,let,const)</p>
+<p>var 키워드를 사용한 변수선언은 선언단계와 초기화 단계가 동시에 일어난다.</p>
+<p><strong>변수선언(메모리 공간을 확보하기 위해)=할당1.논리적 선이된후2.할당</strong></p>
+<p>기본적 변수는 선언을 하고 할당해야함.</p>
+<p>변수를 선언만하고,할당을 하지 않으면 -undefined값이나옴. 값이 정의되지않는다. 변수는 암묵적으로 undefined값을 가진다 .자바스크립트엔진에 부여. 알아서 할당한다 .undefined라는 값으로-우리가 일부로 할당하는 경우는 없다. 자바스크립트엔진이 쓰기위한 값,변수가 선언만되고 할당되지 않았다는것을 알려주기 위함이 크다.-인터프리터 언어는 런타임에 에러가 발생해서 볼 수있기 때문에 최대한 에러가 나지 않게한다.</p>
+<p> 할당하지 않고 변수선언마저하지 않음 에러를 일으킨다.</p>
+<hr>
+<p><strong>변수 호이스팅(중요함)</strong>-변수선언이 위로 끌어올려진것처럼 동작한다.</p>
+<p>console.log(score);//원래 에러가 나야함.<br>var score;//변수선언</p>
+<p><strong>모든(식별자와 관련있다.)선언문은 먼저 실행한다.</strong><br>인터프리터가 코드를 한줄한줄 해석하기 전에 쭉 일고 선언문만을 골라서 먼저 실행한다. 이는 코드를 실행하기 전에 평가를 한다고 말한다.-이후 실행될 수있는 환경을 만들어냄.<br>변수의 선언이 코드가 순차적으로 실행되는 런타임 이전에 먼저 실행된다는 것에 주목하자.</p>
+<p>위 끌어올려서 실행된 실행문은 또 실행되지 않는다.<br>(let,const호이스팅이 되지만 안되는것 처럼 작동한다.이후에 수업할 내용이다.)<br>위의 내용은 변수 호이스팅의 내용이고,함수 호이스팅이 따로 존재한다.<br>**이런식으로 코드를 짜지 말아야하는 예시가 될 수있다.-&gt;최소한 선언을 하고 참조해라.</p>
+<p><strong>왜 호이스팅이 발생하는가?-&gt;</strong>선언문은 실행될때 가장먼저 골라져서 실행되기대문에 발생한다.<br>console.log(result);// undefined을 출력한다.<br>var result=100;(var result;<br>                                 result=100;)으로 해석될수있다.</p>
+<p>선언문과 할당 ,선언문이전에 참조를 하지 말아라.</p>
+<p>console.log(result);//undefined.<br>var result=100;<br>console.log(result)//100출력</p>
+<hr>
+<p><strong><em>값의 할당-</em></strong>변수 선언은 소스 코드가 순차적으로 실행되기 이전, 즉 런타임 이전에 먼저 실행되지만 값의 할당은 소스 코드가 순차적으로 실행되는 시점인 런타임에 실행된다.**</p>
+<p><strong>값의 재할당-</strong>이미 할당되어있는 면수에 새로운 값을 또ㄱ디시 할당하는 것을 말한다.<br>var 키워드로 선언한 변수는 값을 재할당할 수 있따.</p>
+<p>원시값(6가지 타입:undefined,null,불리언,문자열,숫자,symbol,)은 값을 변경할 수 없다.리뮤터블(한번 값을 설정하면 바꿀수없다.)</p>
+<p><strong>언매니지드/ 매니지드</strong><br><strong>가비지 컬렉터</strong>는 지우는 역할이 아니라 값이 할당될때 다른 값이 들어가지 못하도록 블락한것을 풀어주어 다른 값이 들어갈 수 있도록하는 역할을 한다고 생각하면 쉽다.</p>
+<p><strong>힌트는 :변수를 하나를 더만들어서 사용하라.</strong></p>
+<p>var x=1;<br>var y=2;</p>
+<hr>
+<p>var z=y;</p>
+<p>x=z;<br>y=x;<br>console.log(x,y);// 2,1로 출력되도록 값을 바꾸어라.</p>
 ]]></content>
       <tags>
-        <tag>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>tabindex을 이용한 키보드 접근성</title>
-    <url>/2019/09/22/tabindex%EC%9D%84%EC%9D%B4%EC%9A%A9%ED%95%9C%ED%82%A4%EB%B3%B4%EB%93%9C%EC%A0%91%EA%B7%BC%EC%84%B1/</url>
-    <content><![CDATA[<p>키보드의 접근성을 고려한 tabindex의 사용.</p>
-<p>tabindex는 기본적으로  키보드의 tab키를 눌렀을 때 이동순서를 임의로 조정 할 수 있는 html의 속성 입니다. tabindex의 포커스의 순서를 부여하는 방식을 tabintdex 값에 양의정수를 넣어주면 됩니다. 예를 들어 어떤 html요소에 taindex=”1”을 주었다면 해당 웹 페이지 상에서 tab키를 눌렀을때 tabindex=”1”이 부여하는 요소가 가장 먼저 포커스 됩니다. 그러나 taindex는 신중하게 사용해야 할 필 요가 있습니다. 일반적으로 키보드의  tab키를 눌렀을때 포커스는 html의 마크업 순서를 따르며 링크요소 또는 폼 요소등 tab키로 포커스를 가질 수  있는 요소에 마크업 순서에 따라 자연스럽게 이동합니다. 기본적으로 마크업이 논리적으로 이루어져 있다면 굳이 tabindex을 사용할 이유가 없습니다. 오히려 잘못된 tabindex를 사용함으로써 스크린 리더 사용자가 웹 페이지의 구조를 이해하는데 어려움으로 작용하게 될 수 있습니다.</p>
-<p>tabindex는 위에서 설명한것 같이 마크업 순서가 논리적으로 잘 구성되어있다면 대체로 사용할 필요가 없습니다. 임의의 페이지에 처음  접속하는 필수 회원 로그인을 행하는 경우 폼 요소에 tabindex를 부여하여 먼저 회원 로그인을 유도하는등의 이유로 사용할 수는 있습니다. 그러나 이러한 경우에도 페이지 로딩 시autofocus기능을 사용하여 회원 로그인을 유도하는 것이 바람직하다고 생각합니다. 그럼 tabindex는 언제 사용할까요?</p>
-<p>웹페이지를 구성하다 보면 페이지 탐색에 논리적 순서를 부여하는 사용자가 자연스럽게 페이지를 탐색할 수 있도록합니다.</p>
-<p>tabindex속성은 양의정수값 이외에 0과 -1의 값을 가질 수도 있습니다. 먼저 tabindex=”0”은 tab키를 눌렀을때 포커스를 받을 수없는 요소 이를테면 <span>등의 요소에 포커스를 받게 할 수 있습니다.  반면 -1은 기본적으로 tab키를 눌렀을때 포커스받을 수있는 폼 요소나 링크 요소를 강제로  포커스 받지 못하도록 하는 값입니다. </span></p>
-]]></content>
-      <tags>
-        <tag>tabindex을 이용한 키보드 접근성 및 간단한 내용 정리</tag>
+        <tag>메모리,참조,키워드,변수,선언,할당,재할당,호이스팅,</tag>
       </tags>
   </entry>
   <entry>
@@ -495,6 +598,27 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
       </tags>
   </entry>
   <entry>
+    <title>웹접근성과 WAI-ARIA</title>
+    <url>/2019/09/17/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1/</url>
+    <content><![CDATA[<p> 웹 접근성이란 웹 사이트에서 제공하는 정보를 차별없이 동등하게 이용 할 수 있도록하는 보장하는 것을 말한다. 신제적(고령층 ,장애인,비장애인 ) 환경적 요건(다양한 플랫폼,웹 브라우져,장치)을 모두 포함한다.</p>
+<p>WAI ; Web Accessibility InitiativeWAI는 시각·청각 기능 등에 장애를 지닌 사람도 일반인과 동등하게 웹에 접근하여 이용할 수 있도록 관련 지침을 개발하고 웹 접근성 향상을 위한 노력을 기울이는 W3C의 산하 단체를 말한다</p>
+<p>ARIA:Accessible Rich Internet Applications’의 약자로 리치 인터넷을 위한 W3C 접근성 명세입니다.</p>
+<p>RIA:정적인 HTMl과 단순한 자바스크립트 환경의 웹이 아닌 동적인 자바스크립트와 Ajax와 같은 기술을 사용한 환경에서 수준 높은 UX(User eXperience)를 제공하는 웹 애플리케이션을 의미한다.</p>
+<p>WAI-ARIA는 RIA에서 스크린 리더기 및 보조기기 등에서 접근성 및 운용성을 향상시키기 위한 목적으로 탄생했으며 웹 애플리케이션에 역할,속성,상태 정보를 추가하여 이를 개선 할 수 있도록 제공하고 있다.</p>
+<p>1)대표적인 역할( role):tablist,button,tab,tooltip,list,</p>
+<p>application,abnner,navigation,form,search..</p>
+<p>2)Property &amp; State:(상태와 속성):aria-labelledby=”” : 레이블 제공을 위한 aria-속성. 상태 값은 연결시킬 레이블 id를 입력한다.</p>
+<p>aria-haspopup=”” : 팝업요소가 하위에 존재하고 있다는걸 인식 시켜주는 aria-속성. 상태 값은 false(default) / true / menu / listbox / tree / gird / dialog</p>
+<p>aria-live : 페이지의 어떤 위치에 있든 업데이트된 정보를 사용자에게 알려주는 aria-속성. 상태 값은 assertive / off(default) / polite</p>
+<p>aria-labelledby=”” : 레이블 제공을 위한 aria-속성. 상태 값은 연결시킬 레이블 id를 입력한다.</p>
+<p>aria-selected=”” : 탭메뉴 선택 유무를 알려준다. 상태 값은 선택되었을 때 true / 선택되지 않았을 때 false 입력</p>
+<p>ria-controls=”” : 현재 요소가 제어하는 대상을 명시하는 속성으로 탭메뉴와 본문을 연결시켜준다. 상태 값은 tabpanel의 id명 입력</p>
+]]></content>
+      <tags>
+        <tag>웹 접근성과 WAI-ARIA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>스코프</title>
     <url>/2020/05/03/%EC%8A%A4%EC%BD%94%ED%94%84/</url>
     <content><![CDATA[<p><strong>스코프</strong></p>
@@ -538,83 +662,6 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>스코프</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>웹접근성과 WAI-ARIA</title>
-    <url>/2019/09/17/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1/</url>
-    <content><![CDATA[<p> 웹 접근성이란 웹 사이트에서 제공하는 정보를 차별없이 동등하게 이용 할 수 있도록하는 보장하는 것을 말한다. 신제적(고령층 ,장애인,비장애인 ) 환경적 요건(다양한 플랫폼,웹 브라우져,장치)을 모두 포함한다.</p>
-<p>WAI ; Web Accessibility InitiativeWAI는 시각·청각 기능 등에 장애를 지닌 사람도 일반인과 동등하게 웹에 접근하여 이용할 수 있도록 관련 지침을 개발하고 웹 접근성 향상을 위한 노력을 기울이는 W3C의 산하 단체를 말한다</p>
-<p>ARIA:Accessible Rich Internet Applications’의 약자로 리치 인터넷을 위한 W3C 접근성 명세입니다.</p>
-<p>RIA:정적인 HTMl과 단순한 자바스크립트 환경의 웹이 아닌 동적인 자바스크립트와 Ajax와 같은 기술을 사용한 환경에서 수준 높은 UX(User eXperience)를 제공하는 웹 애플리케이션을 의미한다.</p>
-<p>WAI-ARIA는 RIA에서 스크린 리더기 및 보조기기 등에서 접근성 및 운용성을 향상시키기 위한 목적으로 탄생했으며 웹 애플리케이션에 역할,속성,상태 정보를 추가하여 이를 개선 할 수 있도록 제공하고 있다.</p>
-<p>1)대표적인 역할( role):tablist,button,tab,tooltip,list,</p>
-<p>application,abnner,navigation,form,search..</p>
-<p>2)Property &amp; State:(상태와 속성):aria-labelledby=”” : 레이블 제공을 위한 aria-속성. 상태 값은 연결시킬 레이블 id를 입력한다.</p>
-<p>aria-haspopup=”” : 팝업요소가 하위에 존재하고 있다는걸 인식 시켜주는 aria-속성. 상태 값은 false(default) / true / menu / listbox / tree / gird / dialog</p>
-<p>aria-live : 페이지의 어떤 위치에 있든 업데이트된 정보를 사용자에게 알려주는 aria-속성. 상태 값은 assertive / off(default) / polite</p>
-<p>aria-labelledby=”” : 레이블 제공을 위한 aria-속성. 상태 값은 연결시킬 레이블 id를 입력한다.</p>
-<p>aria-selected=”” : 탭메뉴 선택 유무를 알려준다. 상태 값은 선택되었을 때 true / 선택되지 않았을 때 false 입력</p>
-<p>ria-controls=”” : 현재 요소가 제어하는 대상을 명시하는 속성으로 탭메뉴와 본문을 연결시켜준다. 상태 값은 tabpanel의 id명 입력</p>
-]]></content>
-      <tags>
-        <tag>웹 접근성과 WAI-ARIA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>메모리,참조,키워드,변수,선언,할당,재할당,호이스팅</title>
-    <url>/2019/10/04/%EB%A9%94%EB%AA%A8%EB%A6%AC%EC%B0%B8%EC%A1%B0%ED%82%A4%EC%9B%8C%EB%93%9C/</url>
-    <content><![CDATA[<p><strong>변수</strong>-값을 다룬다.(데이터를 다룬다.)</p>
-<p><strong>참조</strong>-변수에 저장된 값을 읽어들이는것을 참조라한다.</p>
-<p>함수/객체 (변수를 모르면 못함)</p>
-<p>10(리터럴)+(연산자)20(리터럴):좌변과 우변의 값 +연산자를 메모리에 저장한다.</p>
-<p><strong>메모리셀</strong>:1byte짜리 방이 존재한다.1byte단위로 저장<br><strong>메모리주소</strong>:각각 셀마다 주소가있다.<br>인간에게 유의미한 데이터는 최소 1byte이상</p>
-<p>숫자를 기억하여 메모리에 저장한다. 연산을 cpu에서 한다. cpu에서 연산 한 후 이를 메모리에 저장을 한다.<br>메모리에 저장되는 모든 값은 2진수이다.</p>
-<p><strong>1+2 안 쓴다표현식(unuse-expression)? 쓴다는 의미?</strong> 메모리 어딘가에 저장함.(10과20) 30이라는 값을 더한이유는 이 값을 ‘사용하겠다’는 의미이다.곧 재사용을 할 수없다는 것이다.  값이 메모리에 저장이 됐지만 주소를 알아야 접근할 수있는데,<br>위치 안알려줌(잘못 저장하면 문제가 생김)/알려준다고해도 문제가 됨.(같은 곳에 저장될 보장이없다.임의의 공간에 저장이 되기때문이다.) 저장된 데이터를 재사용하기 위해서 프로그래밍 언어는 변수를 제공한다.</p>
-<p>따라서 변수는 데이터가 저장되는 곳의 메모리 주소를 기억한다.(반드시 변수에는 하나의 값만 저장할 수 있다.)</p>
-<p><strong>변수란</strong> 하나의 값을 저장할 수 있는 메모리공간에 붙인 이름 또는 메모리공간 자체를 말한다.</p>
-<p><strong>여기서 값이란(하나의값)?</strong> 메모리에 들어가는 대상.컴퓨터가 인식할 수있는 값의 종류. 7가지 (숫자 문자열 불리언 undefined null symbol 객체-값의 유형)</p>
-<p>자료구조-데이터 구조(여러 개의 값이 들어있는,연관된 데이터의 그룹) ex)객체,배열</p>
-<hr>
-<p>자바스크립트 엔진은 변수이름 result (식별자-고유한 이름,일종의 카드 키)을 안다.<br>키워드-명령어(뒤에 값을 준다.) 자바스크립트에게 내리는 명령<br>변수에 저장된 값을 읽어들이는 것을 참조라한다.</p>
-<p><strong>변수의 이름</strong>-&gt;할당값/값을 의미해야함<br>변수의 이름은 저장된 값의 의미를 이해 할 수있는 이름은 가독성을 높여주는 부수효과 .변수이름을 신중하게 정해야한다.</p>
-<p>var result=10+20; 각 값10,20 메모리에 저장하고 30이라는 결과를 가져옴(평가)<br>10,20이라는 값은 필요없는 값-가비지컬렉터에의해 쓰지않는 값이기 때문에 다른값이 들어갈수있게 해준다. 가비지 ㅌ컬렉터는 값을 지우는 것이아니다.</p>
-<p><strong>var(키워드) result(변수이름/식별자)=10+20(표현식);</strong><br><strong>표현식을 변수에 할당(assign,저장,대입)</strong></p>
-<p>code-runner(dom api가 없으면 사용해도 괜찮다.)<br>quokka(command shift p);</p>
-<hr>
-<p><strong>식별자(변수이름)</strong> -메모리에 있는 값을 구별해서 끄집어낼 수  있는 값./식별자는 어떤 값을 구별하여 식별해낼 수있는 고유한 이름</p>
-<p><strong>함수는값이다</strong>.함수덩어리 메모리에 그대로 들어감ex)foo();</p>
-<p>클래스-객체를 만들어냄 ex)class Bar(){} new Bar();<br>식별자는 메모리 주소를 알고 있다.<br>변수,함수,클래스 네이밍있다.</p>
-<p><strong>변수선언</strong>-변수를 생성한다.<br>변수란 컴퓨터에서 메모리와 관련있다.</p>
-<p><strong>변수선언</strong>-변수생성한다(변수이음,메모리공간-매핑된 상황) 자바스크립트 엔진에 변수이름 등록 ,값 저장을 위한 메모리 공간 확보위함</p>
-<p>변수선언 var result 변수이름을 자바스크립크 엔진에 등록해 알린다.</p>
-<p><strong>변수의 이름은 어디에 저장이 되는 가?</strong>  변수이름을 비롯한 모든 식별자는 실행 컨텍스트에 등록이된다. 또한 자바 스크립트 엔진은 실행 컨텍스트를 통해서 식별자와 스코프를 관리한다. 변수이름과  변수값은 실행 컨텍스트내의 key와  value형식으로 등록되어 관리된다.<br>변수 선언 키워드 사용(var,let,const)</p>
-<p>var 키워드를 사용한 변수선언은 선언단계와 초기화 단계가 동시에 일어난다.</p>
-<p><strong>변수선언(메모리 공간을 확보하기 위해)=할당1.논리적 선이된후2.할당</strong></p>
-<p>기본적 변수는 선언을 하고 할당해야함.</p>
-<p>변수를 선언만하고,할당을 하지 않으면 -undefined값이나옴. 값이 정의되지않는다. 변수는 암묵적으로 undefined값을 가진다 .자바스크립트엔진에 부여. 알아서 할당한다 .undefined라는 값으로-우리가 일부로 할당하는 경우는 없다. 자바스크립트엔진이 쓰기위한 값,변수가 선언만되고 할당되지 않았다는것을 알려주기 위함이 크다.-인터프리터 언어는 런타임에 에러가 발생해서 볼 수있기 때문에 최대한 에러가 나지 않게한다.</p>
-<p> 할당하지 않고 변수선언마저하지 않음 에러를 일으킨다.</p>
-<hr>
-<p><strong>변수 호이스팅(중요함)</strong>-변수선언이 위로 끌어올려진것처럼 동작한다.</p>
-<p>console.log(score);//원래 에러가 나야함.<br>var score;//변수선언</p>
-<p><strong>모든(식별자와 관련있다.)선언문은 먼저 실행한다.</strong><br>인터프리터가 코드를 한줄한줄 해석하기 전에 쭉 일고 선언문만을 골라서 먼저 실행한다. 이는 코드를 실행하기 전에 평가를 한다고 말한다.-이후 실행될 수있는 환경을 만들어냄.<br>변수의 선언이 코드가 순차적으로 실행되는 런타임 이전에 먼저 실행된다는 것에 주목하자.</p>
-<p>위 끌어올려서 실행된 실행문은 또 실행되지 않는다.<br>(let,const호이스팅이 되지만 안되는것 처럼 작동한다.이후에 수업할 내용이다.)<br>위의 내용은 변수 호이스팅의 내용이고,함수 호이스팅이 따로 존재한다.<br>**이런식으로 코드를 짜지 말아야하는 예시가 될 수있다.-&gt;최소한 선언을 하고 참조해라.</p>
-<p><strong>왜 호이스팅이 발생하는가?-&gt;</strong>선언문은 실행될때 가장먼저 골라져서 실행되기대문에 발생한다.<br>console.log(result);// undefined을 출력한다.<br>var result=100;(var result;<br>                                 result=100;)으로 해석될수있다.</p>
-<p>선언문과 할당 ,선언문이전에 참조를 하지 말아라.</p>
-<p>console.log(result);//undefined.<br>var result=100;<br>console.log(result)//100출력</p>
-<hr>
-<p><strong><em>값의 할당-</em></strong>변수 선언은 소스 코드가 순차적으로 실행되기 이전, 즉 런타임 이전에 먼저 실행되지만 값의 할당은 소스 코드가 순차적으로 실행되는 시점인 런타임에 실행된다.**</p>
-<p><strong>값의 재할당-</strong>이미 할당되어있는 면수에 새로운 값을 또ㄱ디시 할당하는 것을 말한다.<br>var 키워드로 선언한 변수는 값을 재할당할 수 있따.</p>
-<p>원시값(6가지 타입:undefined,null,불리언,문자열,숫자,symbol,)은 값을 변경할 수 없다.리뮤터블(한번 값을 설정하면 바꿀수없다.)</p>
-<p><strong>언매니지드/ 매니지드</strong><br><strong>가비지 컬렉터</strong>는 지우는 역할이 아니라 값이 할당될때 다른 값이 들어가지 못하도록 블락한것을 풀어주어 다른 값이 들어갈 수 있도록하는 역할을 한다고 생각하면 쉽다.</p>
-<p><strong>힌트는 :변수를 하나를 더만들어서 사용하라.</strong></p>
-<p>var x=1;<br>var y=2;</p>
-<hr>
-<p>var z=y;</p>
-<p>x=z;<br>y=x;<br>console.log(x,y);// 2,1로 출력되도록 값을 바꾸어라.</p>
-]]></content>
-      <tags>
-        <tag>메모리,참조,키워드,변수,선언,할당,재할당,호이스팅,</tag>
       </tags>
   </entry>
 </search>
