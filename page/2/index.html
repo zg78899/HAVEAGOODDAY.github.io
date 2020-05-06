@@ -176,6 +176,101 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2019/09/22/반응형웹수업내용정리/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -JH- World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/22/반응형웹수업내용정리/" class="post-title-link" itemprop="url">반응형웹 수업내용 간단한 정리</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-22 17:24:41" itemprop="dateCreated datePublished" datetime="2019-09-22T17:24:41+09:00">2019-09-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-04 20:40:42" itemprop="dateModified" datetime="2020-05-04T20:40:42+09:00">2020-05-04</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/09/22/반응형웹수업내용정리/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/22/반응형웹수업내용정리/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>반응형 웹 디자인(responsive Web design) 모바일디바이스와 타블렛 같은 다양한 디바이스들이 등장하게 되었고, 그에 환경에 따른 별도의 대응이 필요하게 되었다.</p>
+<p> RWD vs AWD(적응형):view port에 따라 증가하다가 특정 크기에서 고정형(데스크탑 +모바일)<br>반응형 웹의 100(width를  특정한 너비를 설정하지 않는다.)</p>
+<p>컨텐츠는 물과 같다.용기는 다르더라도 내용물은 물은 그대로다.</p>
+<p>미디어 쿼리 배치중요하다. 추천하는 방법은 모바일 환경에 대한 선형 디자인을 처음으로 고려하고 brekpoint를 추가하면서 너비나 상황 변하였을때의 값을 설정해주는 것이 좋은 방법이 된다.(모바일에서 데스크탑으로)<br> mobile first:컨텐츠 전략 선택 선형적인 기본작업을 모바일에서 만들고 그것을 데스크탑 컨텐츠로 순서로 최적화를 한다.</p>
+<p>max-width:너비를 자신의 이상으로 안하겠다.너비가 줄수도 있지만 증가하진않는다.<br>height:auto:높이를 너비가 변호하는 것에 따에 자동으로 맞춘다.</p>
+<p><picture>&lt;source min-width:40em srcset:big-jpg 1x:big -jpg 2x&gt;최소의 너비에서 다음으로 srcset의 값을 보여주겠다. 배율이 1일때와 2배율일때 각각 상황에 맞게 사용하겠다.<picture>은 재사용과 수정에 용이하다.<br></picture><br></picture></p>
+<p>10vh(view height)화면 view port의 1/10을 높이로 정하겠다. 앞에서 이야기했듯이 모바일 first 선형화</p>
+<p>display:flex 의 order속성은 기본 값이 :0 기본 값보다 작으면 -1이면 기본 보다 먼저 값은 값이 있으면 순서대로 정의 한다.</p>
+<p>flex-flow:row wrap은 축은 바꾸지 않고 wrap 을 사용함으로서 줄을 바꿈.</p>
+<p>breakpoint는 쉽게 생각하면 추가될때 바뀌는 구간이라고 생각하면 된다.<br>@media screen and (min-width:801px)::801이 되면서 내용을 덮어씌우겠다.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/22/반응형웹수업내용정리/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2019/09/22/tabindex을이용한키보드접근성/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -540,12 +635,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

@@ -83,24 +83,6 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
       </tags>
   </entry>
   <entry>
-    <title>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</title>
-    <url>/2020/05/03/CSR%20SSR%20SPA%20/</url>
-    <content><![CDATA[<p><strong>1.CSR(클라이언트 사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943424/CSR.png" alt="CSR"></p>
-<p>-1.Server Sending Response to Browser<br>-2.Browser Downloads JS<br>-3.Browser executes React<br>-4.Page Now Viewable and Interatable</p>
-<p>서버에서 비어있는 html와  js파일들을 받아오고 , 데이터는 서비스에 필요한 리소스를 다운로드한후 브라우저에서 렌더링한다.그렇기 때문에 초기 View을 보기가지 SSR보다 시간이 더 걸린다. 하지만 사용자에게 보여진 view의 기능은 동시에 동작한다.</p>
-<p><strong>2.SSR(서버사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943426/SSR.png" alt="SSR"></p>
-<p>-1.Server Sending Ready tobe redered HTML Response to Browser<br>-2.Browser Renders the page,Now Viewable,andBrowser Downloads JS<br>-3.Browser execute React<br>-4.Page Now interatable</p>
-<p>서버에서 렌더링해 가져오기 때문에 ,첫 로딩 매우 짧다.<br>그러나 클라이언트가 js파일을 모두 다운로드하고 적용하기전가지는 각각의 기능은 동작하지않는다는 단점이 있다</p>
-<p><strong>3.SPA(Single page application)</strong></p>
-<p>서버로 부터 처음에만 페이지를 받아오고 이후에는 동적으로 페이지를 구성해서 새로운 페이지를 받아오지않는 웹 애플리케이션을 의미한다.<br> 페이지가 한번 로딩된 이후 데이터를 수정하거나 조회할때. 페이지가 새로고침이 되지않고 다른 페이지로 넘어가지 않습니다.</p>
-<p><strong>4.MPA(Multi Page Application)</strong></p>
-<p>서버로 부터 완전한 페이지를 받아오고 이후에 데이터를 수정하거나 조회할때 다른 완전한 페이지로 이동합니다.단 URL이 바뀔수있습니다.</p>
-]]></content>
-      <tags>
-        <tag>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IR 기법</title>
     <url>/2019/09/17/IR%EA%B8%B0%EB%B2%95/</url>
     <content><![CDATA[<p>홈페이지를 만들때 이미지를 사용할 경우 img태그를 사용해 alt로 이미를 부여 합니다.</p>
@@ -134,6 +116,137 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>IR기법 활용에 대해</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Symbol 타입</title>
+    <url>/2020/05/06/symbol-md/</url>
+    <content><![CDATA[<h1 id="1-Symbol-이란"><a href="#1-Symbol-이란" class="headerlink" title="1.Symbol 이란?"></a>1.Symbol 이란?</h1><p>1997년 자바스크립트의 ECAMScript로 처음 표준화된 이래로 자바스크립트에는 6개의 타입 즉 String,Number,boolean,undefined,null,Object가 있었다. </p>
+<p>심볼은(symbol)은 es6에서 새롭게 추가된 7번째 타입으로 변경이 불가능한 원시타입이다. <strong>다른 값과 중복되지 않는 유일무이한 값이다.</strong> 따라서 주로 이름의 충돌 위험이 없는 유일한 프로퍼티 키를 만들기 위해 사용된다.</p>
+<p>객체의 프로퍼티 키로 사용할 수 있는 값은 빈 문자열을 포함한 모든 문자열 또는 심볼값이다.</p>
+<h1 id="2-Symbol의-생성"><a href="#2-Symbol의-생성" class="headerlink" title="2.Symbol의 생성"></a>2.Symbol의 생성</h1><p>##2.1. Symbol 함수</p>
+<p>심볼 값은 Symbol 함수를 호출하여 생성한다. 다른 원시 값은, 즉 문자열,숫자,불리언 ,undefined,null은 타입의 값은 리터럴 표기법을 통해 값을 생성할 수 있지만 심볼값은 심볼을 함수를 호출해야 생성해야한다. 이<u>때 생성된 심볼 값은 노출 되지 않으며 다른 값과 절대 중복 되지 않는 유일무이한 값이다.</u></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Symbol 함수를 호출하여 유일무이한 심볼값을 생성한다.</span></span><br><span class="line"><span class="keyword">const</span> mySymbol = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//심볼 값은 노출되지 않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol) <span class="comment">// Symbol();</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> mySymbol) <span class="comment">//symbol</span></span><br></pre></td></tr></table></figure>
+
+<p> 언뜻 보면 생성자 함수로 객체를 생성하는 것 처럼 보이지만 Symbol함수는 String, number, Boolean 생성자 함수와는 달리 new 연산자를 사용하지 않는다. new연산자와 함께 생성자 함수 또는 클래스를 호출하면 객체 (인스턴스)가 생성되지만 심볼 값은 변경이 불가능한 원시 값 이다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Symbol</span>();  <span class="comment">//TypeError: Symbol is not a constructor</span></span><br></pre></td></tr></table></figure>
+
+<p>Symbol 함수에는 선택적으로 문자열을 인수로 전달 할 수 있다. 이 문자열은 생성된 심볼 값에 대한 설명으로 디버깅 용도로만 사용되며 심볼 값 생성에 어떠한 영향을 주지 않는다. 즉 심볼 값에 대한 설명이 같더라도 생성되 값은 <u>유일무이한 값이다.</u></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//심볼 값에 대한 설명이 같더라도 유일무이한 심볼 값을 생성한다.</span></span><br><span class="line"><span class="keyword">const</span> mySymbol1 = <span class="built_in">Symbol</span>(<span class="string">'mySymbol'</span>);</span><br><span class="line"><span class="keyword">const</span> mySymbol2 = <span class="built_in">Symbol</span>(<span class="string">'mySymbol'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol1 === mySymbol2); <span class="comment">//false;</span></span><br></pre></td></tr></table></figure>
+
+<p>심볼 값도 문자열,숫자,불리언과 같이 객체처럼 접근하면 암묵적으로 래퍼 객체를 생성한다. 아래 예제는 description  프로퍼티와 toString  메소드는 Symbol.prototype의 프로퍼티 이다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 심볼도 래퍼 객체를 생성한다.</span></span><br><span class="line"><span class="keyword">const</span> mySymbol = <span class="built_in">Symbol</span>(<span class="string">'mySymbol'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol.description) <span class="comment">//mySymbol</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol.toString()) <span class="comment">//Symbol(mySymbol)</span></span><br></pre></td></tr></table></figure>
+
+<u>
+
+<p><strong>심볼 값은 암묵적으로 문자열이나 숫자 타입으로 변화되지 않는다.</strong></p></u><p></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mySymbol = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//심볼 값은 암묵적인 타입 변환이 되지않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol +<span class="string">''</span>) <span class="comment">// TypeError: Cannot convert a Symbol value to a string</span></span><br><span class="line"><span class="built_in">console</span>.log(+mySymbol);  <span class="comment">/// TypeError: Cannot convert a Symbol value to a string</span></span><br></pre></td></tr></table></figure>
+
+<p>단 불리언 타입으로는 암묵적으로 타입 변환이 된다. 이를 통해 if문 등에서 존재 확인이 가능하다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mySymbol = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//불리언 타입으로는 암묵적으로 타입 변환이 된다.</span></span><br><span class="line"><span class="built_in">console</span>.log(!!mySymbol)<span class="comment">//true;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//if문 등에서 존재 확인을 위해 사용할 수 있다.</span></span><br><span class="line"><span class="keyword">if</span>(mysymbol)<span class="built_in">console</span>.log(<span class="string">'mysymbol is not empty'</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-Symbol-for-메소드"><a href="#2-2-Symbol-for-메소드" class="headerlink" title="2.2. Symbol.for 메소드"></a>2.2. Symbol.for 메소드</h2><p>Symbol.for 메소드는 인수로 전달받은 문자열을 키로 사용히여 키와 심볼의 값의 쌍들이 저장되어 있는 전역 심볼 레지스트리에 해당하는 키와 일치하는 심볼값을 검색한다.</p>
+<li>검색에 성공하면 새로운 심볼 값을 생성하지않고 검색된 심볼 값을 반환한다.</li>
+
+<li>검색 실패하면 새로운 심볼값을 생성하여 Symbol.for 메소드의 인수로 전달되는 전역 Symbol 레지스트리에 저장한 후, 생성된 심볼을 반환한다.</li>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//전역 심볼 레지스트리에 mySymbol이라는 키로 저장된 심볼 값이 없으면 새로운 심볼 값을 생성한다.</span></span><br><span class="line"><span class="keyword">const</span> s1 = <span class="built_in">Symbol</span>.for(<span class="string">'mySymbol'</span>);</span><br><span class="line"><span class="comment">//전역 심볼 레지스트리에 mySymbol이라는 키로 저장된 심볼 값이 있으면 해당 심볼 값을 반환</span></span><br><span class="line"><span class="keyword">const</span> s2 = <span class="built_in">Symbol</span>.for(<span class="string">''</span>mySymbol);</span><br><span class="line"><span class="built_in">console</span>.log(s1 === s2) <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>Symbol함수는 호출될때 마다 유일무이한 심볼 값을 생성한다. 이때 자바 스크립트 엔진이 관리하는 심볼 값 저장소인 전역 심볼 레지스트리에서 심볼 값을 검색 할 수 있는 키를 지정 할 수 없으므로 전역 심볼 레지스트리에 등록되어 관리되지않는다.<br>하지만 Symbol.for메소드를 사용하면 애플리케이션 전역에서 중복되지않는 유일무이한 상수인 심볼 값을  단 하나만 생성하여 전역 심볼의 레지스크리를 통해 공유 할 수 있다.<br>Symbol.keyFor 메소드를 사용하면 전역 심볼 레지스트리에 저장된 심볼 값의 키를 추출할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//전역 심볼을 레지슽크리에 mySymbol이라는 키로 심볼 값이 없으면 새로운 심볼 값을 생성</span></span><br><span class="line"><span class="keyword">const</span> s = <span class="built_in">Symbol</span>.for(<span class="string">'mySymbol'</span>);</span><br><span class="line"><span class="comment">//전역 심볼 레지스트리에 저장된 심볼 값의 키를 추출</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Symbol</span>.keyFor(s)) <span class="comment">//mySymbol</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-Symbol과-상수"><a href="#3-Symbol과-상수" class="headerlink" title="3. Symbol과 상수"></a>3. Symbol과 상수</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//위,아래,오른쪽,왼쪽을 나타내는 상수</span></span><br><span class="line"><span class="comment">//값 1,2,3,4에는 특별한 의미가 없고 상수 이름에 의미가 있다.</span></span><br><span class="line"><span class="keyword">const</span> Direction =&#123;</span><br><span class="line">  UP:<span class="number">1</span>,</span><br><span class="line">  DOWN:<span class="number">2</span>,</span><br><span class="line">  LEFT:<span class="number">3</span>,</span><br><span class="line">  RIGHT:<span class="number">4</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//변숭에 상수를 할당</span></span><br><span class="line"><span class="keyword">const</span> myDirection = Direction.UP;</span><br><span class="line"><span class="keyword">if</span>(myDirection === Diretion.UP)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'You are going up'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>위 예제와 같이 값에는 특별한 의미가 없고 상수이름 자체에 의미가 있는 경우가 있다. 이때 문제는 상수 1,2,3,4가 다른 변수 값과 중복 될 수 있다는 것이다. 이러한 경우 중복될 가능성이 있는 무의미한 상수 대신 중복될 가능성이 없는 유일 무이한 심볼값을 사용 할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//위,알래,오른쪽,왼쪽을 나태내는 상수.</span></span><br><span class="line"><span class="comment">//중복될 기능성이 없는 심볼 값으로 상수값을 생성</span></span><br><span class="line"><span class="keyword">const</span> Direction =&#123;</span><br><span class="line">  UP:<span class="built_in">Symbol</span>(<span class="string">'up'</span>),</span><br><span class="line">  DOWN:<span class="built_in">Symbol</span>(<span class="string">'down'</span>),</span><br><span class="line">  LEFT:<span class="built_in">Symbol</span>(<span class="string">'left'</span>),</span><br><span class="line">  RIGHT:<span class="built_in">Symbol</span>(<span class="string">'right'</span>)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//변수에 상수를 할당</span></span><br><span class="line"><span class="keyword">const</span> Direction = Direction.UP;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(myDirection === Direction.UP)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'you are going up'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>enum</strong><br><strong>enum은</strong> 명명된 숫자 상수의 집합으로 열거형이라고 부른다. 자바스크립트는 enum을 지원하지는 않지만 C,Java,Python 등 많은 프로그래밍 언어와 자바 스크립트으 Superset(상위 확장)인 TYpeScript에서  enum을 지원하고 있다. 자바스크립트세서 enum을 흉내내어 사용하려면 아래와 같이 객체의 변경을 방지 하기 위해 객체를 동결  하는 Object.freeze 메소드와 심볼 값을 사용한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Javascript enum</span></span><br><span class="line"><span class="comment">//Direction 객체는 불변객체이며 프로퍼티는 유일무이한 값이다.</span></span><br><span class="line"><span class="keyword">const</span> Direction = <span class="built_in">Object</span>.freeze(&#123;</span><br><span class="line">   UP: <span class="built_in">Symbol</span>(<span class="string">'up'</span>),</span><br><span class="line">   DOWN: <span class="built_in">Symbol</span>(<span class="string">'down'</span>),</span><br><span class="line">   LEFT: <span class="built_in">Symbol</span>(<span class="string">'left'</span>),</span><br><span class="line">   RIGHT: <span class="built_in">Symbol</span>(<span class="string">'right'</span>)</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//변수에 상수를 할당</span></span><br><span class="line"><span class="keyword">const</span> myDirection = Diection.UP;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(myDirection === Direction.UP)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'You are going up'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-Symbol과-프로퍼티-키"><a href="#4-Symbol과-프로퍼티-키" class="headerlink" title="4. Symbol과 프로퍼티 키"></a>4. Symbol과 프로퍼티 키</h1><p>객체의 프로퍼티키는 빈 문자열을 포함하는 모든 문자열 또는 심볼 값으로 만들수 있느며 동적으로 생성 할 수 도 있다.</p>
+<p>심볼 값으로 프로퍼티 키를 동적으로 생성하여 만들어 보자. 심볼 값을 프로퍼티 키로 사용하려면 프로퍼티 키를 사용할 심볼 값에 대괄호를 사용해야한다. 프로퍼티에 접근 할때도 마찬가지로 대괄호를 사용해야한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj=&#123;</span><br><span class="line">  <span class="comment">//심볼 값으로 프로퍼티 키를 동적 생성</span></span><br><span class="line">  [<span class="built_in">Symbol</span>.for(<span class="string">'mySymbol'</span>)]:<span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj[<span class="built_in">Symbol</span>.for(<span class="string">'mySymbol'</span>)]) <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>심볼 값은 유일무이한 값이므로 심볼 값으로 프로퍼티 키를 만들면 다른 프로퍼티 키와 절대 충돌하지않는다.</strong> 기존 프로퍼티 키와 충돌하지않는 것은 물론,미래에 추가될 어떤 프로퍼티 키와도 충돌할 위험이 없다.</p>
+<h1 id="5-Symbol과-프로퍼티-은닉"><a href="#5-Symbol과-프로퍼티-은닉" class="headerlink" title="5. Symbol과 프로퍼티 은닉"></a>5. Symbol과 프로퍼티 은닉</h1><p>심볼 값으로 동적으로 프로퍼티 키로 만든 프로퍼티는 for ..in 문이나 Object.keys,Object.getOwnPropertyNames 메소드로 찾을 수 없다. 이처럼 심볼 값을 동적으로 생성한  프로퍼티 키로 프로퍼티를 만들면 프로퍼티를 숨길 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj=&#123;</span><br><span class="line">  <span class="comment">//심볼 값으로 프로퍼티 키를 동적 생성</span></span><br><span class="line">  [<span class="built_in">Symbol</span>(<span class="string">'mySymbol'</span>)]:<span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key) <span class="comment">//아무것도 출력되지않는다.</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(ObJect.keys(obj)) <span class="comment">//[];</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyNames(obj)); <span class="comment">//[]</span></span><br></pre></td></tr></table></figure>
+
+<p>하지만 프로퍼티를 완전히 숨길 수 있는 것은 아니다. Es6에서 도입된  Object.getOwnPropertySymbols 메소드를 사용하면 심볼값으로 동적 생성한 프로퍼티 키로 만든 프로퍼티를 찾을 수있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj =&#123;</span><br><span class="line">  <span class="comment">//심볼 값으로 프로퍼티 키 동적 생성</span></span><br><span class="line">  [<span class="built_in">Symbol</span>(<span class="string">'mySymbol'</span>)]:<span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertySymbols(obj)) <span class="comment">//[Symbol(mySymbol)];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//심볼 값을 찾을 수 있다.</span></span><br><span class="line"><span class="keyword">const</span> symbolKey1 = <span class="built_in">Object</span>.getOwnpropertySymbols(obj)[<span class="number">0</span>];</span><br><span class="line"><span class="built_in">console</span>.log(obj[symbolKey1]); <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="6-Symbol-과-표준-빌트인-객체-확장"><a href="#6-Symbol-과-표준-빌트인-객체-확장" class="headerlink" title="6. Symbol 과 표준 빌트인 객체 확장"></a>6. Symbol 과 표준 빌트인 객체 확장</h1><p>일반적으로 표준 빌트인 객체에 사용자 정의 메소드를 직접 추가하여 확장하는 것은 권장 하지않는다  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 표준 빌트인 객체를 확장하는 것은 권장하지않는다.</span></span><br><span class="line"><span class="comment">//즉 ,Array.prototype은 읽기 전용으로 사용하는 것의 좋다.</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> <span class="keyword">return</span> <span class="keyword">this</span>.reduce(<span class="function">(<span class="params">p,c</span>)=&gt;</span>p+c,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>,<span class="number">2</span>].sum()); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+
+<p>그 이유는 개발자가 직접 추가한 메소드는 미래에 표준 사양으로 추가될 메소드가 이름이 중복 될 수있기 때문이다. 예를 들어 Array.prototype.find메소드가 Es6의 새롭게 도입되기 이전에 Array.prototype에 find을 집겁 추가 했다면 새롭게 도입된Es6.find 메소드와 이름이 중복되어 Es6의 Array.prototype.find 와 이름이 중복 되어 Es6의 Array.prototype.find 메소드를 이전에 추가했던 사용자 정의 find 메서드가 덮어 쓴다. 표준 빌트인 메소드를 사용자 정의 메소드가 된다면 문제가 된다. </p>
+<p>하지만 중복될 가능성이 없는 심볼 값으로 프로퍼티 키를 생성하여 표준 빌트린 객체를 확장하면 표준 빌트인 객체의 기존 프로퍼티 키와 충돌 되지 않는  것은 물론 , 버전이 올라감에 따라 추가 될지도 모르는 어떤 프로퍼티 키와도 충돌 될 위험없이 안전하게 표준 빌트인 객체를 확장 할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//심볼 값으로 프로퍼티 키를 동적 생성하면 다른 프로퍼티 키와 절대 충돌하지않는다.</span></span><br><span class="line"><span class="built_in">Array</span>.prototype[<span class="built_in">Symbol</span>.for(<span class="string">'sum'</span>)] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.reduce(<span class="function">(<span class="params">p,c</span>)=&gt;</span>p+c,<span class="number">0</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>,<span class="number">2</span>][<span class="built_in">Symbol</span>.for(<span class="string">'sum'</span>)]()); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="7-Well-known-Symbol"><a href="#7-Well-known-Symbol" class="headerlink" title="7. Well known Symbol"></a>7. Well known Symbol</h1><p>자바스크립트가 기본 제공하는 빌트인 심볼 값이 있다. 빌트인 심볼 값은 Symbol 함수의 프로퍼티에 할당되어있다. 브라우저 콘솔에서 Symbol 함수를 참조하여 보자.<br> <img src="https://poiemaweb.com/assets/fs-images/33-1.png" alt="33-1"></p>
+<p>자바스크립트가 기본 제공하는 빌트인 심볼 값을 Well-Known-Symbol이라 부른다. Well-Known-Symbol은 자바스크립트 엔진의 내부 알고리즘에 사용된다.</p>
+<p>예를 들어 배열, String객체, arguments 객체와 같이 for..of 문으로 순회가 가능한 빌트인 이터러블은 Well-Known-Symbol인 Symbol.iterator를 키로 갖는 메소드를 가지며, Symbol.iterator메소드를 호출하면 이터레이터를 반환하도록 ECAMAScript 사양에 규정되어 있다. 빌트인 이터러블은 이 규정을 준수하고 있다.</p>
+<p>만약에 빌트인 이터러블이 아닌 일반객체를 이터러블 처럼 동작하도록 구현하고 싶다면 이 규정(이터레이션 프로토콜)을 따르면 된다. 즉 ECMAScript 사양에 규정 되어 있는 대로  Well-Known-Symbol인 Symbol.iterator을 키로  깆는 메소드를 객체에 추가하고 이터레이터를 반환하도록 구현하면 그 객체는 이터러블이 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1 - 5 사이의 정수로 이루어진 이터러블</span></span><br><span class="line"><span class="keyword">const</span> iterable =&#123;</span><br><span class="line">  <span class="comment">//Symbol.iterator 메소드를 구형하여 이터러블 프로토콜을 준수</span></span><br><span class="line">  [<span class="built_in">Symbol</span>.iterator]()&#123;</span><br><span class="line">    <span class="keyword">let</span> cur =<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">const</span> max = <span class="number">5</span>;</span><br><span class="line">    <span class="comment">//Symbol.iterator 메소드는 next메소드를 소유한 이터레이터를 반환</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      next();</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">      value:cur++,</span><br><span class="line">      done:cur&gt;max+<span class="number">1</span></span><br><span class="line">    	&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> num <span class="keyword">of</span> iterable)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(num); <span class="comment">//1 2 3 4 5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>빌트인 이터러블</strong><br>이터러블은 for…of문으로 순회할 수 있고 스프레드 문법의 피연산자가 될 수 도 있는 객체를 말한다. 자바스크립트가 기본 제공하는 빌트인 이터러블은 아래와 같다.</p>
+<table>
+<thead>
+<tr>
+<th align="center">빌트인 이터러블</th>
+<th align="center">프로퍼티 키가 Symbol.iterator인 메소드</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Array</td>
+<td align="center">Array.prototype[Symbol.iterator]</td>
+</tr>
+<tr>
+<td align="center">String</td>
+<td align="center">String.prototype[Symbol.iterator]</td>
+</tr>
+<tr>
+<td align="center">Map</td>
+<td align="center">Map.prototype[Symbol.iterator]</td>
+</tr>
+<tr>
+<td align="center">Set</td>
+<td align="center">Set.prototype[Symbol.iterator]</td>
+</tr>
+<tr>
+<td align="center">TypedArray</td>
+<td align="center">TypedArray.prototype[Symbol.iterator]</td>
+</tr>
+<tr>
+<td align="center">arguments</td>
+<td align="center">arguments[Symbol.iterator]</td>
+</tr>
+<tr>
+<td align="center">DOM 컬렉션</td>
+<td align="center">NodeList.prototype[Symbol.iterator], HTMLCollection.prototype[Symbol.iterator]</td>
+</tr>
+</tbody></table>
+<p>이때 일반 객체에 추가해야하는 메소드의 키 Symbol.iterator은 기존 프로퍼티 키 또는 미래에 추가될 프로퍼티 키와 절대로 중복되지 않을 것이다.</p>
+<p>이처럼 심볼은 중복되지 않는 상수값을 생성하는 것은 물론 기존에 작성된 코드에 영향을 주지않고 새로운 프로퍼티를 추가하기 위해 ,즉 하위 호환성을 보장하기 위해 도입되었다.</p>
+]]></content>
+      <tags>
+        <tag>Symbol 타입에 대해</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</title>
+    <url>/2020/05/03/CSR%20SSR%20SPA%20/</url>
+    <content><![CDATA[<p><strong>1.CSR(클라이언트 사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943424/CSR.png" alt="CSR"></p>
+<p>-1.Server Sending Response to Browser<br>-2.Browser Downloads JS<br>-3.Browser executes React<br>-4.Page Now Viewable and Interatable</p>
+<p>서버에서 비어있는 html와  js파일들을 받아오고 , 데이터는 서비스에 필요한 리소스를 다운로드한후 브라우저에서 렌더링한다.그렇기 때문에 초기 View을 보기가지 SSR보다 시간이 더 걸린다. 하지만 사용자에게 보여진 view의 기능은 동시에 동작한다.</p>
+<p><strong>2.SSR(서버사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943426/SSR.png" alt="SSR"></p>
+<p>-1.Server Sending Ready tobe redered HTML Response to Browser<br>-2.Browser Renders the page,Now Viewable,andBrowser Downloads JS<br>-3.Browser execute React<br>-4.Page Now interatable</p>
+<p>서버에서 렌더링해 가져오기 때문에 ,첫 로딩 매우 짧다.<br>그러나 클라이언트가 js파일을 모두 다운로드하고 적용하기전가지는 각각의 기능은 동작하지않는다는 단점이 있다</p>
+<p><strong>3.SPA(Single page application)</strong></p>
+<p>서버로 부터 처음에만 페이지를 받아오고 이후에는 동적으로 페이지를 구성해서 새로운 페이지를 받아오지않는 웹 애플리케이션을 의미한다.<br> 페이지가 한번 로딩된 이후 데이터를 수정하거나 조회할때. 페이지가 새로고침이 되지않고 다른 페이지로 넘어가지 않습니다.</p>
+<p><strong>4.MPA(Multi Page Application)</strong></p>
+<p>서버로 부터 완전한 페이지를 받아오고 이후에 데이터를 수정하거나 조회할때 다른 완전한 페이지로 이동합니다.단 URL이 바뀔수있습니다.</p>
+]]></content>
+      <tags>
+        <tag>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</tag>
       </tags>
   </entry>
   <entry>
@@ -194,6 +307,33 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>tabindex을 이용한 키보드 접근성 및 간단한 내용 정리</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>프론트엔드 개발공부를 한 한달의 감상</title>
+    <url>/2019/09/29/%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80%EA%B0%90%EC%83%81/</url>
+    <content><![CDATA[<p>처음에 학원에 들어오게 되었을때,학원의 광고에 이끌려 이제는 쉽게 개발자로서 나의 커리어를 시작할 도약이 되겠구나 생각했다.하지만 처음에 수업을 듣고 난 후, 나의 생각은 정말 오만하고 생각이 없었다는것을 느꼈다.이세상에 쉬운것은 절대 없었다. 내가 알고있던것은 정말 일부에 지나지 않았다. 처음 수업을 들은 후 나는 굉장히 충격과 좌절을 느꼈다. 수업을 따라가는 것 조차 너무나도 버거웠다. 굉장히 불안하고 힘들었다. 내가 그나마 할 수있는 것은 학원 매니져님을 붙잡고 하나하나 질문하는것 뿐이었다. 그래서 첫 수업이 끝난 후 나는 학원 문을 닫을 때 까지 학원을 떠나지 못했다. 집에 가는 중에도 계속생각했다.내가 잘 할 수 있을까?하는 생각을 끊임없이했다.<br>처음에는 어떻게 공부해야 할 지도 너무 막막했다.이게 맞는지 저게 맞는지..몇일 동안을 수업이 끝나고 집으로 돌아가는 내내 기분이 안좋았다. 심지어 학원을 환불받아야하나 하는 생각도 했다.하지만 나에게는 포기했을때 선택할 수 있는 다른 선택지가 없다고 느꼈다. 나에게 프론트엔드 개발자의 길은 너무도 멀리있어서 보이지도 않는 하나의 점처럼 느껴졌다.<br>하지만 조금씩 수업을 듣고 공부를 하면서 조금씩 나아진다는 것을 느꼈다.주말에도 공부를 하고 하다보니까 수업을 듣는것도 이해하는 것도 조금은 수월해 졌다.<br>내가 항상 걱정했던것은 다른사람들은 잘하는데 나만 제일 못하는 것같고 도퇴되면 어쩌지 하는 두려움이었다. 그러다 문득 느낀것이 다른사람들과 나는 출발점이 달랐던 것이었다.컴퓨터 관련 전공자,현업에서 뛰던 경험이 있는 사람들, 비 전공에 혼자서만 공부를 했던 나와는 출발점이 달랐다.그렇기에 다른 사람과 비교하면 차이가 나는것은 당연한 것 이였다.<br>어느날 인터넷에서 개발자와 관련된 글을 읽다가 한가지 글이 굉장히 인상에 남았다.’개발자의 길은 남들과 비교하는 순간 끝이다’라는 글이었다.<br>남들과 비교를 하면서 스스로의 성취에 무뎠었다. 앞으로  나는 나에게만 집중해야겠다 생각했다. 그리고 다른 출발점을 따라 잡기 위해서 더 많은 노력을 할 것이다. 비록 지금은 더디고 느리지만, 나보다 앞선 사람들을 훨씬 추월하고 싶다.그리고 작은 성취를 느끼며 조금씩 조금씩 나아갈 것이다.작은 성취 하나하나가 나를 앞으로 나가게 하는 원동력이 된다. 처음 느꼈던 좌절을 발판삼아 앞으로 나아갈 것이다.앞으로 좌절 보다는 도전하고 극복하겠다.<br>지켜봐라. </p>
+]]></content>
+      <tags>
+        <tag>HTML,CSS 수업을 듣고 난 한 달</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>반응형웹 수업내용 간단한 정리</title>
+    <url>/2019/09/22/%EB%B0%98%EC%9D%91%ED%98%95%EC%9B%B9%EC%88%98%EC%97%85%EB%82%B4%EC%9A%A9%EC%A0%95%EB%A6%AC/</url>
+    <content><![CDATA[<p>반응형 웹 디자인(responsive Web design) 모바일디바이스와 타블렛 같은 다양한 디바이스들이 등장하게 되었고, 그에 환경에 따른 별도의 대응이 필요하게 되었다.</p>
+<p> RWD vs AWD(적응형):view port에 따라 증가하다가 특정 크기에서 고정형(데스크탑 +모바일)<br>반응형 웹의 100(width를  특정한 너비를 설정하지 않는다.)</p>
+<p>컨텐츠는 물과 같다.용기는 다르더라도 내용물은 물은 그대로다.</p>
+<p>미디어 쿼리 배치중요하다. 추천하는 방법은 모바일 환경에 대한 선형 디자인을 처음으로 고려하고 brekpoint를 추가하면서 너비나 상황 변하였을때의 값을 설정해주는 것이 좋은 방법이 된다.(모바일에서 데스크탑으로)<br> mobile first:컨텐츠 전략 선택 선형적인 기본작업을 모바일에서 만들고 그것을 데스크탑 컨텐츠로 순서로 최적화를 한다.</p>
+<p>max-width:너비를 자신의 이상으로 안하겠다.너비가 줄수도 있지만 증가하진않는다.<br>height:auto:높이를 너비가 변호하는 것에 따에 자동으로 맞춘다.</p>
+<p><picture>&lt;source min-width:40em srcset:big-jpg 1x:big -jpg 2x&gt;최소의 너비에서 다음으로 srcset의 값을 보여주겠다. 배율이 1일때와 2배율일때 각각 상황에 맞게 사용하겠다.<picture>은 재사용과 수정에 용이하다.<br></picture><br></picture></p>
+<p>10vh(view height)화면 view port의 1/10을 높이로 정하겠다. 앞에서 이야기했듯이 모바일 first 선형화</p>
+<p>display:flex 의 order속성은 기본 값이 :0 기본 값보다 작으면 -1이면 기본 보다 먼저 값은 값이 있으면 순서대로 정의 한다.</p>
+<p>flex-flow:row wrap은 축은 바꾸지 않고 wrap 을 사용함으로서 줄을 바꿈.</p>
+<p>breakpoint는 쉽게 생각하면 추가될때 바뀌는 구간이라고 생각하면 된다.<br>@media screen and (min-width:801px)::801이 되면서 내용을 덮어씌우겠다.</p>
+]]></content>
+      <tags>
+        <tag>반응형 웹 수업내용</tag>
       </tags>
   </entry>
   <entry>
@@ -403,15 +543,6 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
       </tags>
   </entry>
   <entry>
-    <title>프론트엔드 개발공부를 한 한달의 감상</title>
-    <url>/2019/09/29/%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80%EA%B0%90%EC%83%81/</url>
-    <content><![CDATA[<p>처음에 학원에 들어오게 되었을때,학원의 광고에 이끌려 이제는 쉽게 개발자로서 나의 커리어를 시작할 도약이 되겠구나 생각했다.하지만 처음에 수업을 듣고 난 후, 나의 생각은 정말 오만하고 생각이 없었다는것을 느꼈다.이세상에 쉬운것은 절대 없었다. 내가 알고있던것은 정말 일부에 지나지 않았다. 처음 수업을 들은 후 나는 굉장히 충격과 좌절을 느꼈다. 수업을 따라가는 것 조차 너무나도 버거웠다. 굉장히 불안하고 힘들었다. 내가 그나마 할 수있는 것은 학원 매니져님을 붙잡고 하나하나 질문하는것 뿐이었다. 그래서 첫 수업이 끝난 후 나는 학원 문을 닫을 때 까지 학원을 떠나지 못했다. 집에 가는 중에도 계속생각했다.내가 잘 할 수 있을까?하는 생각을 끊임없이했다.<br>처음에는 어떻게 공부해야 할 지도 너무 막막했다.이게 맞는지 저게 맞는지..몇일 동안을 수업이 끝나고 집으로 돌아가는 내내 기분이 안좋았다. 심지어 학원을 환불받아야하나 하는 생각도 했다.하지만 나에게는 포기했을때 선택할 수 있는 다른 선택지가 없다고 느꼈다. 나에게 프론트엔드 개발자의 길은 너무도 멀리있어서 보이지도 않는 하나의 점처럼 느껴졌다.<br>하지만 조금씩 수업을 듣고 공부를 하면서 조금씩 나아진다는 것을 느꼈다.주말에도 공부를 하고 하다보니까 수업을 듣는것도 이해하는 것도 조금은 수월해 졌다.<br>내가 항상 걱정했던것은 다른사람들은 잘하는데 나만 제일 못하는 것같고 도퇴되면 어쩌지 하는 두려움이었다. 그러다 문득 느낀것이 다른사람들과 나는 출발점이 달랐던 것이었다.컴퓨터 관련 전공자,현업에서 뛰던 경험이 있는 사람들, 비 전공에 혼자서만 공부를 했던 나와는 출발점이 달랐다.그렇기에 다른 사람과 비교하면 차이가 나는것은 당연한 것 이였다.<br>어느날 인터넷에서 개발자와 관련된 글을 읽다가 한가지 글이 굉장히 인상에 남았다.’개발자의 길은 남들과 비교하는 순간 끝이다’라는 글이었다.<br>남들과 비교를 하면서 스스로의 성취에 무뎠었다. 앞으로  나는 나에게만 집중해야겠다 생각했다. 그리고 다른 출발점을 따라 잡기 위해서 더 많은 노력을 할 것이다. 비록 지금은 더디고 느리지만, 나보다 앞선 사람들을 훨씬 추월하고 싶다.그리고 작은 성취를 느끼며 조금씩 조금씩 나아갈 것이다.작은 성취 하나하나가 나를 앞으로 나가게 하는 원동력이 된다. 처음 느꼈던 좌절을 발판삼아 앞으로 나아갈 것이다.앞으로 좌절 보다는 도전하고 극복하겠다.<br>지켜봐라. </p>
-]]></content>
-      <tags>
-        <tag>HTML,CSS 수업을 듣고 난 한 달</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>메모리,참조,키워드,변수,선언,할당,재할당,호이스팅</title>
     <url>/2019/10/04/%EB%A9%94%EB%AA%A8%EB%A6%AC%EC%B0%B8%EC%A1%B0%ED%82%A4%EC%9B%8C%EB%93%9C/</url>
     <content><![CDATA[<p><strong>변수</strong>-값을 다룬다.(데이터를 다룬다.)</p>
@@ -465,24 +596,6 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>메모리,참조,키워드,변수,선언,할당,재할당,호이스팅,</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>반응형웹 수업내용 간단한 정리</title>
-    <url>/2019/09/22/%EB%B0%98%EC%9D%91%ED%98%95%EC%9B%B9%EC%88%98%EC%97%85%EB%82%B4%EC%9A%A9%EC%A0%95%EB%A6%AC/</url>
-    <content><![CDATA[<p>반응형 웹 디자인(responsive Web design) 모바일디바이스와 타블렛 같은 다양한 디바이스들이 등장하게 되었고, 그에 환경에 따른 별도의 대응이 필요하게 되었다.</p>
-<p> RWD vs AWD(적응형):view port에 따라 증가하다가 특정 크기에서 고정형(데스크탑 +모바일)<br>반응형 웹의 100(width를  특정한 너비를 설정하지 않는다.)</p>
-<p>컨텐츠는 물과 같다.용기는 다르더라도 내용물은 물은 그대로다.</p>
-<p>미디어 쿼리 배치중요하다. 추천하는 방법은 모바일 환경에 대한 선형 디자인을 처음으로 고려하고 brekpoint를 추가하면서 너비나 상황 변하였을때의 값을 설정해주는 것이 좋은 방법이 된다.(모바일에서 데스크탑으로)<br> mobile first:컨텐츠 전략 선택 선형적인 기본작업을 모바일에서 만들고 그것을 데스크탑 컨텐츠로 순서로 최적화를 한다.</p>
-<p>max-width:너비를 자신의 이상으로 안하겠다.너비가 줄수도 있지만 증가하진않는다.<br>height:auto:높이를 너비가 변호하는 것에 따에 자동으로 맞춘다.</p>
-<p><picture>&lt;source min-width:40em srcset:big-jpg 1x:big -jpg 2x&gt;최소의 너비에서 다음으로 srcset의 값을 보여주겠다. 배율이 1일때와 2배율일때 각각 상황에 맞게 사용하겠다.<picture>은 재사용과 수정에 용이하다.<br></picture><br></picture></p>
-<p>10vh(view height)화면 view port의 1/10을 높이로 정하겠다. 앞에서 이야기했듯이 모바일 first 선형화</p>
-<p>display:flex 의 order속성은 기본 값이 :0 기본 값보다 작으면 -1이면 기본 보다 먼저 값은 값이 있으면 순서대로 정의 한다.</p>
-<p>flex-flow:row wrap은 축은 바꾸지 않고 wrap 을 사용함으로서 줄을 바꿈.</p>
-<p>breakpoint는 쉽게 생각하면 추가될때 바뀌는 구간이라고 생각하면 된다.<br>@media screen and (min-width:801px)::801이 되면서 내용을 덮어씌우겠다.</p>
-]]></content>
-      <tags>
-        <tag>반응형 웹 수업내용</tag>
       </tags>
   </entry>
   <entry>
