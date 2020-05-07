@@ -780,8 +780,7 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
   <entry>
     <title>하이브리드 웹, 네이티브 웹, 웹 앱의 차이점</title>
     <url>/2020/05/07/%20webapp/</url>
-    <content><![CDATA[<p>###localStorage와 session storage의 가장 큰 차이점</p>
-<ul>
+    <content><![CDATA[<h3 id="localStorage와-session-storage의-가장-큰-차이점"><a href="#localStorage와-session-storage의-가장-큰-차이점" class="headerlink" title="localStorage와 session storage의 가장 큰 차이점"></a>localStorage와 session storage의 가장 큰 차이점</h3><ul>
 <li><p>local storage  만료기간이 없기때문에  브라우저가 종료되어도 남아있는다.</p>
 </li>
 <li><p>session storage 브라우저가 종료되면은 사라진다.</p>
