@@ -37,45 +37,6 @@
       </tags>
   </entry>
   <entry>
-    <title>10월 7일 러버덕(키워드,식별자,변수와 선언,메모리,메모리 주소,할당,호이스팅)</title>
-    <url>/2019/10/07/10%EC%9B%947%EC%9D%BC%EB%9F%AC%EB%B2%84%EB%8D%95/</url>
-    <content><![CDATA[<h3 id="1-키워드"><a href="#1-키워드" class="headerlink" title="1.키워드:"></a><strong>1.키워드</strong>:</h3><p>명령어(뒤에 값을 준다.)<br><strong>자바스크립트에게 내리는 명령.</strong><br>변수선언하려면 반드시  키워드 사용(var/let,const)</p>
-<h3 id="2-식별자-변수이름"><a href="#2-식별자-변수이름" class="headerlink" title="2.식별자(변수이름):"></a><strong>2.식별자(변수이름):</strong></h3><p>고유한이름/일종의 카드키와 같다.<br><strong>식별자(변수이름)-메모리에 있는 값을 구별해서 끄집에 낼 수 있는 값</strong><br>./어떤 값을 구별하여 식별해 낼 수 있는고유한 이름.</p>
-<p>또한 <strong>식별자는 메모리 주소를 알고있다.</strong></p>
-<p>변수 이름을 비롯한 모든 식별자는 실행 컨텍스트에 저장된다.<br>네이밍 규칙-예약어x/특수문자 _ $가능 숫자 처음 에 안나옴.</p>
-<h3 id="3-변수와-선언"><a href="#3-변수와-선언" class="headerlink" title="3.변수와 선언:"></a><strong>3.변수와 선언:</strong></h3><p><strong>변수-</strong>데이터를 다룬다. 하나의 값을 저장할 수있는 메모리 공간에 붙은 이름 혹은 메모리 자체를 의미한다.</p>
-<p>변수를 사용하려면 반드시 선언을 해줘야한다.</p>
-<p><strong>변수의 선언-</strong><br>변수를 생성한다. 변수란 컴퓨터의 메모리 와 관련있다.<br>자바스크립크엔진에 변수이름 등록,값 저장을 위한 메모리 공간을 확보하기위함.</p>
-<h3 id="4-메모리와-주소"><a href="#4-메모리와-주소" class="headerlink" title="4.메모리와 주소:"></a><strong>4.메모리와 주소:</strong></h3><p>메모리:데이터를 저장할 수 있는 데이터 셀들의 집합체.<br>메모리주소: 메모리 공간의 위치를 나타내며 0부터 시작하여 메모리의 크기만큼 정수로 표현된다. </p>
-<p>값을 입력하면 메모리 임의의 공간에 저장이 된다.하지만 메모리의 주소는 알여주지 않는데 저장된 데이터를 재사용하기 위해서는 변수를 제공해야하고 변수는 저장되는 곳의 메모리 주소를 기억한다.</p>
-<p>매니지드:(자바스크립트):<br>언매니지드(c언어):</p>
-<h3 id="5-할당"><a href="#5-할당" class="headerlink" title="5.할당:"></a><strong>5.할당</strong>:</h3><p> 변수에 값을 저장한다. 할당한다(저장한다.대입한다.assign한다)<br>논리적으로 기본적으로 변수를 선언하고 할당해야한다. 변수만을 선언하고 할당하지 않으면 값이 정의 되지 않았기 때문에 undefined가 출력이 된다.</p>
-<p>변수선언은 소소코드가 순차적으로 실행되기 이전,즉 런타임 이전에 먼저실행되지만,값의 할당은 소스코드가 순차적으로 실행되는 시점인 런타임에 실행된다.</p>
-<h3 id="6-호이스팅"><a href="#6-호이스팅" class="headerlink" title="6.호이스팅-"></a><strong>6.호이스팅-</strong></h3><p>왜 호이스팅이 발생하는가?-&gt;**선언문은 실행될때 가장먼저 골라져서 실행되기대문에 발생한다.위 끌어올려서 실행된 실행문은 또 실행되지 않는다.</p>
-]]></content>
-      <tags>
-        <tag>1키워드,2.식별자.3.변수와 선언 4.메모리와 메모리주소5.할당6.호이스팅</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</title>
-    <url>/2020/05/03/CSR%20SSR%20SPA%20/</url>
-    <content><![CDATA[<p><strong>1.CSR(클라이언트 사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943424/CSR.png" alt="CSR"></p>
-<p>-1.Server Sending Response to Browser<br>-2.Browser Downloads JS<br>-3.Browser executes React<br>-4.Page Now Viewable and Interatable</p>
-<p>서버에서 비어있는 html와  js파일들을 받아오고 , 데이터는 서비스에 필요한 리소스를 다운로드한후 브라우저에서 렌더링한다.그렇기 때문에 초기 View을 보기가지 SSR보다 시간이 더 걸린다. 하지만 사용자에게 보여진 view의 기능은 동시에 동작한다.</p>
-<p><strong>2.SSR(서버사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943426/SSR.png" alt="SSR"></p>
-<p>-1.Server Sending Ready tobe redered HTML Response to Browser<br>-2.Browser Renders the page,Now Viewable,andBrowser Downloads JS<br>-3.Browser execute React<br>-4.Page Now interatable</p>
-<p>서버에서 렌더링해 가져오기 때문에 ,첫 로딩 매우 짧다.<br>그러나 클라이언트가 js파일을 모두 다운로드하고 적용하기전가지는 각각의 기능은 동작하지않는다는 단점이 있다</p>
-<p><strong>3.SPA(Single page application)</strong></p>
-<p>서버로 부터 처음에만 페이지를 받아오고 이후에는 동적으로 페이지를 구성해서 새로운 페이지를 받아오지않는 웹 애플리케이션을 의미한다.<br> 페이지가 한번 로딩된 이후 데이터를 수정하거나 조회할때. 페이지가 새로고침이 되지않고 다른 페이지로 넘어가지 않습니다.</p>
-<p><strong>4.MPA(Multi Page Application)</strong></p>
-<p>서버로 부터 완전한 페이지를 받아오고 이후에 데이터를 수정하거나 조회할때 다른 완전한 페이지로 이동합니다.단 URL이 바뀔수있습니다.</p>
-]]></content>
-      <tags>
-        <tag>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>10월 2일 수업내용정리</title>
     <url>/2019/10/03/10%EC%9B%942%EC%9D%BC%EC%88%98%EC%97%85%EB%82%B4%EC%9A%A9%EC%A0%95%EB%A6%AC/</url>
     <content><![CDATA[<p><strong>자바스크립트의 특징</strong> - 웹브라우저에서 동작하는 유일한 언어/고속으로 동작하는(웹 브라우저로 돌리는 게임) 어플리케이션에선 불리함</p>
@@ -137,6 +98,27 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
       </tags>
   </entry>
   <entry>
+    <title>10월 7일 러버덕(키워드,식별자,변수와 선언,메모리,메모리 주소,할당,호이스팅)</title>
+    <url>/2019/10/07/10%EC%9B%947%EC%9D%BC%EB%9F%AC%EB%B2%84%EB%8D%95/</url>
+    <content><![CDATA[<h3 id="1-키워드"><a href="#1-키워드" class="headerlink" title="1.키워드:"></a><strong>1.키워드</strong>:</h3><p>명령어(뒤에 값을 준다.)<br><strong>자바스크립트에게 내리는 명령.</strong><br>변수선언하려면 반드시  키워드 사용(var/let,const)</p>
+<h3 id="2-식별자-변수이름"><a href="#2-식별자-변수이름" class="headerlink" title="2.식별자(변수이름):"></a><strong>2.식별자(변수이름):</strong></h3><p>고유한이름/일종의 카드키와 같다.<br><strong>식별자(변수이름)-메모리에 있는 값을 구별해서 끄집에 낼 수 있는 값</strong><br>./어떤 값을 구별하여 식별해 낼 수 있는고유한 이름.</p>
+<p>또한 <strong>식별자는 메모리 주소를 알고있다.</strong></p>
+<p>변수 이름을 비롯한 모든 식별자는 실행 컨텍스트에 저장된다.<br>네이밍 규칙-예약어x/특수문자 _ $가능 숫자 처음 에 안나옴.</p>
+<h3 id="3-변수와-선언"><a href="#3-변수와-선언" class="headerlink" title="3.변수와 선언:"></a><strong>3.변수와 선언:</strong></h3><p><strong>변수-</strong>데이터를 다룬다. 하나의 값을 저장할 수있는 메모리 공간에 붙은 이름 혹은 메모리 자체를 의미한다.</p>
+<p>변수를 사용하려면 반드시 선언을 해줘야한다.</p>
+<p><strong>변수의 선언-</strong><br>변수를 생성한다. 변수란 컴퓨터의 메모리 와 관련있다.<br>자바스크립크엔진에 변수이름 등록,값 저장을 위한 메모리 공간을 확보하기위함.</p>
+<h3 id="4-메모리와-주소"><a href="#4-메모리와-주소" class="headerlink" title="4.메모리와 주소:"></a><strong>4.메모리와 주소:</strong></h3><p>메모리:데이터를 저장할 수 있는 데이터 셀들의 집합체.<br>메모리주소: 메모리 공간의 위치를 나타내며 0부터 시작하여 메모리의 크기만큼 정수로 표현된다. </p>
+<p>값을 입력하면 메모리 임의의 공간에 저장이 된다.하지만 메모리의 주소는 알여주지 않는데 저장된 데이터를 재사용하기 위해서는 변수를 제공해야하고 변수는 저장되는 곳의 메모리 주소를 기억한다.</p>
+<p>매니지드:(자바스크립트):<br>언매니지드(c언어):</p>
+<h3 id="5-할당"><a href="#5-할당" class="headerlink" title="5.할당:"></a><strong>5.할당</strong>:</h3><p> 변수에 값을 저장한다. 할당한다(저장한다.대입한다.assign한다)<br>논리적으로 기본적으로 변수를 선언하고 할당해야한다. 변수만을 선언하고 할당하지 않으면 값이 정의 되지 않았기 때문에 undefined가 출력이 된다.</p>
+<p>변수선언은 소소코드가 순차적으로 실행되기 이전,즉 런타임 이전에 먼저실행되지만,값의 할당은 소스코드가 순차적으로 실행되는 시점인 런타임에 실행된다.</p>
+<h3 id="6-호이스팅"><a href="#6-호이스팅" class="headerlink" title="6.호이스팅-"></a><strong>6.호이스팅-</strong></h3><p>왜 호이스팅이 발생하는가?-&gt;**선언문은 실행될때 가장먼저 골라져서 실행되기대문에 발생한다.위 끌어올려서 실행된 실행문은 또 실행되지 않는다.</p>
+]]></content>
+      <tags>
+        <tag>1키워드,2.식별자.3.변수와 선언 4.메모리와 메모리주소5.할당6.호이스팅</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>IR 기법</title>
     <url>/2019/09/17/IR%EA%B8%B0%EB%B2%95/</url>
     <content><![CDATA[<p>홈페이지를 만들때 이미지를 사용할 경우 img태그를 사용해 alt로 이미를 부여 합니다.</p>
@@ -170,6 +152,24 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>IR기법 활용에 대해</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</title>
+    <url>/2020/05/03/CSR%20SSR%20SPA%20/</url>
+    <content><![CDATA[<p><strong>1.CSR(클라이언트 사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943424/CSR.png" alt="CSR"></p>
+<p>-1.Server Sending Response to Browser<br>-2.Browser Downloads JS<br>-3.Browser executes React<br>-4.Page Now Viewable and Interatable</p>
+<p>서버에서 비어있는 html와  js파일들을 받아오고 , 데이터는 서비스에 필요한 리소스를 다운로드한후 브라우저에서 렌더링한다.그렇기 때문에 초기 View을 보기가지 SSR보다 시간이 더 걸린다. 하지만 사용자에게 보여진 view의 기능은 동시에 동작한다.</p>
+<p><strong>2.SSR(서버사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943426/SSR.png" alt="SSR"></p>
+<p>-1.Server Sending Ready tobe redered HTML Response to Browser<br>-2.Browser Renders the page,Now Viewable,andBrowser Downloads JS<br>-3.Browser execute React<br>-4.Page Now interatable</p>
+<p>서버에서 렌더링해 가져오기 때문에 ,첫 로딩 매우 짧다.<br>그러나 클라이언트가 js파일을 모두 다운로드하고 적용하기전가지는 각각의 기능은 동작하지않는다는 단점이 있다</p>
+<p><strong>3.SPA(Single page application)</strong></p>
+<p>서버로 부터 처음에만 페이지를 받아오고 이후에는 동적으로 페이지를 구성해서 새로운 페이지를 받아오지않는 웹 애플리케이션을 의미한다.<br> 페이지가 한번 로딩된 이후 데이터를 수정하거나 조회할때. 페이지가 새로고침이 되지않고 다른 페이지로 넘어가지 않습니다.</p>
+<p><strong>4.MPA(Multi Page Application)</strong></p>
+<p>서버로 부터 완전한 페이지를 받아오고 이후에 데이터를 수정하거나 조회할때 다른 완전한 페이지로 이동합니다.단 URL이 바뀔수있습니다.</p>
+]]></content>
+      <tags>
+        <tag>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</tag>
       </tags>
   </entry>
   <entry>
@@ -253,6 +253,26 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>let과 const 블록레벨 스코프에 대해</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>자바스크립트의 개발환경</title>
+    <url>/2020/05/10/review3-md/</url>
+    <content><![CDATA[<h2 id="1-자바스크립트-실행환경"><a href="#1-자바스크립트-실행환경" class="headerlink" title="1. 자바스크립트 실행환경"></a>1. 자바스크립트 실행환경</h2><hr>
+
+<p>모든 브라우저는 자바스크립트를 해석하고 실행할 수 있는 자바스크립트 엔진을 내장하고 있다. node.js  또한 자바스크립트엔진을 내장하고 있으며, 자바스크립트는 nodejs 와 브라우저환경에서 실행 할 수 있다.<br>브라우저에서  자바스크립트의 목적은 html,css,자바스크립트를 실행하여 웹에 보여주는 것이 주된 목적이고,  node.js는 서버 개발 환경을 제공하는 목적을 가진다.<br>또한 모두 자바스크립트의 코어인 ECMAScript를 실행할 수 있지만 ECMAScript의 추가적으로 제공하는 기능은 호환 불가능하다.<br>브라우저에서는 DOM API를 기본적으로 제공하지만 , node.js 에서는 DOM API를 제공하지 않는다.</p>
+<h2 id="2-웹"><a href="#2-웹" class="headerlink" title="2. 웹"></a>2. 웹</h2><hr>
+
+<p>자바스크립트가 가장 많이 사용되는 분야는 웹페이지와 웹 애플리케이션이다. 웹 애플리케이션은 웹 브라우저 에서 html과css와 자바스크립트가  함께 실행된다.</p>
+<p>웹 브라우저 환경을 고려할 때, 보다 효율적인 자바스크립트 프로그래밍이 가능하다.<br>자바스크립트는 렌더링 엔진이 아닌 자바스크립트 엔진이 처리를 한다,html파서는 script태그를 만나면 자바 스크립트 코드를 실행하기 위해서 DOM생성 프로세스를 중지하고 자바 스크립트 엔진으로 제어권한을 넘긴다.제어 권한을 넘겨받은 자바 스크립트엔진은 script태그의 자바스크립트 파일을 파싱한다. </p>
+<p>자바스크립트는 명시적인 컴파일러 단계를 거치지 않지만 인터프리터 언어의 장점인 동적기능지원을 살리면서 실행속도가 느리다는 단점을 극복한다.</p>
+<p>head 요소 내부에 script 태그를 위치시키면 HTML 요소가 파싱되어 DOM 객체로 변환되기 이전에 자바스크립트가 실행된다. 따라서 body태그 아래에 script태그를 두는것이 바람직하다.</p>
+<p><strong>async</strong> : 웹 페이지 파싱과 외부 스크립트 파일의 다운로드가 동시에 진행된다. 스크립트는 다운로드 완료직후 실행된다.<br><strong>defer</strong> : 웹페이지 파싱과 외부 스크립트 파일의 다운로드가 동시에 진행된다.스크립트는 웹페이지 파싱완료 직후 실행된다. 두개의 차이점은 스크립트의 실행 시점이다르다.</p>
+<p> 어트리뷰트는 스크립트 로딩으로 인한 병목을 근본적으로 방지하기 위해서 html5부터 script태그에 추가되었다.</p>
+<p>node.js는 클라이언트 사이드, 즉 웹 브라우저에서 동작하는 간단한 웹 애플리케이션은 브라우저만으로도 개발을 할 수 있다.<br>하지만 프로젝트의 규모가 커짐에 따라 React, jQuery와 같은 외부 라이브러리를 도입하거나 Babel, Webpack, ESLint 등 여러 가지 도구를 사용해야 할 필요가 있다. 이때 Node.js와 npm이 필요하다.</p>
+]]></content>
+      <tags>
+        <tag>자바스크립트의 개발환경</tag>
       </tags>
   </entry>
   <entry>
