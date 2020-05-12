@@ -1,42 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>하이브리드 웹, 네이티브 웹, 웹 앱의 차이점</title>
-    <url>/2020/05/07/%20webapp/</url>
-    <content><![CDATA[<h3 id="localStorage와-session-storage의-가장-큰-차이점"><a href="#localStorage와-session-storage의-가장-큰-차이점" class="headerlink" title="localStorage와 session storage의 가장 큰 차이점"></a>localStorage와 session storage의 가장 큰 차이점</h3><ul>
-<li><p>local storage  만료기간이 없기때문에  브라우저가 종료되어도 남아있는다.</p>
-</li>
-<li><p>session storage 브라우저가 종료되면은 사라진다.</p>
-</li>
-</ul>
-<hr>
-
-<h2 id="1-하이브리드-앱"><a href="#1-하이브리드-앱" class="headerlink" title="1. 하이브리드 앱"></a>1. 하이브리드 앱</h2><p>하이브리드 앱은 네이티브 개발과 웹 기술을 융합한 방식입니다. 기본 기능은 HTML 등의 웹 문서로 구현하고, 패키징은 아이폰, 안드로이드 등 모바일 운영 체제(OS) 별로 구현하는 것이다.<br>따라서 네이티브 앱과 같이 앱 스토어에서 다운로드하여 사용할 수 있고, 기기에 저장된 고유 파일이나 카메라와 같은 하드웨어적인 부분에 접근성을 가질 수도 있습니다. 또한, 근본적으로는 웹 기술을 이용한 것이기에 빠르고, 편리하게 앱을 유지보수할 수 있습니다.</p>
-<p><strong>하이브리드 앱의 단점</strong>은 네이티브 앱보다 UI를 구성하는 디자인 부분이 취약하며, 성능이 떨어진다는 것입니다. 또한, 웹 브라우저를 실행하여 콘텐츠를 제공하기에 인터넷 속도에 따라 구동 속도가 느려질 수도 있습니다.</p>
-<h3 id="1-1-하이브리드-APP의-장점"><a href="#1-1-하이브리드-APP의-장점" class="headerlink" title="1.1. 하이브리드 APP의 장점"></a>1.1. 하이브리드 APP의 장점</h3><p>■ 네이티브 API 와 브라우저 API 를 이용한 다양한 개발이 가능 합니다.<br>■ 웹개발 기술을 사용해 앱을 개발할 수 있습니다.<br>■ 한번의 개발로 다수의 플랫폼에 대응할 수 있습니다.</p>
-<h3 id="1-2-하이브리드-APP의-단점"><a href="#1-2-하이브리드-APP의-단점" class="headerlink" title="1.2.하이브리드 APP의 단점"></a>1.2.하이브리드 APP의 단점</h3><p>■ 웹뷰에서 앱을 실행하는 경우이기 때문에 앱의 성능이 곧 브라우저의 성능 입니다.<br>■ UI 프레임워크 도구를 사용하지 않는다면 개발자가 UI를 제작해야 합니다</p>
-<hr>
-
-<h3 id="모바일-웹-web-이란"><a href="#모바일-웹-web-이란" class="headerlink" title="모바일 웹 (web) 이란?"></a>모바일 웹 (web) 이란?</h3><p>모바일 웹은 모바일에서 PC용 사이트의 글자폰트와 이미지 , 터치 아이콘 , 플래시 등 데스크탑 브라우저에서 실행되는 기능을 모바일에 맞추어 표현한 사이트를 의미합니다. 쉽개말해 , PC용 홈페이지를 모바일 스크린의 크기에 맞춰 줄여 놓은 것이라고 생각하시면 됩니다.</p>
-<hr>
-
-<h2 id="2-웹-앱"><a href="#2-웹-앱" class="headerlink" title="2. 웹 앱"></a>2. 웹 앱</h2><p>웹앱은 모바일웹 과 네이티브앱을 결합한 형태로 모바일웹의 특징을 가지면서 네이티브앱의 장점을 갖고 있습니다. 모바일웹 보다는 조금 더<br>모바일에 최적화 된 앱을 의미 합니다. 웹앱도 모바일웹 처럼 일반적인 웹기술로 개발되고 모바일 브라우저에서 실행되지만 풀 브라우저 방식이 아닌 단일 페이지 방식으로 화면을 진화해 속도가 빠르다는 장점이 있습니다.</p>
-<p>모바일 웹 앱이란 PC나 스마트폰 등 단말기의 기종에 관계없이 모든 단말기에서 같은 콘텐츠를 볼 수 있도록 해주는 앱입니다.<br>운영체제(OS)와 직접 통신하는 네이티브 앱과 다르게 웹 앱은 브라우저 내에서 실행됩니다. 따라서 앱을 따로 다운로드하거나 업그레이드하지 않고, 항상 최신 버전을 유지할 수 있지요. 또한, OS별로 별도의 플랫폼이 필요하지 않고, HTML5와 같은 표준 웹 언어로 만들어지기 때문에 제작 비용도 저렴하고, 개발 기간도 비교적 짧은 편입니다.<br>웹 앱 방식은 상대적으로 개발 공수가 적게 들고, 업데이트가 쉽지만 기능상 제한이 많이 따릅니다. 웹 앱은 처음부터 디바이스에 적합한 형태로 만들어지는 것이 아니기 때문입니다. 따라서 네이티브 앱과 비교해 봤을 때, 느리기도 하고, 앱을 통해 기기 고유의 정보를 사용할 수도 없습니다.</p>
-<h3 id="2-1-모바일-웹앱의-장점"><a href="#2-1-모바일-웹앱의-장점" class="headerlink" title="2.1. 모바일 웹앱의 장점"></a>2.1. 모바일 웹앱의 장점</h3><p>■ 웹사이트를 보는 것이기 때문에 따로 설치할 필요가 없습니다.<br>■ 모든 기기와 브라우저에서 접근할 수 있습니다.<br>■ 별도 설치 및 승인과정이 필요치 않아 유지보수가 용이 합니다.</p>
-<h3 id="2-2-모바일-웹앱의-단점"><a href="#2-2-모바일-웹앱의-단점" class="headerlink" title="2.2. 모바일 웹앱의 단점"></a>2.2. 모바일 웹앱의 단점</h3><p>■ 플랫폼 API (카메라 등) 을 사용할 수 없고 오로지 , 브라우저 API만을 사용할 수 있습니다.<br>■ 친화적인 터치 앱을 개발하기가 약간 번거로운 점이 있습니다. (까다로움)<br>■ 네이티브 , 하이브리드 앱보다 실행이 까다롭습니다. (브라우저를 열고 검색해 들어가야 합니다.)</p>
-<hr>
-
-<h2 id="3-네이티브-앱"><a href="#3-네이티브-앱" class="headerlink" title="3. 네이티브 앱"></a>3. 네이티브 앱</h2><p>네이티브 앱은 우리가 흔히 말하는 ‘ 어플리케이션 ‘ 을 의미 합니다. 모바일 기기에 최적화 된 언어로 개발 된 앱으로 안드로이드 SDK를 이용해 Java (자바) 언어로 만드는 앱과 iOS 기반 SDK를 이용해 Swift (스위프트) 로 만드는 대부분의 앱이 여기에 속한다고 할 수 있습니다.</p>
-<p>네이티브 앱이란 모바일 기기에 직접 다운로드하여 사용하는 앱입니다. </p>
-<p>네이티브 앱이란 모바일 기기에 직접 다운로드하여 사용하는 앱입니다. 네이티브 앱은 사용자가 공용 앱스토어에서 직접 설치할 수도 있고, 모바일 공급업체에서 제공할 수도 있습니다.<br>네이티브 어플을 만들기 위해서는 개발자가 사람이 읽을 수 있는 형식으로 소스코드를 작성하고, 다양한 운영체제(OS: Operation System) 별로 선언 파일이나 이미지, 오디오 등의 리소스를 만들어야 합니다. 그다음, 모바일 운영체제(OS)에서 제공하는 툴을 활용하여 소스코드를 컴파일하고, 여러 실행 파일을 만들어야 하지요.<br>이처럼 네이티브 앱은 각기의 모바일 운영체제(OS)에서 제공하는 툴과 언어 등에 따라 기능들을 최대한 살리기 때문에, 높은 사양의 그래픽과 성능을 자랑하면서도 구동 속도가 빠른 편입니다. 뿐만 아니라 디바이스 전체에 액세스 권한을 가질 수 있어, 기기에 저장된 주소록, 캘린더 등의 고유 정보를 사용할 수도 있지요.<br>하지만 다른 방식들보다 높은 수준의 기술력이 필요하며, 각기의 모바일 운영체제(OS)별로 앱을 개발해야하기 때문에 개발 기간이나 비용이 많이 들 수 있습니다.</p>
-<h3 id="3-1-네이티브-앱의-장점"><a href="#3-1-네이티브-앱의-장점" class="headerlink" title="3.1. 네이티브 앱의  장점"></a>3.1. 네이티브 앱의  장점</h3><p>성능이 웹앱 , 하이브리드 앱에 비하여 가장 높습니다.<br>■ 네이티브 API를 호출하여 사용함으로 플랫폼과 밀착되어 있습니다.<br>■ 해당 언어에 익숙한 사용자라면 좀 더 쉽게 접근할 수 있습니다.</p>
-<h3 id="3-2-네이티브-앱의-단점"><a href="#3-2-네이티브-앱의-단점" class="headerlink" title="3.2. 네이티브 앱의 단점"></a>3.2. 네이티브 앱의 단점</h3><p>플랫폼에 한정적 입니다.<br>■ 해당 플랫폼에서 요구하는 언어에 제약적 입니다. 따라서 해당 언어와 플랫폼의 API를 다루는데 익숙해야 합니다.</p>
-]]></content>
-      <tags>
-        <tag>하이브리드 웹, 네이티브 웹, 웹 앱의 차이점에대해 알아보자</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>10월 2일 수업내용정리</title>
     <url>/2019/10/03/10%EC%9B%942%EC%9D%BC%EC%88%98%EC%97%85%EB%82%B4%EC%9A%A9%EC%A0%95%EB%A6%AC/</url>
     <content><![CDATA[<p><strong>자바스크립트의 특징</strong> - 웹브라우저에서 동작하는 유일한 언어/고속으로 동작하는(웹 브라우저로 돌리는 게임) 어플리케이션에선 불리함</p>
@@ -119,6 +83,155 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
       </tags>
   </entry>
   <entry>
+    <title>하이브리드 웹, 네이티브 웹, 웹 앱의 차이점</title>
+    <url>/2020/05/07/%20webapp/</url>
+    <content><![CDATA[<h3 id="localStorage와-session-storage의-가장-큰-차이점"><a href="#localStorage와-session-storage의-가장-큰-차이점" class="headerlink" title="localStorage와 session storage의 가장 큰 차이점"></a>localStorage와 session storage의 가장 큰 차이점</h3><ul>
+<li><p>local storage  만료기간이 없기때문에  브라우저가 종료되어도 남아있는다.</p>
+</li>
+<li><p>session storage 브라우저가 종료되면은 사라진다.</p>
+</li>
+</ul>
+<hr>
+
+<h2 id="1-하이브리드-앱"><a href="#1-하이브리드-앱" class="headerlink" title="1. 하이브리드 앱"></a>1. 하이브리드 앱</h2><p>하이브리드 앱은 네이티브 개발과 웹 기술을 융합한 방식입니다. 기본 기능은 HTML 등의 웹 문서로 구현하고, 패키징은 아이폰, 안드로이드 등 모바일 운영 체제(OS) 별로 구현하는 것이다.<br>따라서 네이티브 앱과 같이 앱 스토어에서 다운로드하여 사용할 수 있고, 기기에 저장된 고유 파일이나 카메라와 같은 하드웨어적인 부분에 접근성을 가질 수도 있습니다. 또한, 근본적으로는 웹 기술을 이용한 것이기에 빠르고, 편리하게 앱을 유지보수할 수 있습니다.</p>
+<p><strong>하이브리드 앱의 단점</strong>은 네이티브 앱보다 UI를 구성하는 디자인 부분이 취약하며, 성능이 떨어진다는 것입니다. 또한, 웹 브라우저를 실행하여 콘텐츠를 제공하기에 인터넷 속도에 따라 구동 속도가 느려질 수도 있습니다.</p>
+<h3 id="1-1-하이브리드-APP의-장점"><a href="#1-1-하이브리드-APP의-장점" class="headerlink" title="1.1. 하이브리드 APP의 장점"></a>1.1. 하이브리드 APP의 장점</h3><p>■ 네이티브 API 와 브라우저 API 를 이용한 다양한 개발이 가능 합니다.<br>■ 웹개발 기술을 사용해 앱을 개발할 수 있습니다.<br>■ 한번의 개발로 다수의 플랫폼에 대응할 수 있습니다.</p>
+<h3 id="1-2-하이브리드-APP의-단점"><a href="#1-2-하이브리드-APP의-단점" class="headerlink" title="1.2.하이브리드 APP의 단점"></a>1.2.하이브리드 APP의 단점</h3><p>■ 웹뷰에서 앱을 실행하는 경우이기 때문에 앱의 성능이 곧 브라우저의 성능 입니다.<br>■ UI 프레임워크 도구를 사용하지 않는다면 개발자가 UI를 제작해야 합니다</p>
+<hr>
+
+<h3 id="모바일-웹-web-이란"><a href="#모바일-웹-web-이란" class="headerlink" title="모바일 웹 (web) 이란?"></a>모바일 웹 (web) 이란?</h3><p>모바일 웹은 모바일에서 PC용 사이트의 글자폰트와 이미지 , 터치 아이콘 , 플래시 등 데스크탑 브라우저에서 실행되는 기능을 모바일에 맞추어 표현한 사이트를 의미합니다. 쉽개말해 , PC용 홈페이지를 모바일 스크린의 크기에 맞춰 줄여 놓은 것이라고 생각하시면 됩니다.</p>
+<hr>
+
+<h2 id="2-웹-앱"><a href="#2-웹-앱" class="headerlink" title="2. 웹 앱"></a>2. 웹 앱</h2><p>웹앱은 모바일웹 과 네이티브앱을 결합한 형태로 모바일웹의 특징을 가지면서 네이티브앱의 장점을 갖고 있습니다. 모바일웹 보다는 조금 더<br>모바일에 최적화 된 앱을 의미 합니다. 웹앱도 모바일웹 처럼 일반적인 웹기술로 개발되고 모바일 브라우저에서 실행되지만 풀 브라우저 방식이 아닌 단일 페이지 방식으로 화면을 진화해 속도가 빠르다는 장점이 있습니다.</p>
+<p>모바일 웹 앱이란 PC나 스마트폰 등 단말기의 기종에 관계없이 모든 단말기에서 같은 콘텐츠를 볼 수 있도록 해주는 앱입니다.<br>운영체제(OS)와 직접 통신하는 네이티브 앱과 다르게 웹 앱은 브라우저 내에서 실행됩니다. 따라서 앱을 따로 다운로드하거나 업그레이드하지 않고, 항상 최신 버전을 유지할 수 있지요. 또한, OS별로 별도의 플랫폼이 필요하지 않고, HTML5와 같은 표준 웹 언어로 만들어지기 때문에 제작 비용도 저렴하고, 개발 기간도 비교적 짧은 편입니다.<br>웹 앱 방식은 상대적으로 개발 공수가 적게 들고, 업데이트가 쉽지만 기능상 제한이 많이 따릅니다. 웹 앱은 처음부터 디바이스에 적합한 형태로 만들어지는 것이 아니기 때문입니다. 따라서 네이티브 앱과 비교해 봤을 때, 느리기도 하고, 앱을 통해 기기 고유의 정보를 사용할 수도 없습니다.</p>
+<h3 id="2-1-모바일-웹앱의-장점"><a href="#2-1-모바일-웹앱의-장점" class="headerlink" title="2.1. 모바일 웹앱의 장점"></a>2.1. 모바일 웹앱의 장점</h3><p>■ 웹사이트를 보는 것이기 때문에 따로 설치할 필요가 없습니다.<br>■ 모든 기기와 브라우저에서 접근할 수 있습니다.<br>■ 별도 설치 및 승인과정이 필요치 않아 유지보수가 용이 합니다.</p>
+<h3 id="2-2-모바일-웹앱의-단점"><a href="#2-2-모바일-웹앱의-단점" class="headerlink" title="2.2. 모바일 웹앱의 단점"></a>2.2. 모바일 웹앱의 단점</h3><p>■ 플랫폼 API (카메라 등) 을 사용할 수 없고 오로지 , 브라우저 API만을 사용할 수 있습니다.<br>■ 친화적인 터치 앱을 개발하기가 약간 번거로운 점이 있습니다. (까다로움)<br>■ 네이티브 , 하이브리드 앱보다 실행이 까다롭습니다. (브라우저를 열고 검색해 들어가야 합니다.)</p>
+<hr>
+
+<h2 id="3-네이티브-앱"><a href="#3-네이티브-앱" class="headerlink" title="3. 네이티브 앱"></a>3. 네이티브 앱</h2><p>네이티브 앱은 우리가 흔히 말하는 ‘ 어플리케이션 ‘ 을 의미 합니다. 모바일 기기에 최적화 된 언어로 개발 된 앱으로 안드로이드 SDK를 이용해 Java (자바) 언어로 만드는 앱과 iOS 기반 SDK를 이용해 Swift (스위프트) 로 만드는 대부분의 앱이 여기에 속한다고 할 수 있습니다.</p>
+<p>네이티브 앱이란 모바일 기기에 직접 다운로드하여 사용하는 앱입니다. </p>
+<p>네이티브 앱이란 모바일 기기에 직접 다운로드하여 사용하는 앱입니다. 네이티브 앱은 사용자가 공용 앱스토어에서 직접 설치할 수도 있고, 모바일 공급업체에서 제공할 수도 있습니다.<br>네이티브 어플을 만들기 위해서는 개발자가 사람이 읽을 수 있는 형식으로 소스코드를 작성하고, 다양한 운영체제(OS: Operation System) 별로 선언 파일이나 이미지, 오디오 등의 리소스를 만들어야 합니다. 그다음, 모바일 운영체제(OS)에서 제공하는 툴을 활용하여 소스코드를 컴파일하고, 여러 실행 파일을 만들어야 하지요.<br>이처럼 네이티브 앱은 각기의 모바일 운영체제(OS)에서 제공하는 툴과 언어 등에 따라 기능들을 최대한 살리기 때문에, 높은 사양의 그래픽과 성능을 자랑하면서도 구동 속도가 빠른 편입니다. 뿐만 아니라 디바이스 전체에 액세스 권한을 가질 수 있어, 기기에 저장된 주소록, 캘린더 등의 고유 정보를 사용할 수도 있지요.<br>하지만 다른 방식들보다 높은 수준의 기술력이 필요하며, 각기의 모바일 운영체제(OS)별로 앱을 개발해야하기 때문에 개발 기간이나 비용이 많이 들 수 있습니다.</p>
+<h3 id="3-1-네이티브-앱의-장점"><a href="#3-1-네이티브-앱의-장점" class="headerlink" title="3.1. 네이티브 앱의  장점"></a>3.1. 네이티브 앱의  장점</h3><p>성능이 웹앱 , 하이브리드 앱에 비하여 가장 높습니다.<br>■ 네이티브 API를 호출하여 사용함으로 플랫폼과 밀착되어 있습니다.<br>■ 해당 언어에 익숙한 사용자라면 좀 더 쉽게 접근할 수 있습니다.</p>
+<h3 id="3-2-네이티브-앱의-단점"><a href="#3-2-네이티브-앱의-단점" class="headerlink" title="3.2. 네이티브 앱의 단점"></a>3.2. 네이티브 앱의 단점</h3><p>플랫폼에 한정적 입니다.<br>■ 해당 플랫폼에서 요구하는 언어에 제약적 입니다. 따라서 해당 언어와 플랫폼의 API를 다루는데 익숙해야 합니다.</p>
+]]></content>
+      <tags>
+        <tag>하이브리드 웹, 네이티브 웹, 웹 앱의 차이점에대해 알아보자</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</title>
+    <url>/2020/05/03/CSR%20SSR%20SPA%20/</url>
+    <content><![CDATA[<p><strong>1.CSR(클라이언트 사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943424/CSR.png" alt="CSR"></p>
+<p>-1.Server Sending Response to Browser<br>-2.Browser Downloads JS<br>-3.Browser executes React<br>-4.Page Now Viewable and Interatable</p>
+<p>서버에서 비어있는 html와  js파일들을 받아오고 , 데이터는 서비스에 필요한 리소스를 다운로드한후 브라우저에서 렌더링한다.그렇기 때문에 초기 View을 보기가지 SSR보다 시간이 더 걸린다. 하지만 사용자에게 보여진 view의 기능은 동시에 동작한다.</p>
+<p><strong>2.SSR(서버사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943426/SSR.png" alt="SSR"></p>
+<p>-1.Server Sending Ready tobe redered HTML Response to Browser<br>-2.Browser Renders the page,Now Viewable,andBrowser Downloads JS<br>-3.Browser execute React<br>-4.Page Now interatable</p>
+<p>서버에서 렌더링해 가져오기 때문에 ,첫 로딩 매우 짧다.<br>그러나 클라이언트가 js파일을 모두 다운로드하고 적용하기전가지는 각각의 기능은 동작하지않는다는 단점이 있다</p>
+<p><strong>3.SPA(Single page application)</strong></p>
+<p>서버로 부터 처음에만 페이지를 받아오고 이후에는 동적으로 페이지를 구성해서 새로운 페이지를 받아오지않는 웹 애플리케이션을 의미한다.<br> 페이지가 한번 로딩된 이후 데이터를 수정하거나 조회할때. 페이지가 새로고침이 되지않고 다른 페이지로 넘어가지 않습니다.</p>
+<p><strong>4.MPA(Multi Page Application)</strong></p>
+<p>서버로 부터 완전한 페이지를 받아오고 이후에 데이터를 수정하거나 조회할때 다른 완전한 페이지로 이동합니다.단 URL이 바뀔수있습니다.</p>
+]]></content>
+      <tags>
+        <tag>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>제어문</title>
+    <url>/2020/05/12/control-flow-statement-md/</url>
+    <content><![CDATA[<h1 id="1-블록문"><a href="#1-블록문" class="headerlink" title="1. 블록문"></a>1. 블록문</h1><p>블록문는 0개이 상의 문을 중괄호로 묶은것으로 콛블록 또는 블록이라고 부르기도 한다. 자바스크립트는 블ㄹ고문을 하나의 시랳아 단위로 취급한다. 블록문은 단독으로 사용할 수도 있으나 일반적으로 제어문이나 함수를 정의할때 상요하는 것이 일반적이다.<br>블록문이 사용되는 다양한 예제가 있다. 문의 끝에는 세미 콜론을 붙이는 것이 일반적이다. 하지만 블록 문은 언제나 문의 종료를 의미하는 자체 종결성을 갖기 때문에 블록문의 끝에는 세미콜론을 붙이지 않는다는 것에 주의하자.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//블록문</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">var</span> foo = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//제어문</span></span><br><span class="line"><span class="keyword">var</span> x =<span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span>(x&lt;<span class="number">10</span>)&#123;</span><br><span class="line">  x++</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//함수 선언문</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-조건문"><a href="#2-조건문" class="headerlink" title="2. 조건문"></a>2. 조건문</h1><p>조건문은 주어진 조건식의 평가 결과에 따라 코드블록의(블록문)의 실행을  결정한다. 조건식은 불리언 값으로 평가 될 수있는 표현식이다. 자바스크립트는 2가지의 조건문 if …else if 문과 switch문을 제공한다.</p>
+<h2 id="2-1-if-…-else-if-문"><a href="#2-1-if-…-else-if-문" class="headerlink" title="2.1. if … else if 문"></a>2.1. if … else if 문</h2><p>if .. else  문은 주언진 조건식(불리언 값으로 평가 될수 있는 표현식)의 평가 결과,즉 놀리적 참 또는 거짓에 따라 실행할 코드 블록을 결정한다. 조건식의 평가 결과가 참일 경우,if 문 다음의 코들 블록이 실행되고 거짓일 경우 else일경우 다음의 코드 블록이 실행된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(조건식)&#123;</span><br><span class="line">  <span class="comment">//조건식이  참이면 이 코드 블록이 실행된다.</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  <span class="comment">//조건식이 거짓이면 이 코드 블록리 실행된다.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>if의 조건식은 불리언 값으로 평가 되어야한다. 만약if문의 조건식이 불리언값이 아닌 다른 값으로 평가 되면 자바스크립트 엔진에 의해서 암묵적으로 데이터 타입이 불리언 값으로 강제로 변환이 되어 실행할 코드 블록을 결정한다.<br>조건식을 추가하여 조건에 따라 실행될 코드 블록을 늘리고 싶으면 else if문을 사용한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(조건식)&#123;</span><br><span class="line">  <span class="comment">//조건식1이 참이면 이 코드 블록을 실행</span></span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(조건식)&#123;</span><br><span class="line">  <span class="comment">//조건식2이 참이면 이 코드블록을 실행</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  <span class="comment">//조건식1과 조건식2가 모두 거짓이면 이 코들 블록을 실행</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> else if문과 else문은 옵션이다. 즉 사용 할 수도 있고 사용하지 않을 수도 있다. if문과 else문은 2번이상 사용할수 없지만 else if문은 2 이상 사용 할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> num =<span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> kind;</span><br><span class="line"><span class="comment">//if문</span></span><br><span class="line"><span class="keyword">if</span>(num &gt; <span class="number">0</span>)&#123;</span><br><span class="line">  kind =<span class="string">'양수'</span>;<span class="comment">//양수</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(kind);</span><br><span class="line"></span><br><span class="line"><span class="comment">//if else 문</span></span><br><span class="line"><span class="keyword">if</span>(num&gt;<span class="number">0</span>)&#123;</span><br><span class="line">  kind = <span class="string">'양수'</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  kind =<span class="string">'음수'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(kind<span class="comment">//양수</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//if else if문 </span></span><br><span class="line"><span class="keyword">if</span>(num &gt; <span class="number">0</span>)&#123;</span><br><span class="line">  kind =<span class="string">'양수'</span>;</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(num &lt;<span class="number">0</span>)&#123;</span><br><span class="line">  kind = <span class="string">'음수'</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  kind = <span class="string">'영'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(kind); <span class="comment">//양수</span></span><br></pre></td></tr></table></figure>
+
+<p>만약에 코드 블록의 문이 하나라면 중괄호를 생략 할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> num =<span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> kind;</span><br><span class="line"><span class="keyword">if</span>(num &gt; <span class="number">0</span> )kind = <span class="string">'양수'</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(num &lt; <span class="number">0</span>)kind = <span class="string">'음수'</span>;</span><br><span class="line"><span class="keyword">else</span> kind = <span class="string">'영'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(kind) <span class="comment">//양수</span></span><br></pre></td></tr></table></figure>
+
+<p>대부분의 if…else 문은 삼항 조건 연산자로 바꿔 사용가능하다. </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x =<span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> result;</span><br><span class="line"><span class="keyword">if</span>(x % <span class="number">2</span>)&#123;</span><br><span class="line">  result = <span class="string">'홀수'</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  result = <span class="string">'짝수'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">//짝수</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> result = (x % <span class="number">2</span> )? <span class="string">'홀수'</span>:<span class="string">'짝수'</span>;</span><br><span class="line">consoel.log(result) <span class="comment">//짝수</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> kind = num ? (n &gt;<span class="number">0</span>? <span class="string">'양수'</span>: <span class="string">'음수'</span>):<span class="string">'영'</span></span><br><span class="line"><span class="built_in">console</span>.log(num) <span class="comment">//양수</span></span><br></pre></td></tr></table></figure>
+
+<p>(n &gt;0? ‘양수’: ‘음수’)는 표현식이다. 즉 삼항 조건 연산자는 값으로 평가되는 표현식을 만든다. 하지만 if . else 문은 표현식이 아닌 문이다. 따라서 삼항 조건 연산자 표현식은 값 처럼 사용 할 수 있기 때문에 변수 할당 할 수 있다.하지만 if..else문은  값처럼 사용 할수 없다는 차이가 있다. 따라서 조건에 따라 단순히 값을 결정하는 경우 if ..else문 보다 삼항 조건 연산자를 사용하는 것이 가독성이 좋다. 하지만 조건에 따라 실행하여야 하는 내용이 복잡하여 여러 줄의 문이 필요하다면 if ..else문을 사용 하는 평이 가독성이 좋다.</p>
+<h2 id="2-2-switch문"><a href="#2-2-switch문" class="headerlink" title="2.2. switch문"></a>2.2. switch문</h2><p>switch문은 주어진 표현식을 형가하여 그 값과 일치하는 표현식을 갖는 case문으로 실행하는 순서를 이동 시킨다. case문은 상화을 의미하는 표현식을 지정하고 콜론으로 마친다. 그리고 그 뒤에 실행 할  문들을 위치 시킨다.<br>switch문의 표현식과 일치하는 표현식을 갖는 case문이 없다면 실행 순서는 default 문으로 이동한다. default 문은 옵션으로 사용 할 수 있고 않을 수도 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span>(표현식)&#123;</span><br><span class="line">  <span class="keyword">case</span> 표현식<span class="number">1</span>:</span><br><span class="line">    <span class="keyword">switch</span> 문의 표현식과 표현식<span class="number">1</span>이 일치하면 실행될 문;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> 표현식<span class="number">2</span>:</span><br><span class="line">    <span class="keyword">switch</span> 문의 표현식과 표현식<span class="number">2</span>이 일치하면 실행될 문;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">switch</span> 문의 표현식과 일치하는 표현식을 갖는 <span class="keyword">case</span>문이 없을 때 실핼될 문</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>else if 문의 조건식은 불리언 값으로 평가되어야 하지만 , switch 문의 표현식은 불리언 값 보다는 문자열 ,숫자 값인 경우가 많다. if ..else 문은 논리적 참,거짓으로 실행할 코들 블록을 결정한다.switch문은 논리적참,거짓 보다 다양한 상황에 따라 실행될 코드 블록을 결정 할 때가 많다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> month = <span class="number">11</span>;</span><br><span class="line"><span class="keyword">var</span> monthName;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> (month) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">1</span>: monthName = <span class="string">'January'</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">2</span>: monthName = <span class="string">'February'</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">3</span>: monthName = <span class="string">'March'</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">4</span>: monthName = <span class="string">'April'</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">5</span>: monthName = <span class="string">'May'</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">6</span>: monthName = <span class="string">'June'</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">7</span>: monthName = <span class="string">'July'</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">8</span>: monthName = <span class="string">'August'</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">9</span>: monthName = <span class="string">'September'</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">10</span>: monthName = <span class="string">'October'</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">11</span>: monthName = <span class="string">'November'</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">12</span>: monthName = <span class="string">'December'</span>;</span><br><span class="line">  <span class="keyword">default</span>: monthName = <span class="string">'Invalid month'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(monthName); <span class="comment">// November</span></span><br></pre></td></tr></table></figure>
+
+<p>그런데 위 예제를 실행해 보면은 ‘November’가 출력되지 않고 ‘Invalid  month’을 출력한다. 이는 switch문의 표현식의 평가 결과와 일치하는 case 문으로 실행한 것은 맞지만 ,문을 실행한 후  switch문을 탈출 하지않고 switch문이 끝날 때 까지 이후의 모든 case문과 default문을 실행 했기 때문이다. 이를 <strong><u>폴 스루</u></strong> 했다고 한다. 다시 말해 변수 monthName에  ‘November’가 할당된 후 switch 문을 탈출 하지않고 연이어 재할되기 때문이다. 때문에 ‘Invalid month’출력된다.<br>결과가 이러한 이유는 case문에 해당하는 문의 마지막 break문을 사용하지 않았기 때문이다. break 키워드로 구성된 break문은 코드 블록에서 탈출하는 역할을 한다. break문이 없다면 case문의 표현식과 일치하지 않더라도 실행 순서는 다음 case문으로 연이어 이동한다. 올바른 switch문의 예는 다음과 같다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> month = <span class="number">11</span>;</span><br><span class="line"><span class="keyword">var</span> monthName;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> (month) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">1</span>: monthName = <span class="string">'January'</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">2</span>: monthName = <span class="string">'February'</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">3</span>: monthName = <span class="string">'March'</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">4</span>: monthName = <span class="string">'April'</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">5</span>: monthName = <span class="string">'May'</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">6</span>: monthName = <span class="string">'June'</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">7</span>: monthName = <span class="string">'July'</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">8</span>: monthName = <span class="string">'August'</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">9</span>: monthName = <span class="string">'September'</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">10</span>: monthName = <span class="string">'October'</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">11</span>: monthName = <span class="string">'November'</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">12</span>: monthName = <span class="string">'December'</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>: monthName = <span class="string">'Invalid month'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(monthName); <span class="comment">// November</span></span><br></pre></td></tr></table></figure>
+
+<p>deafult 문에는 break문을 생략하는 것이 일반적이다. default문은 switch문의 가장 마지막에 위치하므로 defualt문의 실행은 따라서 별도의 break문이 필요 없다.</p>
+<p>break문을 생략한 폴 스루가 유용한 경우도 있다 폴스루는 여러개의 case문을 하나의 조건으로 사용할 수 있다. </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> year =<span class="number">2020</span>;</span><br><span class="line"><span class="keyword">var</span> month = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> days = <span class="number">12</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span>(month)&#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">1</span> :<span class="keyword">case</span> <span class="number">3</span>:<span class="keyword">case</span> <span class="number">5</span>: <span class="keyword">case</span> <span class="number">7</span>: <span class="keyword">case</span> <span class="number">10</span>: <span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">    days = <span class="number">31</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">4</span>:<span class="keyword">case</span> <span class="number">6</span>: <span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">    days = <span class="number">30</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    days =((year % <span class="number">4</span> ===<span class="number">0</span> &amp;&amp; year % <span class="number">100</span> !== <span class="number">0</span>) || (yaer % <span class="number">400</span> === <span class="number">0</span>))?<span class="number">29</span>:<span class="number">28</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Invalid month'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(days);</span><br></pre></td></tr></table></figure>
+
+<p>switch문은 case, default,break등 다양한 키워드를 사용해야하고 상화에 따라 실행될 코들 블록리 중괄호로 붂어 있지 안흥며 폴스루가 발생하는 등 문법도 복잡하다. 따라서 C언어를 기반으로 하는 프로그래밍 언어는 대부분 switch문을 지원하지만 피이썬과 같이 switch문을 지원 하지 않는 프로그래밍 언어도 존재한다.<br>만약 if ..else문으로 해결 할 수 있다면 switch문 보다 if ..else문을 사용했을때 가독성이 더 좋다. 하지만 if…else 문보다는 switch 문을 사용했을때 더 가독성이 좋다면 switch문을 사용하는 편이 좋다.</p>
+<h1 id="3-반복문"><a href="#3-반복문" class="headerlink" title="3. 반복문"></a>3. 반복문</h1><p>반복문은 주어진 조건식의 평가 결과가 참인 경우 코드블럭을 실행한다. 그 후 저건식을 다시 검사하여 여전히 참인 경우 코드블록을 다시 실행한다. 이는 조건식이 거짓일때 까지 반복한다.<br>자바스크립트는 3가지의 반복문 for문 while문 do while문 을 제공한다.<br>반복문을 대체 할 수 있는 다양한 기능 </p>
+<p>자바스크립트는 배열을 순회할때 사용하는 forEach 메소드,객체의 프로퍼티를 열거할 때 사용하는 for ..in문 Es6에서 새롭게 이터러블을  순회할 수 있는 for..of문과 같이 반복문을 대체 할 수 있는 다양한 기능을 제공한다.</p>
+<h2 id="3-1-for문"><a href="#3-1-for문" class="headerlink" title="3.1. for문"></a>3.1. for문</h2><p>for문은 조건식이 거짓으로 판별 될때 까지 코드 블록을 반복 실행한다. 가장 일반적으로 사용되는 for문의 형태는 다음과 같다. 변수 선언문의 변수이름은 반복을 의미하는 iteration의 i을 사용하는 것이 일반적이다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(변수 선언문 또는 할당문;조건식;증감식)&#123;</span><br><span class="line">  조건식이 참인 경우 반복 실행될 문;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>;i&lt;<span class="number">2</span>;i++)&#123;</span><br><span class="line">  consoel.log(i) <span class="comment">// 0 1 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://poiemaweb.com/assets/fs-images/8-1.png" alt="img"></p>
+<p>for문의 변수 선언문,조건식,증감식은 모구 옵션이다. 반드시 사용할 필요는 없다. 어떤식도 선언하지 않으면 무한 루프가 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//무한 루프</span></span><br><span class="line"><span class="keyword">for</span>(;;)&#123;...&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;=<span class="number">6</span>;i++)&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> j =<span class="number">0</span>;j&lt;=<span class="number">6</span>;j++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(i+j === <span class="number">6</span>)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">`[<span class="subst">$&#123;i&#125;</span>,<span class="subst">$&#123;j&#125;</span>]`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 결과</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">5</span>]</span><br><span class="line">[<span class="number">2</span>, <span class="number">4</span>]</span><br><span class="line">[<span class="number">3</span>, <span class="number">3</span>]</span><br><span class="line">[<span class="number">4</span>, <span class="number">2</span>]</span><br><span class="line">[<span class="number">5</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-2-while문"><a href="#3-2-while문" class="headerlink" title="3.2. while문"></a>3.2. while문</h2><p>while문은 주언진 조건식의 평가가 참이면 코드블록을 계속해서 반복 실행한다. 조건문의 평가 결과가 거짓이면 실행을 종료한다. 만약 조건식의 평가 결과가 블리언 값이 아니면 불리언 값으로 강제 변환되어 논리적 참 거짓을 구별하게 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//count가 3보다 작을 때 까지 코드블록을 계속 반복 실행한다.</span></span><br><span class="line"><span class="keyword">while</span>(count &lt;<span class="number">3</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(count); <span class="comment">// 0 1 2 </span></span><br><span class="line">  count++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>조건식의 평가 결과 가 언제나 참이면 무한 루프를 돈다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;...&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//무한 루프를 탈출하기 우해서 조건을 만들고 break을 사용하여 탈출한다.</span></span><br><span class="line"> <span class="keyword">var</span> count =<span class="number">0</span>;</span><br><span class="line"><span class="comment">//무한 루프</span></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  consoel.log(count);</span><br><span class="line">  count++;</span><br><span class="line">  <span class="comment">//count가 3이면 코들블록을 탈출한다.</span></span><br><span class="line">  <span class="keyword">if</span>(count ===<span class="number">3</span>)<span class="keyword">break</span>;</span><br><span class="line">  <span class="comment">//0 1 2 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-3-do-while문"><a href="#3-3-do-while문" class="headerlink" title="3.3. do while문"></a>3.3. do while문</h2><p>do…while문은 코드블록을 먼저 실행하고 조건식을 평가한다. 따라서 코드블록은 무조건 한번이상 실행된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> counr =<span class="number">0</span>;</span><br><span class="line"><span class="comment">//count가 3보다 작을때 까지 코드블록을 곗고 반복 실행;</span></span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(count);</span><br><span class="line">  count++;</span><br><span class="line">&#125;<span class="keyword">while</span>(count &lt;<span class="number">3</span>) <span class="comment">//0 1 2;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="4-break문"><a href="#4-break문" class="headerlink" title="4.  break문"></a>4.  break문</h1><p>switch문과 while문 네서 살펴 보았듯이 break문은 코드 블록을 탈출한다. 좀 더 정확히 말하면 코드블록을 탈출하는 것이 아니라 레이블문 ,반복문(for,for..in,for…of ,while문,do…while문) 또는 switch문의 코드블록을 탈출한다.<br>레이블 문,반복문,switch 문의 코드블록 이외에 break 문을 사용하면 SyntaxError문법에러가 발생한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="keyword">break</span>;<span class="comment">// Uncaught SyntaxError: Illegal break statement</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>레이블 문(label statement)이란 식별자가 붙은 문을 말한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//foo라는 레이블 식별자가 붙은 레이블 문</span></span><br><span class="line">foo: <span class="built_in">console</span>.log(<span class="string">'foo'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>레이블 문은 프로그램의 실행 순서를 제어하기 위햇 사용한다. 사실  switch 문의 case문과 default도 레이블 문이다. 레이블 문을 탈출하려면 break 문에 레이블 식별자를 지정한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//foo라는 식별자가 붙은 레이블 블록문</span></span><br><span class="line">foo:&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">break</span> foo;<span class="comment">//foo 레이블 블록문을 탈출한다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Done'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>중첩된 for 문의 내부 for문에서 break문을 실행하면 내부 for문을 탈출하여 외부 for문으로 진입한다. 이때 내부for문이 아닌 외부 for문을 탈출하려면 레이블문을 사용한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//outer라는 식별자가 붙은 레이블 for문</span></span><br><span class="line">outer:<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; <span class="number">3</span>;i++)&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>;j&lt;<span class="number">3</span>;j++)&#123;</span><br><span class="line">    <span class="comment">//i+j === 3 이면 outer라는 식별자가 붙은 레이블 for문을 탈출한다.</span></span><br><span class="line">    <span class="keyword">if</span>( i+j === <span class="number">3</span>) <span class="keyword">break</span> outer;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`inner [<span class="subst">$&#123;i&#125;</span>,<span class="subst">$&#123;j&#125;</span>]`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Done!'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>레이블 문은 중첩된 for문 외부로 탈출할 때 유용하지만 그 외의 경우 레이블 문은 일반적으로 권장 하지않는다. 레이블 문을 사용하면 프로그램의 흐름이 복잡해져서 가독성이 나빠지고 오류를 발생시킬 가능성이 높아지기 때문이다.</p>
+<p>break문은 레이블 문 뿐 만이 아니라 반복문,switch문에서도 사용 할 수 있다. 이 경우에는 break문에 레이블 식별자를 지정하지 않는다. break문은 반복문을 더 이상 진행하지 않아도 될때 불필요한 반복을 회피할 수 있어 유용하다.</p>
+<p>아래는 문자열에서 특정한 인덱스의 위치를 검색하는 예제이다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> string = <span class="string">'Hello world'</span>;</span><br><span class="line"><span class="keyword">var</span> search = <span class="string">'l'</span>;</span><br><span class="line"><span class="keyword">var</span> index ;</span><br><span class="line"><span class="comment">//문자열은 유사배열이므로 for문으로 순회할 수 있다.</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>;i &lt; string.length;i++)&#123;</span><br><span class="line">  <span class="comment">//문자열의 개별 문자가 'l'이면;</span></span><br><span class="line">  <span class="keyword">if</span>(string[i] === search)&#123;</span><br><span class="line">    index = i;</span><br><span class="line">    <span class="keyword">break</span>; <span class="comment">//반복문은 탈출한다.</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(index) <span class="comment">//2;</span></span><br><span class="line"></span><br><span class="line">consoel.log(string.indexOf(search)) <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="5-continue문"><a href="#5-continue문" class="headerlink" title="5. continue문"></a>5. continue문</h1><p>continue문은 반복문의 코드블록 실행 을 현 시점에서 중담하고 반복문의 증감식으로 이동한다. break문처럼 반복문을 탈출하지않는다.<br>문자열에서 특정 문자의 개수를 카운트하는 예제이다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> string = <span class="string">'Hello world'</span>;</span><br><span class="line"><span class="keyword">var</span> search =<span class="string">'l'</span>;</span><br><span class="line"><span class="keyword">var</span> index ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>;i&lt;string.length;i++)&#123;</span><br><span class="line">  <span class="keyword">if</span>(string [i] !== serach) <span class="keyword">continue</span>;</span><br><span class="line">  <span class="comment">//string[i] === 'l'일때에만 아래의 count++가 실행된다.</span></span><br><span class="line">  <span class="comment">//string[i] !== 'l'일 때에는 for문의 조건의 증감식으로 이동한다.</span></span><br><span class="line">  count++</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(count) <span class="comment">//3;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> regexp =<span class="keyword">new</span> <span class="built_in">RegExp</span>(search,<span class="string">'g'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(string.match(regexp).length); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>;i&lt;string.length;i++)&#123;</span><br><span class="line">  <span class="keyword">if</span>(string[i] === search)&#123;</span><br><span class="line">    count++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>위와 같이 if문 내에서 실행해야 할 코드가 한 줄이라면 continue문을 사용했을때 보다 간편하며 가독성이 좋다. 하지만 if문 내에서 실행할 코드가 길다면 들여쓰기가 한 단계 더 깊어지므로 continue 문을 사용하는 것이 가독성이 더 좋다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// continue 문을 사용하지않으면 if문 내에 코드를 작성해야한다.</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>;i&lt;string.length;i++)&#123;</span><br><span class="line">  <span class="comment">//'l'이면 카운트를 증가 시킨다.</span></span><br><span class="line">  <span class="keyword">if</span>(string[i] === search)&#123;</span><br><span class="line">    count++</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//continue 문을 사용하면 id문 밖에 코드를 작성할수있다.</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>;i&lt;string.length;i++)&#123;</span><br><span class="line">  <span class="comment">//'l'이 아니면 카운트를 증가 시키지 않는다.</span></span><br><span class="line">  <span class="keyword">if</span>( string[i] !== search) <span class="keyword">continue</span>;</span><br><span class="line">  count++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>제어문에 대해</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>IR 기법</title>
     <url>/2019/09/17/IR%EA%B8%B0%EB%B2%95/</url>
     <content><![CDATA[<p>홈페이지를 만들때 이미지를 사용할 경우 img태그를 사용해 alt로 이미를 부여 합니다.</p>
@@ -152,24 +265,6 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>IR기법 활용에 대해</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</title>
-    <url>/2020/05/03/CSR%20SSR%20SPA%20/</url>
-    <content><![CDATA[<p><strong>1.CSR(클라이언트 사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943424/CSR.png" alt="CSR"></p>
-<p>-1.Server Sending Response to Browser<br>-2.Browser Downloads JS<br>-3.Browser executes React<br>-4.Page Now Viewable and Interatable</p>
-<p>서버에서 비어있는 html와  js파일들을 받아오고 , 데이터는 서비스에 필요한 리소스를 다운로드한후 브라우저에서 렌더링한다.그렇기 때문에 초기 View을 보기가지 SSR보다 시간이 더 걸린다. 하지만 사용자에게 보여진 view의 기능은 동시에 동작한다.</p>
-<p><strong>2.SSR(서버사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943426/SSR.png" alt="SSR"></p>
-<p>-1.Server Sending Ready tobe redered HTML Response to Browser<br>-2.Browser Renders the page,Now Viewable,andBrowser Downloads JS<br>-3.Browser execute React<br>-4.Page Now interatable</p>
-<p>서버에서 렌더링해 가져오기 때문에 ,첫 로딩 매우 짧다.<br>그러나 클라이언트가 js파일을 모두 다운로드하고 적용하기전가지는 각각의 기능은 동작하지않는다는 단점이 있다</p>
-<p><strong>3.SPA(Single page application)</strong></p>
-<p>서버로 부터 처음에만 페이지를 받아오고 이후에는 동적으로 페이지를 구성해서 새로운 페이지를 받아오지않는 웹 애플리케이션을 의미한다.<br> 페이지가 한번 로딩된 이후 데이터를 수정하거나 조회할때. 페이지가 새로고침이 되지않고 다른 페이지로 넘어가지 않습니다.</p>
-<p><strong>4.MPA(Multi Page Application)</strong></p>
-<p>서버로 부터 완전한 페이지를 받아오고 이후에 데이터를 수정하거나 조회할때 다른 완전한 페이지로 이동합니다.단 URL이 바뀔수있습니다.</p>
-]]></content>
-      <tags>
-        <tag>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</tag>
       </tags>
   </entry>
   <entry>
@@ -273,6 +368,394 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>자바스크립트의 개발환경</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Symbol 타입</title>
+    <url>/2020/05/06/symbol-md/</url>
+    <content><![CDATA[<h1 id="1-Symbol-이란"><a href="#1-Symbol-이란" class="headerlink" title="1.Symbol 이란?"></a>1.Symbol 이란?</h1><p>1997년 자바스크립트의 ECAMScript로 처음 표준화된 이래로 자바스크립트에는 6개의 타입 즉 String,Number,boolean,undefined,null,Object가 있었다. </p>
+<p>심볼은(symbol)은 es6에서 새롭게 추가된 7번째 타입으로 변경이 불가능한 원시타입이다. <strong>다른 값과 중복되지 않는 유일무이한 값이다.</strong> 따라서 주로 이름의 충돌 위험이 없는 유일한 프로퍼티 키를 만들기 위해 사용된다.</p>
+<p>객체의 프로퍼티 키로 사용할 수 있는 값은 빈 문자열을 포함한 모든 문자열 또는 심볼값이다.</p>
+<h1 id="2-Symbol의-생성"><a href="#2-Symbol의-생성" class="headerlink" title="2.Symbol의 생성"></a>2.Symbol의 생성</h1><p>##2.1. Symbol 함수</p>
+<p>심볼 값은 Symbol 함수를 호출하여 생성한다. 다른 원시 값은, 즉 문자열,숫자,불리언 ,undefined,null은 타입의 값은 리터럴 표기법을 통해 값을 생성할 수 있지만 심볼값은 심볼을 함수를 호출해야 생성해야한다. 이<u>때 생성된 심볼 값은 노출 되지 않으며 다른 값과 절대 중복 되지 않는 유일무이한 값이다.</u></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Symbol 함수를 호출하여 유일무이한 심볼값을 생성한다.</span></span><br><span class="line"><span class="keyword">const</span> mySymbol = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//심볼 값은 노출되지 않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol) <span class="comment">// Symbol();</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> mySymbol) <span class="comment">//symbol</span></span><br></pre></td></tr></table></figure>
+
+<p> 언뜻 보면 생성자 함수로 객체를 생성하는 것 처럼 보이지만 Symbol함수는 String, number, Boolean 생성자 함수와는 달리 new 연산자를 사용하지 않는다. new연산자와 함께 생성자 함수 또는 클래스를 호출하면 객체 (인스턴스)가 생성되지만 심볼 값은 변경이 불가능한 원시 값 이다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Symbol</span>();  <span class="comment">//TypeError: Symbol is not a constructor</span></span><br></pre></td></tr></table></figure>
+
+<p>Symbol 함수에는 선택적으로 문자열을 인수로 전달 할 수 있다. 이 문자열은 생성된 심볼 값에 대한 설명으로 디버깅 용도로만 사용되며 심볼 값 생성에 어떠한 영향을 주지 않는다. 즉 심볼 값에 대한 설명이 같더라도 생성되 값은 <u>유일무이한 값이다.</u></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//심볼 값에 대한 설명이 같더라도 유일무이한 심볼 값을 생성한다.</span></span><br><span class="line"><span class="keyword">const</span> mySymbol1 = <span class="built_in">Symbol</span>(<span class="string">'mySymbol'</span>);</span><br><span class="line"><span class="keyword">const</span> mySymbol2 = <span class="built_in">Symbol</span>(<span class="string">'mySymbol'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol1 === mySymbol2); <span class="comment">//false;</span></span><br></pre></td></tr></table></figure>
+
+<p>심볼 값도 문자열,숫자,불리언과 같이 객체처럼 접근하면 암묵적으로 래퍼 객체를 생성한다. 아래 예제는 description  프로퍼티와 toString  메소드는 Symbol.prototype의 프로퍼티 이다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 심볼도 래퍼 객체를 생성한다.</span></span><br><span class="line"><span class="keyword">const</span> mySymbol = <span class="built_in">Symbol</span>(<span class="string">'mySymbol'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol.description) <span class="comment">//mySymbol</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol.toString()) <span class="comment">//Symbol(mySymbol)</span></span><br></pre></td></tr></table></figure>
+
+<u>
+
+<p><strong>심볼 값은 암묵적으로 문자열이나 숫자 타입으로 변화되지 않는다.</strong></p></u><p></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mySymbol = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//심볼 값은 암묵적인 타입 변환이 되지않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol +<span class="string">''</span>) <span class="comment">// TypeError: Cannot convert a Symbol value to a string</span></span><br><span class="line"><span class="built_in">console</span>.log(+mySymbol);  <span class="comment">/// TypeError: Cannot convert a Symbol value to a string</span></span><br></pre></td></tr></table></figure>
+
+<p>단 불리언 타입으로는 암묵적으로 타입 변환이 된다. 이를 통해 if문 등에서 존재 확인이 가능하다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mySymbol = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//불리언 타입으로는 암묵적으로 타입 변환이 된다.</span></span><br><span class="line"><span class="built_in">console</span>.log(!!mySymbol)<span class="comment">//true;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//if문 등에서 존재 확인을 위해 사용할 수 있다.</span></span><br><span class="line"><span class="keyword">if</span>(mysymbol)<span class="built_in">console</span>.log(<span class="string">'mysymbol is not empty'</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-Symbol-for-메소드"><a href="#2-2-Symbol-for-메소드" class="headerlink" title="2.2. Symbol.for 메소드"></a>2.2. Symbol.for 메소드</h2><p>Symbol.for 메소드는 인수로 전달받은 문자열을 키로 사용히여 키와 심볼의 값의 쌍들이 저장되어 있는 전역 심볼 레지스트리에 해당하는 키와 일치하는 심볼값을 검색한다.</p>
+<li>검색에 성공하면 새로운 심볼 값을 생성하지않고 검색된 심볼 값을 반환한다.</li>
+
+<li>검색 실패하면 새로운 심볼값을 생성하여 Symbol.for 메소드의 인수로 전달되는 전역 Symbol 레지스트리에 저장한 후, 생성된 심볼을 반환한다.</li>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//전역 심볼 레지스트리에 mySymbol이라는 키로 저장된 심볼 값이 없으면 새로운 심볼 값을 생성한다.</span></span><br><span class="line"><span class="keyword">const</span> s1 = <span class="built_in">Symbol</span>.for(<span class="string">'mySymbol'</span>);</span><br><span class="line"><span class="comment">//전역 심볼 레지스트리에 mySymbol이라는 키로 저장된 심볼 값이 있으면 해당 심볼 값을 반환</span></span><br><span class="line"><span class="keyword">const</span> s2 = <span class="built_in">Symbol</span>.for(<span class="string">''</span>mySymbol);</span><br><span class="line"><span class="built_in">console</span>.log(s1 === s2) <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>Symbol함수는 호출될때 마다 유일무이한 심볼 값을 생성한다. 이때 자바 스크립트 엔진이 관리하는 심볼 값 저장소인 전역 심볼 레지스트리에서 심볼 값을 검색 할 수 있는 키를 지정 할 수 없으므로 전역 심볼 레지스트리에 등록되어 관리되지않는다.<br>하지만 Symbol.for메소드를 사용하면 애플리케이션 전역에서 중복되지않는 유일무이한 상수인 심볼 값을  단 하나만 생성하여 전역 심볼의 레지스크리를 통해 공유 할 수 있다.<br>Symbol.keyFor 메소드를 사용하면 전역 심볼 레지스트리에 저장된 심볼 값의 키를 추출할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//전역 심볼을 레지슽크리에 mySymbol이라는 키로 심볼 값이 없으면 새로운 심볼 값을 생성</span></span><br><span class="line"><span class="keyword">const</span> s = <span class="built_in">Symbol</span>.for(<span class="string">'mySymbol'</span>);</span><br><span class="line"><span class="comment">//전역 심볼 레지스트리에 저장된 심볼 값의 키를 추출</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Symbol</span>.keyFor(s)) <span class="comment">//mySymbol</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-Symbol과-상수"><a href="#3-Symbol과-상수" class="headerlink" title="3. Symbol과 상수"></a>3. Symbol과 상수</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//위,아래,오른쪽,왼쪽을 나타내는 상수</span></span><br><span class="line"><span class="comment">//값 1,2,3,4에는 특별한 의미가 없고 상수 이름에 의미가 있다.</span></span><br><span class="line"><span class="keyword">const</span> Direction =&#123;</span><br><span class="line">  UP:<span class="number">1</span>,</span><br><span class="line">  DOWN:<span class="number">2</span>,</span><br><span class="line">  LEFT:<span class="number">3</span>,</span><br><span class="line">  RIGHT:<span class="number">4</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//변숭에 상수를 할당</span></span><br><span class="line"><span class="keyword">const</span> myDirection = Direction.UP;</span><br><span class="line"><span class="keyword">if</span>(myDirection === Diretion.UP)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'You are going up'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>위 예제와 같이 값에는 특별한 의미가 없고 상수이름 자체에 의미가 있는 경우가 있다. 이때 문제는 상수 1,2,3,4가 다른 변수 값과 중복 될 수 있다는 것이다. 이러한 경우 중복될 가능성이 있는 무의미한 상수 대신 중복될 가능성이 없는 유일 무이한 심볼값을 사용 할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//위,알래,오른쪽,왼쪽을 나태내는 상수.</span></span><br><span class="line"><span class="comment">//중복될 기능성이 없는 심볼 값으로 상수값을 생성</span></span><br><span class="line"><span class="keyword">const</span> Direction =&#123;</span><br><span class="line">  UP:<span class="built_in">Symbol</span>(<span class="string">'up'</span>),</span><br><span class="line">  DOWN:<span class="built_in">Symbol</span>(<span class="string">'down'</span>),</span><br><span class="line">  LEFT:<span class="built_in">Symbol</span>(<span class="string">'left'</span>),</span><br><span class="line">  RIGHT:<span class="built_in">Symbol</span>(<span class="string">'right'</span>)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//변수에 상수를 할당</span></span><br><span class="line"><span class="keyword">const</span> Direction = Direction.UP;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(myDirection === Direction.UP)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'you are going up'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>enum</strong><br><strong>enum은</strong> 명명된 숫자 상수의 집합으로 열거형이라고 부른다. 자바스크립트는 enum을 지원하지는 않지만 C,Java,Python 등 많은 프로그래밍 언어와 자바 스크립트으 Superset(상위 확장)인 TYpeScript에서  enum을 지원하고 있다. 자바스크립트세서 enum을 흉내내어 사용하려면 아래와 같이 객체의 변경을 방지 하기 위해 객체를 동결  하는 Object.freeze 메소드와 심볼 값을 사용한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Javascript enum</span></span><br><span class="line"><span class="comment">//Direction 객체는 불변객체이며 프로퍼티는 유일무이한 값이다.</span></span><br><span class="line"><span class="keyword">const</span> Direction = <span class="built_in">Object</span>.freeze(&#123;</span><br><span class="line">   UP: <span class="built_in">Symbol</span>(<span class="string">'up'</span>),</span><br><span class="line">   DOWN: <span class="built_in">Symbol</span>(<span class="string">'down'</span>),</span><br><span class="line">   LEFT: <span class="built_in">Symbol</span>(<span class="string">'left'</span>),</span><br><span class="line">   RIGHT: <span class="built_in">Symbol</span>(<span class="string">'right'</span>)</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//변수에 상수를 할당</span></span><br><span class="line"><span class="keyword">const</span> myDirection = Diection.UP;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(myDirection === Direction.UP)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'You are going up'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-Symbol과-프로퍼티-키"><a href="#4-Symbol과-프로퍼티-키" class="headerlink" title="4. Symbol과 프로퍼티 키"></a>4. Symbol과 프로퍼티 키</h1><p>객체의 프로퍼티키는 빈 문자열을 포함하는 모든 문자열 또는 심볼 값으로 만들수 있느며 동적으로 생성 할 수 도 있다.</p>
+<p>심볼 값으로 프로퍼티 키를 동적으로 생성하여 만들어 보자. 심볼 값을 프로퍼티 키로 사용하려면 프로퍼티 키를 사용할 심볼 값에 대괄호를 사용해야한다. 프로퍼티에 접근 할때도 마찬가지로 대괄호를 사용해야한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj=&#123;</span><br><span class="line">  <span class="comment">//심볼 값으로 프로퍼티 키를 동적 생성</span></span><br><span class="line">  [<span class="built_in">Symbol</span>.for(<span class="string">'mySymbol'</span>)]:<span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj[<span class="built_in">Symbol</span>.for(<span class="string">'mySymbol'</span>)]) <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>심볼 값은 유일무이한 값이므로 심볼 값으로 프로퍼티 키를 만들면 다른 프로퍼티 키와 절대 충돌하지않는다.</strong> 기존 프로퍼티 키와 충돌하지않는 것은 물론,미래에 추가될 어떤 프로퍼티 키와도 충돌할 위험이 없다.</p>
+<h1 id="5-Symbol과-프로퍼티-은닉"><a href="#5-Symbol과-프로퍼티-은닉" class="headerlink" title="5. Symbol과 프로퍼티 은닉"></a>5. Symbol과 프로퍼티 은닉</h1><p>심볼 값으로 동적으로 프로퍼티 키로 만든 프로퍼티는 for ..in 문이나 Object.keys,Object.getOwnPropertyNames 메소드로 찾을 수 없다. 이처럼 심볼 값을 동적으로 생성한  프로퍼티 키로 프로퍼티를 만들면 프로퍼티를 숨길 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj=&#123;</span><br><span class="line">  <span class="comment">//심볼 값으로 프로퍼티 키를 동적 생성</span></span><br><span class="line">  [<span class="built_in">Symbol</span>(<span class="string">'mySymbol'</span>)]:<span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key) <span class="comment">//아무것도 출력되지않는다.</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(ObJect.keys(obj)) <span class="comment">//[];</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyNames(obj)); <span class="comment">//[]</span></span><br></pre></td></tr></table></figure>
+
+<p>하지만 프로퍼티를 완전히 숨길 수 있는 것은 아니다. Es6에서 도입된  Object.getOwnPropertySymbols 메소드를 사용하면 심볼값으로 동적 생성한 프로퍼티 키로 만든 프로퍼티를 찾을 수있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj =&#123;</span><br><span class="line">  <span class="comment">//심볼 값으로 프로퍼티 키 동적 생성</span></span><br><span class="line">  [<span class="built_in">Symbol</span>(<span class="string">'mySymbol'</span>)]:<span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertySymbols(obj)) <span class="comment">//[Symbol(mySymbol)];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//심볼 값을 찾을 수 있다.</span></span><br><span class="line"><span class="keyword">const</span> symbolKey1 = <span class="built_in">Object</span>.getOwnpropertySymbols(obj)[<span class="number">0</span>];</span><br><span class="line"><span class="built_in">console</span>.log(obj[symbolKey1]); <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="6-Symbol-과-표준-빌트인-객체-확장"><a href="#6-Symbol-과-표준-빌트인-객체-확장" class="headerlink" title="6. Symbol 과 표준 빌트인 객체 확장"></a>6. Symbol 과 표준 빌트인 객체 확장</h1><p>일반적으로 표준 빌트인 객체에 사용자 정의 메소드를 직접 추가하여 확장하는 것은 권장 하지않는다  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 표준 빌트인 객체를 확장하는 것은 권장하지않는다.</span></span><br><span class="line"><span class="comment">//즉 ,Array.prototype은 읽기 전용으로 사용하는 것의 좋다.</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> <span class="keyword">return</span> <span class="keyword">this</span>.reduce(<span class="function">(<span class="params">p,c</span>)=&gt;</span>p+c,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>,<span class="number">2</span>].sum()); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+
+<p>그 이유는 개발자가 직접 추가한 메소드는 미래에 표준 사양으로 추가될 메소드가 이름이 중복 될 수있기 때문이다. 예를 들어 Array.prototype.find메소드가 Es6의 새롭게 도입되기 이전에 Array.prototype에 find을 집겁 추가 했다면 새롭게 도입된Es6.find 메소드와 이름이 중복되어 Es6의 Array.prototype.find 와 이름이 중복 되어 Es6의 Array.prototype.find 메소드를 이전에 추가했던 사용자 정의 find 메서드가 덮어 쓴다. 표준 빌트인 메소드를 사용자 정의 메소드가 된다면 문제가 된다. </p>
+<p>하지만 중복될 가능성이 없는 심볼 값으로 프로퍼티 키를 생성하여 표준 빌트린 객체를 확장하면 표준 빌트인 객체의 기존 프로퍼티 키와 충돌 되지 않는  것은 물론 , 버전이 올라감에 따라 추가 될지도 모르는 어떤 프로퍼티 키와도 충돌 될 위험없이 안전하게 표준 빌트인 객체를 확장 할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//심볼 값으로 프로퍼티 키를 동적 생성하면 다른 프로퍼티 키와 절대 충돌하지않는다.</span></span><br><span class="line"><span class="built_in">Array</span>.prototype[<span class="built_in">Symbol</span>.for(<span class="string">'sum'</span>)] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.reduce(<span class="function">(<span class="params">p,c</span>)=&gt;</span>p+c,<span class="number">0</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>,<span class="number">2</span>][<span class="built_in">Symbol</span>.for(<span class="string">'sum'</span>)]()); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="7-Well-known-Symbol"><a href="#7-Well-known-Symbol" class="headerlink" title="7. Well known Symbol"></a>7. Well known Symbol</h1><p>자바스크립트가 기본 제공하는 빌트인 심볼 값이 있다. 빌트인 심볼 값은 Symbol 함수의 프로퍼티에 할당되어있다. 브라우저 콘솔에서 Symbol 함수를 참조하여 보자.<br> <img src="https://poiemaweb.com/assets/fs-images/33-1.png" alt="33-1"></p>
+<p>자바스크립트가 기본 제공하는 빌트인 심볼 값을 Well-Known-Symbol이라 부른다. Well-Known-Symbol은 자바스크립트 엔진의 내부 알고리즘에 사용된다.</p>
+<p>예를 들어 배열, String객체, arguments 객체와 같이 for..of 문으로 순회가 가능한 빌트인 이터러블은 Well-Known-Symbol인 Symbol.iterator를 키로 갖는 메소드를 가지며, Symbol.iterator메소드를 호출하면 이터레이터를 반환하도록 ECAMAScript 사양에 규정되어 있다. 빌트인 이터러블은 이 규정을 준수하고 있다.</p>
+<p>만약에 빌트인 이터러블이 아닌 일반객체를 이터러블 처럼 동작하도록 구현하고 싶다면 이 규정(이터레이션 프로토콜)을 따르면 된다. 즉 ECMAScript 사양에 규정 되어 있는 대로  Well-Known-Symbol인 Symbol.iterator을 키로  깆는 메소드를 객체에 추가하고 이터레이터를 반환하도록 구현하면 그 객체는 이터러블이 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1 - 5 사이의 정수로 이루어진 이터러블</span></span><br><span class="line"><span class="keyword">const</span> iterable =&#123;</span><br><span class="line">  <span class="comment">//Symbol.iterator 메소드를 구형하여 이터러블 프로토콜을 준수</span></span><br><span class="line">  [<span class="built_in">Symbol</span>.iterator]()&#123;</span><br><span class="line">    <span class="keyword">let</span> cur =<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">const</span> max = <span class="number">5</span>;</span><br><span class="line">    <span class="comment">//Symbol.iterator 메소드는 next메소드를 소유한 이터레이터를 반환</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      next();</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">      value:cur++,</span><br><span class="line">      done:cur&gt;max+<span class="number">1</span></span><br><span class="line">    	&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> num <span class="keyword">of</span> iterable)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(num); <span class="comment">//1 2 3 4 5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>빌트인 이터러블</strong><br>이터러블은 for…of문으로 순회할 수 있고 스프레드 문법의 피연산자가 될 수 도 있는 객체를 말한다. 자바스크립트가 기본 제공하는 빌트인 이터러블은 아래와 같다.</p>
+<table>
+<thead>
+<tr>
+<th align="center">빌트인 이터러블</th>
+<th align="center">프로퍼티 키가 Symbol.iterator인 메소드</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Array</td>
+<td align="center">Array.prototype[Symbol.iterator]</td>
+</tr>
+<tr>
+<td align="center">String</td>
+<td align="center">String.prototype[Symbol.iterator]</td>
+</tr>
+<tr>
+<td align="center">Map</td>
+<td align="center">Map.prototype[Symbol.iterator]</td>
+</tr>
+<tr>
+<td align="center">Set</td>
+<td align="center">Set.prototype[Symbol.iterator]</td>
+</tr>
+<tr>
+<td align="center">TypedArray</td>
+<td align="center">TypedArray.prototype[Symbol.iterator]</td>
+</tr>
+<tr>
+<td align="center">arguments</td>
+<td align="center">arguments[Symbol.iterator]</td>
+</tr>
+<tr>
+<td align="center">DOM 컬렉션</td>
+<td align="center">NodeList.prototype[Symbol.iterator], HTMLCollection.prototype[Symbol.iterator]</td>
+</tr>
+</tbody></table>
+<p>이때 일반 객체에 추가해야하는 메소드의 키 Symbol.iterator은 기존 프로퍼티 키 또는 미래에 추가될 프로퍼티 키와 절대로 중복되지 않을 것이다.</p>
+<p>이처럼 심볼은 중복되지 않는 상수값을 생성하는 것은 물론 기존에 작성된 코드에 영향을 주지않고 새로운 프로퍼티를 추가하기 위해 ,즉 하위 호환성을 보장하기 위해 도입되었다.</p>
+]]></content>
+      <tags>
+        <tag>Symbol 타입에 대해</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>메모리,참조,키워드,변수,선언,할당,재할당,호이스팅</title>
+    <url>/2019/10/04/%EB%A9%94%EB%AA%A8%EB%A6%AC%EC%B0%B8%EC%A1%B0%ED%82%A4%EC%9B%8C%EB%93%9C/</url>
+    <content><![CDATA[<p><strong>변수</strong>-값을 다룬다.(데이터를 다룬다.)</p>
+<p><strong>참조</strong>-변수에 저장된 값을 읽어들이는것을 참조라한다.</p>
+<p>함수/객체 (변수를 모르면 못함)</p>
+<p>10(리터럴)+(연산자)20(리터럴):좌변과 우변의 값 +연산자를 메모리에 저장한다.</p>
+<p><strong>메모리셀</strong>:1byte짜리 방이 존재한다.1byte단위로 저장<br><strong>메모리주소</strong>:각각 셀마다 주소가있다.<br>인간에게 유의미한 데이터는 최소 1byte이상</p>
+<p>숫자를 기억하여 메모리에 저장한다. 연산을 cpu에서 한다. cpu에서 연산 한 후 이를 메모리에 저장을 한다.<br>메모리에 저장되는 모든 값은 2진수이다.</p>
+<p><strong>1+2 안 쓴다표현식(unuse-expression)? 쓴다는 의미?</strong> 메모리 어딘가에 저장함.(10과20) 30이라는 값을 더한이유는 이 값을 ‘사용하겠다’는 의미이다.곧 재사용을 할 수없다는 것이다.  값이 메모리에 저장이 됐지만 주소를 알아야 접근할 수있는데,<br>위치 안알려줌(잘못 저장하면 문제가 생김)/알려준다고해도 문제가 됨.(같은 곳에 저장될 보장이없다.임의의 공간에 저장이 되기때문이다.) 저장된 데이터를 재사용하기 위해서 프로그래밍 언어는 변수를 제공한다.</p>
+<p>따라서 변수는 데이터가 저장되는 곳의 메모리 주소를 기억한다.(반드시 변수에는 하나의 값만 저장할 수 있다.)</p>
+<p><strong>변수란</strong> 하나의 값을 저장할 수 있는 메모리공간에 붙인 이름 또는 메모리공간 자체를 말한다.</p>
+<p><strong>여기서 값이란(하나의값)?</strong> 메모리에 들어가는 대상.컴퓨터가 인식할 수있는 값의 종류. 7가지 (숫자 문자열 불리언 undefined null symbol 객체-값의 유형)</p>
+<p>자료구조-데이터 구조(여러 개의 값이 들어있는,연관된 데이터의 그룹) ex)객체,배열</p>
+<hr>
+<p>자바스크립트 엔진은 변수이름 result (식별자-고유한 이름,일종의 카드 키)을 안다.<br>키워드-명령어(뒤에 값을 준다.) 자바스크립트에게 내리는 명령<br>변수에 저장된 값을 읽어들이는 것을 참조라한다.</p>
+<p><strong>변수의 이름</strong>-&gt;할당값/값을 의미해야함<br>변수의 이름은 저장된 값의 의미를 이해 할 수있는 이름은 가독성을 높여주는 부수효과 .변수이름을 신중하게 정해야한다.</p>
+<p>var result=10+20; 각 값10,20 메모리에 저장하고 30이라는 결과를 가져옴(평가)<br>10,20이라는 값은 필요없는 값-가비지컬렉터에의해 쓰지않는 값이기 때문에 다른값이 들어갈수있게 해준다. 가비지 ㅌ컬렉터는 값을 지우는 것이아니다.</p>
+<p><strong>var(키워드) result(변수이름/식별자)=10+20(표현식);</strong><br><strong>표현식을 변수에 할당(assign,저장,대입)</strong></p>
+<p>code-runner(dom api가 없으면 사용해도 괜찮다.)<br>quokka(command shift p);</p>
+<hr>
+<p><strong>식별자(변수이름)</strong> -메모리에 있는 값을 구별해서 끄집어낼 수  있는 값./식별자는 어떤 값을 구별하여 식별해낼 수있는 고유한 이름</p>
+<p><strong>함수는값이다</strong>.함수덩어리 메모리에 그대로 들어감ex)foo();</p>
+<p>클래스-객체를 만들어냄 ex)class Bar(){} new Bar();<br>식별자는 메모리 주소를 알고 있다.<br>변수,함수,클래스 네이밍있다.</p>
+<p><strong>변수선언</strong>-변수를 생성한다.<br>변수란 컴퓨터에서 메모리와 관련있다.</p>
+<p><strong>변수선언</strong>-변수생성한다(변수이음,메모리공간-매핑된 상황) 자바스크립트 엔진에 변수이름 등록 ,값 저장을 위한 메모리 공간 확보위함</p>
+<p>변수선언 var result 변수이름을 자바스크립크 엔진에 등록해 알린다.</p>
+<p><strong>변수의 이름은 어디에 저장이 되는 가?</strong>  변수이름을 비롯한 모든 식별자는 실행 컨텍스트에 등록이된다. 또한 자바 스크립트 엔진은 실행 컨텍스트를 통해서 식별자와 스코프를 관리한다. 변수이름과  변수값은 실행 컨텍스트내의 key와  value형식으로 등록되어 관리된다.<br>변수 선언 키워드 사용(var,let,const)</p>
+<p>var 키워드를 사용한 변수선언은 선언단계와 초기화 단계가 동시에 일어난다.</p>
+<p><strong>변수선언(메모리 공간을 확보하기 위해)=할당1.논리적 선이된후2.할당</strong></p>
+<p>기본적 변수는 선언을 하고 할당해야함.</p>
+<p>변수를 선언만하고,할당을 하지 않으면 -undefined값이나옴. 값이 정의되지않는다. 변수는 암묵적으로 undefined값을 가진다 .자바스크립트엔진에 부여. 알아서 할당한다 .undefined라는 값으로-우리가 일부로 할당하는 경우는 없다. 자바스크립트엔진이 쓰기위한 값,변수가 선언만되고 할당되지 않았다는것을 알려주기 위함이 크다.-인터프리터 언어는 런타임에 에러가 발생해서 볼 수있기 때문에 최대한 에러가 나지 않게한다.</p>
+<p> 할당하지 않고 변수선언마저하지 않음 에러를 일으킨다.</p>
+<hr>
+<p><strong>변수 호이스팅(중요함)</strong>-변수선언이 위로 끌어올려진것처럼 동작한다.</p>
+<p>console.log(score);//원래 에러가 나야함.<br>var score;//변수선언</p>
+<p><strong>모든(식별자와 관련있다.)선언문은 먼저 실행한다.</strong><br>인터프리터가 코드를 한줄한줄 해석하기 전에 쭉 일고 선언문만을 골라서 먼저 실행한다. 이는 코드를 실행하기 전에 평가를 한다고 말한다.-이후 실행될 수있는 환경을 만들어냄.<br>변수의 선언이 코드가 순차적으로 실행되는 런타임 이전에 먼저 실행된다는 것에 주목하자.</p>
+<p>위 끌어올려서 실행된 실행문은 또 실행되지 않는다.<br>(let,const호이스팅이 되지만 안되는것 처럼 작동한다.이후에 수업할 내용이다.)<br>위의 내용은 변수 호이스팅의 내용이고,함수 호이스팅이 따로 존재한다.<br>**이런식으로 코드를 짜지 말아야하는 예시가 될 수있다.-&gt;최소한 선언을 하고 참조해라.</p>
+<p><strong>왜 호이스팅이 발생하는가?-&gt;</strong>선언문은 실행될때 가장먼저 골라져서 실행되기대문에 발생한다.<br>console.log(result);// undefined을 출력한다.<br>var result=100;(var result;<br>                                 result=100;)으로 해석될수있다.</p>
+<p>선언문과 할당 ,선언문이전에 참조를 하지 말아라.</p>
+<p>console.log(result);//undefined.<br>var result=100;<br>console.log(result)//100출력</p>
+<hr>
+<p><strong><em>값의 할당-</em></strong>변수 선언은 소스 코드가 순차적으로 실행되기 이전, 즉 런타임 이전에 먼저 실행되지만 값의 할당은 소스 코드가 순차적으로 실행되는 시점인 런타임에 실행된다.**</p>
+<p><strong>값의 재할당-</strong>이미 할당되어있는 면수에 새로운 값을 또ㄱ디시 할당하는 것을 말한다.<br>var 키워드로 선언한 변수는 값을 재할당할 수 있따.</p>
+<p>원시값(6가지 타입:undefined,null,불리언,문자열,숫자,symbol,)은 값을 변경할 수 없다.리뮤터블(한번 값을 설정하면 바꿀수없다.)</p>
+<p><strong>언매니지드/ 매니지드</strong><br><strong>가비지 컬렉터</strong>는 지우는 역할이 아니라 값이 할당될때 다른 값이 들어가지 못하도록 블락한것을 풀어주어 다른 값이 들어갈 수 있도록하는 역할을 한다고 생각하면 쉽다.</p>
+<p><strong>힌트는 :변수를 하나를 더만들어서 사용하라.</strong></p>
+<p>var x=1;<br>var y=2;</p>
+<hr>
+<p>var z=y;</p>
+<p>x=z;<br>y=x;<br>console.log(x,y);// 2,1로 출력되도록 값을 바꾸어라.</p>
+]]></content>
+      <tags>
+        <tag>메모리,참조,키워드,변수,선언,할당,재할당,호이스팅,</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tabindex을 이용한 키보드 접근성</title>
+    <url>/2019/09/22/tabindex%EC%9D%84%EC%9D%B4%EC%9A%A9%ED%95%9C%ED%82%A4%EB%B3%B4%EB%93%9C%EC%A0%91%EA%B7%BC%EC%84%B1/</url>
+    <content><![CDATA[<p>키보드의 접근성을 고려한 tabindex의 사용.</p>
+<p>tabindex는 기본적으로  키보드의 tab키를 눌렀을 때 이동순서를 임의로 조정 할 수 있는 html의 속성 입니다. tabindex의 포커스의 순서를 부여하는 방식을 tabintdex 값에 양의정수를 넣어주면 됩니다. 예를 들어 어떤 html요소에 taindex=”1”을 주었다면 해당 웹 페이지 상에서 tab키를 눌렀을때 tabindex=”1”이 부여하는 요소가 가장 먼저 포커스 됩니다. 그러나 taindex는 신중하게 사용해야 할 필 요가 있습니다. 일반적으로 키보드의  tab키를 눌렀을때 포커스는 html의 마크업 순서를 따르며 링크요소 또는 폼 요소등 tab키로 포커스를 가질 수  있는 요소에 마크업 순서에 따라 자연스럽게 이동합니다. 기본적으로 마크업이 논리적으로 이루어져 있다면 굳이 tabindex을 사용할 이유가 없습니다. 오히려 잘못된 tabindex를 사용함으로써 스크린 리더 사용자가 웹 페이지의 구조를 이해하는데 어려움으로 작용하게 될 수 있습니다.</p>
+<p>tabindex는 위에서 설명한것 같이 마크업 순서가 논리적으로 잘 구성되어있다면 대체로 사용할 필요가 없습니다. 임의의 페이지에 처음  접속하는 필수 회원 로그인을 행하는 경우 폼 요소에 tabindex를 부여하여 먼저 회원 로그인을 유도하는등의 이유로 사용할 수는 있습니다. 그러나 이러한 경우에도 페이지 로딩 시autofocus기능을 사용하여 회원 로그인을 유도하는 것이 바람직하다고 생각합니다. 그럼 tabindex는 언제 사용할까요?</p>
+<p>웹페이지를 구성하다 보면 페이지 탐색에 논리적 순서를 부여하는 사용자가 자연스럽게 페이지를 탐색할 수 있도록합니다.</p>
+<p>tabindex속성은 양의정수값 이외에 0과 -1의 값을 가질 수도 있습니다. 먼저 tabindex=”0”은 tab키를 눌렀을때 포커스를 받을 수없는 요소 이를테면 <span>등의 요소에 포커스를 받게 할 수 있습니다.  반면 -1은 기본적으로 tab키를 눌렀을때 포커스받을 수있는 폼 요소나 링크 요소를 강제로  포커스 받지 못하도록 하는 값입니다. </span></p>
+]]></content>
+      <tags>
+        <tag>tabindex을 이용한 키보드 접근성 및 간단한 내용 정리</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>프론트엔드 개발공부를 한 한달의 감상</title>
+    <url>/2019/09/29/%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80%EA%B0%90%EC%83%81/</url>
+    <content><![CDATA[<p>처음에 학원에 들어오게 되었을때,학원의 광고에 이끌려 이제는 쉽게 개발자로서 나의 커리어를 시작할 도약이 되겠구나 생각했다.하지만 처음에 수업을 듣고 난 후, 나의 생각은 정말 오만하고 생각이 없었다는것을 느꼈다.이세상에 쉬운것은 절대 없었다. 내가 알고있던것은 정말 일부에 지나지 않았다. 처음 수업을 들은 후 나는 굉장히 충격과 좌절을 느꼈다. 수업을 따라가는 것 조차 너무나도 버거웠다. 굉장히 불안하고 힘들었다. 내가 그나마 할 수있는 것은 학원 매니져님을 붙잡고 하나하나 질문하는것 뿐이었다. 그래서 첫 수업이 끝난 후 나는 학원 문을 닫을 때 까지 학원을 떠나지 못했다. 집에 가는 중에도 계속생각했다.내가 잘 할 수 있을까?하는 생각을 끊임없이했다.<br>처음에는 어떻게 공부해야 할 지도 너무 막막했다.이게 맞는지 저게 맞는지..몇일 동안을 수업이 끝나고 집으로 돌아가는 내내 기분이 안좋았다. 심지어 학원을 환불받아야하나 하는 생각도 했다.하지만 나에게는 포기했을때 선택할 수 있는 다른 선택지가 없다고 느꼈다. 나에게 프론트엔드 개발자의 길은 너무도 멀리있어서 보이지도 않는 하나의 점처럼 느껴졌다.<br>하지만 조금씩 수업을 듣고 공부를 하면서 조금씩 나아진다는 것을 느꼈다.주말에도 공부를 하고 하다보니까 수업을 듣는것도 이해하는 것도 조금은 수월해 졌다.<br>내가 항상 걱정했던것은 다른사람들은 잘하는데 나만 제일 못하는 것같고 도퇴되면 어쩌지 하는 두려움이었다. 그러다 문득 느낀것이 다른사람들과 나는 출발점이 달랐던 것이었다.컴퓨터 관련 전공자,현업에서 뛰던 경험이 있는 사람들, 비 전공에 혼자서만 공부를 했던 나와는 출발점이 달랐다.그렇기에 다른 사람과 비교하면 차이가 나는것은 당연한 것 이였다.<br>어느날 인터넷에서 개발자와 관련된 글을 읽다가 한가지 글이 굉장히 인상에 남았다.’개발자의 길은 남들과 비교하는 순간 끝이다’라는 글이었다.<br>남들과 비교를 하면서 스스로의 성취에 무뎠었다. 앞으로  나는 나에게만 집중해야겠다 생각했다. 그리고 다른 출발점을 따라 잡기 위해서 더 많은 노력을 할 것이다. 비록 지금은 더디고 느리지만, 나보다 앞선 사람들을 훨씬 추월하고 싶다.그리고 작은 성취를 느끼며 조금씩 조금씩 나아갈 것이다.작은 성취 하나하나가 나를 앞으로 나가게 하는 원동력이 된다. 처음 느꼈던 좌절을 발판삼아 앞으로 나아갈 것이다.앞으로 좌절 보다는 도전하고 극복하겠다.<br>지켜봐라. </p>
+]]></content>
+      <tags>
+        <tag>HTML,CSS 수업을 듣고 난 한 달</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>반응형웹 수업내용 간단한 정리</title>
+    <url>/2019/09/22/%EB%B0%98%EC%9D%91%ED%98%95%EC%9B%B9%EC%88%98%EC%97%85%EB%82%B4%EC%9A%A9%EC%A0%95%EB%A6%AC/</url>
+    <content><![CDATA[<p>반응형 웹 디자인(responsive Web design) 모바일디바이스와 타블렛 같은 다양한 디바이스들이 등장하게 되었고, 그에 환경에 따른 별도의 대응이 필요하게 되었다.</p>
+<p> RWD vs AWD(적응형):view port에 따라 증가하다가 특정 크기에서 고정형(데스크탑 +모바일)<br>반응형 웹의 100(width를  특정한 너비를 설정하지 않는다.)</p>
+<p>컨텐츠는 물과 같다.용기는 다르더라도 내용물은 물은 그대로다.</p>
+<p>미디어 쿼리 배치중요하다. 추천하는 방법은 모바일 환경에 대한 선형 디자인을 처음으로 고려하고 brekpoint를 추가하면서 너비나 상황 변하였을때의 값을 설정해주는 것이 좋은 방법이 된다.(모바일에서 데스크탑으로)<br> mobile first:컨텐츠 전략 선택 선형적인 기본작업을 모바일에서 만들고 그것을 데스크탑 컨텐츠로 순서로 최적화를 한다.</p>
+<p>max-width:너비를 자신의 이상으로 안하겠다.너비가 줄수도 있지만 증가하진않는다.<br>height:auto:높이를 너비가 변호하는 것에 따에 자동으로 맞춘다.</p>
+<p><picture>&lt;source min-width:40em srcset:big-jpg 1x:big -jpg 2x&gt;최소의 너비에서 다음으로 srcset의 값을 보여주겠다. 배율이 1일때와 2배율일때 각각 상황에 맞게 사용하겠다.<picture>은 재사용과 수정에 용이하다.<br></picture><br></picture></p>
+<p>10vh(view height)화면 view port의 1/10을 높이로 정하겠다. 앞에서 이야기했듯이 모바일 first 선형화</p>
+<p>display:flex 의 order속성은 기본 값이 :0 기본 값보다 작으면 -1이면 기본 보다 먼저 값은 값이 있으면 순서대로 정의 한다.</p>
+<p>flex-flow:row wrap은 축은 바꾸지 않고 wrap 을 사용함으로서 줄을 바꿈.</p>
+<p>breakpoint는 쉽게 생각하면 추가될때 바뀌는 구간이라고 생각하면 된다.<br>@media screen and (min-width:801px)::801이 되면서 내용을 덮어씌우겠다.</p>
+]]></content>
+      <tags>
+        <tag>반응형 웹 수업내용</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>데이터 타입 연산자</title>
+    <url>/2019/10/08/%EB%B3%80%EC%88%98%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%80%EC%9E%85%20%EC%97%B0%EC%82%B0%EC%9E%90/</url>
+    <content><![CDATA[<p>var person,$elem,_name,first_name,val1;</p>
+<p>,쉼표는 연산자다.<br>자바스크립트는 대소문자를 구분한다.</p>
+<p>var FRISTNAME:식별자의 이름을 대문자로 쓰면 개발자들사이에서 ‘상수’라는 것을 암묵적으로 약속한다.</p>
+<p>변수는 값의 이름을 나타낼수 있는 의미가 중요하다.<br>주석은 가급적 많이 사용하지 않는것이 좋다-오히려 주석이 이해를 방해/그만큼 네이밍이 중요하다.</p>
+<p>카멜케이스- var fristName변수,함수 기본적으로 사용<br>파스칼케이스-var FirstName생성자함수,클래스<br>스테이크케이스-var first_name;<br>헝가리언 케이스-var strFirstName;<br>var $elem=$(‘.myClass’);</p>
+<p>var a=10+20; 10.+,20은 각각이 토큰이다.</p>
+<p>+는 산술 연산자,<br>식(표현식:10+20)=&gt; 값(value)으로 30;<br>식이 값이 되려면 자바스크립트 엔진이 식을 평가(evaluation)한다.<br>var a=10+20;(전체를 문:statement)</p>
+<hr>
+
+<p><strong>데이터 타입</strong>(7가지-숫자,문자열,불리언,undefined,null,symbol,객체 혹은 참조)</p>
+<p>-데이터 타입이 필요하다-&gt;할당할때 변수에 확보해야하는 메모리 공간을 확보할 수있다.</p>
+<p>1.타입을 알아야-메모리 공간을 확보한다.<br>2.몇 바이트 공간이 필요한가<br>3.가져온 값을 어떻게 해석해야하는가?</p>
+<p>숫자값 저장(8byte 사용) 타입마다 확보해야하는 메모리 공간 제각각이다. 타입을 모르면 확보해야할 메모리를 모른다.</p>
+<p>score을 선두에 접근한다. 8byte만큼 가져옴-&gt;가져온 데이터 2진수(문자/숫자/불리언 등으로 어떻게 알것이냐?)<br>-&gt;따라서 식별자는 타입을 알아야한다.</p>
+<hr>
+
+<p><strong>값</strong>:현재 메모리에 들어있는 데이터<br><strong>값의 특징:</strong>타입을 가지고 있다(7가지 타입중하나)<br><strong>값이란?</strong> 더이산 평가 할 수 없는 하나의 표현식이다.<br>ex)30-리터럴/리터럴 표기법(10진수)/값을 만들어낸느 가장 시초<br><strong>평가란?</strong>식을 하나의 값으로 계산한다.ex)10+20평가의 대상 -평가의 결과물은 <strong>값</strong>이다.<br>표현식은 평가가 되어 값이 되는 것이다.<br>10(피연산자,리터럴)+(산술 연산자)20(피연산자,리터럴)</p>
+<p>값을 표기하는 방법 크게 두가지다</p>
+<p>1.<strong>리터럴</strong>(ex)30.<br><strong>2.표현식</strong>(ex)10+20-&gt;하나 이상의 리터럴,하나 이상의 표현식 연산자로 만들어진 ‘문(statement)’이다.</p>
+<p>10+20:표현식-&gt; 자바스크립트엔진에서 평가-&gt;값 30을 만듦/리터럴 표기법를 평가해야 값을 만들어낸다.(평가 전에는 값이 만들어지지않는다.)</p>
+<p>숫자 리터럴/문자열 리터럴/불리언 리터럴/null리터럴/undefined리터럴/객체 리터럴/배열 리터럴/함수 리터럴/정규표현식 리터럴</p>
+<p>리터럴은 사람이 이해하기 편하게 하기 위해서 만들었다.</p>
+<p><strong>데이터 타입</strong><br><strong>원시타입</strong>(숫자/문자열/불리언/undefined/null/symbol)</p>
+<p><strong>객체 타입</strong>(object/reference type):객체,함수,배열</p>
+<p>정수/실수-모든숫자를 실수 타입으로 처리를 한다.</p>
+<ul>
+<li>Infinity : 양의 무한대</li>
+<li>-Infinity : 음의 무한대</li>
+<li>NaN : 산술 연산 불가(not-a-number)</li>
+</ul>
+<p>표현식은 평가 되어져서 하나의 값을 만든다.<br>식별자는 결국 표현식이다.<br>(ex)var a=10;var a=b;b=a+10;표현식은 하나의 값으로 표현할 수있다.</p>
+<p><strong>문자열</strong><br>작은 따옴표,큰 따옴표-개행하기 위해서는 이스케이프 시퀀스를 사용한다.(개행:\n);</p>
+<p>백틱문자는 엔터나 띄어쓰기 같은 것,’’,””을 모두 동시에 사용할 수 있다는 장점이 있다.</p>
+<p>console.log(‘My name is’+frist+’’+second+’!’);</p>
+<p>+은 문자열 연산자-좌우항에 하나라도 문자열이 있다면 + 연산자로 결합하여 문자열이 된다.<br><code>${문자열}</code> ex)console.log(<code>1+1=${1+1}</code>);</p>
+<p>‘2’는 문자열이다. 이는 암묵적인 타입변환이 일어났단는 것을 알수있다. 이러한 암묵적인 변환은 에러의 온상이 된다.</p>
+<p><strong>불리언 타입</strong><br>논리적인 참,거짓을 나타내는 true 와 false를 가진다.</p>
+<p><strong>undefined타입</strong><br>undefined타입 값은 undefined가 유일 하다.선언 이후에 명시적으로 값을 할당하지 은 변수는 자바스크립트 엔진의 암묵적 초기화에 의해서 undefined값을 가진다. 따라서 선언은 되었지만 아직 값을 할당하지 낳은 변수에 접근하면 undefined가 반환된다.</p>
+<p><strong>선언</strong>:변수는 선언이라고 부를 것이다.<br><strong>정의</strong> :무언가를 할당해서 그 변수에 어떤 값을 가지고있는지 명확히 나타냄<br>함수,클래스는 ‘정의’로 부르겠다. 선언과 동시에 객체가 생성됨</p>
+<p><strong>null타입</strong></p>
+<p>변수에는 값이 없다는 것을 명확히 나타냄.<br>ex)var foo=’lee’; foo=null(가비지 컬렉터가 로 ‘lee ‘를 해제해 주세요)</p>
+<p><strong>동적 타이핑(타입이 동적이다.)</strong><br>동적타입언어(자바스크립트)-변수의 타입이 없다(값에 타입이 있다.)-편하지만 신뢰성이 떨어진다(변수의 타입이 암묵적으로 변환이 된다.).</p>
+<p>값에 의해서 변수의 타입이 결정이 된다.변수는 선언이 아닌 할당에 의해 타입이 결정된다. 재할당에 의해 변수의 타입은 언제든지 동적으로 바뀔 수 있다.-&gt;하나의 변수에 여러가지 값을 마구마구 집어널을 수있다.</p>
+<p><strong>정적타입의 언어</strong>(자바,c)-변수자체가 타입이 있다=엄격하다(정해진타입의 값만이 들어갈수있기 때문에 )그래서 안정성이 있다.</p>
+<p>언제나 변수의 타입의 값을 확정할 수있다.</p>
+<p>Typescript -&gt;자바스크립트 에 정적 타입을 도입한것.</p>
+<p>동적 타입언어는 편리함,but위험이 도사리고 있다.</p>
+<p>동적으로 변화하는 데이터타입을 추측하기 어려운데 ,안정적인 프로그램을 만들기 위해서<br>1.변수를 최소화 한다.<br>2.전역변수(라이프 주기가 길다)사용x<br>변수의 생명주기를 짧게 만든다.<br>3.변수보다 상수를 사용해서 값의 변경을 억제 하자.<br>4.변수의 이름을 존재를 파악할 수있도록 명명한다.</p>
+<hr>
+<p><strong>표현식과 연산자</strong></p>
+<p><strong>표현식</strong> :하나의 값을 표현할 수있는 문<br>표현식에 리터럴,식별자,연산자를 사용할 수있다.</p>
+<p><strong>리터럴</strong>-사람이 이해할 수있는 값으로 나타냄<br>리럴은 표현식을 만드는 요소중에 하나이다.리터럴은 표현식이 될수있지만, 표현식은 리터럴 일수도 아닐 수도 있다.</p>
+<p><strong>문</strong>-표현식일수도 아닐수도 있다.(문&gt;표현식)</p>
+<p><strong>표현식인 문</strong>-값으로 표현(변수에 할당)<br><strong>표현식이 아닌 문</strong>-값으로 표현 (변수에 할당x)<br> 표현식인 문과 표현식이 아닌 문을 확인하는 가장 쉬운 방법은 변수에 할당해보는 방법이다.</p>
+<p><strong>변수선언문</strong>-표현식이 아닌 문<br><strong>할당문**</strong>-(ex)x=5; 어떤 변수에 할당할 수있다.</p>
+<p>문은 세미콜론으로 끝나야한다. 그러나 단 코드 블록 뒤에는 붙이지 않는다. 자동 삽입 기능이있지만 붙이는 것이 권고 된다.</p>
+<p><strong>연산자</strong>:표현식을 만드는 연산자.피연산자에는 식이 올수도 있다.</p>
+<p><strong>이항 연산자</strong>는 부수효과가 없다.<br>그러나 단항 연산자++,–부수효과가 있다.</p>
+<p>+’10’숫자로 암묵적으로 변한이 일어남</p>
+<p><strong>비교연산자</strong><br>===타입이 다르면 false이다.==타입이 달라도 같은 결과라고 나오는 경우가 있기에 ===을 사용해야함.<br>!==와 !==도 마찬가지</p>
+<p>NaN===NaN은 false을 반황하는대   NaNdㅡㄴ 자신과 일치하지 않은 유일한 값이다. 따라서 NaN인지를 조사하려면 빌트인 함수를 isNaN을 사용해여한다.</p>
+<p><strong>대소 연산자</strong>도 true와 false값을 받는다.</p>
+<p><strong>3항 조건 연산자</strong><br>조건식? 조건식 이 true일때 반환하는 값 :조건식이 false일때 반환하는 값<br>var x=2;</p>
+<p>var result=x%2? ‘홀수’:’짝수’;</p>
+<p>console.log(result);</p>
+<p>var x=2,result;</p>
+<p>if(x%2){<br>result=’홀수’;</p>
+<p>}else{</p>
+<p>result=’짝수’</p>
+<p>}console.log(result);</p>
+<p><strong>논리연산자</strong></p>
+<p>or(논리합:||)and(논리곱:&amp;&amp;) not(!)</p>
+<p><strong>드모르간의 법칙</strong> !(x || y)===(!x &amp;&amp; !y)</p>
+<p><strong>단축평가</strong>-피연산자가 불리언이 아닐수도 있다 어느 한쪽을 선택함</p>
+<table>
+<thead>
+<tr>
+<th>단축 평가 표현식</th>
+<th>평가 결과</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>true||anything</td>
+<td>true</td>
+</tr>
+<tr>
+<td>false||anything</td>
+<td>anything</td>
+</tr>
+<tr>
+<td>true&amp;&amp;anything</td>
+<td>anything</td>
+</tr>
+<tr>
+<td>false&amp;&amp;anything</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<p><strong>typeof연산자</strong> </p>
+<p>typeof funciton(){}-함수 리터럴-&gt;function을 받는다<br>생성자 함수=new 객체와 새로운 함수를 만든다.<br>typeof null은 object를 반환한다.</p>
+<p><strong>지수연산자</strong></p>
+<p>5 ** 2-&gt;25;</p>
+<p>var num=5;<br>num ** =2-&gt;25</p>
+<p>1.연산자 ++/–변수 ㄱ밧을 고친 다 부수효과가 존재한다.<br>2.동등연산자의 차이(===/==);<br>3.삼항조건연산자,if문 대신 사용할 수 있다.</p>
+]]></content>
+      <tags>
+        <tag>변수 뒷부분 + 1.데이터타입 2.연산자</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>웹접근성과 WAI-ARIA</title>
+    <url>/2019/09/17/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1/</url>
+    <content><![CDATA[<p> 웹 접근성이란 웹 사이트에서 제공하는 정보를 차별없이 동등하게 이용 할 수 있도록하는 보장하는 것을 말한다. 신제적(고령층 ,장애인,비장애인 ) 환경적 요건(다양한 플랫폼,웹 브라우져,장치)을 모두 포함한다.</p>
+<p>WAI ; Web Accessibility InitiativeWAI는 시각·청각 기능 등에 장애를 지닌 사람도 일반인과 동등하게 웹에 접근하여 이용할 수 있도록 관련 지침을 개발하고 웹 접근성 향상을 위한 노력을 기울이는 W3C의 산하 단체를 말한다</p>
+<p>ARIA:Accessible Rich Internet Applications’의 약자로 리치 인터넷을 위한 W3C 접근성 명세입니다.</p>
+<p>RIA:정적인 HTMl과 단순한 자바스크립트 환경의 웹이 아닌 동적인 자바스크립트와 Ajax와 같은 기술을 사용한 환경에서 수준 높은 UX(User eXperience)를 제공하는 웹 애플리케이션을 의미한다.</p>
+<p>WAI-ARIA는 RIA에서 스크린 리더기 및 보조기기 등에서 접근성 및 운용성을 향상시키기 위한 목적으로 탄생했으며 웹 애플리케이션에 역할,속성,상태 정보를 추가하여 이를 개선 할 수 있도록 제공하고 있다.</p>
+<p>1)대표적인 역할( role):tablist,button,tab,tooltip,list,</p>
+<p>application,abnner,navigation,form,search..</p>
+<p>2)Property &amp; State:(상태와 속성):aria-labelledby=”” : 레이블 제공을 위한 aria-속성. 상태 값은 연결시킬 레이블 id를 입력한다.</p>
+<p>aria-haspopup=”” : 팝업요소가 하위에 존재하고 있다는걸 인식 시켜주는 aria-속성. 상태 값은 false(default) / true / menu / listbox / tree / gird / dialog</p>
+<p>aria-live : 페이지의 어떤 위치에 있든 업데이트된 정보를 사용자에게 알려주는 aria-속성. 상태 값은 assertive / off(default) / polite</p>
+<p>aria-labelledby=”” : 레이블 제공을 위한 aria-속성. 상태 값은 연결시킬 레이블 id를 입력한다.</p>
+<p>aria-selected=”” : 탭메뉴 선택 유무를 알려준다. 상태 값은 선택되었을 때 true / 선택되지 않았을 때 false 입력</p>
+<p>ria-controls=”” : 현재 요소가 제어하는 대상을 명시하는 속성으로 탭메뉴와 본문을 연결시켜준다. 상태 값은 tabpanel의 id명 입력</p>
+]]></content>
+      <tags>
+        <tag>웹 접근성과 WAI-ARIA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>스코프</title>
+    <url>/2020/05/03/%EC%8A%A4%EC%BD%94%ED%94%84/</url>
+    <content><![CDATA[<p><strong>스코프</strong></p>
+<p>식별자(변수)가 유효한 범위,식별자와 깊은 관련,함수와 관련<br>어떨때 유효하고 어떨때 유효하지 않은가?<br>함수는 스코프를 만든다.(var키워드로 선언한 경우)</p>
+<p>var 키워드는 함수의 코드블록만을 코드 블록으로 인정하는 함수레벨 스코프를 따른다. var 키워드는 함수가 스코프를 만든다.</p>
+<p>중첩함수-스코프도 중첩이 된다.(어떤 우선순위를 가지는 가?을 아는 것이 중요)<br>스코프는 간단하게 말하면 자바스크립트엔진이 식별자를 찾는 규칙이다. </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="comment">//선언하고 할당할때 a라는 식별자를 찾는다.</span></span><br></pre></td></tr></table></figure>
+
+<p>즉 스코프는 식별자에 존재한다. 프로퍼티는 prototype체인에 존재한다.</p>
+<p>스코프의 생명주기<br>함수에 매개변수가 업ㄱ다면 외부와 단절이 된다. 하지만 매개변수는 없는 것이 가장 좋다.-&gt;외부에 의존하기 때문에</p>
+<p>함수는 재사용을 한다. 변수를 왜쓰는가?-어떤 상태를 유지해야할때 사용한다.<br>변수를 공용으로 쓸때는(전역변수와 관련하여)? 고정되어 변하지 않는 값ㅇ르 가지는 경우에 사용한다.<br>상수는 재할당을 금지시킨다. 따라서  전역변수는 상수개념이 아니면 사용하지 않는것이 좋다.</p>
+<p>1.순수함수-1언제나 동일 한 반환값(return x+y)<br>x(2,3)=5</p>
+<p>2.비순수함수 -외부함수에 영향을 받음</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> num=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">increase</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> ++num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>스코프 함수</strong></p>
+<p>변수가 어디에서 선언이 됐느냐가 즉 선언 위치가 스코프를 만든다.<br>class는 함수이다.<br>자신이 선언된 위치에 의해 다른 식벼자를 참조할 유효범위가 결정된다.</p>
+<p>function foo(){}는 식별자가 2개이다. 1.암묵적으로 자바스크립트 엔진이 변수이름으로 만든 식별자.</p>
+<p>2.지역함수의 식별자. 그런데 에러를 일으키지않는다. 그리고 foo는 전역 함수이다. 또한 호출하는 foo()에서 foo는 함수이름이 아니고 자바스크립트엔진이 생성한 암묵적인 식별자다.</p>
+<p>스코프는 자카스크립트엔진이 식별자는 찾는 규칙이다. 코드와 가장 근접한 곳에있는 스코프를 본다.<br>자바스크립트 코드의 문맥과 환경이있따. 코드를 실행하기 위한 문맥을 기억한다. 자바스크립트는 전역과 지역을 어떻게 구분하는걸까?</p>
+<p>식별자는 스코프내에서 유니크하다.<br>전역은 어디근 참조(문맥을 찾는다.)가 가능하다. 코드가 해당하는 스코프부터 식별자를 찾는다. 그후에 상위로 간다.<br>쉐도잉-그림자 처럼 가져려진다.<br>식별자는 자바스크립트엔진에 등록이된다.<br>이때 스코프가 정해진다.<br>식별자는 스코프 체인에서 찾는다. 함수는 변수와 저장되는 매카니즘이 같다. 찾는 매카니즘도 동일하다.</p>
+<p><strong>렉시컬 시코프</strong><br>자바스크립트엔진이 함수를 정의할때 어디서 호출될지 알수없다.<br>언제 함수의 상위 스코프가 오는냐? 함수의를 할때 취치에 의해 상위 스코프가정해진다. 어디서 호출되든지 간에 정의위치에 ㄱ따라 사우이스코프가 정해져버린다.<br>동적스코프와 /렉시컬스코프의 차이</p>
+<p>매개변수가 값을 할당하는 것은 호출할때, 호출된 직후 매개변수undefined 선언된다. 이후에 할당된다.<br>변수도 어디에서 선언되는지에 따라 스코프가 정해진다.함수도 마찬가지</p>
+<p><strong>암묵적 전역변수</strong><br>전역함수에서 선언하지않은 변수는 전역변수가 된다.<br>모듈(자바스크립트 엔진은 파일 스코프를 가지지않는다.)-&gt;한개의 파일로 함ㅍ쳐진다. 같은 이름의 변숙가 있다면 재할다잉 된다.이런 문제 따문에 전역변수를 사용하지않는다.<br>자바스크립트에는 순서가 있다.엄청 여러개의 스크립트파일들을  webpack 번들링 로 하나로 묶고 그 안에서 스코프를 줘서 나눈다.</p>
+<p><strong>변수의 생명주기</strong>- 변수 생명주기는 직역변수일때 함수의 생명주기가 짧다.리소스가 빨리 해방이 된다.<br> 반대로 전역변수의 생명주기(스코프가 길다.)는 길기 때문에 재할당 수정등의 여러가지 문제를 야기한다.</p>
+<p>짧고 생명주기가 짧은 함수가 가독성이 좋다. 그리고  한가지 일만 을 시킬수있어서 좋다.</p>
+<p>전역변수의 생명주기는 스크립트 로드가 되자마자 생성되고 애플리케이션이 종료될때 까지 (브라우저 종료) 전역변수는 리소스 할당이 적다.,암묵적 결함을 하고,네이밍스페이스를 오염시킨다. </p>
+<p>모둘패턴 (문법이 아닌 디자인 패턴이다.)<br>즉시실행함수는 코드가 실행되면 바로 실행이 된다. 객체 리터럴이 바로 함수에 할당이 된다. 모듈패턴은 자바스크립트에는 자바에서 public,private,protected같은 접근제한자가 없다. 따라서 이를 상요함으로써 변수에 접근을 하지못하게하는 역할을 하기위해 사용한다.<br>let,const 블록레벨 스코프</p>
+<p>var키워드는 전역 변수의 분제점으로 귀결된다. 왜var키워드를 사용할 수없는가?-&gt;함수레벨 스코프,전역변수 문제점,재할당 등의 이유.</p>
+<p>변수 호이스팅은 나쁜점이다. 지양해야하는 부분.<br>변수는 선언하고 참조해라</p>
+<p>let/const 변수 선언 중복선언애러,변수는 스코프가 분리되있으면 다른 변수이다.</p>
+<p>for문()의 소괄호의 부분은 코드블록안에 있다고 생각을 하는 것이 좋다.</p>
+<p>const/let은 호이스팅이 안하는 것 처럼 보이지만 한다.-런타임이전에 변수는 선언이 된다. 하지만 런타임에 선언문을 만나야지 값이 할당된다. 그렇기 때문에 선언문이전에 호출을 하면 에러를 발생시킨다. 즉 선언된 것을 자바스크립트엔진이 알지만 이에 접근하지 말라는 의미다.</p>
+<p><strong>전역객체</strong></p>
+<p>브라우저의 전역객체는 :window이다.<br>node.js의 전역객체는 :gloabal이다.<br>var키워드로 선언한 모든 전역변수는 window객체릐 프로퍼티가 된다.</p>
+<p>브라우저의 페이지를 바꾸면 전역객체또한 리셋이 된다.<br>전역객체는 var키워드로 선언한다.<br>function foo(){}와 var foo=funciton(){}모두 window의 객체이다.</p>
+<p>let으로 선언한 전역변수는 더이상 읽어들을 전역변수가 없다면 생명주기를 다하고 죽는다.<br>var와 let키워드를 섞어서 사용하지만고 한가지만을 통일해서 사용하자.<br>window객체의프로퍼티는 전역변수와 같게 사용 할 수 있다.</p>
+<p><strong>const키워드</strong><br>재할당을 할수없다. 변수 선언과 동시에 값을 할당해 주어야한다.<br>상수도 변수이다. 재할당을 금지시킨다.(스네이크 케이스,대문자로 사용한다.).</p>
+<p><strong>const 키워드의 객체</strong><br>재할당을 하는 일은 극히 드물다.<br>대부분 변수 const 사용한다. 변수 재할당 할일 이 없다.<br>객체는 변경가능한 값이다. 객체를 가지는 변수는 let을 사용할 이유가 없다. 객체는 기본적으로 재할당하지 않는다. es6/const ,let을 사용한다. 재할당 필요한 경우에만 let을 사용한다. </p>
+<p>전역 코드의 실행이 종료되면 let종료,window는 살아있다. 완료값은 변수에 할당되는 값이 아니다.</p>
+]]></content>
+      <tags>
+        <tag>스코프</tag>
       </tags>
   </entry>
   <entry>
@@ -479,394 +962,6 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>Set  과  Map에 대해</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Symbol 타입</title>
-    <url>/2020/05/06/symbol-md/</url>
-    <content><![CDATA[<h1 id="1-Symbol-이란"><a href="#1-Symbol-이란" class="headerlink" title="1.Symbol 이란?"></a>1.Symbol 이란?</h1><p>1997년 자바스크립트의 ECAMScript로 처음 표준화된 이래로 자바스크립트에는 6개의 타입 즉 String,Number,boolean,undefined,null,Object가 있었다. </p>
-<p>심볼은(symbol)은 es6에서 새롭게 추가된 7번째 타입으로 변경이 불가능한 원시타입이다. <strong>다른 값과 중복되지 않는 유일무이한 값이다.</strong> 따라서 주로 이름의 충돌 위험이 없는 유일한 프로퍼티 키를 만들기 위해 사용된다.</p>
-<p>객체의 프로퍼티 키로 사용할 수 있는 값은 빈 문자열을 포함한 모든 문자열 또는 심볼값이다.</p>
-<h1 id="2-Symbol의-생성"><a href="#2-Symbol의-생성" class="headerlink" title="2.Symbol의 생성"></a>2.Symbol의 생성</h1><p>##2.1. Symbol 함수</p>
-<p>심볼 값은 Symbol 함수를 호출하여 생성한다. 다른 원시 값은, 즉 문자열,숫자,불리언 ,undefined,null은 타입의 값은 리터럴 표기법을 통해 값을 생성할 수 있지만 심볼값은 심볼을 함수를 호출해야 생성해야한다. 이<u>때 생성된 심볼 값은 노출 되지 않으며 다른 값과 절대 중복 되지 않는 유일무이한 값이다.</u></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Symbol 함수를 호출하여 유일무이한 심볼값을 생성한다.</span></span><br><span class="line"><span class="keyword">const</span> mySymbol = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//심볼 값은 노출되지 않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol) <span class="comment">// Symbol();</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> mySymbol) <span class="comment">//symbol</span></span><br></pre></td></tr></table></figure>
-
-<p> 언뜻 보면 생성자 함수로 객체를 생성하는 것 처럼 보이지만 Symbol함수는 String, number, Boolean 생성자 함수와는 달리 new 연산자를 사용하지 않는다. new연산자와 함께 생성자 함수 또는 클래스를 호출하면 객체 (인스턴스)가 생성되지만 심볼 값은 변경이 불가능한 원시 값 이다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Symbol</span>();  <span class="comment">//TypeError: Symbol is not a constructor</span></span><br></pre></td></tr></table></figure>
-
-<p>Symbol 함수에는 선택적으로 문자열을 인수로 전달 할 수 있다. 이 문자열은 생성된 심볼 값에 대한 설명으로 디버깅 용도로만 사용되며 심볼 값 생성에 어떠한 영향을 주지 않는다. 즉 심볼 값에 대한 설명이 같더라도 생성되 값은 <u>유일무이한 값이다.</u></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//심볼 값에 대한 설명이 같더라도 유일무이한 심볼 값을 생성한다.</span></span><br><span class="line"><span class="keyword">const</span> mySymbol1 = <span class="built_in">Symbol</span>(<span class="string">'mySymbol'</span>);</span><br><span class="line"><span class="keyword">const</span> mySymbol2 = <span class="built_in">Symbol</span>(<span class="string">'mySymbol'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol1 === mySymbol2); <span class="comment">//false;</span></span><br></pre></td></tr></table></figure>
-
-<p>심볼 값도 문자열,숫자,불리언과 같이 객체처럼 접근하면 암묵적으로 래퍼 객체를 생성한다. 아래 예제는 description  프로퍼티와 toString  메소드는 Symbol.prototype의 프로퍼티 이다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 심볼도 래퍼 객체를 생성한다.</span></span><br><span class="line"><span class="keyword">const</span> mySymbol = <span class="built_in">Symbol</span>(<span class="string">'mySymbol'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol.description) <span class="comment">//mySymbol</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol.toString()) <span class="comment">//Symbol(mySymbol)</span></span><br></pre></td></tr></table></figure>
-
-<u>
-
-<p><strong>심볼 값은 암묵적으로 문자열이나 숫자 타입으로 변화되지 않는다.</strong></p></u><p></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mySymbol = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//심볼 값은 암묵적인 타입 변환이 되지않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol +<span class="string">''</span>) <span class="comment">// TypeError: Cannot convert a Symbol value to a string</span></span><br><span class="line"><span class="built_in">console</span>.log(+mySymbol);  <span class="comment">/// TypeError: Cannot convert a Symbol value to a string</span></span><br></pre></td></tr></table></figure>
-
-<p>단 불리언 타입으로는 암묵적으로 타입 변환이 된다. 이를 통해 if문 등에서 존재 확인이 가능하다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mySymbol = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//불리언 타입으로는 암묵적으로 타입 변환이 된다.</span></span><br><span class="line"><span class="built_in">console</span>.log(!!mySymbol)<span class="comment">//true;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//if문 등에서 존재 확인을 위해 사용할 수 있다.</span></span><br><span class="line"><span class="keyword">if</span>(mysymbol)<span class="built_in">console</span>.log(<span class="string">'mysymbol is not empty'</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-2-Symbol-for-메소드"><a href="#2-2-Symbol-for-메소드" class="headerlink" title="2.2. Symbol.for 메소드"></a>2.2. Symbol.for 메소드</h2><p>Symbol.for 메소드는 인수로 전달받은 문자열을 키로 사용히여 키와 심볼의 값의 쌍들이 저장되어 있는 전역 심볼 레지스트리에 해당하는 키와 일치하는 심볼값을 검색한다.</p>
-<li>검색에 성공하면 새로운 심볼 값을 생성하지않고 검색된 심볼 값을 반환한다.</li>
-
-<li>검색 실패하면 새로운 심볼값을 생성하여 Symbol.for 메소드의 인수로 전달되는 전역 Symbol 레지스트리에 저장한 후, 생성된 심볼을 반환한다.</li>
-
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//전역 심볼 레지스트리에 mySymbol이라는 키로 저장된 심볼 값이 없으면 새로운 심볼 값을 생성한다.</span></span><br><span class="line"><span class="keyword">const</span> s1 = <span class="built_in">Symbol</span>.for(<span class="string">'mySymbol'</span>);</span><br><span class="line"><span class="comment">//전역 심볼 레지스트리에 mySymbol이라는 키로 저장된 심볼 값이 있으면 해당 심볼 값을 반환</span></span><br><span class="line"><span class="keyword">const</span> s2 = <span class="built_in">Symbol</span>.for(<span class="string">''</span>mySymbol);</span><br><span class="line"><span class="built_in">console</span>.log(s1 === s2) <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-
-<p>Symbol함수는 호출될때 마다 유일무이한 심볼 값을 생성한다. 이때 자바 스크립트 엔진이 관리하는 심볼 값 저장소인 전역 심볼 레지스트리에서 심볼 값을 검색 할 수 있는 키를 지정 할 수 없으므로 전역 심볼 레지스트리에 등록되어 관리되지않는다.<br>하지만 Symbol.for메소드를 사용하면 애플리케이션 전역에서 중복되지않는 유일무이한 상수인 심볼 값을  단 하나만 생성하여 전역 심볼의 레지스크리를 통해 공유 할 수 있다.<br>Symbol.keyFor 메소드를 사용하면 전역 심볼 레지스트리에 저장된 심볼 값의 키를 추출할 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//전역 심볼을 레지슽크리에 mySymbol이라는 키로 심볼 값이 없으면 새로운 심볼 값을 생성</span></span><br><span class="line"><span class="keyword">const</span> s = <span class="built_in">Symbol</span>.for(<span class="string">'mySymbol'</span>);</span><br><span class="line"><span class="comment">//전역 심볼 레지스트리에 저장된 심볼 값의 키를 추출</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Symbol</span>.keyFor(s)) <span class="comment">//mySymbol</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="3-Symbol과-상수"><a href="#3-Symbol과-상수" class="headerlink" title="3. Symbol과 상수"></a>3. Symbol과 상수</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//위,아래,오른쪽,왼쪽을 나타내는 상수</span></span><br><span class="line"><span class="comment">//값 1,2,3,4에는 특별한 의미가 없고 상수 이름에 의미가 있다.</span></span><br><span class="line"><span class="keyword">const</span> Direction =&#123;</span><br><span class="line">  UP:<span class="number">1</span>,</span><br><span class="line">  DOWN:<span class="number">2</span>,</span><br><span class="line">  LEFT:<span class="number">3</span>,</span><br><span class="line">  RIGHT:<span class="number">4</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//변숭에 상수를 할당</span></span><br><span class="line"><span class="keyword">const</span> myDirection = Direction.UP;</span><br><span class="line"><span class="keyword">if</span>(myDirection === Diretion.UP)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'You are going up'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>위 예제와 같이 값에는 특별한 의미가 없고 상수이름 자체에 의미가 있는 경우가 있다. 이때 문제는 상수 1,2,3,4가 다른 변수 값과 중복 될 수 있다는 것이다. 이러한 경우 중복될 가능성이 있는 무의미한 상수 대신 중복될 가능성이 없는 유일 무이한 심볼값을 사용 할 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//위,알래,오른쪽,왼쪽을 나태내는 상수.</span></span><br><span class="line"><span class="comment">//중복될 기능성이 없는 심볼 값으로 상수값을 생성</span></span><br><span class="line"><span class="keyword">const</span> Direction =&#123;</span><br><span class="line">  UP:<span class="built_in">Symbol</span>(<span class="string">'up'</span>),</span><br><span class="line">  DOWN:<span class="built_in">Symbol</span>(<span class="string">'down'</span>),</span><br><span class="line">  LEFT:<span class="built_in">Symbol</span>(<span class="string">'left'</span>),</span><br><span class="line">  RIGHT:<span class="built_in">Symbol</span>(<span class="string">'right'</span>)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//변수에 상수를 할당</span></span><br><span class="line"><span class="keyword">const</span> Direction = Direction.UP;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(myDirection === Direction.UP)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'you are going up'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>enum</strong><br><strong>enum은</strong> 명명된 숫자 상수의 집합으로 열거형이라고 부른다. 자바스크립트는 enum을 지원하지는 않지만 C,Java,Python 등 많은 프로그래밍 언어와 자바 스크립트으 Superset(상위 확장)인 TYpeScript에서  enum을 지원하고 있다. 자바스크립트세서 enum을 흉내내어 사용하려면 아래와 같이 객체의 변경을 방지 하기 위해 객체를 동결  하는 Object.freeze 메소드와 심볼 값을 사용한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Javascript enum</span></span><br><span class="line"><span class="comment">//Direction 객체는 불변객체이며 프로퍼티는 유일무이한 값이다.</span></span><br><span class="line"><span class="keyword">const</span> Direction = <span class="built_in">Object</span>.freeze(&#123;</span><br><span class="line">   UP: <span class="built_in">Symbol</span>(<span class="string">'up'</span>),</span><br><span class="line">   DOWN: <span class="built_in">Symbol</span>(<span class="string">'down'</span>),</span><br><span class="line">   LEFT: <span class="built_in">Symbol</span>(<span class="string">'left'</span>),</span><br><span class="line">   RIGHT: <span class="built_in">Symbol</span>(<span class="string">'right'</span>)</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//변수에 상수를 할당</span></span><br><span class="line"><span class="keyword">const</span> myDirection = Diection.UP;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(myDirection === Direction.UP)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'You are going up'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="4-Symbol과-프로퍼티-키"><a href="#4-Symbol과-프로퍼티-키" class="headerlink" title="4. Symbol과 프로퍼티 키"></a>4. Symbol과 프로퍼티 키</h1><p>객체의 프로퍼티키는 빈 문자열을 포함하는 모든 문자열 또는 심볼 값으로 만들수 있느며 동적으로 생성 할 수 도 있다.</p>
-<p>심볼 값으로 프로퍼티 키를 동적으로 생성하여 만들어 보자. 심볼 값을 프로퍼티 키로 사용하려면 프로퍼티 키를 사용할 심볼 값에 대괄호를 사용해야한다. 프로퍼티에 접근 할때도 마찬가지로 대괄호를 사용해야한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj=&#123;</span><br><span class="line">  <span class="comment">//심볼 값으로 프로퍼티 키를 동적 생성</span></span><br><span class="line">  [<span class="built_in">Symbol</span>.for(<span class="string">'mySymbol'</span>)]:<span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj[<span class="built_in">Symbol</span>.for(<span class="string">'mySymbol'</span>)]) <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>심볼 값은 유일무이한 값이므로 심볼 값으로 프로퍼티 키를 만들면 다른 프로퍼티 키와 절대 충돌하지않는다.</strong> 기존 프로퍼티 키와 충돌하지않는 것은 물론,미래에 추가될 어떤 프로퍼티 키와도 충돌할 위험이 없다.</p>
-<h1 id="5-Symbol과-프로퍼티-은닉"><a href="#5-Symbol과-프로퍼티-은닉" class="headerlink" title="5. Symbol과 프로퍼티 은닉"></a>5. Symbol과 프로퍼티 은닉</h1><p>심볼 값으로 동적으로 프로퍼티 키로 만든 프로퍼티는 for ..in 문이나 Object.keys,Object.getOwnPropertyNames 메소드로 찾을 수 없다. 이처럼 심볼 값을 동적으로 생성한  프로퍼티 키로 프로퍼티를 만들면 프로퍼티를 숨길 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj=&#123;</span><br><span class="line">  <span class="comment">//심볼 값으로 프로퍼티 키를 동적 생성</span></span><br><span class="line">  [<span class="built_in">Symbol</span>(<span class="string">'mySymbol'</span>)]:<span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key) <span class="comment">//아무것도 출력되지않는다.</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(ObJect.keys(obj)) <span class="comment">//[];</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyNames(obj)); <span class="comment">//[]</span></span><br></pre></td></tr></table></figure>
-
-<p>하지만 프로퍼티를 완전히 숨길 수 있는 것은 아니다. Es6에서 도입된  Object.getOwnPropertySymbols 메소드를 사용하면 심볼값으로 동적 생성한 프로퍼티 키로 만든 프로퍼티를 찾을 수있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj =&#123;</span><br><span class="line">  <span class="comment">//심볼 값으로 프로퍼티 키 동적 생성</span></span><br><span class="line">  [<span class="built_in">Symbol</span>(<span class="string">'mySymbol'</span>)]:<span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertySymbols(obj)) <span class="comment">//[Symbol(mySymbol)];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//심볼 값을 찾을 수 있다.</span></span><br><span class="line"><span class="keyword">const</span> symbolKey1 = <span class="built_in">Object</span>.getOwnpropertySymbols(obj)[<span class="number">0</span>];</span><br><span class="line"><span class="built_in">console</span>.log(obj[symbolKey1]); <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="6-Symbol-과-표준-빌트인-객체-확장"><a href="#6-Symbol-과-표준-빌트인-객체-확장" class="headerlink" title="6. Symbol 과 표준 빌트인 객체 확장"></a>6. Symbol 과 표준 빌트인 객체 확장</h1><p>일반적으로 표준 빌트인 객체에 사용자 정의 메소드를 직접 추가하여 확장하는 것은 권장 하지않는다  </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 표준 빌트인 객체를 확장하는 것은 권장하지않는다.</span></span><br><span class="line"><span class="comment">//즉 ,Array.prototype은 읽기 전용으로 사용하는 것의 좋다.</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> <span class="keyword">return</span> <span class="keyword">this</span>.reduce(<span class="function">(<span class="params">p,c</span>)=&gt;</span>p+c,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>,<span class="number">2</span>].sum()); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
-
-<p>그 이유는 개발자가 직접 추가한 메소드는 미래에 표준 사양으로 추가될 메소드가 이름이 중복 될 수있기 때문이다. 예를 들어 Array.prototype.find메소드가 Es6의 새롭게 도입되기 이전에 Array.prototype에 find을 집겁 추가 했다면 새롭게 도입된Es6.find 메소드와 이름이 중복되어 Es6의 Array.prototype.find 와 이름이 중복 되어 Es6의 Array.prototype.find 메소드를 이전에 추가했던 사용자 정의 find 메서드가 덮어 쓴다. 표준 빌트인 메소드를 사용자 정의 메소드가 된다면 문제가 된다. </p>
-<p>하지만 중복될 가능성이 없는 심볼 값으로 프로퍼티 키를 생성하여 표준 빌트린 객체를 확장하면 표준 빌트인 객체의 기존 프로퍼티 키와 충돌 되지 않는  것은 물론 , 버전이 올라감에 따라 추가 될지도 모르는 어떤 프로퍼티 키와도 충돌 될 위험없이 안전하게 표준 빌트인 객체를 확장 할 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//심볼 값으로 프로퍼티 키를 동적 생성하면 다른 프로퍼티 키와 절대 충돌하지않는다.</span></span><br><span class="line"><span class="built_in">Array</span>.prototype[<span class="built_in">Symbol</span>.for(<span class="string">'sum'</span>)] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.reduce(<span class="function">(<span class="params">p,c</span>)=&gt;</span>p+c,<span class="number">0</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>,<span class="number">2</span>][<span class="built_in">Symbol</span>.for(<span class="string">'sum'</span>)]()); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="7-Well-known-Symbol"><a href="#7-Well-known-Symbol" class="headerlink" title="7. Well known Symbol"></a>7. Well known Symbol</h1><p>자바스크립트가 기본 제공하는 빌트인 심볼 값이 있다. 빌트인 심볼 값은 Symbol 함수의 프로퍼티에 할당되어있다. 브라우저 콘솔에서 Symbol 함수를 참조하여 보자.<br> <img src="https://poiemaweb.com/assets/fs-images/33-1.png" alt="33-1"></p>
-<p>자바스크립트가 기본 제공하는 빌트인 심볼 값을 Well-Known-Symbol이라 부른다. Well-Known-Symbol은 자바스크립트 엔진의 내부 알고리즘에 사용된다.</p>
-<p>예를 들어 배열, String객체, arguments 객체와 같이 for..of 문으로 순회가 가능한 빌트인 이터러블은 Well-Known-Symbol인 Symbol.iterator를 키로 갖는 메소드를 가지며, Symbol.iterator메소드를 호출하면 이터레이터를 반환하도록 ECAMAScript 사양에 규정되어 있다. 빌트인 이터러블은 이 규정을 준수하고 있다.</p>
-<p>만약에 빌트인 이터러블이 아닌 일반객체를 이터러블 처럼 동작하도록 구현하고 싶다면 이 규정(이터레이션 프로토콜)을 따르면 된다. 즉 ECMAScript 사양에 규정 되어 있는 대로  Well-Known-Symbol인 Symbol.iterator을 키로  깆는 메소드를 객체에 추가하고 이터레이터를 반환하도록 구현하면 그 객체는 이터러블이 된다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1 - 5 사이의 정수로 이루어진 이터러블</span></span><br><span class="line"><span class="keyword">const</span> iterable =&#123;</span><br><span class="line">  <span class="comment">//Symbol.iterator 메소드를 구형하여 이터러블 프로토콜을 준수</span></span><br><span class="line">  [<span class="built_in">Symbol</span>.iterator]()&#123;</span><br><span class="line">    <span class="keyword">let</span> cur =<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">const</span> max = <span class="number">5</span>;</span><br><span class="line">    <span class="comment">//Symbol.iterator 메소드는 next메소드를 소유한 이터레이터를 반환</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      next();</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">      value:cur++,</span><br><span class="line">      done:cur&gt;max+<span class="number">1</span></span><br><span class="line">    	&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> num <span class="keyword">of</span> iterable)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(num); <span class="comment">//1 2 3 4 5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p> <strong>빌트인 이터러블</strong><br>이터러블은 for…of문으로 순회할 수 있고 스프레드 문법의 피연산자가 될 수 도 있는 객체를 말한다. 자바스크립트가 기본 제공하는 빌트인 이터러블은 아래와 같다.</p>
-<table>
-<thead>
-<tr>
-<th align="center">빌트인 이터러블</th>
-<th align="center">프로퍼티 키가 Symbol.iterator인 메소드</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Array</td>
-<td align="center">Array.prototype[Symbol.iterator]</td>
-</tr>
-<tr>
-<td align="center">String</td>
-<td align="center">String.prototype[Symbol.iterator]</td>
-</tr>
-<tr>
-<td align="center">Map</td>
-<td align="center">Map.prototype[Symbol.iterator]</td>
-</tr>
-<tr>
-<td align="center">Set</td>
-<td align="center">Set.prototype[Symbol.iterator]</td>
-</tr>
-<tr>
-<td align="center">TypedArray</td>
-<td align="center">TypedArray.prototype[Symbol.iterator]</td>
-</tr>
-<tr>
-<td align="center">arguments</td>
-<td align="center">arguments[Symbol.iterator]</td>
-</tr>
-<tr>
-<td align="center">DOM 컬렉션</td>
-<td align="center">NodeList.prototype[Symbol.iterator], HTMLCollection.prototype[Symbol.iterator]</td>
-</tr>
-</tbody></table>
-<p>이때 일반 객체에 추가해야하는 메소드의 키 Symbol.iterator은 기존 프로퍼티 키 또는 미래에 추가될 프로퍼티 키와 절대로 중복되지 않을 것이다.</p>
-<p>이처럼 심볼은 중복되지 않는 상수값을 생성하는 것은 물론 기존에 작성된 코드에 영향을 주지않고 새로운 프로퍼티를 추가하기 위해 ,즉 하위 호환성을 보장하기 위해 도입되었다.</p>
-]]></content>
-      <tags>
-        <tag>Symbol 타입에 대해</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>tabindex을 이용한 키보드 접근성</title>
-    <url>/2019/09/22/tabindex%EC%9D%84%EC%9D%B4%EC%9A%A9%ED%95%9C%ED%82%A4%EB%B3%B4%EB%93%9C%EC%A0%91%EA%B7%BC%EC%84%B1/</url>
-    <content><![CDATA[<p>키보드의 접근성을 고려한 tabindex의 사용.</p>
-<p>tabindex는 기본적으로  키보드의 tab키를 눌렀을 때 이동순서를 임의로 조정 할 수 있는 html의 속성 입니다. tabindex의 포커스의 순서를 부여하는 방식을 tabintdex 값에 양의정수를 넣어주면 됩니다. 예를 들어 어떤 html요소에 taindex=”1”을 주었다면 해당 웹 페이지 상에서 tab키를 눌렀을때 tabindex=”1”이 부여하는 요소가 가장 먼저 포커스 됩니다. 그러나 taindex는 신중하게 사용해야 할 필 요가 있습니다. 일반적으로 키보드의  tab키를 눌렀을때 포커스는 html의 마크업 순서를 따르며 링크요소 또는 폼 요소등 tab키로 포커스를 가질 수  있는 요소에 마크업 순서에 따라 자연스럽게 이동합니다. 기본적으로 마크업이 논리적으로 이루어져 있다면 굳이 tabindex을 사용할 이유가 없습니다. 오히려 잘못된 tabindex를 사용함으로써 스크린 리더 사용자가 웹 페이지의 구조를 이해하는데 어려움으로 작용하게 될 수 있습니다.</p>
-<p>tabindex는 위에서 설명한것 같이 마크업 순서가 논리적으로 잘 구성되어있다면 대체로 사용할 필요가 없습니다. 임의의 페이지에 처음  접속하는 필수 회원 로그인을 행하는 경우 폼 요소에 tabindex를 부여하여 먼저 회원 로그인을 유도하는등의 이유로 사용할 수는 있습니다. 그러나 이러한 경우에도 페이지 로딩 시autofocus기능을 사용하여 회원 로그인을 유도하는 것이 바람직하다고 생각합니다. 그럼 tabindex는 언제 사용할까요?</p>
-<p>웹페이지를 구성하다 보면 페이지 탐색에 논리적 순서를 부여하는 사용자가 자연스럽게 페이지를 탐색할 수 있도록합니다.</p>
-<p>tabindex속성은 양의정수값 이외에 0과 -1의 값을 가질 수도 있습니다. 먼저 tabindex=”0”은 tab키를 눌렀을때 포커스를 받을 수없는 요소 이를테면 <span>등의 요소에 포커스를 받게 할 수 있습니다.  반면 -1은 기본적으로 tab키를 눌렀을때 포커스받을 수있는 폼 요소나 링크 요소를 강제로  포커스 받지 못하도록 하는 값입니다. </span></p>
-]]></content>
-      <tags>
-        <tag>tabindex을 이용한 키보드 접근성 및 간단한 내용 정리</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>프론트엔드 개발공부를 한 한달의 감상</title>
-    <url>/2019/09/29/%EA%B0%9C%EB%B0%9C%EA%B3%B5%EB%B6%80%EA%B0%90%EC%83%81/</url>
-    <content><![CDATA[<p>처음에 학원에 들어오게 되었을때,학원의 광고에 이끌려 이제는 쉽게 개발자로서 나의 커리어를 시작할 도약이 되겠구나 생각했다.하지만 처음에 수업을 듣고 난 후, 나의 생각은 정말 오만하고 생각이 없었다는것을 느꼈다.이세상에 쉬운것은 절대 없었다. 내가 알고있던것은 정말 일부에 지나지 않았다. 처음 수업을 들은 후 나는 굉장히 충격과 좌절을 느꼈다. 수업을 따라가는 것 조차 너무나도 버거웠다. 굉장히 불안하고 힘들었다. 내가 그나마 할 수있는 것은 학원 매니져님을 붙잡고 하나하나 질문하는것 뿐이었다. 그래서 첫 수업이 끝난 후 나는 학원 문을 닫을 때 까지 학원을 떠나지 못했다. 집에 가는 중에도 계속생각했다.내가 잘 할 수 있을까?하는 생각을 끊임없이했다.<br>처음에는 어떻게 공부해야 할 지도 너무 막막했다.이게 맞는지 저게 맞는지..몇일 동안을 수업이 끝나고 집으로 돌아가는 내내 기분이 안좋았다. 심지어 학원을 환불받아야하나 하는 생각도 했다.하지만 나에게는 포기했을때 선택할 수 있는 다른 선택지가 없다고 느꼈다. 나에게 프론트엔드 개발자의 길은 너무도 멀리있어서 보이지도 않는 하나의 점처럼 느껴졌다.<br>하지만 조금씩 수업을 듣고 공부를 하면서 조금씩 나아진다는 것을 느꼈다.주말에도 공부를 하고 하다보니까 수업을 듣는것도 이해하는 것도 조금은 수월해 졌다.<br>내가 항상 걱정했던것은 다른사람들은 잘하는데 나만 제일 못하는 것같고 도퇴되면 어쩌지 하는 두려움이었다. 그러다 문득 느낀것이 다른사람들과 나는 출발점이 달랐던 것이었다.컴퓨터 관련 전공자,현업에서 뛰던 경험이 있는 사람들, 비 전공에 혼자서만 공부를 했던 나와는 출발점이 달랐다.그렇기에 다른 사람과 비교하면 차이가 나는것은 당연한 것 이였다.<br>어느날 인터넷에서 개발자와 관련된 글을 읽다가 한가지 글이 굉장히 인상에 남았다.’개발자의 길은 남들과 비교하는 순간 끝이다’라는 글이었다.<br>남들과 비교를 하면서 스스로의 성취에 무뎠었다. 앞으로  나는 나에게만 집중해야겠다 생각했다. 그리고 다른 출발점을 따라 잡기 위해서 더 많은 노력을 할 것이다. 비록 지금은 더디고 느리지만, 나보다 앞선 사람들을 훨씬 추월하고 싶다.그리고 작은 성취를 느끼며 조금씩 조금씩 나아갈 것이다.작은 성취 하나하나가 나를 앞으로 나가게 하는 원동력이 된다. 처음 느꼈던 좌절을 발판삼아 앞으로 나아갈 것이다.앞으로 좌절 보다는 도전하고 극복하겠다.<br>지켜봐라. </p>
-]]></content>
-      <tags>
-        <tag>HTML,CSS 수업을 듣고 난 한 달</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>메모리,참조,키워드,변수,선언,할당,재할당,호이스팅</title>
-    <url>/2019/10/04/%EB%A9%94%EB%AA%A8%EB%A6%AC%EC%B0%B8%EC%A1%B0%ED%82%A4%EC%9B%8C%EB%93%9C/</url>
-    <content><![CDATA[<p><strong>변수</strong>-값을 다룬다.(데이터를 다룬다.)</p>
-<p><strong>참조</strong>-변수에 저장된 값을 읽어들이는것을 참조라한다.</p>
-<p>함수/객체 (변수를 모르면 못함)</p>
-<p>10(리터럴)+(연산자)20(리터럴):좌변과 우변의 값 +연산자를 메모리에 저장한다.</p>
-<p><strong>메모리셀</strong>:1byte짜리 방이 존재한다.1byte단위로 저장<br><strong>메모리주소</strong>:각각 셀마다 주소가있다.<br>인간에게 유의미한 데이터는 최소 1byte이상</p>
-<p>숫자를 기억하여 메모리에 저장한다. 연산을 cpu에서 한다. cpu에서 연산 한 후 이를 메모리에 저장을 한다.<br>메모리에 저장되는 모든 값은 2진수이다.</p>
-<p><strong>1+2 안 쓴다표현식(unuse-expression)? 쓴다는 의미?</strong> 메모리 어딘가에 저장함.(10과20) 30이라는 값을 더한이유는 이 값을 ‘사용하겠다’는 의미이다.곧 재사용을 할 수없다는 것이다.  값이 메모리에 저장이 됐지만 주소를 알아야 접근할 수있는데,<br>위치 안알려줌(잘못 저장하면 문제가 생김)/알려준다고해도 문제가 됨.(같은 곳에 저장될 보장이없다.임의의 공간에 저장이 되기때문이다.) 저장된 데이터를 재사용하기 위해서 프로그래밍 언어는 변수를 제공한다.</p>
-<p>따라서 변수는 데이터가 저장되는 곳의 메모리 주소를 기억한다.(반드시 변수에는 하나의 값만 저장할 수 있다.)</p>
-<p><strong>변수란</strong> 하나의 값을 저장할 수 있는 메모리공간에 붙인 이름 또는 메모리공간 자체를 말한다.</p>
-<p><strong>여기서 값이란(하나의값)?</strong> 메모리에 들어가는 대상.컴퓨터가 인식할 수있는 값의 종류. 7가지 (숫자 문자열 불리언 undefined null symbol 객체-값의 유형)</p>
-<p>자료구조-데이터 구조(여러 개의 값이 들어있는,연관된 데이터의 그룹) ex)객체,배열</p>
-<hr>
-<p>자바스크립트 엔진은 변수이름 result (식별자-고유한 이름,일종의 카드 키)을 안다.<br>키워드-명령어(뒤에 값을 준다.) 자바스크립트에게 내리는 명령<br>변수에 저장된 값을 읽어들이는 것을 참조라한다.</p>
-<p><strong>변수의 이름</strong>-&gt;할당값/값을 의미해야함<br>변수의 이름은 저장된 값의 의미를 이해 할 수있는 이름은 가독성을 높여주는 부수효과 .변수이름을 신중하게 정해야한다.</p>
-<p>var result=10+20; 각 값10,20 메모리에 저장하고 30이라는 결과를 가져옴(평가)<br>10,20이라는 값은 필요없는 값-가비지컬렉터에의해 쓰지않는 값이기 때문에 다른값이 들어갈수있게 해준다. 가비지 ㅌ컬렉터는 값을 지우는 것이아니다.</p>
-<p><strong>var(키워드) result(변수이름/식별자)=10+20(표현식);</strong><br><strong>표현식을 변수에 할당(assign,저장,대입)</strong></p>
-<p>code-runner(dom api가 없으면 사용해도 괜찮다.)<br>quokka(command shift p);</p>
-<hr>
-<p><strong>식별자(변수이름)</strong> -메모리에 있는 값을 구별해서 끄집어낼 수  있는 값./식별자는 어떤 값을 구별하여 식별해낼 수있는 고유한 이름</p>
-<p><strong>함수는값이다</strong>.함수덩어리 메모리에 그대로 들어감ex)foo();</p>
-<p>클래스-객체를 만들어냄 ex)class Bar(){} new Bar();<br>식별자는 메모리 주소를 알고 있다.<br>변수,함수,클래스 네이밍있다.</p>
-<p><strong>변수선언</strong>-변수를 생성한다.<br>변수란 컴퓨터에서 메모리와 관련있다.</p>
-<p><strong>변수선언</strong>-변수생성한다(변수이음,메모리공간-매핑된 상황) 자바스크립트 엔진에 변수이름 등록 ,값 저장을 위한 메모리 공간 확보위함</p>
-<p>변수선언 var result 변수이름을 자바스크립크 엔진에 등록해 알린다.</p>
-<p><strong>변수의 이름은 어디에 저장이 되는 가?</strong>  변수이름을 비롯한 모든 식별자는 실행 컨텍스트에 등록이된다. 또한 자바 스크립트 엔진은 실행 컨텍스트를 통해서 식별자와 스코프를 관리한다. 변수이름과  변수값은 실행 컨텍스트내의 key와  value형식으로 등록되어 관리된다.<br>변수 선언 키워드 사용(var,let,const)</p>
-<p>var 키워드를 사용한 변수선언은 선언단계와 초기화 단계가 동시에 일어난다.</p>
-<p><strong>변수선언(메모리 공간을 확보하기 위해)=할당1.논리적 선이된후2.할당</strong></p>
-<p>기본적 변수는 선언을 하고 할당해야함.</p>
-<p>변수를 선언만하고,할당을 하지 않으면 -undefined값이나옴. 값이 정의되지않는다. 변수는 암묵적으로 undefined값을 가진다 .자바스크립트엔진에 부여. 알아서 할당한다 .undefined라는 값으로-우리가 일부로 할당하는 경우는 없다. 자바스크립트엔진이 쓰기위한 값,변수가 선언만되고 할당되지 않았다는것을 알려주기 위함이 크다.-인터프리터 언어는 런타임에 에러가 발생해서 볼 수있기 때문에 최대한 에러가 나지 않게한다.</p>
-<p> 할당하지 않고 변수선언마저하지 않음 에러를 일으킨다.</p>
-<hr>
-<p><strong>변수 호이스팅(중요함)</strong>-변수선언이 위로 끌어올려진것처럼 동작한다.</p>
-<p>console.log(score);//원래 에러가 나야함.<br>var score;//변수선언</p>
-<p><strong>모든(식별자와 관련있다.)선언문은 먼저 실행한다.</strong><br>인터프리터가 코드를 한줄한줄 해석하기 전에 쭉 일고 선언문만을 골라서 먼저 실행한다. 이는 코드를 실행하기 전에 평가를 한다고 말한다.-이후 실행될 수있는 환경을 만들어냄.<br>변수의 선언이 코드가 순차적으로 실행되는 런타임 이전에 먼저 실행된다는 것에 주목하자.</p>
-<p>위 끌어올려서 실행된 실행문은 또 실행되지 않는다.<br>(let,const호이스팅이 되지만 안되는것 처럼 작동한다.이후에 수업할 내용이다.)<br>위의 내용은 변수 호이스팅의 내용이고,함수 호이스팅이 따로 존재한다.<br>**이런식으로 코드를 짜지 말아야하는 예시가 될 수있다.-&gt;최소한 선언을 하고 참조해라.</p>
-<p><strong>왜 호이스팅이 발생하는가?-&gt;</strong>선언문은 실행될때 가장먼저 골라져서 실행되기대문에 발생한다.<br>console.log(result);// undefined을 출력한다.<br>var result=100;(var result;<br>                                 result=100;)으로 해석될수있다.</p>
-<p>선언문과 할당 ,선언문이전에 참조를 하지 말아라.</p>
-<p>console.log(result);//undefined.<br>var result=100;<br>console.log(result)//100출력</p>
-<hr>
-<p><strong><em>값의 할당-</em></strong>변수 선언은 소스 코드가 순차적으로 실행되기 이전, 즉 런타임 이전에 먼저 실행되지만 값의 할당은 소스 코드가 순차적으로 실행되는 시점인 런타임에 실행된다.**</p>
-<p><strong>값의 재할당-</strong>이미 할당되어있는 면수에 새로운 값을 또ㄱ디시 할당하는 것을 말한다.<br>var 키워드로 선언한 변수는 값을 재할당할 수 있따.</p>
-<p>원시값(6가지 타입:undefined,null,불리언,문자열,숫자,symbol,)은 값을 변경할 수 없다.리뮤터블(한번 값을 설정하면 바꿀수없다.)</p>
-<p><strong>언매니지드/ 매니지드</strong><br><strong>가비지 컬렉터</strong>는 지우는 역할이 아니라 값이 할당될때 다른 값이 들어가지 못하도록 블락한것을 풀어주어 다른 값이 들어갈 수 있도록하는 역할을 한다고 생각하면 쉽다.</p>
-<p><strong>힌트는 :변수를 하나를 더만들어서 사용하라.</strong></p>
-<p>var x=1;<br>var y=2;</p>
-<hr>
-<p>var z=y;</p>
-<p>x=z;<br>y=x;<br>console.log(x,y);// 2,1로 출력되도록 값을 바꾸어라.</p>
-]]></content>
-      <tags>
-        <tag>메모리,참조,키워드,변수,선언,할당,재할당,호이스팅,</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>반응형웹 수업내용 간단한 정리</title>
-    <url>/2019/09/22/%EB%B0%98%EC%9D%91%ED%98%95%EC%9B%B9%EC%88%98%EC%97%85%EB%82%B4%EC%9A%A9%EC%A0%95%EB%A6%AC/</url>
-    <content><![CDATA[<p>반응형 웹 디자인(responsive Web design) 모바일디바이스와 타블렛 같은 다양한 디바이스들이 등장하게 되었고, 그에 환경에 따른 별도의 대응이 필요하게 되었다.</p>
-<p> RWD vs AWD(적응형):view port에 따라 증가하다가 특정 크기에서 고정형(데스크탑 +모바일)<br>반응형 웹의 100(width를  특정한 너비를 설정하지 않는다.)</p>
-<p>컨텐츠는 물과 같다.용기는 다르더라도 내용물은 물은 그대로다.</p>
-<p>미디어 쿼리 배치중요하다. 추천하는 방법은 모바일 환경에 대한 선형 디자인을 처음으로 고려하고 brekpoint를 추가하면서 너비나 상황 변하였을때의 값을 설정해주는 것이 좋은 방법이 된다.(모바일에서 데스크탑으로)<br> mobile first:컨텐츠 전략 선택 선형적인 기본작업을 모바일에서 만들고 그것을 데스크탑 컨텐츠로 순서로 최적화를 한다.</p>
-<p>max-width:너비를 자신의 이상으로 안하겠다.너비가 줄수도 있지만 증가하진않는다.<br>height:auto:높이를 너비가 변호하는 것에 따에 자동으로 맞춘다.</p>
-<p><picture>&lt;source min-width:40em srcset:big-jpg 1x:big -jpg 2x&gt;최소의 너비에서 다음으로 srcset의 값을 보여주겠다. 배율이 1일때와 2배율일때 각각 상황에 맞게 사용하겠다.<picture>은 재사용과 수정에 용이하다.<br></picture><br></picture></p>
-<p>10vh(view height)화면 view port의 1/10을 높이로 정하겠다. 앞에서 이야기했듯이 모바일 first 선형화</p>
-<p>display:flex 의 order속성은 기본 값이 :0 기본 값보다 작으면 -1이면 기본 보다 먼저 값은 값이 있으면 순서대로 정의 한다.</p>
-<p>flex-flow:row wrap은 축은 바꾸지 않고 wrap 을 사용함으로서 줄을 바꿈.</p>
-<p>breakpoint는 쉽게 생각하면 추가될때 바뀌는 구간이라고 생각하면 된다.<br>@media screen and (min-width:801px)::801이 되면서 내용을 덮어씌우겠다.</p>
-]]></content>
-      <tags>
-        <tag>반응형 웹 수업내용</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>데이터 타입 연산자</title>
-    <url>/2019/10/08/%EB%B3%80%EC%88%98%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%80%EC%9E%85%20%EC%97%B0%EC%82%B0%EC%9E%90/</url>
-    <content><![CDATA[<p>var person,$elem,_name,first_name,val1;</p>
-<p>,쉼표는 연산자다.<br>자바스크립트는 대소문자를 구분한다.</p>
-<p>var FRISTNAME:식별자의 이름을 대문자로 쓰면 개발자들사이에서 ‘상수’라는 것을 암묵적으로 약속한다.</p>
-<p>변수는 값의 이름을 나타낼수 있는 의미가 중요하다.<br>주석은 가급적 많이 사용하지 않는것이 좋다-오히려 주석이 이해를 방해/그만큼 네이밍이 중요하다.</p>
-<p>카멜케이스- var fristName변수,함수 기본적으로 사용<br>파스칼케이스-var FirstName생성자함수,클래스<br>스테이크케이스-var first_name;<br>헝가리언 케이스-var strFirstName;<br>var $elem=$(‘.myClass’);</p>
-<p>var a=10+20; 10.+,20은 각각이 토큰이다.</p>
-<p>+는 산술 연산자,<br>식(표현식:10+20)=&gt; 값(value)으로 30;<br>식이 값이 되려면 자바스크립트 엔진이 식을 평가(evaluation)한다.<br>var a=10+20;(전체를 문:statement)</p>
-<hr>
-
-<p><strong>데이터 타입</strong>(7가지-숫자,문자열,불리언,undefined,null,symbol,객체 혹은 참조)</p>
-<p>-데이터 타입이 필요하다-&gt;할당할때 변수에 확보해야하는 메모리 공간을 확보할 수있다.</p>
-<p>1.타입을 알아야-메모리 공간을 확보한다.<br>2.몇 바이트 공간이 필요한가<br>3.가져온 값을 어떻게 해석해야하는가?</p>
-<p>숫자값 저장(8byte 사용) 타입마다 확보해야하는 메모리 공간 제각각이다. 타입을 모르면 확보해야할 메모리를 모른다.</p>
-<p>score을 선두에 접근한다. 8byte만큼 가져옴-&gt;가져온 데이터 2진수(문자/숫자/불리언 등으로 어떻게 알것이냐?)<br>-&gt;따라서 식별자는 타입을 알아야한다.</p>
-<hr>
-
-<p><strong>값</strong>:현재 메모리에 들어있는 데이터<br><strong>값의 특징:</strong>타입을 가지고 있다(7가지 타입중하나)<br><strong>값이란?</strong> 더이산 평가 할 수 없는 하나의 표현식이다.<br>ex)30-리터럴/리터럴 표기법(10진수)/값을 만들어낸느 가장 시초<br><strong>평가란?</strong>식을 하나의 값으로 계산한다.ex)10+20평가의 대상 -평가의 결과물은 <strong>값</strong>이다.<br>표현식은 평가가 되어 값이 되는 것이다.<br>10(피연산자,리터럴)+(산술 연산자)20(피연산자,리터럴)</p>
-<p>값을 표기하는 방법 크게 두가지다</p>
-<p>1.<strong>리터럴</strong>(ex)30.<br><strong>2.표현식</strong>(ex)10+20-&gt;하나 이상의 리터럴,하나 이상의 표현식 연산자로 만들어진 ‘문(statement)’이다.</p>
-<p>10+20:표현식-&gt; 자바스크립트엔진에서 평가-&gt;값 30을 만듦/리터럴 표기법를 평가해야 값을 만들어낸다.(평가 전에는 값이 만들어지지않는다.)</p>
-<p>숫자 리터럴/문자열 리터럴/불리언 리터럴/null리터럴/undefined리터럴/객체 리터럴/배열 리터럴/함수 리터럴/정규표현식 리터럴</p>
-<p>리터럴은 사람이 이해하기 편하게 하기 위해서 만들었다.</p>
-<p><strong>데이터 타입</strong><br><strong>원시타입</strong>(숫자/문자열/불리언/undefined/null/symbol)</p>
-<p><strong>객체 타입</strong>(object/reference type):객체,함수,배열</p>
-<p>정수/실수-모든숫자를 실수 타입으로 처리를 한다.</p>
-<ul>
-<li>Infinity : 양의 무한대</li>
-<li>-Infinity : 음의 무한대</li>
-<li>NaN : 산술 연산 불가(not-a-number)</li>
-</ul>
-<p>표현식은 평가 되어져서 하나의 값을 만든다.<br>식별자는 결국 표현식이다.<br>(ex)var a=10;var a=b;b=a+10;표현식은 하나의 값으로 표현할 수있다.</p>
-<p><strong>문자열</strong><br>작은 따옴표,큰 따옴표-개행하기 위해서는 이스케이프 시퀀스를 사용한다.(개행:\n);</p>
-<p>백틱문자는 엔터나 띄어쓰기 같은 것,’’,””을 모두 동시에 사용할 수 있다는 장점이 있다.</p>
-<p>console.log(‘My name is’+frist+’’+second+’!’);</p>
-<p>+은 문자열 연산자-좌우항에 하나라도 문자열이 있다면 + 연산자로 결합하여 문자열이 된다.<br><code>${문자열}</code> ex)console.log(<code>1+1=${1+1}</code>);</p>
-<p>‘2’는 문자열이다. 이는 암묵적인 타입변환이 일어났단는 것을 알수있다. 이러한 암묵적인 변환은 에러의 온상이 된다.</p>
-<p><strong>불리언 타입</strong><br>논리적인 참,거짓을 나타내는 true 와 false를 가진다.</p>
-<p><strong>undefined타입</strong><br>undefined타입 값은 undefined가 유일 하다.선언 이후에 명시적으로 값을 할당하지 은 변수는 자바스크립트 엔진의 암묵적 초기화에 의해서 undefined값을 가진다. 따라서 선언은 되었지만 아직 값을 할당하지 낳은 변수에 접근하면 undefined가 반환된다.</p>
-<p><strong>선언</strong>:변수는 선언이라고 부를 것이다.<br><strong>정의</strong> :무언가를 할당해서 그 변수에 어떤 값을 가지고있는지 명확히 나타냄<br>함수,클래스는 ‘정의’로 부르겠다. 선언과 동시에 객체가 생성됨</p>
-<p><strong>null타입</strong></p>
-<p>변수에는 값이 없다는 것을 명확히 나타냄.<br>ex)var foo=’lee’; foo=null(가비지 컬렉터가 로 ‘lee ‘를 해제해 주세요)</p>
-<p><strong>동적 타이핑(타입이 동적이다.)</strong><br>동적타입언어(자바스크립트)-변수의 타입이 없다(값에 타입이 있다.)-편하지만 신뢰성이 떨어진다(변수의 타입이 암묵적으로 변환이 된다.).</p>
-<p>값에 의해서 변수의 타입이 결정이 된다.변수는 선언이 아닌 할당에 의해 타입이 결정된다. 재할당에 의해 변수의 타입은 언제든지 동적으로 바뀔 수 있다.-&gt;하나의 변수에 여러가지 값을 마구마구 집어널을 수있다.</p>
-<p><strong>정적타입의 언어</strong>(자바,c)-변수자체가 타입이 있다=엄격하다(정해진타입의 값만이 들어갈수있기 때문에 )그래서 안정성이 있다.</p>
-<p>언제나 변수의 타입의 값을 확정할 수있다.</p>
-<p>Typescript -&gt;자바스크립트 에 정적 타입을 도입한것.</p>
-<p>동적 타입언어는 편리함,but위험이 도사리고 있다.</p>
-<p>동적으로 변화하는 데이터타입을 추측하기 어려운데 ,안정적인 프로그램을 만들기 위해서<br>1.변수를 최소화 한다.<br>2.전역변수(라이프 주기가 길다)사용x<br>변수의 생명주기를 짧게 만든다.<br>3.변수보다 상수를 사용해서 값의 변경을 억제 하자.<br>4.변수의 이름을 존재를 파악할 수있도록 명명한다.</p>
-<hr>
-<p><strong>표현식과 연산자</strong></p>
-<p><strong>표현식</strong> :하나의 값을 표현할 수있는 문<br>표현식에 리터럴,식별자,연산자를 사용할 수있다.</p>
-<p><strong>리터럴</strong>-사람이 이해할 수있는 값으로 나타냄<br>리럴은 표현식을 만드는 요소중에 하나이다.리터럴은 표현식이 될수있지만, 표현식은 리터럴 일수도 아닐 수도 있다.</p>
-<p><strong>문</strong>-표현식일수도 아닐수도 있다.(문&gt;표현식)</p>
-<p><strong>표현식인 문</strong>-값으로 표현(변수에 할당)<br><strong>표현식이 아닌 문</strong>-값으로 표현 (변수에 할당x)<br> 표현식인 문과 표현식이 아닌 문을 확인하는 가장 쉬운 방법은 변수에 할당해보는 방법이다.</p>
-<p><strong>변수선언문</strong>-표현식이 아닌 문<br><strong>할당문**</strong>-(ex)x=5; 어떤 변수에 할당할 수있다.</p>
-<p>문은 세미콜론으로 끝나야한다. 그러나 단 코드 블록 뒤에는 붙이지 않는다. 자동 삽입 기능이있지만 붙이는 것이 권고 된다.</p>
-<p><strong>연산자</strong>:표현식을 만드는 연산자.피연산자에는 식이 올수도 있다.</p>
-<p><strong>이항 연산자</strong>는 부수효과가 없다.<br>그러나 단항 연산자++,–부수효과가 있다.</p>
-<p>+’10’숫자로 암묵적으로 변한이 일어남</p>
-<p><strong>비교연산자</strong><br>===타입이 다르면 false이다.==타입이 달라도 같은 결과라고 나오는 경우가 있기에 ===을 사용해야함.<br>!==와 !==도 마찬가지</p>
-<p>NaN===NaN은 false을 반황하는대   NaNdㅡㄴ 자신과 일치하지 않은 유일한 값이다. 따라서 NaN인지를 조사하려면 빌트인 함수를 isNaN을 사용해여한다.</p>
-<p><strong>대소 연산자</strong>도 true와 false값을 받는다.</p>
-<p><strong>3항 조건 연산자</strong><br>조건식? 조건식 이 true일때 반환하는 값 :조건식이 false일때 반환하는 값<br>var x=2;</p>
-<p>var result=x%2? ‘홀수’:’짝수’;</p>
-<p>console.log(result);</p>
-<p>var x=2,result;</p>
-<p>if(x%2){<br>result=’홀수’;</p>
-<p>}else{</p>
-<p>result=’짝수’</p>
-<p>}console.log(result);</p>
-<p><strong>논리연산자</strong></p>
-<p>or(논리합:||)and(논리곱:&amp;&amp;) not(!)</p>
-<p><strong>드모르간의 법칙</strong> !(x || y)===(!x &amp;&amp; !y)</p>
-<p><strong>단축평가</strong>-피연산자가 불리언이 아닐수도 있다 어느 한쪽을 선택함</p>
-<table>
-<thead>
-<tr>
-<th>단축 평가 표현식</th>
-<th>평가 결과</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>true||anything</td>
-<td>true</td>
-</tr>
-<tr>
-<td>false||anything</td>
-<td>anything</td>
-</tr>
-<tr>
-<td>true&amp;&amp;anything</td>
-<td>anything</td>
-</tr>
-<tr>
-<td>false&amp;&amp;anything</td>
-<td>false</td>
-</tr>
-</tbody></table>
-<p><strong>typeof연산자</strong> </p>
-<p>typeof funciton(){}-함수 리터럴-&gt;function을 받는다<br>생성자 함수=new 객체와 새로운 함수를 만든다.<br>typeof null은 object를 반환한다.</p>
-<p><strong>지수연산자</strong></p>
-<p>5 ** 2-&gt;25;</p>
-<p>var num=5;<br>num ** =2-&gt;25</p>
-<p>1.연산자 ++/–변수 ㄱ밧을 고친 다 부수효과가 존재한다.<br>2.동등연산자의 차이(===/==);<br>3.삼항조건연산자,if문 대신 사용할 수 있다.</p>
-]]></content>
-      <tags>
-        <tag>변수 뒷부분 + 1.데이터타입 2.연산자</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>스코프</title>
-    <url>/2020/05/03/%EC%8A%A4%EC%BD%94%ED%94%84/</url>
-    <content><![CDATA[<p><strong>스코프</strong></p>
-<p>식별자(변수)가 유효한 범위,식별자와 깊은 관련,함수와 관련<br>어떨때 유효하고 어떨때 유효하지 않은가?<br>함수는 스코프를 만든다.(var키워드로 선언한 경우)</p>
-<p>var 키워드는 함수의 코드블록만을 코드 블록으로 인정하는 함수레벨 스코프를 따른다. var 키워드는 함수가 스코프를 만든다.</p>
-<p>중첩함수-스코프도 중첩이 된다.(어떤 우선순위를 가지는 가?을 아는 것이 중요)<br>스코프는 간단하게 말하면 자바스크립트엔진이 식별자를 찾는 규칙이다. </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="comment">//선언하고 할당할때 a라는 식별자를 찾는다.</span></span><br></pre></td></tr></table></figure>
-
-<p>즉 스코프는 식별자에 존재한다. 프로퍼티는 prototype체인에 존재한다.</p>
-<p>스코프의 생명주기<br>함수에 매개변수가 업ㄱ다면 외부와 단절이 된다. 하지만 매개변수는 없는 것이 가장 좋다.-&gt;외부에 의존하기 때문에</p>
-<p>함수는 재사용을 한다. 변수를 왜쓰는가?-어떤 상태를 유지해야할때 사용한다.<br>변수를 공용으로 쓸때는(전역변수와 관련하여)? 고정되어 변하지 않는 값ㅇ르 가지는 경우에 사용한다.<br>상수는 재할당을 금지시킨다. 따라서  전역변수는 상수개념이 아니면 사용하지 않는것이 좋다.</p>
-<p>1.순수함수-1언제나 동일 한 반환값(return x+y)<br>x(2,3)=5</p>
-<p>2.비순수함수 -외부함수에 영향을 받음</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> num=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">increase</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> ++num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p> <strong>스코프 함수</strong></p>
-<p>변수가 어디에서 선언이 됐느냐가 즉 선언 위치가 스코프를 만든다.<br>class는 함수이다.<br>자신이 선언된 위치에 의해 다른 식벼자를 참조할 유효범위가 결정된다.</p>
-<p>function foo(){}는 식별자가 2개이다. 1.암묵적으로 자바스크립트 엔진이 변수이름으로 만든 식별자.</p>
-<p>2.지역함수의 식별자. 그런데 에러를 일으키지않는다. 그리고 foo는 전역 함수이다. 또한 호출하는 foo()에서 foo는 함수이름이 아니고 자바스크립트엔진이 생성한 암묵적인 식별자다.</p>
-<p>스코프는 자카스크립트엔진이 식별자는 찾는 규칙이다. 코드와 가장 근접한 곳에있는 스코프를 본다.<br>자바스크립트 코드의 문맥과 환경이있따. 코드를 실행하기 위한 문맥을 기억한다. 자바스크립트는 전역과 지역을 어떻게 구분하는걸까?</p>
-<p>식별자는 스코프내에서 유니크하다.<br>전역은 어디근 참조(문맥을 찾는다.)가 가능하다. 코드가 해당하는 스코프부터 식별자를 찾는다. 그후에 상위로 간다.<br>쉐도잉-그림자 처럼 가져려진다.<br>식별자는 자바스크립트엔진에 등록이된다.<br>이때 스코프가 정해진다.<br>식별자는 스코프 체인에서 찾는다. 함수는 변수와 저장되는 매카니즘이 같다. 찾는 매카니즘도 동일하다.</p>
-<p><strong>렉시컬 시코프</strong><br>자바스크립트엔진이 함수를 정의할때 어디서 호출될지 알수없다.<br>언제 함수의 상위 스코프가 오는냐? 함수의를 할때 취치에 의해 상위 스코프가정해진다. 어디서 호출되든지 간에 정의위치에 ㄱ따라 사우이스코프가 정해져버린다.<br>동적스코프와 /렉시컬스코프의 차이</p>
-<p>매개변수가 값을 할당하는 것은 호출할때, 호출된 직후 매개변수undefined 선언된다. 이후에 할당된다.<br>변수도 어디에서 선언되는지에 따라 스코프가 정해진다.함수도 마찬가지</p>
-<p><strong>암묵적 전역변수</strong><br>전역함수에서 선언하지않은 변수는 전역변수가 된다.<br>모듈(자바스크립트 엔진은 파일 스코프를 가지지않는다.)-&gt;한개의 파일로 함ㅍ쳐진다. 같은 이름의 변숙가 있다면 재할다잉 된다.이런 문제 따문에 전역변수를 사용하지않는다.<br>자바스크립트에는 순서가 있다.엄청 여러개의 스크립트파일들을  webpack 번들링 로 하나로 묶고 그 안에서 스코프를 줘서 나눈다.</p>
-<p><strong>변수의 생명주기</strong>- 변수 생명주기는 직역변수일때 함수의 생명주기가 짧다.리소스가 빨리 해방이 된다.<br> 반대로 전역변수의 생명주기(스코프가 길다.)는 길기 때문에 재할당 수정등의 여러가지 문제를 야기한다.</p>
-<p>짧고 생명주기가 짧은 함수가 가독성이 좋다. 그리고  한가지 일만 을 시킬수있어서 좋다.</p>
-<p>전역변수의 생명주기는 스크립트 로드가 되자마자 생성되고 애플리케이션이 종료될때 까지 (브라우저 종료) 전역변수는 리소스 할당이 적다.,암묵적 결함을 하고,네이밍스페이스를 오염시킨다. </p>
-<p>모둘패턴 (문법이 아닌 디자인 패턴이다.)<br>즉시실행함수는 코드가 실행되면 바로 실행이 된다. 객체 리터럴이 바로 함수에 할당이 된다. 모듈패턴은 자바스크립트에는 자바에서 public,private,protected같은 접근제한자가 없다. 따라서 이를 상요함으로써 변수에 접근을 하지못하게하는 역할을 하기위해 사용한다.<br>let,const 블록레벨 스코프</p>
-<p>var키워드는 전역 변수의 분제점으로 귀결된다. 왜var키워드를 사용할 수없는가?-&gt;함수레벨 스코프,전역변수 문제점,재할당 등의 이유.</p>
-<p>변수 호이스팅은 나쁜점이다. 지양해야하는 부분.<br>변수는 선언하고 참조해라</p>
-<p>let/const 변수 선언 중복선언애러,변수는 스코프가 분리되있으면 다른 변수이다.</p>
-<p>for문()의 소괄호의 부분은 코드블록안에 있다고 생각을 하는 것이 좋다.</p>
-<p>const/let은 호이스팅이 안하는 것 처럼 보이지만 한다.-런타임이전에 변수는 선언이 된다. 하지만 런타임에 선언문을 만나야지 값이 할당된다. 그렇기 때문에 선언문이전에 호출을 하면 에러를 발생시킨다. 즉 선언된 것을 자바스크립트엔진이 알지만 이에 접근하지 말라는 의미다.</p>
-<p><strong>전역객체</strong></p>
-<p>브라우저의 전역객체는 :window이다.<br>node.js의 전역객체는 :gloabal이다.<br>var키워드로 선언한 모든 전역변수는 window객체릐 프로퍼티가 된다.</p>
-<p>브라우저의 페이지를 바꾸면 전역객체또한 리셋이 된다.<br>전역객체는 var키워드로 선언한다.<br>function foo(){}와 var foo=funciton(){}모두 window의 객체이다.</p>
-<p>let으로 선언한 전역변수는 더이상 읽어들을 전역변수가 없다면 생명주기를 다하고 죽는다.<br>var와 let키워드를 섞어서 사용하지만고 한가지만을 통일해서 사용하자.<br>window객체의프로퍼티는 전역변수와 같게 사용 할 수 있다.</p>
-<p><strong>const키워드</strong><br>재할당을 할수없다. 변수 선언과 동시에 값을 할당해 주어야한다.<br>상수도 변수이다. 재할당을 금지시킨다.(스네이크 케이스,대문자로 사용한다.).</p>
-<p><strong>const 키워드의 객체</strong><br>재할당을 하는 일은 극히 드물다.<br>대부분 변수 const 사용한다. 변수 재할당 할일 이 없다.<br>객체는 변경가능한 값이다. 객체를 가지는 변수는 let을 사용할 이유가 없다. 객체는 기본적으로 재할당하지 않는다. es6/const ,let을 사용한다. 재할당 필요한 경우에만 let을 사용한다. </p>
-<p>전역 코드의 실행이 종료되면 let종료,window는 살아있다. 완료값은 변수에 할당되는 값이 아니다.</p>
-]]></content>
-      <tags>
-        <tag>스코프</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>웹접근성과 WAI-ARIA</title>
-    <url>/2019/09/17/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1/</url>
-    <content><![CDATA[<p> 웹 접근성이란 웹 사이트에서 제공하는 정보를 차별없이 동등하게 이용 할 수 있도록하는 보장하는 것을 말한다. 신제적(고령층 ,장애인,비장애인 ) 환경적 요건(다양한 플랫폼,웹 브라우져,장치)을 모두 포함한다.</p>
-<p>WAI ; Web Accessibility InitiativeWAI는 시각·청각 기능 등에 장애를 지닌 사람도 일반인과 동등하게 웹에 접근하여 이용할 수 있도록 관련 지침을 개발하고 웹 접근성 향상을 위한 노력을 기울이는 W3C의 산하 단체를 말한다</p>
-<p>ARIA:Accessible Rich Internet Applications’의 약자로 리치 인터넷을 위한 W3C 접근성 명세입니다.</p>
-<p>RIA:정적인 HTMl과 단순한 자바스크립트 환경의 웹이 아닌 동적인 자바스크립트와 Ajax와 같은 기술을 사용한 환경에서 수준 높은 UX(User eXperience)를 제공하는 웹 애플리케이션을 의미한다.</p>
-<p>WAI-ARIA는 RIA에서 스크린 리더기 및 보조기기 등에서 접근성 및 운용성을 향상시키기 위한 목적으로 탄생했으며 웹 애플리케이션에 역할,속성,상태 정보를 추가하여 이를 개선 할 수 있도록 제공하고 있다.</p>
-<p>1)대표적인 역할( role):tablist,button,tab,tooltip,list,</p>
-<p>application,abnner,navigation,form,search..</p>
-<p>2)Property &amp; State:(상태와 속성):aria-labelledby=”” : 레이블 제공을 위한 aria-속성. 상태 값은 연결시킬 레이블 id를 입력한다.</p>
-<p>aria-haspopup=”” : 팝업요소가 하위에 존재하고 있다는걸 인식 시켜주는 aria-속성. 상태 값은 false(default) / true / menu / listbox / tree / gird / dialog</p>
-<p>aria-live : 페이지의 어떤 위치에 있든 업데이트된 정보를 사용자에게 알려주는 aria-속성. 상태 값은 assertive / off(default) / polite</p>
-<p>aria-labelledby=”” : 레이블 제공을 위한 aria-속성. 상태 값은 연결시킬 레이블 id를 입력한다.</p>
-<p>aria-selected=”” : 탭메뉴 선택 유무를 알려준다. 상태 값은 선택되었을 때 true / 선택되지 않았을 때 false 입력</p>
-<p>ria-controls=”” : 현재 요소가 제어하는 대상을 명시하는 속성으로 탭메뉴와 본문을 연결시켜준다. 상태 값은 tabpanel의 id명 입력</p>
-]]></content>
-      <tags>
-        <tag>웹 접근성과 WAI-ARIA</tag>
       </tags>
   </entry>
 </search>
