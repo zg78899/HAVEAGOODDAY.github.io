@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zg78899.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="1. 타입변환이란?자바스크립트의 모든 값은 카입이 있다. 값의 타입은 개발자의 의도에 의해 다른 타입으로 변환될 수 있다. 개발자가 의도적으로 값의 타입을 변환하는 것을 명시적 타입변환 또는 타입캐스팅이라 한다. 123456789var x = 10;//명시적 타입변환//숫자를 문자열로 타입 캐스팅을 한다.var str = x.toString();consol">
+<meta name="keywords" content="타입변환과 단축평가에 대해">
+<meta property="og:type" content="article">
+<meta property="og:title" content="타입변환과 단축평가">
+<meta property="og:url" content="https://zg78899.github.io/2020/05/16/typechange/index.html">
+<meta property="og:site_name" content="Hello -JH- World">
+<meta property="og:description" content="1. 타입변환이란?자바스크립트의 모든 값은 카입이 있다. 값의 타입은 개발자의 의도에 의해 다른 타입으로 변환될 수 있다. 개발자가 의도적으로 값의 타입을 변환하는 것을 명시적 타입변환 또는 타입캐스팅이라 한다. 123456789var x = 10;//명시적 타입변환//숫자를 문자열로 타입 캐스팅을 한다.var str = x.toString();consol">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-05-16T13:26:26.198Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="타입변환과 단축평가">
+<meta name="twitter:description" content="1. 타입변환이란?자바스크립트의 모든 값은 카입이 있다. 값의 타입은 개발자의 의도에 의해 다른 타입으로 변환될 수 있다. 개발자가 의도적으로 값의 타입을 변환하는 것을 명시적 타입변환 또는 타입캐스팅이라 한다. 123456789var x = 10;//명시적 타입변환//숫자를 문자열로 타입 캐스팅을 한다.var str = x.toString();consol">
+
+<link rel="canonical" href="https://zg78899.github.io/2020/05/16/typechange/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>타입변환과 단축평가 | Hello -JH- World</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hello -JH- World</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">daily 개발 study</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/zg78899" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/05/16/typechange/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -JH- World">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          타입변환과 단축평가
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-16 17:20:48 / Modified: 22:26:26" itemprop="dateCreated datePublished" datetime="2020-05-16T17:20:48+09:00">2020-05-16</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/05/16/typechange/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/16/typechange/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-타입변환이란"><a href="#1-타입변환이란" class="headerlink" title="1. 타입변환이란?"></a>1. 타입변환이란?</h1><p>자바스크립트의 모든 값은 카입이 있다. 값의 타입은 개발자의 의도에 의해 다른 타입으로 변환될 수 있다. 개발자가 의도적으로 값의 타입을 변환하는 것을 명시적 타입변환 또는 타입캐스팅이라 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//명시적 타입변환</span></span><br><span class="line"><span class="comment">//숫자를 문자열로 타입 캐스팅을 한다.</span></span><br><span class="line"><span class="keyword">var</span> str = x.toString();</span><br><span class="line"><span class="built_in">console</span>.log(typeif str,str) <span class="comment">//string 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//변수 x의 값이 변경된 것은 아니다. </span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> x,x) <span class="comment">//number 10;</span></span><br></pre></td></tr></table></figure>
+
+<p>개발자의 의도와는 상관없이 표현식을 평가하는 도중에 자바스크립트 엔진에 의해 암묵적으로 타입이 자동 변환되기도 한다. 이를 암묵적 타입 변환 또는 타입 강제 변환이라고 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line"><span class="comment">//암묵적 타입 변환</span></span><br><span class="line"><span class="comment">// 문자열 연결 연산자는 숫자 타입 x의 값을 바탕으로새로운 문자열을 생성한다.</span></span><br><span class="line"><span class="keyword">var</span> str = x+<span class="string">''</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> str,str) <span class="comment">//string 10</span></span><br><span class="line"><span class="comment">//x의 타입이 변경되는 것은 아니다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> x,x) <span class="comment">//number 10</span></span><br></pre></td></tr></table></figure>
+
+<p>명시적 타입 변환이나 암묵적 타입변환이 기존 원시값을 직접 변경하는 것은 아니다. 원시값은 변경 불가능한 값이므로 변경 할 숭 없다. 타입 변환이란 기존 원시값을 사용해 다른 타입의 새로운 원시값을 생성하는 것이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//원시값 1이 '1'로 직접 변경되는것은 아니다.</span></span><br><span class="line"><span class="comment">//1을 사용해 타입이 다른 '1'을 새롭게 생성하여 '1'+''을 평가한다.</span></span><br><span class="line"><span class="number">1</span>+ <span class="string">''</span><span class="comment">// -&gt;'1'</span></span><br></pre></td></tr></table></figure>
+
+<p>암묵적 타입 변화은 변수의 값을 재할당해서 변경하는 것이 아니라 자바스크립트 엔진이 표현식을  에러없이 평가하기 위해 피연산자의 값을 바탕으로 새로운 타입의 값을 만들어 단 한번 사용하고 버린다.<br>위 에제의 경우, 자바스크립트의 엔진은 표현식 x+’’ 을 평가하기위해서 변수 x의 숫자 값을 바탕으로 새로운 문자열 값을 ‘10’을 생성하고 이것으로 표현식 ‘10’+’’를 평가한다. 이때 암묵적으로 생성된 문자열 ‘10’은 변수 x에 할당되지않는다. 따라서 암묵적으로 생성된 문자열 ‘10’은 표현ㅅ기의 평가가 끝나면 아무도 참조하지 ㅇ낳으므로 가비지 컬렉션에 의해 메모리에서 해제된다.</p>
+<p>명시적 타입변환은 타입을 변경하겠다는 개발자의 의지가 코드에 명백히 드러난다. 하지만 암묵적 타입 강제 변환은 자바스크립트  엔진에 의해 암묵적으로 , 즉 드러나지 않게 타입이 자동변환 되기 때문에 타입을 변경하겠다는 개발자의 의지가 코드에 명백히 드러나지 않는다.</p>
+<p>따라서 자신이 작성한 코드에서 암묵적 타입변환이 발생하는지, 발생한다면 어떤타입의 어떤 값으로 변환되는지, 그리고 타입 변환된 값으로 표현식은 어떻게 평가될 것인지 에측 가능해야한다. 만약 타입 변환결과를 예측 못하거나 예측이 결과와 일치하지않는다면 오류를 발생할 가능성이 높아진다.</p>
+<p>그렇다면 명시벅 타입변환 만을 사용하고 암무거적 타입변환은 발생하지 않도록 코드를 작성하면 어떨까? 좋은 생각이지만 이러한 논리는 옳지 않다. 때로는 명시적 타입변환 보다 암묵적 타입 변환이 가독성 측면에서 더 좋을 수도 있다. 예를 들어 자바스크립트 문법을 잘 이해하고 있는 개발자에게는 (10).toString()보다 10 +’’이 더욱 간결하고 이해하기 쉽다.</p>
+<p>중요한 것은 코드를 예측할 수 있어야 한다는 것이다. 동료가 작성한 코드를 정확히 이해할 수 있어야 자신의 코드는 타인에 의해 쉽게 이해 될 수 있어야한다. 이를 위해 타입 변환이 어떻게 동작하는지 정확히 알고 사용하는 것이 중요하다.</p>
+<h1 id="2-암묵적-타입-변환"><a href="#2-암묵적-타입-변환" class="headerlink" title="2. 암묵적 타입 변환"></a>2. 암묵적 타입 변환</h1><p>자바스크립트 엔진은 표현식을 평가 할 때 개발자의 의도와는 상관없이 코드의 문맥을 고려하여 암묵적으로 데이터 타입 을강제로 변환(암묵적 타입 변환)할 때가 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//피연산자가 모두 문자열 타입이어야 하는 문맥</span></span><br><span class="line"><span class="string">'10'</span> + <span class="number">2</span> <span class="comment">//'102';</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//피연산자가 모두 숫자 타입이어야하는 문맥</span></span><br><span class="line"><span class="number">5</span> * <span class="string">'10'</span> <span class="comment">//50;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//피연산자 또는 표현식이 불리언 타입이어야하는 문맥</span></span><br><span class="line">!<span class="number">0</span> <span class="comment">//true;</span></span><br><span class="line"><span class="keyword">if</span>(<span class="number">1</span>)&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>이처럼 표현식을 평가 할때 코드의 문맥에 부합하지 않는 상황이 발생 할 수 있다. 디때 자바스크립트는 가급적 에러를 발생시키지 않도록 암묵적 타입 변환을 통해 표현식을 평가한다. 암묵적 타입 변환이 발생하면 문자열,숫자,불리언 같은 원시 타입 중 하나로 타입을 자동 변환한다. 타입 별로 암묵적 타입 변환이 어떻게 발생하는 지 살펴보자.</p>
+<h2 id="2-1-문자열-타입으로-변환"><a href="#2-1-문자열-타입으로-변환" class="headerlink" title="2.1. 문자열 타입으로 변환"></a>2.1. 문자열 타입으로 변환</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>+<span class="string">'2'</span> <span class="comment">//'12';</span></span><br></pre></td></tr></table></figure>
+
+<p>위에제는 +연산자는 피연산자 중 하나의 이상의 문자열이므로 문자열 연결 연산자로 종작한다. 문자열 연견 연산자의 역할은 문자열 값을 만드는 것이다. 따라서 문자열 연결 연산자의 모즌 연산자는 코드의 문맥 상 모두 문자열 타입이어야한다. </p>
+<p>자바스크립트의 엔진은 문자열 연산자 표현식을 평가하기 위해서 문자열 연결 연산자의 피연산자 중에서 문자열 타입이 아닌 피연산자를 문자열 타입으로 암묵적으로 타입 변환한다.<br>연산자 표현식의 피연산자(피연산자도 표현식이다)만이 암묵적 타입변환 의 대상이 되는 것은 아니다. 앞서 언급했듯이 자바스크립트 엔진은 표현식을 평가 할때 코드 문맥에 부합하도록 암묵적 타입 변환을 실행한다.</p>
+<p>예를 들어 ES6에서 도입된 템플릿 리터럴의 표현식 삽입은 표현식의 평가 결과를 문자열 타입으로 암묵적으로 변환한다</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`1 + 1 = <span class="subst">$&#123;<span class="number">1</span>+<span class="number">1</span>&#125;</span>`</span> <span class="comment">// ' 1 + 1 = 2'</span></span><br></pre></td></tr></table></figure>
+
+<p>자바스크립트의 엔진은 문자열아닌 갓을 문자열 타입으로 변환을 수행할때 아래와 같이 동작한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//숫자 타입</span></span><br><span class="line"></span><br><span class="line"> <span class="number">0</span> +<span class="string">''</span> <span class="comment">//'0'</span></span><br><span class="line"><span class="number">-0</span>+ <span class="string">''</span> <span class="comment">//'0'</span></span><br><span class="line"><span class="number">1</span>+<span class="string">''</span> <span class="comment">//'1'</span></span><br><span class="line"><span class="number">-1</span>+<span class="string">''</span> <span class="comment">//'-1';</span></span><br><span class="line"><span class="literal">NaN</span> + <span class="string">''</span> <span class="comment">// 'NaN'</span></span><br><span class="line"><span class="literal">Infinity</span>+<span class="string">''</span> <span class="comment">// 'Infinity';</span></span><br><span class="line">-Infinitiy + <span class="string">''</span> <span class="comment">// '-Infinity'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//불리언 타입 </span></span><br><span class="line"><span class="literal">true</span> +<span class="string">''</span> <span class="comment">// 'true';</span></span><br><span class="line"><span class="literal">false</span> +<span class="string">''</span> <span class="comment">// 'false';</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//null 타입</span></span><br><span class="line"><span class="literal">null</span> + <span class="string">''</span> <span class="comment">// 'null';</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//undefined 타입</span></span><br><span class="line"><span class="literal">undefined</span> + <span class="string">''</span> <span class="comment">// 'undefined';</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//심볼 타입</span></span><br><span class="line">(<span class="built_in">Symbol</span>())+ <span class="string">''</span>  <span class="comment">// TypeError :cannont convert a Symbol value to a string;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//객체 타입</span></span><br><span class="line">(&#123;&#125;)+<span class="string">''</span>  <span class="comment">// '[object Object]';</span></span><br><span class="line"><span class="built_in">Math</span> + <span class="string">''</span> <span class="comment">// '[object Math]';</span></span><br><span class="line">[]+<span class="string">''</span> <span class="comment">// ''</span></span><br><span class="line">[<span class="number">10</span>,<span class="number">20</span>]+<span class="string">''</span> <span class="comment">//'10,20';</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)+<span class="string">''</span> <span class="comment">// 'function()&#123;&#125;';</span></span><br><span class="line"><span class="built_in">Array</span> +<span class="string">''</span> <span class="comment">// 'function Array()&#123;[native code]&#125;'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-숫자-타입으로-변환"><a href="#2-2-숫자-타입으로-변환" class="headerlink" title="2.2 숫자 타입으로 변환"></a>2.2 숫자 타입으로 변환</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> - <span class="string">'1'</span> <span class="comment">//0</span></span><br><span class="line"><span class="number">1</span> * <span class="string">'10'</span> <span class="comment">//10</span></span><br><span class="line"><span class="number">1</span> / <span class="string">'one'</span> <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+
+<p>위 예제에서 사용한 연산자는 모두 산술 연산자 이다. 산술 연산자의 역할은 숫자 값을 만드는 것이다. 따라서 산술 연산자의 모든 피연자는 코드 문맥 상 모두 숫자 타입이어야한다.</p>
+<p>자바스크립트 엔진은 산술 연산자 표현식을 평가하기 위해 산술 연산자의 피연산자 중에서  숫자 타입이 아닌 피연산자를 숫자 타입으로 암묵적으로 타입 변환한다. 이때 피연산자를 숫자 타입으로 변환 할 수 없는 경우 산술 연산을 수행 할 수 없으므로 표현식의 평가 결과는 NaN이된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'1'</span> &gt; <span class="number">0</span> <span class="comment">//true;</span></span><br></pre></td></tr></table></figure>
+
+<p>비교 연산자의 역할은 불리언 값을 만드는것이다. &gt;연산자는 피연자의 크기를 비교하므로 피연산자는 코드의 문맥상 모두 숫자 타입이어야한다. 자바스크립트 엔진은 비교 연산자 표현식을 평가 하기 위해 비교 연산자 중에서 숫자 타입이 아닌 피연산자 숫자타입으로 암묵적 타입변환한다.<br>자바스크립트 엔진은 숫자 타입아닌 갓을 숫자 타입으로 암묵적 타입 변환을 수행 할대 아래와 같이 동작한다. +단한 연사자는 피연산자가 숫자 타입의 값이 아니면 숫자 타입 값으로 암묵적으로 타입변환을 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 문자열 타입</span></span><br><span class="line">+<span class="string">''</span>       <span class="comment">// -&gt; 0</span></span><br><span class="line">+<span class="string">'0'</span>      <span class="comment">// -&gt; 0</span></span><br><span class="line">+<span class="string">'1'</span>      <span class="comment">// -&gt; 1</span></span><br><span class="line">+<span class="string">'string'</span> <span class="comment">// -&gt; NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 불리언 타입</span></span><br><span class="line">+<span class="literal">true</span>     <span class="comment">// -&gt; 1</span></span><br><span class="line">+<span class="literal">false</span>    <span class="comment">// -&gt; 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// null 타입</span></span><br><span class="line">+<span class="literal">null</span>     <span class="comment">// -&gt; 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// undefined 타입</span></span><br><span class="line">+<span class="literal">undefined</span> <span class="comment">// -&gt; NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 심볼 타입</span></span><br><span class="line">+<span class="built_in">Symbol</span>() <span class="comment">// -&gt; ypeError: Cannot convert a Symbol value to a number</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체 타입</span></span><br><span class="line">+&#123;&#125;             <span class="comment">// -&gt; NaN</span></span><br><span class="line">+[]             <span class="comment">// -&gt; 0</span></span><br><span class="line">+[<span class="number">10</span>, <span class="number">20</span>]       <span class="comment">// -&gt; NaN</span></span><br><span class="line">+(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;) <span class="comment">// -&gt; NaN</span></span><br></pre></td></tr></table></figure>
+
+<p>빈 문자열,빈 배열,null,false는 0으로 true는 1로 변환된다.  객체와 빈 배열이 아닌 배열 ,undefined는 변환되지 않아 NaN이 된다는 것에 주의 </p>
+<h2 id="2-3-불리언-타입으로-변환"><a href="#2-3-불리언-타입으로-변환" class="headerlink" title="2.3. 불리언 타입으로 변환"></a>2.3. 불리언 타입으로 변환</h2><p>if문이나 for문과 같은 제어문 또는 삼항 조건 연산자의 조건식은 불리언 값 즉 , 논리적 참,거짓을 반환해야하는 표현식이다. 자바스크립트 엔진은 조건식의 평가 결과를 불리언 타입로 변환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">''</span>)    <span class="built_in">console</span>.log(<span class="string">'1'</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>)  <span class="built_in">console</span>.log(<span class="string">'2'</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="number">0</span>)     <span class="built_in">console</span>.log(<span class="string">'3'</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="string">'str'</span>) <span class="built_in">console</span>.log(<span class="string">'4'</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="literal">null</span>)  <span class="built_in">console</span>.log(<span class="string">'5'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2 4</span></span><br></pre></td></tr></table></figure>
+
+<p>이 때 자바스크립트 엔진은 불리언 타입이 아닌 값을 Truthy 또는 Falsy값으로 구분한다. 즉 제어문의 조건식과 같이 불리언 값으로 평가 되어야 할 문맥에서 Truthy 값은 true로 , Falsy 값은 false로 암묵적 타입변환을 한다.</p>
+<p>아래 값들은 false로 평가되는 Falsy 값이다.</p>
+<ul>
+<li>false</li>
+<li>undefined</li>
+<li>null</li>
+<li>0, -0</li>
+<li>NaN</li>
+<li>’’ (빈문자열);</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 아래의 조건문은 모두 코드 블록을 실행한다.</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="literal">false</span>)     <span class="built_in">console</span>.log(<span class="literal">false</span> + <span class="string">' is falsy value'</span>);</span><br><span class="line"><span class="keyword">if</span> (!<span class="literal">undefined</span>) <span class="built_in">console</span>.log(<span class="literal">undefined</span> + <span class="string">' is falsy value'</span>);</span><br><span class="line"><span class="keyword">if</span> (!<span class="literal">null</span>)      <span class="built_in">console</span>.log(<span class="literal">null</span> + <span class="string">' is falsy value'</span>);</span><br><span class="line"><span class="keyword">if</span> (!<span class="number">0</span>)         <span class="built_in">console</span>.log(<span class="number">0</span> + <span class="string">' is falsy value'</span>);</span><br><span class="line"><span class="keyword">if</span> (!<span class="literal">NaN</span>)       <span class="built_in">console</span>.log(<span class="literal">NaN</span> + <span class="string">' is falsy value'</span>);</span><br><span class="line"><span class="keyword">if</span> (!<span class="string">''</span>)        <span class="built_in">console</span>.log(<span class="string">''</span> + <span class="string">' is falsy value'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>Falsy 값 이외의 모든 값은 모두 true로 평가되는 Truthy 값이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 주어진 값이 falsy값이면 true, Truthy 값이면 false을 반환한다.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isFalsy</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> !v;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//주어진 인자가 truthy 값이면 true, Falsy깂이면 false을 반환한다.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isTruhty</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> !!v;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 모두 true를 반환한다.</span></span><br><span class="line">isFalsy(<span class="literal">false</span>);</span><br><span class="line">isFalsy(<span class="literal">undefined</span>);</span><br><span class="line">isFalsy(<span class="literal">null</span>);</span><br><span class="line">isFalsy(<span class="number">0</span>);</span><br><span class="line">isFalsy(<span class="literal">NaN</span>);</span><br><span class="line">isFalsy(<span class="string">''</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 모두 true를 반환한다.</span></span><br><span class="line">isTruthy(<span class="literal">true</span>);</span><br><span class="line">isTruthy(<span class="string">'0'</span>); <span class="comment">// 빈 문자열이 아닌 문자열은 Truthy 값이다.</span></span><br><span class="line">isTruthy(&#123;&#125;);</span><br><span class="line">isTruthy([]);</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-명시적-타입-변환"><a href="#3-명시적-타입-변환" class="headerlink" title="3. 명시적 타입 변환"></a>3. 명시적 타입 변환</h1><p>개발자의 의도에 의해 명시적으로 타입을 변환하는 방법은 다양하다. 표준 빌트인 생성자 함수를 new 연산자 호출 없이 호출하는 방법과 빌트인 메소드를 사용하는 방법, 그리고 앞에서 살펴본 암묵적 타입 변환을 이용하는 방법이 있다.</p>
+<p>표준빌트인 생성자 함수와 빌트인 메소드<br>표준 빌트인 생성자 함수와 표준 빌트인 메소드는 자바스크립트에서 기본으로 제공하는 함수이다. 표준 빌트인 생성자 함수는 객체를 생성하기 위한 함수이며 new연산자와 함께 호출한다. 표준 빌트인 메소드는 자바스크립트에서 기본 제공하는 빌트인객체릐 메소드이다. </p>
+<h2 id="3-1-문자열-타입으로-변환"><a href="#3-1-문자열-타입으로-변환" class="headerlink" title="3.1. 문자열 타입으로 변환"></a>3.1. 문자열 타입으로 변환</h2><p>문자열 타입이 아닌 값을 문자열 타입으로 변환하는 방법은 다음과같다.</p>
+<p>1.String 생성자 함수르 new 연산자 없이 호출하는 방법.</p>
+<p>2.Object.prototype.toString() 메소드를 사용하느 방법<br>3.문자열 연결 연산자를 사용하는 방법</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. String 생성자 함수를 new호출없이 호출하는 방법</span></span><br><span class="line"><span class="comment">//숫자 타입 =&gt; 문자열</span></span><br><span class="line"><span class="built_in">String</span>(<span class="number">1</span>);        <span class="comment">// -&gt; "1"</span></span><br><span class="line"><span class="built_in">String</span>(<span class="literal">NaN</span>);      <span class="comment">// -&gt; "NaN"</span></span><br><span class="line"><span class="built_in">String</span>(<span class="literal">Infinity</span>); <span class="comment">// -&gt; "Infinity"</span></span><br><span class="line"><span class="comment">// 불리언 타입 =&gt; 문자열 타입</span></span><br><span class="line"><span class="built_in">String</span>(<span class="literal">true</span>);     <span class="comment">// -&gt; "true"</span></span><br><span class="line"><span class="built_in">String</span>(<span class="literal">false</span>);    <span class="comment">// -&gt; "false"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. Object.prototype.toString 메소드를 사용하는 방법</span></span><br><span class="line"><span class="comment">// 숫자 타입 =&gt; 문자열 타입</span></span><br><span class="line">(<span class="number">1</span>).toString();        <span class="comment">// -&gt; "1"</span></span><br><span class="line">(<span class="literal">NaN</span>).toString();      <span class="comment">// -&gt; "NaN"</span></span><br><span class="line">(<span class="literal">Infinity</span>).toString(); <span class="comment">// -&gt; "Infinity"</span></span><br><span class="line"><span class="comment">// 불리언 타입 =&gt; 문자열 타입</span></span><br><span class="line">(<span class="literal">true</span>).toString();     <span class="comment">// -&gt; "true"</span></span><br><span class="line">(<span class="literal">false</span>).toString();    <span class="comment">// -&gt; "false"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 문자열 연결 연산자를 이용하는 방법</span></span><br><span class="line"><span class="comment">// 숫자 타입 =&gt; 문자열 타입</span></span><br><span class="line"><span class="number">1</span> + <span class="string">''</span>;        <span class="comment">// -&gt; "1"</span></span><br><span class="line"><span class="literal">NaN</span> + <span class="string">''</span>;      <span class="comment">// -&gt; "NaN"</span></span><br><span class="line"><span class="literal">Infinity</span> + <span class="string">''</span>; <span class="comment">// -&gt; "Infinity"</span></span><br><span class="line"><span class="comment">// 불리언 타입 =&gt; 문자열 타입</span></span><br><span class="line"><span class="literal">true</span> + <span class="string">''</span>;     <span class="comment">// -&gt; "true"</span></span><br><span class="line"><span class="literal">false</span> + <span class="string">''</span>;    <span class="comment">// -&gt; "false"</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-2-숫자-타입으로-변환"><a href="#3-2-숫자-타입으로-변환" class="headerlink" title="3.2  숫자 타입으로 변환"></a>3.2  숫자 타입으로 변환</h2><p>숫자 타입이 아닌 어떤 값을 숫자 타입으로 변환하는 방법은 다음과 같다.</p>
+<ol>
+<li>Number 생성자 함수르 new 연산자 없이 호출하는 방법</li>
+<li>paseInt ,parseFloat 함수를 사용하는 방법(문자열만 숫자 타입로 변환가능);</li>
+<li>+단항 산술 연산자를 이용하는 방법</li>
+<li>*산술연산자를 사용하는 방법</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. Number 생성자 함수를 new 연산자 없이 호출하는 방법</span></span><br><span class="line"><span class="comment">// 문자열 타입 =&gt; 숫자 타입</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="string">'0'</span>);     <span class="comment">// -&gt; 0</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="string">'-1'</span>);    <span class="comment">// -&gt; -1</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="string">'10.53'</span>); <span class="comment">// -&gt; 10.53</span></span><br><span class="line"><span class="comment">// 불리언 타입 =&gt; 숫자 타입</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">true</span>);    <span class="comment">// -&gt; 1</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">false</span>);   <span class="comment">// -&gt; 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. parseInt, parseFloat 함수를 사용하는 방법(문자열만 변환 가능)</span></span><br><span class="line"><span class="comment">// 문자열 타입 =&gt; 숫자 타입</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'0'</span>);       <span class="comment">// -&gt; 0</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'-1'</span>);      <span class="comment">// -&gt; -1</span></span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">'10.53'</span>); <span class="comment">// -&gt; 10.53</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. + 단항 산술 연산자를 이용하는 방법</span></span><br><span class="line"><span class="comment">// 문자열 타입 =&gt; 숫자 타입</span></span><br><span class="line">+<span class="string">'0'</span>;     <span class="comment">// -&gt; 0</span></span><br><span class="line">+<span class="string">'-1'</span>;    <span class="comment">// -&gt; -1</span></span><br><span class="line">+<span class="string">'10.53'</span>; <span class="comment">// -&gt; 10.53</span></span><br><span class="line"><span class="comment">// 불리언 타입 =&gt; 숫자 타입</span></span><br><span class="line">+<span class="literal">true</span>;    <span class="comment">// -&gt; 1</span></span><br><span class="line">+<span class="literal">false</span>;   <span class="comment">// -&gt; 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. * 산술 연산자를 이용하는 방법</span></span><br><span class="line"><span class="comment">// 문자열 타입 =&gt; 숫자 타입</span></span><br><span class="line"><span class="string">'0'</span> * <span class="number">1</span>;     <span class="comment">// -&gt; 0</span></span><br><span class="line"><span class="string">'-1'</span> * <span class="number">1</span>;    <span class="comment">// -&gt; -1</span></span><br><span class="line"><span class="string">'10.53'</span> * <span class="number">1</span>; <span class="comment">// -&gt; 10.53</span></span><br><span class="line"><span class="comment">// 불리언 타입 =&gt; 숫자 타입</span></span><br><span class="line"><span class="literal">true</span> * <span class="number">1</span>;    <span class="comment">// -&gt; 1</span></span><br><span class="line"><span class="literal">false</span> * <span class="number">1</span>;   <span class="comment">// -&gt; 0</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-3-불리언-타입으로-변환"><a href="#3-3-불리언-타입으로-변환" class="headerlink" title="3.3. 불리언 타입으로 변환"></a>3.3. 불리언 타입으로 변환</h2><p>불리언 타입이 아닌 값을 불리언 타입으로 변환하는 방법</p>
+<ol>
+<li>Boolean 생성자 삼수를 new 연산자 없이 호출하는 방법</li>
+<li>!부정 논리 연산자를 두번 사용하는 방법</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. Boolean 생성자 함수를 new 연산자 없이 호출하는 방법</span></span><br><span class="line"><span class="comment">// 문자열 타입 =&gt; 불리언 타입</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">'x'</span>);       <span class="comment">// -&gt; true</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">''</span>);        <span class="comment">// -&gt; false</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">'false'</span>);   <span class="comment">// -&gt; true</span></span><br><span class="line"><span class="comment">// 숫자 타입 =&gt; 불리언 타입</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="number">0</span>);         <span class="comment">// -&gt; false</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="number">1</span>);         <span class="comment">// -&gt; true</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">NaN</span>);       <span class="comment">// -&gt; false</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">Infinity</span>);  <span class="comment">// -&gt; true</span></span><br><span class="line"><span class="comment">// null 타입 =&gt; 불리언 타입</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">null</span>);      <span class="comment">// -&gt; false</span></span><br><span class="line"><span class="comment">// undefined 타입 =&gt; 불리언 타 입</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">undefined</span>); <span class="comment">// -&gt; false</span></span><br><span class="line"><span class="comment">// 객체 타입 =&gt; 불리언 타입</span></span><br><span class="line"><span class="built_in">Boolean</span>(&#123;&#125;);        <span class="comment">// -&gt; true</span></span><br><span class="line"><span class="built_in">Boolean</span>([]);        <span class="comment">// -&gt; true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. ! 부정 논리 연산자를 두번 사용하는 방법</span></span><br><span class="line"><span class="comment">// 문자열 타입 =&gt; 불리언 타입</span></span><br><span class="line">!!<span class="string">'x'</span>;       <span class="comment">// -&gt; true</span></span><br><span class="line">!!<span class="string">''</span>;        <span class="comment">// -&gt; false</span></span><br><span class="line">!!<span class="string">'false'</span>;   <span class="comment">// -&gt; true</span></span><br><span class="line"><span class="comment">// 숫자 타입 =&gt; 불리언 타입</span></span><br><span class="line">!!<span class="number">0</span>;         <span class="comment">// -&gt; false</span></span><br><span class="line">!!<span class="number">1</span>;         <span class="comment">// -&gt; true</span></span><br><span class="line">!!<span class="literal">NaN</span>;       <span class="comment">// -&gt; false</span></span><br><span class="line">!!<span class="literal">Infinity</span>;  <span class="comment">// -&gt; true</span></span><br><span class="line"><span class="comment">// null 타입 =&gt; 불리언 타입</span></span><br><span class="line">!!<span class="literal">null</span>;      <span class="comment">// -&gt; false</span></span><br><span class="line"><span class="comment">// undefined 타입 =&gt; 불리언 타입</span></span><br><span class="line">!!<span class="literal">undefined</span>; <span class="comment">// -&gt; false</span></span><br><span class="line"><span class="comment">// 객체 타입 =&gt; 불리언 타입</span></span><br><span class="line">!!&#123;&#125;;        <span class="comment">// -&gt; true</span></span><br><span class="line">!![];        <span class="comment">// -&gt; true</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="4-단축-평가"><a href="#4-단축-평가" class="headerlink" title="4.  단축 평가"></a>4.  단축 평가</h1><p>논리합(||)  연산자와 논리곱(&amp;&amp;) 연산자 표현식의 평가 결과는 불리언 값이 아닐 수 도 있다. 논리합 ,논리곱 연산자 표현식은 언제나 2개의 피연산자 중 어느 한쪽으로 평가된 다는 것이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Cat'</span> &amp;&amp; <span class="string">'Dog'</span> <span class="comment">// 'Dog'</span></span><br></pre></td></tr></table></figure>
+
+<p>논리곱 연산자는 두개의 피연산자가 모두 true 일때 모두 true 를 반환한다. 논리곱 연산자는 결합 순서가 좌항에서 우항으로 평가가 진행된다.<br>첫번째 피연산자 ‘Cat’은 truty 값이므로 true로 평가 된다. 하지만 이 시점까지는 위 표현식을 평가 할 수없다. 두번째 피연산자까지 평가해 보아야 위 표현식을 평가 할 수 있다. 다시 말해 두번째 피연산자가 위 논리곱 연산자 표현식의 평가 결과를 결정한다.이때 논리곱 연산자 논리 연산의 결과를 결정한 두번재  피연산자 즉 문자열 ‘Dog’를 그대로 반환한다.</p>
+<p>논리합 연산자도 논리곱 연산자와 동일하게 동작한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Cat'</span> || <span class="string">'Dog'</span> <span class="comment">// -&gt; "Cat"</span></span><br></pre></td></tr></table></figure>
+
+<p>논리함 연산자는 두개의 피연산자 중 하나만 true로 평가 되어도 true를 반환한다. 논리합 연산자도 왼쪽에서 오른쪽으로 진행된다. 찻 반째 피연산자 ‘Cat’은  truthy한 값이므로 true로 평가된다. 이 시점에서 두 번째 피연산자까지 평가 해 보지 않아도 위 표현식을 평가 할수있다. 이때 논리 합 연산자는 논리 연산의 결과를 결정한 첫번째 피연산자 즉 ,문자열 ‘Cat’을 그대로 반환한다.<br>논리곱 연산자와 논리합 연산자는 이와 같이 논리 연산의 결과를 결정한 피연산자를 타입 변환 하지 않고 그대로 반환한다. 이를 단축 평가라 부른다. 단축평가는 표현식을 평가하는 도중에 평가 결과가 확정된 경우,나머지 평가 과정을 생략한다. 대부분의 프로그래밍 언어는 단축병가를 통해 논리 연산을 수행한다.</p>
+<p>단축 평가는 아래의 규칙을 따른다. </p>
+<table>
+<thead>
+<tr>
+<th align="left">단축 평가 표현식</th>
+<th align="left">평가 결과</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">true || anything</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left">false || anything</td>
+<td align="left">anything</td>
+</tr>
+<tr>
+<td align="left">true &amp;&amp; anything</td>
+<td align="left">anything</td>
+</tr>
+<tr>
+<td align="left">false &amp;&amp; anything</td>
+<td align="left">false</td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 논리합(||) 연산자</span></span><br><span class="line"><span class="string">'Cat'</span> || <span class="string">'Dog'</span>  <span class="comment">// -&gt; "Cat"</span></span><br><span class="line"><span class="literal">false</span> || <span class="string">'Dog'</span>  <span class="comment">// -&gt; "Dog"</span></span><br><span class="line"><span class="string">'Cat'</span> || <span class="literal">false</span>  <span class="comment">// -&gt; "Cat"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 논리곱(&amp;&amp;) 연산자</span></span><br><span class="line"><span class="string">'Cat'</span> &amp;&amp; <span class="string">'Dog'</span>  <span class="comment">// -&gt; "Dog"</span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="string">'Dog'</span>  <span class="comment">// -&gt; false</span></span><br><span class="line"><span class="string">'Cat'</span> &amp;&amp; <span class="literal">false</span>  <span class="comment">// -&gt; false</span></span><br></pre></td></tr></table></figure>
+
+<p>단축 평가를 사용하면 if문을 대체 할 수 있다 . 주어진 조건이 truthy값(참으로 평가되는 값)일 때 무언가를 해야한다면 온리곱 연산자 표현식으로 if문을 대체 할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> done = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> message = <span class="string">''</span>;</span><br><span class="line"><span class="comment">//주어진 조건이 true일 때 </span></span><br><span class="line"><span class="keyword">if</span>(done)message = <span class="string">'완료'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//if문은 단축 평가로 대체 가능하다.</span></span><br><span class="line"><span class="comment">//done에 true라면 message에 '완료'를 할당</span></span><br><span class="line">message = done &amp;&amp; <span class="string">'완료'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message) <span class="comment">//완료</span></span><br></pre></td></tr></table></figure>
+
+<p>주어진 조건이 truthy값(거짓으로 평가 되는 값) 일 때 무언가를 해야 한다면 논리합 연산자 표현식으로 if문을 대체할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> done = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">var</span> message = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//주어진 조건이 false 일때</span></span><br><span class="line"><span class="keyword">if</span>(!done)mesage = <span class="string">'미완료'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//if문은 단축평가로 대체 가능하다.</span></span><br><span class="line"> <span class="comment">//done이 false이면 message에 '미완료'를 할당</span></span><br><span class="line">message = done || <span class="string">'미완료'</span>;</span><br><span class="line">consoel.log(message) <span class="comment">//미완료</span></span><br></pre></td></tr></table></figure>
+
+<p>참고로 삼항 조건 연산자는 if…else문을 대체 할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> done = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> message = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//if else문</span></span><br><span class="line"><span class="keyword">if</span>(done)message =<span class="string">'완료'</span>;</span><br><span class="line"><span class="keyword">else</span> message = <span class="string">'미완료'</span>;</span><br><span class="line">consoel.log(message) <span class="comment">// 완료;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//if ...else 문은 삼항 조건 연산자로 대체 가능 하다.</span></span><br><span class="line">message = done ? <span class="string">'완료'</span> :<span class="string">'미완료'</span>;</span><br><span class="line">consoel.log(message) <span class="comment">//  완료</span></span><br></pre></td></tr></table></figure>
+
+<p>객체를 가리키는 변수가  null(또는 undefined)인지 확인하고 프로퍼티를 참조 할 때</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> elem = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> value = elem.value; <span class="comment">//// TypeError: Cannot read property 'value' of null</span></span><br><span class="line"><span class="keyword">var</span> value = elem &amp;&amp; elem.value <span class="comment">//null</span></span><br></pre></td></tr></table></figure>
+
+<p>객체는 키와 값으로 구성된 프로퍼티들의 집합이다. 만약 객체를 가리키는 변수가 null인 경우 , 객체의 프로퍼티를 참조하면 타입에러가 발생한다. 이때 단축 평가를 사용하면 에러가 발생하지않는다.</p>
+<p>ES11(ECMAScript2020)에 도입될 것으로 알려진 옵셔널 체이닝(optional chaining, 2020년 5월 현재, stage 4) 문법을 사용하면 논리곱(&amp;&amp;) 연산자 표현식을 대체할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> elem = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// elem이 null 또는 undefined인 경우, 옵셔널 체이닝 문법은 undefined를 반환한다.</span></span><br><span class="line"><span class="keyword">const</span> value = elem ? .value; <span class="comment">//undefined;</span></span><br><span class="line"><span class="comment">//const value = (elem === null || elem === undefined)? undefined :elem.value;</span></span><br></pre></td></tr></table></figure>
+
+<p>함수 매개 변수에 기본값을 설정 할때</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//단축 평가를 사용한 매개변수의 기본값 설정</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getStringLength</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">  str = str || <span class="string">''</span>;</span><br><span class="line">  <span class="keyword">return</span> str.length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getStringLength() <span class="comment">// 0;</span></span><br><span class="line">setStringLength(<span class="string">'hi'</span>) <span class="comment">//2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//ES6의 매개변수의 기본값 설정</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getStringLength</span>(<span class="params">str = <span class="string">''</span></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> str.length;</span><br><span class="line">&#125;</span><br><span class="line">getStringLength(); <span class="comment">//0;</span></span><br><span class="line">getStringLength(<span class="string">'hi'</span>) <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+<p>함수를 호출할 때 인수를 전달하지 않으면 매개 변수를 undefined을 갖는다. 이때 단축평가를 사용하여 매개 변수의 기본값을 설정하면 undefined로인해 발생 할 수 있는 에러를 방지할 수 있다.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/타입변환과-단축평가에-대해/" rel="tag"># 타입변환과 단축평가에 대해</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/15/ecmascript-and-javascript-md/" rel="prev" title="ECMAScript와 Javascript의 차이">
+      <i class="fa fa-chevron-left"></i> ECMAScript와 Javascript의 차이
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-타입변환이란"><span class="nav-number">1.</span> <span class="nav-text">1. 타입변환이란?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-암묵적-타입-변환"><span class="nav-number">2.</span> <span class="nav-text">2. 암묵적 타입 변환</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-문자열-타입으로-변환"><span class="nav-number">2.1.</span> <span class="nav-text">2.1. 문자열 타입으로 변환</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-숫자-타입으로-변환"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 숫자 타입으로 변환</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-불리언-타입으로-변환"><span class="nav-number">2.3.</span> <span class="nav-text">2.3. 불리언 타입으로 변환</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-명시적-타입-변환"><span class="nav-number">3.</span> <span class="nav-text">3. 명시적 타입 변환</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-문자열-타입으로-변환"><span class="nav-number">3.1.</span> <span class="nav-text">3.1. 문자열 타입으로 변환</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-숫자-타입으로-변환"><span class="nav-number">3.2.</span> <span class="nav-text">3.2  숫자 타입으로 변환</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-불리언-타입으로-변환"><span class="nav-number">3.3.</span> <span class="nav-text">3.3. 불리언 타입으로 변환</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-단축-평가"><span class="nav-number">4.</span> <span class="nav-text">4.  단축 평가</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zg78899" title="GitHub → https://github.com/zg78899" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zg788990@gmail.com" title="E-Mail → mailto:zg788990@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/zg788990" title="YouTube → https://youtube.com/zg788990" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://https-zg78899-github-io.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://zg78899.github.io/2020/05/16/typechange/";
+    this.page.identifier = "2020/05/16/typechange/";
+    this.page.title = "타입변환과 단축평가";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-zg78899-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
