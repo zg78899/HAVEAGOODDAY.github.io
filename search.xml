@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>10월 7일 러버덕(키워드,식별자,변수와 선언,메모리,메모리 주소,할당,호이스팅)</title>
+    <url>/2019/10/07/10%EC%9B%947%EC%9D%BC%EB%9F%AC%EB%B2%84%EB%8D%95/</url>
+    <content><![CDATA[<h3 id="1-키워드"><a href="#1-키워드" class="headerlink" title="1.키워드:"></a><strong>1.키워드</strong>:</h3><p>명령어(뒤에 값을 준다.)<br><strong>자바스크립트에게 내리는 명령.</strong><br>변수선언하려면 반드시  키워드 사용(var/let,const)</p>
+<h3 id="2-식별자-변수이름"><a href="#2-식별자-변수이름" class="headerlink" title="2.식별자(변수이름):"></a><strong>2.식별자(변수이름):</strong></h3><p>고유한이름/일종의 카드키와 같다.<br><strong>식별자(변수이름)-메모리에 있는 값을 구별해서 끄집에 낼 수 있는 값</strong><br>./어떤 값을 구별하여 식별해 낼 수 있는고유한 이름.</p>
+<p>또한 <strong>식별자는 메모리 주소를 알고있다.</strong></p>
+<p>변수 이름을 비롯한 모든 식별자는 실행 컨텍스트에 저장된다.<br>네이밍 규칙-예약어x/특수문자 _ $가능 숫자 처음 에 안나옴.</p>
+<h3 id="3-변수와-선언"><a href="#3-변수와-선언" class="headerlink" title="3.변수와 선언:"></a><strong>3.변수와 선언:</strong></h3><p><strong>변수-</strong>데이터를 다룬다. 하나의 값을 저장할 수있는 메모리 공간에 붙은 이름 혹은 메모리 자체를 의미한다.</p>
+<p>변수를 사용하려면 반드시 선언을 해줘야한다.</p>
+<p><strong>변수의 선언-</strong><br>변수를 생성한다. 변수란 컴퓨터의 메모리 와 관련있다.<br>자바스크립크엔진에 변수이름 등록,값 저장을 위한 메모리 공간을 확보하기위함.</p>
+<h3 id="4-메모리와-주소"><a href="#4-메모리와-주소" class="headerlink" title="4.메모리와 주소:"></a><strong>4.메모리와 주소:</strong></h3><p>메모리:데이터를 저장할 수 있는 데이터 셀들의 집합체.<br>메모리주소: 메모리 공간의 위치를 나타내며 0부터 시작하여 메모리의 크기만큼 정수로 표현된다. </p>
+<p>값을 입력하면 메모리 임의의 공간에 저장이 된다.하지만 메모리의 주소는 알여주지 않는데 저장된 데이터를 재사용하기 위해서는 변수를 제공해야하고 변수는 저장되는 곳의 메모리 주소를 기억한다.</p>
+<p>매니지드:(자바스크립트):<br>언매니지드(c언어):</p>
+<h3 id="5-할당"><a href="#5-할당" class="headerlink" title="5.할당:"></a><strong>5.할당</strong>:</h3><p> 변수에 값을 저장한다. 할당한다(저장한다.대입한다.assign한다)<br>논리적으로 기본적으로 변수를 선언하고 할당해야한다. 변수만을 선언하고 할당하지 않으면 값이 정의 되지 않았기 때문에 undefined가 출력이 된다.</p>
+<p>변수선언은 소소코드가 순차적으로 실행되기 이전,즉 런타임 이전에 먼저실행되지만,값의 할당은 소스코드가 순차적으로 실행되는 시점인 런타임에 실행된다.</p>
+<h3 id="6-호이스팅"><a href="#6-호이스팅" class="headerlink" title="6.호이스팅-"></a><strong>6.호이스팅-</strong></h3><p>왜 호이스팅이 발생하는가?-&gt;**선언문은 실행될때 가장먼저 골라져서 실행되기대문에 발생한다.위 끌어올려서 실행된 실행문은 또 실행되지 않는다.</p>
+]]></content>
+      <tags>
+        <tag>1키워드,2.식별자.3.변수와 선언 4.메모리와 메모리주소5.할당6.호이스팅</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>하이브리드 웹, 네이티브 웹, 웹 앱의 차이점</title>
     <url>/2020/05/07/%20webapp/</url>
     <content><![CDATA[<h3 id="localStorage와-session-storage의-가장-큰-차이점"><a href="#localStorage와-session-storage의-가장-큰-차이점" class="headerlink" title="localStorage와 session storage의 가장 큰 차이점"></a>localStorage와 session storage의 가장 큰 차이점</h3><ul>
@@ -34,6 +55,36 @@
 ]]></content>
       <tags>
         <tag>하이브리드 웹, 네이티브 웹, 웹 앱의 차이점에대해 알아보자</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Set을 사용한 교집합, 합집합, 차집합, 상위</title>
+    <url>/2020/05/23/aboutSet-md/</url>
+    <content><![CDATA[<h1 id="1-Set의-사용한-교집합-합집합-차집합-상위"><a href="#1-Set의-사용한-교집합-합집합-차집합-상위" class="headerlink" title="1.Set의 사용한 교집합 , 합집합 , 차집합 , 상위"></a>1.Set의 사용한 교집합 , 합집합 , 차집합 , 상위</h1><p>Set은 중복값을 제외한 유일한 값을 저장한다. 그렇기에 교집합, 합집합 , 차집합, 상위 등을 나타내는데 사용하기 에 용이하다.</p>
+<h2 id="1-1-교집합"><a href="#1-1-교집합" class="headerlink" title="1.1. 교집합"></a>1.1. 교집합</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//첫번째 방법</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.intersaction = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">const</span> value <span class="keyword">of</span> <span class="keyword">set</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.has(value))</span><br><span class="line">      result.add(value)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(setA.intersaction(setB)) <span class="comment">// [2,4];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//두번째 방법</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.intersaction = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [...this].filter(<span class="function"><span class="params">v</span>=&gt;</span> <span class="keyword">set</span>.has(v));</span><br><span class="line">&#125;</span><br><span class="line">const setA = new Set([1,2,3,4]);</span><br><span class="line">const seB = new Set([2,4]);</span><br><span class="line"></span><br><span class="line">console.log(setA.intersaction(setB)) // [2,4];</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-합집합"><a href="#1-2-합집합" class="headerlink" title="1.2. 합집합"></a>1.2. 합집합</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//첫번째 방법</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Set</span>.prototype.union = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="built_in">Set</span>(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">const</span> value <span class="keyword">of</span> <span class="keyword">set</span>)&#123;</span><br><span class="line">    result.add(value);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(setA.union(setB)) <span class="comment">//[1,2,3,4];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 두번째 방법</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Set</span>.prototype.union = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="built_in">Set</span>([...this,...set])</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(setA.union(setB)) <span class="comment">//[1,2,3,4];</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-3-차집합"><a href="#1-3-차집합" class="headerlink" title="1.3 차집합"></a>1.3 차집합</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//첫번째 방법</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.differnce = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="built_in">Set</span>(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">const</span> value <span class="keyword">of</span> <span class="keyword">set</span>)&#123;</span><br><span class="line">    result.delete(value);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(setA.difference(setB)) <span class="comment">//[1,3];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//두번째 방법</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Set</span>.prototype.difference = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [...this].filter(<span class="function"><span class="params">v</span>=&gt;</span> !<span class="keyword">set</span>.has(v));</span><br><span class="line">&#125;</span><br><span class="line">const setA = new Set([1,2,3,4]);</span><br><span class="line">const setB = new Set([2,4]);</span><br><span class="line"></span><br><span class="line">consoel.log(setA.differnce(setB)) //[1,3];</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-4-상위"><a href="#1-4-상위" class="headerlink" title="1.4. 상위"></a>1.4. 상위</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//첫번째 방법</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.isSuperset = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> value <span class="keyword">of</span> subset)&#123;</span><br><span class="line">  <span class="keyword">if</span>(!<span class="keyword">this</span>.has(value))<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(setA.isSuperset(setB)) <span class="comment">// true;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//두번째 방법</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.isSuperset = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> superArr = [...this];</span><br><span class="line">  <span class="keyword">return</span> [...superArr].every(<span class="function"><span class="params">v</span> =&gt;</span> superArr.includes(v));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> setA =<span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(setA.isSuperset(setB)) <span class="comment">// true;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Set을 사용한 교집합 ,합집합, 차집합, 상위</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ECMAScript와 Javascript의 차이</title>
+    <url>/2020/05/15/ecmascript-and-javascript-md/</url>
+    <content><![CDATA[<h1 id="ECMAScript-와-JavaScript"><a href="#ECMAScript-와-JavaScript" class="headerlink" title="ECMAScript  와 JavaScript"></a>ECMAScript  와 JavaScript</h1><p>![image-20200516171849635](/Users/pokeoseu/Library/Application Support/typora-user-images/image-20200516171849635.png)</p>
+<p><strong><u>ECMAScript는 자바스크립트의 표준사양인 ECMA-262를 말하며</u></strong> 프로그래밍 언어의 타입 , 값,객체와 프로퍼티,함수,표준 빌트인 객체 등 핵심 문법을 규정한다. 각 브라우저 제조사는 ECAMScript를 준수하여 브라우저에 내장되어있는 자바스크립트 엔진을 구현한다.<br><strong><u>자바스크립트는 일반적으로 프로그래밍 언어</u></strong>로서 기본 뼈대를 이루는 ECMAScript와 브라우저가 별도 지원하는 클라이언트 사이드 WEB API,즉 DOM ,BOM, Canvas ,XMLHttpRequest, Fetch, requestAnimationFrame, SVG, Web Storage, Web Component, Web worker등을 아우르는 개념이다.<br> 즉 Javascript &gt; Ecmascript (자바스크립가 더 큰 개념이다.)<br>클라이언트 사이드 WEB API는 ECMAScript와는 별도로 World Wide Web Consortium(W3C)에서도 별도로 명세로 관리하고 있다.</p>
+<p>요약하자면 ECMAScript는 ecma 인터내셔녈에 의해 정의된 ECMA -262 기술규격에 의해 정의된 범용 자바스크립트 언어를 뜻합니다. ‘ECMAScript 사양’입니다.<br>ECMA -262 는 표준의 이름이고, ECMAScript는 ECMA -262에서 정의된 하나의 사양을 의미합니다. ECMAScript는 스크립트언어가 준수해야하는 규칙,세부사항 및 지침을 제공합니다.</p>
+<p>JavaScript는 ECMAScript가 사양을 준수하는 범용 스크립트팅 언어 입니다. 자바스크립트느 ECMAScript아우르는 개념입니다..</p>
+<p>또한 JavaScripts는 1996년에 반들어 졌고 , 그 다음 해에 JavaScriptd를 표준화하기 위해서 1997년 ECMAScript가 만들어졌습니다. JavaScript는 ECMAScript 사양을 준수하는 언어이며 , JavaScript가  ECMAScript을 기반하는 동시에 ECMAScript도 JavaScript를 기반으로 한다. </p>
+]]></content>
+      <tags>
+        <tag>ECMAScript와 Javascript의 차이</tag>
       </tags>
   </entry>
   <entry>
@@ -98,44 +149,6 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
       </tags>
   </entry>
   <entry>
-    <title>Set을 사용한 교집합, 합집합, 차집합, 상위</title>
-    <url>/2020/05/23/aboutSet-md/</url>
-    <content><![CDATA[<h1 id="1-Set의-사용한-교집합-합집합-차집합-상위"><a href="#1-Set의-사용한-교집합-합집합-차집합-상위" class="headerlink" title="1.Set의 사용한 교집합 , 합집합 , 차집합 , 상위"></a>1.Set의 사용한 교집합 , 합집합 , 차집합 , 상위</h1><p>Set은 중복값을 제외한 유일한 값을 저장한다. 그렇기에 교집합, 합집합 , 차집합, 상위 등을 나타내는데 사용하기 에 용이하다.</p>
-<h2 id="1-1-교집합"><a href="#1-1-교집합" class="headerlink" title="1.1. 교집합"></a>1.1. 교집합</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//첫번째 방법</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.intersaction = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">const</span> value <span class="keyword">of</span> <span class="keyword">set</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.has(value))</span><br><span class="line">      result.add(value)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(setA.intersaction(setB)) <span class="comment">// [2,4];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//두번째 방법</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.intersaction = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [...this].filter(<span class="function"><span class="params">v</span>=&gt;</span> <span class="keyword">set</span>.has(v));</span><br><span class="line">&#125;</span><br><span class="line">const setA = new Set([1,2,3,4]);</span><br><span class="line">const seB = new Set([2,4]);</span><br><span class="line"></span><br><span class="line">console.log(setA.intersaction(setB)) // [2,4];</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-합집합"><a href="#1-2-합집합" class="headerlink" title="1.2. 합집합"></a>1.2. 합집합</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//첫번째 방법</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Set</span>.prototype.union = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="built_in">Set</span>(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">const</span> value <span class="keyword">of</span> <span class="keyword">set</span>)&#123;</span><br><span class="line">    result.add(value);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(setA.union(setB)) <span class="comment">//[1,2,3,4];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 두번째 방법</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Set</span>.prototype.union = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="built_in">Set</span>([...this,...set])</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(setA.union(setB)) <span class="comment">//[1,2,3,4];</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="1-3-차집합"><a href="#1-3-차집합" class="headerlink" title="1.3 차집합"></a>1.3 차집합</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//첫번째 방법</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.differnce = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="built_in">Set</span>(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">const</span> value <span class="keyword">of</span> <span class="keyword">set</span>)&#123;</span><br><span class="line">    result.delete(value);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(setA.difference(setB)) <span class="comment">//[1,3];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//두번째 방법</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Set</span>.prototype.difference = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [...this].filter(<span class="function"><span class="params">v</span>=&gt;</span> !<span class="keyword">set</span>.has(v));</span><br><span class="line">&#125;</span><br><span class="line">const setA = new Set([1,2,3,4]);</span><br><span class="line">const setB = new Set([2,4]);</span><br><span class="line"></span><br><span class="line">consoel.log(setA.differnce(setB)) //[1,3];</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-4-상위"><a href="#1-4-상위" class="headerlink" title="1.4. 상위"></a>1.4. 상위</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//첫번째 방법</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.isSuperset = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> value <span class="keyword">of</span> subset)&#123;</span><br><span class="line">  <span class="keyword">if</span>(!<span class="keyword">this</span>.has(value))<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(setA.isSuperset(setB)) <span class="comment">// true;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//두번째 방법</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.isSuperset = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> superArr = [...this];</span><br><span class="line">  <span class="keyword">return</span> [...superArr].every(<span class="function"><span class="params">v</span> =&gt;</span> superArr.includes(v));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> setA =<span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(setA.isSuperset(setB)) <span class="comment">// true;</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Set을 사용한 교집합 ,합집합, 차집합, 상위</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>10월 7일 러버덕(키워드,식별자,변수와 선언,메모리,메모리 주소,할당,호이스팅)</title>
-    <url>/2019/10/07/10%EC%9B%947%EC%9D%BC%EB%9F%AC%EB%B2%84%EB%8D%95/</url>
-    <content><![CDATA[<h3 id="1-키워드"><a href="#1-키워드" class="headerlink" title="1.키워드:"></a><strong>1.키워드</strong>:</h3><p>명령어(뒤에 값을 준다.)<br><strong>자바스크립트에게 내리는 명령.</strong><br>변수선언하려면 반드시  키워드 사용(var/let,const)</p>
-<h3 id="2-식별자-변수이름"><a href="#2-식별자-변수이름" class="headerlink" title="2.식별자(변수이름):"></a><strong>2.식별자(변수이름):</strong></h3><p>고유한이름/일종의 카드키와 같다.<br><strong>식별자(변수이름)-메모리에 있는 값을 구별해서 끄집에 낼 수 있는 값</strong><br>./어떤 값을 구별하여 식별해 낼 수 있는고유한 이름.</p>
-<p>또한 <strong>식별자는 메모리 주소를 알고있다.</strong></p>
-<p>변수 이름을 비롯한 모든 식별자는 실행 컨텍스트에 저장된다.<br>네이밍 규칙-예약어x/특수문자 _ $가능 숫자 처음 에 안나옴.</p>
-<h3 id="3-변수와-선언"><a href="#3-변수와-선언" class="headerlink" title="3.변수와 선언:"></a><strong>3.변수와 선언:</strong></h3><p><strong>변수-</strong>데이터를 다룬다. 하나의 값을 저장할 수있는 메모리 공간에 붙은 이름 혹은 메모리 자체를 의미한다.</p>
-<p>변수를 사용하려면 반드시 선언을 해줘야한다.</p>
-<p><strong>변수의 선언-</strong><br>변수를 생성한다. 변수란 컴퓨터의 메모리 와 관련있다.<br>자바스크립크엔진에 변수이름 등록,값 저장을 위한 메모리 공간을 확보하기위함.</p>
-<h3 id="4-메모리와-주소"><a href="#4-메모리와-주소" class="headerlink" title="4.메모리와 주소:"></a><strong>4.메모리와 주소:</strong></h3><p>메모리:데이터를 저장할 수 있는 데이터 셀들의 집합체.<br>메모리주소: 메모리 공간의 위치를 나타내며 0부터 시작하여 메모리의 크기만큼 정수로 표현된다. </p>
-<p>값을 입력하면 메모리 임의의 공간에 저장이 된다.하지만 메모리의 주소는 알여주지 않는데 저장된 데이터를 재사용하기 위해서는 변수를 제공해야하고 변수는 저장되는 곳의 메모리 주소를 기억한다.</p>
-<p>매니지드:(자바스크립트):<br>언매니지드(c언어):</p>
-<h3 id="5-할당"><a href="#5-할당" class="headerlink" title="5.할당:"></a><strong>5.할당</strong>:</h3><p> 변수에 값을 저장한다. 할당한다(저장한다.대입한다.assign한다)<br>논리적으로 기본적으로 변수를 선언하고 할당해야한다. 변수만을 선언하고 할당하지 않으면 값이 정의 되지 않았기 때문에 undefined가 출력이 된다.</p>
-<p>변수선언은 소소코드가 순차적으로 실행되기 이전,즉 런타임 이전에 먼저실행되지만,값의 할당은 소스코드가 순차적으로 실행되는 시점인 런타임에 실행된다.</p>
-<h3 id="6-호이스팅"><a href="#6-호이스팅" class="headerlink" title="6.호이스팅-"></a><strong>6.호이스팅-</strong></h3><p>왜 호이스팅이 발생하는가?-&gt;**선언문은 실행될때 가장먼저 골라져서 실행되기대문에 발생한다.위 끌어올려서 실행된 실행문은 또 실행되지 않는다.</p>
-]]></content>
-      <tags>
-        <tag>1키워드,2.식별자.3.변수와 선언 4.메모리와 메모리주소5.할당6.호이스팅</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IR 기법</title>
     <url>/2019/09/17/IR%EA%B8%B0%EB%B2%95/</url>
     <content><![CDATA[<p>홈페이지를 만들때 이미지를 사용할 경우 img태그를 사용해 alt로 이미를 부여 합니다.</p>
@@ -172,6 +185,116 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
       </tags>
   </entry>
   <entry>
+    <title>HTML콘텐츠 모델과 다양한 API</title>
+    <url>/2020/06/03/html-contents-model-md/</url>
+    <content><![CDATA[<p>HTML5는 html4.01,xHTML1.0과 도입한 마크업 언어입니다. 기존 HTML과 HTML5의 차이점은 새롭게 도입된 콘텐츠 모델이라는 개념과 구조관련 요소가 추가 되었다는 점을 들을수 있습니다. 또한 기존에 사용했던 요소중에서 의미가 변한 요소도 있습니다. </p>
+<hr>
+
+<h2 id="콘텐츠-모델-Contents-Model"><a href="#콘텐츠-모델-Contents-Model" class="headerlink" title="콘텐츠 모델(Contents Model)"></a>콘텐츠 모델(Contents Model)</h2><p>기존 HTML기반의 마크업에서 일잔적인 인라인 요소와 블록 요소로 구분하는정도의 개념만 존재하였지만 ,HTML15에서는 좀더 명확한 정보 구조 설계 및 구성을 위해 카테고리를 정의하여 각 요소별로 비슷한 성격을 가지고 있는 것들끼리 그룹화 하였는데 이를 HTML5의 콘텐츠 모델이라고 합니다. </p>
+<p>특히 HTML5에 추가된 콘텐츠 모델이란 ,’어떤 요소에 어떤 콘텐츠를 포함해야하는지’,’어떤 요소가 어떤요소를 포함할 수있는지’를 정의한 것을 말합니다. 이 콘텐츠 모델이라는 개념을 통해 자식 요소로 포함 할 수이쓴느 카테고리에 제한을 두었으며 , 이와 반대로 자식 요소가 작성 될 수 있는 카테고리를 제한하였스빈다. 이런 HTML5의 콘텐츠 모델은 단순히 기존 HTML 에서의 문법적인 변화만을 의미하는 것으로 그치지 않고 구조와 구성을 중시하는 마크업으로 진화했다는 점을 이해할수있습니다. </p>
+<p>HTML5의 카테고리(Category)에는 Sectioning Root, Metadata Content, Flow Content, Sectioning Content, Heading Content, Phrasing Content, Embedded Content, Interactive Content, Palpable Content, Script-supporting Elements, Transparent Content 등의 그룹이 있으며, 하나의 요소가 여러 그룹에 속해 있을 수도 있고, 그렇지 않을 수도 있습니다.</p>
+<p>![콘텐츠 모델](/Users/pokeoseu/Desktop/콘텐츠 모델.png)</p>
+<ul>
+<li><strong>섹셔닝 루트(Sectioning Root)</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span>, <span class="tag">&lt;<span class="name">body</span>&gt;</span>, <span class="tag">&lt;<span class="name">detail</span>&gt;</span>, <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span>, <span class="tag">&lt;<span class="name">figure</span>&gt;</span>, <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>몇몇 요소는 섹셔닝 루트라는 그룹으로 구분합니다. 섹셔닝 루트에 속하는 요소는 section이나 article 요소와 같이 장이나 절과 같은 계층 구조로 구분되지 않고 독립적인 콘텐츠로 분리되기 때문에 아웃라인에 영향을 주지 않습니다.</p>
+<ul>
+<li>** 메타데이터 콘텐츠(Metadata Content)**</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">base</span>&gt;</span>, <span class="tag">&lt;<span class="name">link</span>&gt;</span>, <span class="tag">&lt;<span class="name">meta</span>&gt;</span>, <span class="tag">&lt;<span class="name">noscript</span>&gt;</span>, <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml">, <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="xml">, <span class="tag">&lt;<span class="name">title</span>&gt;</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p>메타데이터는 문서의 정보를 포함하는 메타데이터, 스타일 표현을 위한 style 요소, 행동을 설정하는 script 요소들을 나타냅니다. 기본적인 웹 브라우저에 직접적으로 표시되지 않으며, 문서(document)와 문서 간의 관계를 설정합니다.</p>
+<ul>
+<li><strong>플로우 콘텐츠(Flow Content)</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span>, <span class="tag">&lt;<span class="name">abbr</span>&gt;</span>, <span class="tag">&lt;<span class="name">address</span>&gt;</span>, <span class="tag">&lt;<span class="name">area</span>&gt;</span>(<span class="tag">&lt;<span class="name">map</span>&gt;</span> 요소의 자손인 경우), <span class="tag">&lt;<span class="name">article</span>&gt;</span>, <span class="tag">&lt;<span class="name">aside</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span>&gt;</span>, <span class="tag">&lt;<span class="name">b</span>&gt;</span>, <span class="tag">&lt;<span class="name">bdi</span>&gt;</span>, <span class="tag">&lt;<span class="name">bdo</span>&gt;</span>, <span class="tag">&lt;<span class="name">blockquote</span>&gt;</span>, <span class="tag">&lt;<span class="name">br</span>&gt;</span>, <span class="tag">&lt;<span class="name">button</span>&gt;</span>, <span class="tag">&lt;<span class="name">canvas</span>&gt;</span>, <span class="tag">&lt;<span class="name">cite</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">code</span>&gt;</span>, <span class="tag">&lt;<span class="name">data</span>&gt;</span>, <span class="tag">&lt;<span class="name">datalist</span>&gt;</span>, <span class="tag">&lt;<span class="name">del</span>&gt;</span>, <span class="tag">&lt;<span class="name">details</span>&gt;</span>, <span class="tag">&lt;<span class="name">dfn</span>&gt;</span>, <span class="tag">&lt;<span class="name">dialog</span>&gt;</span>, <span class="tag">&lt;<span class="name">div</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span>, <span class="tag">&lt;<span class="name">em</span>&gt;</span>, <span class="tag">&lt;<span class="name">embed</span>&gt;</span>, <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span>, <span class="tag">&lt;<span class="name">figure</span>&gt;</span>, <span class="tag">&lt;<span class="name">footer</span>&gt;</span>, <span class="tag">&lt;<span class="name">form</span>&gt;</span>, <span class="tag">&lt;<span class="name">h1</span>&gt;</span>, <span class="tag">&lt;<span class="name">h2</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>, <span class="tag">&lt;<span class="name">h4</span>&gt;</span>, <span class="tag">&lt;<span class="name">h5</span>&gt;</span>, <span class="tag">&lt;<span class="name">h6</span>&gt;</span>, <span class="tag">&lt;<span class="name">header</span>&gt;</span>, <span class="tag">&lt;<span class="name">hr</span>&gt;</span>, <span class="tag">&lt;<span class="name">i</span>&gt;</span>, <span class="tag">&lt;<span class="name">iframe</span>&gt;</span>, <span class="tag">&lt;<span class="name">img</span>&gt;</span>, <span class="tag">&lt;<span class="name">input</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">ins</span>&gt;</span>, <span class="tag">&lt;<span class="name">kbd</span>&gt;</span>, <span class="tag">&lt;<span class="name">keygen</span>&gt;</span>, <span class="tag">&lt;<span class="name">label</span>&gt;</span>, <span class="tag">&lt;<span class="name">main</span>&gt;</span>, <span class="tag">&lt;<span class="name">map</span>&gt;</span>, <span class="tag">&lt;<span class="name">mark</span>&gt;</span>, <span class="tag">&lt;<span class="name">math</span>&gt;</span>, <span class="tag">&lt;<span class="name">meter</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span>, <span class="tag">&lt;<span class="name">noscript</span>&gt;</span>, <span class="tag">&lt;<span class="name">object</span>&gt;</span>, <span class="tag">&lt;<span class="name">ol</span>&gt;</span>, <span class="tag">&lt;<span class="name">output</span>&gt;</span>, <span class="tag">&lt;<span class="name">p</span>&gt;</span>, <span class="tag">&lt;<span class="name">pre</span>&gt;</span>, <span class="tag">&lt;<span class="name">progress</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">q</span>&gt;</span>, <span class="tag">&lt;<span class="name">ruby</span>&gt;</span>, <span class="tag">&lt;<span class="name">s</span>&gt;</span>, <span class="tag">&lt;<span class="name">samp</span>&gt;</span>, <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml">, <span class="tag">&lt;<span class="name">section</span>&gt;</span>, <span class="tag">&lt;<span class="name">select</span>&gt;</span>, <span class="tag">&lt;<span class="name">small</span>&gt;</span>, <span class="tag">&lt;<span class="name">span</span>&gt;</span>, </span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">strong</span>&gt;</span>, <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="xml">(scoped 속성이 있는 경우) <span class="tag">&lt;<span class="name">sub</span>&gt;</span>, <span class="tag">&lt;<span class="name">sup</span>&gt;</span>, <span class="tag">&lt;<span class="name">svg</span>&gt;</span>, <span class="tag">&lt;<span class="name">table</span>&gt;</span>, </span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">textarea</span>&gt;</span>, <span class="tag">&lt;<span class="name">time</span>&gt;</span>, <span class="tag">&lt;<span class="name">u</span>&gt;</span>, <span class="tag">&lt;<span class="name">ul</span>&gt;</span>, <span class="tag">&lt;<span class="name">var</span>&gt;</span>, <span class="tag">&lt;<span class="name">video</span>&gt;</span>, <span class="tag">&lt;<span class="name">wbr</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>HTML5의 콘텐츠 모델 관계도에 표시한 것과 같이 메타데이터 콘텐츠 요소 중 일부를 제외하고 문서 본문에 해당하는 body 요소에 들어가는 대부분의 요소들이 플로우 콘텐츠 모델에 속하며, 이 중에서 area, link, meta, style 요소는 조건부로 플로우 콘텐츠가 됩니다.</p>
+<ul>
+<li><strong>섹셔닝 콘텐츠(Sectioning Content)</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span>, <span class="tag">&lt;<span class="name">aside</span>&gt;</span>, <span class="tag">&lt;<span class="name">nav</span>&gt;</span>, <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>섹셔닝 콘텐츠는 대부분 HTML5에서 새롭게 추가된 요소들이며, 제목과 그 내용을 포함한 범위를 지정하는 콘텐츠를 나타냅니다. 모든 섹셔닝 콘텐츠는 헤딩과 아웃라인을 가집니다.</p>
+<ul>
+<li><strong>헤딩 콘텐츠(Heading Content)</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>, <span class="tag">&lt;<span class="name">h2</span>&gt;</span>, <span class="tag">&lt;<span class="name">h3</span>&gt;</span>, <span class="tag">&lt;<span class="name">h4</span>&gt;</span>, <span class="tag">&lt;<span class="name">h5</span>&gt;</span>, <span class="tag">&lt;<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>헤딩 콘텐츠는 섹션의 제목을 나타냅니다. 문서의 아웃라인을 고려하여 사용해야 합니다.</p>
+<ul>
+<li><strong>프레이징 콘텐츠(Phrasing Content)</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span>, <span class="tag">&lt;<span class="name">abbr</span>&gt;</span>, <span class="tag">&lt;<span class="name">area</span>&gt;</span>(<span class="tag">&lt;<span class="name">map</span>&gt;</span> 요소의 자손인 경우), <span class="tag">&lt;<span class="name">audio</span>&gt;</span>, <span class="tag">&lt;<span class="name">b</span>&gt;</span>, <span class="tag">&lt;<span class="name">bdi</span>&gt;</span>, <span class="tag">&lt;<span class="name">bdo</span>&gt;</span>, <span class="tag">&lt;<span class="name">br</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>, <span class="tag">&lt;<span class="name">canvas</span>&gt;</span>, <span class="tag">&lt;<span class="name">cite</span>&gt;</span>, <span class="tag">&lt;<span class="name">code</span>&gt;</span>, <span class="tag">&lt;<span class="name">data</span>&gt;</span>, <span class="tag">&lt;<span class="name">datalist</span>&gt;</span>, <span class="tag">&lt;<span class="name">del</span>&gt;</span>, <span class="tag">&lt;<span class="name">dfn</span>&gt;</span>, <span class="tag">&lt;<span class="name">em</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">embed</span>&gt;</span>, <span class="tag">&lt;<span class="name">i</span>&gt;</span>, <span class="tag">&lt;<span class="name">iframe</span>&gt;</span>, <span class="tag">&lt;<span class="name">img</span>&gt;</span>, <span class="tag">&lt;<span class="name">input</span>&gt;</span>, <span class="tag">&lt;<span class="name">ins</span>&gt;</span>, <span class="tag">&lt;<span class="name">kbd</span>&gt;</span>, <span class="tag">&lt;<span class="name">keygen</span>&gt;</span>, <span class="tag">&lt;<span class="name">label</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">map</span>&gt;</span>, <span class="tag">&lt;<span class="name">mark</span>&gt;</span>, <span class="tag">&lt;<span class="name">math</span>&gt;</span>, <span class="tag">&lt;<span class="name">meter</span>&gt;</span>, <span class="tag">&lt;<span class="name">noscript</span>&gt;</span>, <span class="tag">&lt;<span class="name">object</span>&gt;</span>, <span class="tag">&lt;<span class="name">output</span>&gt;</span>, <span class="tag">&lt;<span class="name">progress</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">q</span>&gt;</span>, <span class="tag">&lt;<span class="name">ruby</span>&gt;</span>, <span class="tag">&lt;<span class="name">s</span>&gt;</span>, <span class="tag">&lt;<span class="name">samp</span>&gt;</span>, <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml">, <span class="tag">&lt;<span class="name">select</span>&gt;</span>, <span class="tag">&lt;<span class="name">small</span>&gt;</span>, <span class="tag">&lt;<span class="name">span</span>&gt;</span>, <span class="tag">&lt;<span class="name">strong</span>&gt;</span>, </span></span><br><span class="line"><span class="xml"> <span class="tag">&lt;<span class="name">sub</span>&gt;</span>, <span class="tag">&lt;<span class="name">sup</span>&gt;</span>, <span class="tag">&lt;<span class="name">svg</span>&gt;</span>, <span class="tag">&lt;<span class="name">textarea</span>&gt;</span>, <span class="tag">&lt;<span class="name">time</span>&gt;</span>, <span class="tag">&lt;<span class="name">u</span>&gt;</span>, <span class="tag">&lt;<span class="name">var</span>&gt;</span>, <span class="tag">&lt;<span class="name">video</span>&gt;</span>, <span class="tag">&lt;<span class="name">wbr</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>프레이징 콘텐츠는 문서의 텍스트를 나타내며, 그 텍스트를 문단 내부 레벨로 마크업하는 요소들입니다. 프레이징 콘텐츠가 모여 문단을 구성합니다. a 요소와 같은 일부 요소들은 콘텐츠로 다른 요소를 포함하지 않는다는 전제하에 조건부로 프레이징 콘텐츠가 되기도 합니다. 프레이징 콘텐츠로 분류되는 요소의 대부분은 플로우 콘텐츠 전체를 포함할 수 없으며, 프레이징 콘텐츠로 분류된 요소만을 포함할 수 있습니다. 또한 프레이징 콘텐츠는 텍스트 이외에 임베디드 콘텐츠를 포함할 수 있습니다.</p>
+<ul>
+<li><strong>임베디드 콘텐츠(Embedded Content)</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span>&gt;</span>, <span class="tag">&lt;<span class="name">canvas</span>&gt;</span>, <span class="tag">&lt;<span class="name">embed</span>&gt;</span>, <span class="tag">&lt;<span class="name">iframe</span>&gt;</span>, <span class="tag">&lt;<span class="name">img</span>&gt;</span>, <span class="tag">&lt;<span class="name">math</span>&gt;</span>, <span class="tag">&lt;<span class="name">object</span>&gt;</span>, <span class="tag">&lt;<span class="name">svg</span>&gt;</span>, <span class="tag">&lt;<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>임베디드는 ‘포함된’이라는 뜻을 가지고 있으며, 문서 안에 외부 자원(‘외부 리소스’라고 불리기도 함) 또는 HTML이 아닌 다른 언어로 표현되는 콘텐츠를 말합니다. 외부 자원에는 이미지, 동영상, 플러그인, 아이프레임 콘텐츠 등이 있고, 다른 언어로 된 콘텐츠에는 수학 공식을 표현하는 MathML과 SVG 등이 있습니다.</p>
+<ul>
+<li><strong>인터랙티브 콘텐츠(Interactive Content)</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span>, <span class="tag">&lt;<span class="name">audio</span>&gt;</span>(controls 속성이 있는 경우),<span class="tag">&lt;<span class="name">button</span>&gt;</span>, <span class="tag">&lt;<span class="name">details</span>&gt;</span>, <span class="tag">&lt;<span class="name">embed</span>&gt;</span>, <span class="tag">&lt;<span class="name">iframe</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">img</span>&gt;</span>(usemap 속성이 있는 경우), <span class="tag">&lt;<span class="name">input</span>&gt;</span>(type 속성이 hidden이 아닌 경우), <span class="tag">&lt;<span class="name">keygen</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span>, <span class="tag">&lt;<span class="name">object</span>&gt;</span>(usemap 속성이 있는 경우), <span class="tag">&lt;<span class="name">select</span>&gt;</span>, <span class="tag">&lt;<span class="name">textarea</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">video</span>&gt;</span>(controls 속성이 있는 경우)</span><br></pre></td></tr></table></figure>
+
+<p>인터랙티브 콘텐츠는 사용자가 어떤 기능을 조작할 수 있는 (상호 작용) 콘텐츠를 말합니다. 예를 들면, 회원가입 정보를 입력한 후 [확인] 버튼을 누른다거나, 문서에 포함된 동영상을 재생한다거나, 링크를 클릭하는 것 등을 의미합니다. audio, img, input, object, video 요소는 이러한 특성을 바탕으로 조건부 인터랙티브 콘텐츠가 됩니다.</p>
+<ul>
+<li><strong>팰퍼블 콘텐츠(Palpable Content)</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span>, <span class="tag">&lt;<span class="name">abbr</span>&gt;</span>, <span class="tag">&lt;<span class="name">address</span>&gt;</span>, <span class="tag">&lt;<span class="name">article</span>&gt;</span>, <span class="tag">&lt;<span class="name">aside</span>&gt;</span>, <span class="tag">&lt;<span class="name">audio</span>&gt;</span>(controls 속성이 있는 경우), </span><br><span class="line"><span class="tag">&lt;<span class="name">base-img</span>&gt;</span>, <span class="tag">&lt;<span class="name">bdi</span>&gt;</span>, <span class="tag">&lt;<span class="name">bdo</span>&gt;</span>, <span class="tag">&lt;<span class="name">blockquote</span>&gt;</span>, <span class="tag">&lt;<span class="name">button</span>&gt;</span>, <span class="tag">&lt;<span class="name">canvas</span>&gt;</span>, <span class="tag">&lt;<span class="name">cite</span>&gt;</span>, <span class="tag">&lt;<span class="name">code</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">data</span>&gt;</span>, <span class="tag">&lt;<span class="name">details</span>&gt;</span>, <span class="tag">&lt;<span class="name">dfn</span>&gt;</span>, <span class="tag">&lt;<span class="name">div</span>&gt;</span>, <span class="tag">&lt;<span class="name">embed</span>&gt;</span>, <span class="tag">&lt;<span class="name">form</span>&gt;</span>, <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span>, <span class="tag">&lt;<span class="name">figure</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span>(dl 요소의 자식 요소로 하나 이상의 이름과 값으로 구성되어 있는 경우), <span class="tag">&lt;<span class="name">em</span>&gt;</span>, <span class="tag">&lt;<span class="name">footer</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>, <span class="tag">&lt;<span class="name">h2</span>&gt;</span>, <span class="tag">&lt;<span class="name">h3</span>&gt;</span>, <span class="tag">&lt;<span class="name">h4</span>&gt;</span>, <span class="tag">&lt;<span class="name">h5</span>&gt;</span>, <span class="tag">&lt;<span class="name">h6</span>&gt;</span>, <span class="tag">&lt;<span class="name">header</span>&gt;</span>, <span class="tag">&lt;<span class="name">i</span>&gt;</span>, <span class="tag">&lt;<span class="name">iframe</span>&gt;</span>, <span class="tag">&lt;<span class="name">img</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">input</span>&gt;</span>(hidden 속성 값이 아닌 경우), <span class="tag">&lt;<span class="name">ins</span>&gt;</span>, <span class="tag">&lt;<span class="name">kbd</span>&gt;</span>, <span class="tag">&lt;<span class="name">keygen</span>&gt;</span>, <span class="tag">&lt;<span class="name">label</span>&gt;</span>, <span class="tag">&lt;<span class="name">main</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">map</span>&gt;</span>, <span class="tag">&lt;<span class="name">mark</span>&gt;</span>, <span class="tag">&lt;<span class="name">math</span>&gt;</span>, <span class="tag">&lt;<span class="name">menu</span>&gt;</span>(toolbar 속성이 있는 경우), <span class="tag">&lt;<span class="name">meter</span>&gt;</span>, <span class="tag">&lt;<span class="name">nav</span>&gt;</span>, <span class="tag">&lt;<span class="name">object</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span>(자식 요소로 하나 이상의 li 요소를 포함한 경우), <span class="tag">&lt;<span class="name">output</span>&gt;</span>, <span class="tag">&lt;<span class="name">p</span>&gt;</span>, <span class="tag">&lt;<span class="name">pre</span>&gt;</span>, <span class="tag">&lt;<span class="name">progress</span>&gt;</span>,</span><br><span class="line"><span class="tag">&lt;<span class="name">q</span>&gt;</span>, <span class="tag">&lt;<span class="name">ruby</span>&gt;</span>, <span class="tag">&lt;<span class="name">s</span>&gt;</span>, <span class="tag">&lt;<span class="name">samp</span>&gt;</span>, <span class="tag">&lt;<span class="name">section</span>&gt;</span>, <span class="tag">&lt;<span class="name">select</span>&gt;</span>, <span class="tag">&lt;<span class="name">small</span>&gt;</span>, <span class="tag">&lt;<span class="name">span</span>&gt;</span>, <span class="tag">&lt;<span class="name">strong</span>&gt;</span>, </span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span>, <span class="tag">&lt;<span class="name">sup</span>&gt;</span>, <span class="tag">&lt;<span class="name">svg</span>&gt;</span>, <span class="tag">&lt;<span class="name">table</span>&gt;</span>, <span class="tag">&lt;<span class="name">textarea</span>&gt;</span>, <span class="tag">&lt;<span class="name">time</span>&gt;</span>, <span class="tag">&lt;<span class="name">u</span>&gt;</span>, <span class="tag">&lt;<span class="name">var</span>&gt;</span>, <span class="tag">&lt;<span class="name">video</span>&gt;</span>, <span class="tag">&lt;<span class="name">span</span>&gt;</span>,</span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span>(자식 요소로 하나 이상의 li 요소를 포함한 경우)</span><br></pre></td></tr></table></figure>
+
+<p>팰퍼블 콘텐츠는 기존 콘텐츠 모델에 새롭게 추가된 개념으로 구체적으로 보여지고 이해할 수 있는 콘텐츠 요소를 말하며, 최소한 하나 이상의 요소가 존재해야 합니다. 이때 해당 요소는 숨김 상태여서는 안됩니다.</p>
+<ul>
+<li><strong>스크립트 지원 요소(Script-supporting Elements)</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>스크립트 지원 요소는 요소 자체가 어떤 정보를 표현하지는 않지만 사용자에 대한 기능 등에 해당하는 스크립트를 지원하는 데 사용됩니다.</p>
+<ul>
+<li><strong>트랜스 패어런트 콘텐츠(Transparent Content)</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span>, <span class="tag">&lt;<span class="name">audio</span>&gt;</span>, <span class="tag">&lt;<span class="name">canvas</span>&gt;</span>, <span class="tag">&lt;<span class="name">del</span>&gt;</span>, <span class="tag">&lt;<span class="name">ins</span>&gt;</span>, <span class="tag">&lt;<span class="name">map</span>&gt;</span>, <span class="tag">&lt;<span class="name">noscript</span>&gt;</span>, <span class="tag">&lt;<span class="name">object</span>&gt;</span>, <span class="tag">&lt;<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>모든 요소는 콘텐츠 모델을 가지지만, 앞에서 설명한 카테고리에 속하지 않은 경우도 있습니다. 이러한 요소들을 ‘트랜스 패어런트(Transparent)’라고 합니다. 트랜스페어런트 콘텐츠는 투명하다는 의미가 아니라 트랜스 패어런트 콘텐츠 요소와 그 안에 담긴 콘텐츠를 바꾸어 마크업해도 HTML5 문법에 오류가 없다는 것을 의미합니다.</p>
+<hr>
+
+<h2 id="다양한-API의-추가"><a href="#다양한-API의-추가" class="headerlink" title="다양한 API의 추가"></a>다양한 API의 추가</h2><p>HTML5의 커다란 변화 중 하나로는 다양한 API(Application Programming Interface)의 추가를 들 수 있습니다. API란, 프로그램을 개발할 때 필요한 기본 기능을 의미합니다. 새로운 프로그램을 만들 때 사용하는 프로그래밍 언어(C 언어, Java, JavaScript 등) 차원에서 제공되거나 프로그램이 구동되는 환경을 의미하는 플랫폼에서 만들어져 제공되며 프로그램 개발자는 API를 활용하여 실제 필요로 하는 기능을 완성할 수 있습니다.</p>
+<p>HTML5에서는 자바스크립트(JavaScript) 기술을 좀 더 편리하게 이용할 수 있도록 다양한 API를 지원하고 있습니다. HTML5에 추가된 API는 다음과 같습니다.</p>
+<p><strong>오프라인 웹 구현을 위한 API</strong></p>
+<p>오프라인에서 동작할 수 있는 웹 기능을 구현하기 위한 API로, Web Strorage, Web SQL Database, IndexedDB, Application Cache 등의 API가 추가되었습니다.</p>
+<ul>
+<li>Web Storage : 브라우저에 데이터를 저장하기 위한 공간으로, 쿠키와 비교했을 때 크기 제한과 유효 기간이 없고, 데이터가 서버로 전송되지 않으며, JavaScript 객체를 저장할 수 있다는 장점을 가지고 있습니다.</li>
+<li>Web SQL Database/Indexed Database : Web SQL Database와 Indexed Database API는 클라이언트(웹 브라우저)에서 관리되는 데이터베이스를 제어할 수 있는 API로 구성되어 있습니다.</li>
+<li>Application Cache : Application Cache는 웹 애플리케이션을 오프라인에서 사용하는 데 필요한 리소스(HTML, CSS, JS, 이미지 등)를 클라이언트 쪽에 캐시하기 위한 기능으로, 이를 활용하면 리소스가 로컬에 캐시된 상태에서 웹브라우저가 네트워크에 접속하지 않고 캐시된 리소스를 이용할 수 있습니다.</li>
+</ul>
+<p><strong>실시간 커뮤니케이션 API</strong></p>
+<ul>
+<li>Web Workers : Web Workers는 메인 스레드(UI)와 독립적인 백그라운드 프로세스로 처리되는 스크립트를 말하며, 이를 활용하면 웹브라우저 내에서 자바스크립트로 멀티스레드 프로그램을 구현할 수 있습니다.</li>
+<li>Web Socket : Web Socket은 웹 브라우저와 서버 간 양방향 전이중 통신(Full Duplex)을 구현한 Web Socket 프로토콜을 이용할 수 있는 API 입니다.</li>
+<li>Notifications : Notifications API는 운영 체제에 독립적인 플랫폼 수준의 알림 메시지를 보여주는 API 입니다.</li>
+</ul>
+<p><strong>파일/하드웨어 접근 API</strong></p>
+<p>웹브라우저에서 로컬 저장 장치 간 파일을 주고받을 수 있는 API와 웹 브라우저가 설치된 단말기의 하드웨어에 접근할 수 있는 API 입니다.</p>
+<ul>
+<li>File API(Desktop Drag-In, Desktop Drag-Out) : File API를 이용하면 로컬 파일 시스템과 웹 브라우저 간에 파일을 주고받을 수 있습니다.</li>
+<li>Geolocation : Geolocation은 웹 브라우저가 설치되어 있는 단말기(데스크톱, 스마트폰 등)의 GPS 장치를 구동하여 현재 위치 정보를 받아오는 기능을 정의한 API 입니다.</li>
+<li>Device Orientation : Device Orientation은 단말기의 센서를 이용하여 현재 방향과 기울기가 같은 정보를 구할 수 있는 API 입니다.</li>
+<li>Speech Input : Speech Input은 단말기의 마이크로폰을 이용하여 음성을 입력받은 후 이를 문자로 바꿔주는 새로운 입력 방식입니다.</li>
+</ul>
+<p><strong>GUI를 위한 API</strong></p>
+<ul>
+<li>Drag &amp; Drop : HTML4.01에서는 Drag &amp; Drop을 구현하기 위해 직접 자바스크립트로 개발하거나 UI 관련 자바스크립트 라이브러리를 이용해야 했지만, HTML5에서는 Drag &amp; Drop API를 이용하여 쉽게 구현할 수 있습니다.</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>HTML콘텐츠 모델과 다양한에 대해</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</title>
     <url>/2020/05/03/CSR%20SSR%20SPA%20/</url>
     <content><![CDATA[<p><strong>1.CSR(클라이언트 사이드 렌더링)</strong><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/640576/images/3943424/CSR.png" alt="CSR"></p>
@@ -187,19 +310,6 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>CSR(클라이언트 사이드 렌더링)과 SSR(서버 사이드 렌더링) 차이점</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ECMAScript와 Javascript의 차이</title>
-    <url>/2020/05/15/ecmascript-and-javascript-md/</url>
-    <content><![CDATA[<h1 id="ECMAScript-와-JavaScript"><a href="#ECMAScript-와-JavaScript" class="headerlink" title="ECMAScript  와 JavaScript"></a>ECMAScript  와 JavaScript</h1><p>![image-20200516171849635](/Users/pokeoseu/Library/Application Support/typora-user-images/image-20200516171849635.png)</p>
-<p><strong><u>ECMAScript는 자바스크립트의 표준사양인 ECMA-262를 말하며</u></strong> 프로그래밍 언어의 타입 , 값,객체와 프로퍼티,함수,표준 빌트인 객체 등 핵심 문법을 규정한다. 각 브라우저 제조사는 ECAMScript를 준수하여 브라우저에 내장되어있는 자바스크립트 엔진을 구현한다.<br><strong><u>자바스크립트는 일반적으로 프로그래밍 언어</u></strong>로서 기본 뼈대를 이루는 ECMAScript와 브라우저가 별도 지원하는 클라이언트 사이드 WEB API,즉 DOM ,BOM, Canvas ,XMLHttpRequest, Fetch, requestAnimationFrame, SVG, Web Storage, Web Component, Web worker등을 아우르는 개념이다.<br> 즉 Javascript &gt; Ecmascript (자바스크립가 더 큰 개념이다.)<br>클라이언트 사이드 WEB API는 ECMAScript와는 별도로 World Wide Web Consortium(W3C)에서도 별도로 명세로 관리하고 있다.</p>
-<p>요약하자면 ECMAScript는 ecma 인터내셔녈에 의해 정의된 ECMA -262 기술규격에 의해 정의된 범용 자바스크립트 언어를 뜻합니다. ‘ECMAScript 사양’입니다.<br>ECMA -262 는 표준의 이름이고, ECMAScript는 ECMA -262에서 정의된 하나의 사양을 의미합니다. ECMAScript는 스크립트언어가 준수해야하는 규칙,세부사항 및 지침을 제공합니다.</p>
-<p>JavaScript는 ECMAScript가 사양을 준수하는 범용 스크립트팅 언어 입니다. 자바스크립트느 ECMAScript아우르는 개념입니다..</p>
-<p>또한 JavaScripts는 1996년에 반들어 졌고 , 그 다음 해에 JavaScriptd를 표준화하기 위해서 1997년 ECMAScript가 만들어졌습니다. JavaScript는 ECMAScript 사양을 준수하는 언어이며 , JavaScript가  ECMAScript을 기반하는 동시에 ECMAScript도 JavaScript를 기반으로 한다. </p>
-]]></content>
-      <tags>
-        <tag>ECMAScript와 Javascript의 차이</tag>
       </tags>
   </entry>
   <entry>
@@ -295,42 +405,6 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>제어문에 대해</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>let과 const 블록 레벨스코프</title>
-    <url>/2020/05/09/letconst-md/</url>
-    <content><![CDATA[<h1 id="1-var키워드로-선언한-변수의-문제점"><a href="#1-var키워드로-선언한-변수의-문제점" class="headerlink" title="1. var키워드로 선언한 변수의 문제점"></a>1. var키워드로 선언한 변수의 문제점</h1><h2 id="1-1-변수-중복-선언이-가능"><a href="#1-1-변수-중복-선언이-가능" class="headerlink" title="1.1.변수 중복 선언이 가능"></a>1.1.변수 중복 선언이 가능</h2><p>-변수의 중복 선언이 가능하고,이때문에 의도치 않은 값의 변경이 일어나는 부작용이 발생한다.</p>
-<h2 id="1-2-함수레벨-스코프"><a href="#1-2-함수레벨-스코프" class="headerlink" title="1.2, 함수레벨 스코프"></a>1.2, 함수레벨 스코프</h2><p>var키워드로 선언한 변수는 오로지 함수의 코드블록만을 지역스코프로 인정한다. 따라서 외부에서 선언한 변수는 모두 전역변수가 된다. 함수레벨 스코프는 전역변수를 남발할 가능성이 높다. 이로인해 의도치 않은 전역변수가 중복되는 경우가 발생한다.</p>
-<h2 id="1-3-변수의-호이스팅"><a href="#1-3-변수의-호이스팅" class="headerlink" title="1.3. 변수의 호이스팅"></a>1.3. 변수의 호이스팅</h2><p>변수ㅣ 호이스팅에 의해 선언문이 스코프를 선두로 끌어 올려진것 처럼 동작한다. 즉 변수 호이스팅에 의해 var키워드로 선언한 변수는 변수 선언문 이전에 참조할 수있다. 단 할당문 이전에 변수를  참조하면 언제나 undefined를 반환한다. 변수호이스팅은 가독성을 떨어뜨리고 오류를 발생시킬 수있는 여지를 만든다.</p>
-<hr>
-
-<h1 id="2-let키워드"><a href="#2-let키워드" class="headerlink" title="2.let키워드"></a>2.let키워드</h1><p>let은 키워드는 var키워드와 동일하게 변수를 선언할때 사용한다. var키워드와의 차이점은</p>
-<h2 id="2-1-변수의-중복선언-금지"><a href="#2-1-변수의-중복선언-금지" class="headerlink" title="2.1. 변수의 중복선언 금지"></a>2.1. 변수의 중복선언 금지</h2><p>var 키워드로 선언한 변수를 중복선언하면 에러가 발생하지 않고 덮어씌어진다. 하지만 let키워드로 동일한 이름을 갖는 변수를 중복선언하면 문법에러가 발생한다.<br> let이나 const 키워드로 선언된 변수는 같은 스코프 내에서 중복 선언을 허용하지 않는다.</p>
-<h2 id="2-2-블록-레벨-스코프"><a href="#2-2-블록-레벨-스코프" class="headerlink" title="2.2. 블록 레벨 스코프"></a>2.2. 블록 레벨 스코프</h2><p>var키워드롤 선언한 변수는 오로지 함수의코드블록을 지역변수로 인정하는 함수레벨 스코프를 따랐다. 하지만 let 키워드로 선언한 변수는 모든 코드블록에(if/for/while/try/catch)을 지역 스코프로 인정하는 블록레벨 스코프를 따른다.</p>
-<p>함수도 코드블록이므로 스코프를 만든다. 이때 함수 내의 코드 블록은 함수레벨 스코프에 중첩된다.</p>
-<h2 id="2-3-변수의-호이스팅"><a href="#2-3-변수의-호이스팅" class="headerlink" title="2.3. 변수의 호이스팅"></a>2.3. 변수의 호이스팅</h2><p>var키워드와는 달리 let키워드로 선언한 변수는 변수 호이스팅이 발생하지 않는것 처럼 동작한다.<br> var 키워드를 사용해 선언한 변수는 런타임 이전에 자바스크립트 엔진에 의해서 암묵적으로 선언단계와 초기화 단계를 한번에 진행한다.<br>그러나 let  키워드를 사용해 선언한 변수는 자바스크립트엔진이 선언단계와 초기화 단계가 분리되어 실행된다. 즉 런타임 이전에 자바스크립트 엔진에 의해서 암묵적으로 선언단계가 실행되지만 초기화단계는 변수선언문에 도달했을때 실행된다.<br>스코프의 시작지점부터 초기화 시작 지점까지의 구간을 <strong>일시적 사각사각지대</strong>라고 한다.<br>자바스크립트에 도입된 모든 선언들은 호이스팅한다.(var.let,const,function,class)</p>
-<h2 id="2-4-전역객체와-let"><a href="#2-4-전역객체와-let" class="headerlink" title="2.4. 전역객체와  let"></a>2.4. 전역객체와  let</h2><p>전역객체는 어떤 객체보다도 먼저 생성되어 어떤객체에도 속하지 않은 최상위 객체이다. 일반적으로 브라우저 환경에서는 window객체,node.js환경에서는 global객체를 의미한다.<br>var키워드로 선언한 전역변수와 선언하지 않은 변수에 전역값을 할당하는 암묵적 번역변수 그리고 전역함수는 정겨 객체릐 프로퍼티가 된다. 전역깩체의 프로퍼티를 참조할때 window응 생략 할 수있따.</p>
-<p><strong>let키워드로 선언한 전역변수는 전역객체 window의 프로퍼티가 아니다</strong>. <strong>즉window.foo와 같이 접근 할 수없다.</strong>let전역변수는 보이지 않는 개념적인 블록내에 존재 하게 된다.</p>
-<hr>
-
-<h1 id="3-const키워드"><a href="#3-const키워드" class="headerlink" title="3. const키워드"></a>3. const키워드</h1><p>const키워드는 상수(변하지 않는 고정된 값)를 선언하기 위해 사용한다. 하지만 반드시 상수 만을 위해 사용하지 않는다. </p>
-<h2 id="3-1-선언과-초기화"><a href="#3-1-선언과-초기화" class="headerlink" title="3.1 선언과 초기화"></a>3.1 선언과 초기화</h2><p>let키워들 선언한 변수는 재할당이 자유로우나 const 키워드로 선언한 변수는 재할다잉 금지된다. const키워드로 선언한 변수는 값을 변경,재할당 할 수 없으므로 처음 할당한 갓을 그대로 유지한다. 따라서 변하지 않는 고정된 값,상수를 할당하기 위해사용한다.</p>
-<p>cost키워드로 선언한 변수는 반드시 선언과 동시에 할당이 이루어져야한다.그렇지 않으면 문법적인 에러가 발생한다.</p>
-<p>const키워드로 let키워드와ㅏ 마찬가지로 블록 레벨 스코프를 가진다.</p>
-<h2 id="3-2-상수"><a href="#3-2-상수" class="headerlink" title="3.2. 상수"></a>3.2. 상수</h2><p>상수는 가독성과 유지보수의 편의를 위해 적극적으로 사용해야한다.</p>
-<p>상수를 값으로 갖는 변수는 일반적으로 변수이름을 대문자로 선언하고 상수가 저장되어있음을 명확하게 나타낸다. 여러 단어로 이루어진 경우 _로 구분을 하는 것이 일반적이다.</p>
-<h2 id="3-3-const키워드와-객체"><a href="#3-3-const키워드와-객체" class="headerlink" title="3.3. const키워드와 객체"></a>3.3. const키워드와 객체</h2><p>const키워드로 선언된 변수는 재할당이 금지된다. const키워드로 선언된 변수에 원시값을 할당한 경우,원시값은 변경할 수 없는 값이고,const키워드에 의해 재할당이 금지되므로 할당된 값을 변경할 수 있는 방법은 없다.</p>
-<p>const키워드로 선언한 변수에 깩체를 할당하는 경우, 원시값을 할당한 경우와 마찬가지로 재할당이 금지된다. 그러나 객체는 변경가능한 값이다.따라서 const 키워드로 선언된 변수에 할당된 객체는 변경이 가능하다.</p>
-<p>const키워드는 재할당을 금지할뿐 불변을 의미하지 않는다. 새로운 객체를 재할당하는 것은 불가능하지만 객체의 내용을 변경하는 것은 가능하다.객체의 내용이 변경되더라도 변수에 할당된 주소값은 변경되지않는다.</p>
-<hr>
-
-<h1 id="4-var-대-let-대-const"><a href="#4-var-대-let-대-const" class="headerlink" title="4. var 대 let 대 const"></a>4. var 대 let 대 const</h1><p>변수 선언에는 기본적으로 const를 사용하고 let은 재할당이 필요한 경우에 한정해서 사용하는 것이 좋다. 원시값의 경우,가급적 상수를 사용하는 것이 좋다. 그리고 객체를 재할당하는 경우는 생각보다 흔하지않다. const 키워드를 사용하면 의도치 않은 재할당을 방지해주기때문이다.</p>
-<p>es6에서는 var을 사용하지않는다.<br>재할당이 필요한경우에는 한정해 letd을 사용한다. 이때 변수의 스코프는 최대한 좁게 만든다.<br>변경이 발생하지않는(재할당이 필요없는 상수)원시값과 객체에는 const키워드를 사용한다. const키워드는 재할당을 금지하므로 var,let보다 안전하다.</p>
-<p>변수를 선언하는 시점에는 재할다잉 필요할지 잘 모르는 경우가 많다. 그리고 객체는 의외로 재할당하는 경우가 드물다. 따라서 변수를 선언할때 일단 const 키워드로 사용하도록하자 .반드시 재할당이 필요하다면 그때 const를 let으로 변경하면 된다.</p>
-]]></content>
-      <tags>
-        <tag>let과 const 블록레벨 스코프에 대해</tag>
       </tags>
   </entry>
   <entry>
@@ -498,6 +572,42 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
       </tags>
   </entry>
   <entry>
+    <title>let과 const 블록 레벨스코프</title>
+    <url>/2020/05/09/letconst-md/</url>
+    <content><![CDATA[<h1 id="1-var키워드로-선언한-변수의-문제점"><a href="#1-var키워드로-선언한-변수의-문제점" class="headerlink" title="1. var키워드로 선언한 변수의 문제점"></a>1. var키워드로 선언한 변수의 문제점</h1><h2 id="1-1-변수-중복-선언이-가능"><a href="#1-1-변수-중복-선언이-가능" class="headerlink" title="1.1.변수 중복 선언이 가능"></a>1.1.변수 중복 선언이 가능</h2><p>-변수의 중복 선언이 가능하고,이때문에 의도치 않은 값의 변경이 일어나는 부작용이 발생한다.</p>
+<h2 id="1-2-함수레벨-스코프"><a href="#1-2-함수레벨-스코프" class="headerlink" title="1.2, 함수레벨 스코프"></a>1.2, 함수레벨 스코프</h2><p>var키워드로 선언한 변수는 오로지 함수의 코드블록만을 지역스코프로 인정한다. 따라서 외부에서 선언한 변수는 모두 전역변수가 된다. 함수레벨 스코프는 전역변수를 남발할 가능성이 높다. 이로인해 의도치 않은 전역변수가 중복되는 경우가 발생한다.</p>
+<h2 id="1-3-변수의-호이스팅"><a href="#1-3-변수의-호이스팅" class="headerlink" title="1.3. 변수의 호이스팅"></a>1.3. 변수의 호이스팅</h2><p>변수ㅣ 호이스팅에 의해 선언문이 스코프를 선두로 끌어 올려진것 처럼 동작한다. 즉 변수 호이스팅에 의해 var키워드로 선언한 변수는 변수 선언문 이전에 참조할 수있다. 단 할당문 이전에 변수를  참조하면 언제나 undefined를 반환한다. 변수호이스팅은 가독성을 떨어뜨리고 오류를 발생시킬 수있는 여지를 만든다.</p>
+<hr>
+
+<h1 id="2-let키워드"><a href="#2-let키워드" class="headerlink" title="2.let키워드"></a>2.let키워드</h1><p>let은 키워드는 var키워드와 동일하게 변수를 선언할때 사용한다. var키워드와의 차이점은</p>
+<h2 id="2-1-변수의-중복선언-금지"><a href="#2-1-변수의-중복선언-금지" class="headerlink" title="2.1. 변수의 중복선언 금지"></a>2.1. 변수의 중복선언 금지</h2><p>var 키워드로 선언한 변수를 중복선언하면 에러가 발생하지 않고 덮어씌어진다. 하지만 let키워드로 동일한 이름을 갖는 변수를 중복선언하면 문법에러가 발생한다.<br> let이나 const 키워드로 선언된 변수는 같은 스코프 내에서 중복 선언을 허용하지 않는다.</p>
+<h2 id="2-2-블록-레벨-스코프"><a href="#2-2-블록-레벨-스코프" class="headerlink" title="2.2. 블록 레벨 스코프"></a>2.2. 블록 레벨 스코프</h2><p>var키워드롤 선언한 변수는 오로지 함수의코드블록을 지역변수로 인정하는 함수레벨 스코프를 따랐다. 하지만 let 키워드로 선언한 변수는 모든 코드블록에(if/for/while/try/catch)을 지역 스코프로 인정하는 블록레벨 스코프를 따른다.</p>
+<p>함수도 코드블록이므로 스코프를 만든다. 이때 함수 내의 코드 블록은 함수레벨 스코프에 중첩된다.</p>
+<h2 id="2-3-변수의-호이스팅"><a href="#2-3-변수의-호이스팅" class="headerlink" title="2.3. 변수의 호이스팅"></a>2.3. 변수의 호이스팅</h2><p>var키워드와는 달리 let키워드로 선언한 변수는 변수 호이스팅이 발생하지 않는것 처럼 동작한다.<br> var 키워드를 사용해 선언한 변수는 런타임 이전에 자바스크립트 엔진에 의해서 암묵적으로 선언단계와 초기화 단계를 한번에 진행한다.<br>그러나 let  키워드를 사용해 선언한 변수는 자바스크립트엔진이 선언단계와 초기화 단계가 분리되어 실행된다. 즉 런타임 이전에 자바스크립트 엔진에 의해서 암묵적으로 선언단계가 실행되지만 초기화단계는 변수선언문에 도달했을때 실행된다.<br>스코프의 시작지점부터 초기화 시작 지점까지의 구간을 <strong>일시적 사각사각지대</strong>라고 한다.<br>자바스크립트에 도입된 모든 선언들은 호이스팅한다.(var.let,const,function,class)</p>
+<h2 id="2-4-전역객체와-let"><a href="#2-4-전역객체와-let" class="headerlink" title="2.4. 전역객체와  let"></a>2.4. 전역객체와  let</h2><p>전역객체는 어떤 객체보다도 먼저 생성되어 어떤객체에도 속하지 않은 최상위 객체이다. 일반적으로 브라우저 환경에서는 window객체,node.js환경에서는 global객체를 의미한다.<br>var키워드로 선언한 전역변수와 선언하지 않은 변수에 전역값을 할당하는 암묵적 번역변수 그리고 전역함수는 정겨 객체릐 프로퍼티가 된다. 전역깩체의 프로퍼티를 참조할때 window응 생략 할 수있따.</p>
+<p><strong>let키워드로 선언한 전역변수는 전역객체 window의 프로퍼티가 아니다</strong>. <strong>즉window.foo와 같이 접근 할 수없다.</strong>let전역변수는 보이지 않는 개념적인 블록내에 존재 하게 된다.</p>
+<hr>
+
+<h1 id="3-const키워드"><a href="#3-const키워드" class="headerlink" title="3. const키워드"></a>3. const키워드</h1><p>const키워드는 상수(변하지 않는 고정된 값)를 선언하기 위해 사용한다. 하지만 반드시 상수 만을 위해 사용하지 않는다. </p>
+<h2 id="3-1-선언과-초기화"><a href="#3-1-선언과-초기화" class="headerlink" title="3.1 선언과 초기화"></a>3.1 선언과 초기화</h2><p>let키워들 선언한 변수는 재할당이 자유로우나 const 키워드로 선언한 변수는 재할다잉 금지된다. const키워드로 선언한 변수는 값을 변경,재할당 할 수 없으므로 처음 할당한 갓을 그대로 유지한다. 따라서 변하지 않는 고정된 값,상수를 할당하기 위해사용한다.</p>
+<p>cost키워드로 선언한 변수는 반드시 선언과 동시에 할당이 이루어져야한다.그렇지 않으면 문법적인 에러가 발생한다.</p>
+<p>const키워드로 let키워드와ㅏ 마찬가지로 블록 레벨 스코프를 가진다.</p>
+<h2 id="3-2-상수"><a href="#3-2-상수" class="headerlink" title="3.2. 상수"></a>3.2. 상수</h2><p>상수는 가독성과 유지보수의 편의를 위해 적극적으로 사용해야한다.</p>
+<p>상수를 값으로 갖는 변수는 일반적으로 변수이름을 대문자로 선언하고 상수가 저장되어있음을 명확하게 나타낸다. 여러 단어로 이루어진 경우 _로 구분을 하는 것이 일반적이다.</p>
+<h2 id="3-3-const키워드와-객체"><a href="#3-3-const키워드와-객체" class="headerlink" title="3.3. const키워드와 객체"></a>3.3. const키워드와 객체</h2><p>const키워드로 선언된 변수는 재할당이 금지된다. const키워드로 선언된 변수에 원시값을 할당한 경우,원시값은 변경할 수 없는 값이고,const키워드에 의해 재할당이 금지되므로 할당된 값을 변경할 수 있는 방법은 없다.</p>
+<p>const키워드로 선언한 변수에 깩체를 할당하는 경우, 원시값을 할당한 경우와 마찬가지로 재할당이 금지된다. 그러나 객체는 변경가능한 값이다.따라서 const 키워드로 선언된 변수에 할당된 객체는 변경이 가능하다.</p>
+<p>const키워드는 재할당을 금지할뿐 불변을 의미하지 않는다. 새로운 객체를 재할당하는 것은 불가능하지만 객체의 내용을 변경하는 것은 가능하다.객체의 내용이 변경되더라도 변수에 할당된 주소값은 변경되지않는다.</p>
+<hr>
+
+<h1 id="4-var-대-let-대-const"><a href="#4-var-대-let-대-const" class="headerlink" title="4. var 대 let 대 const"></a>4. var 대 let 대 const</h1><p>변수 선언에는 기본적으로 const를 사용하고 let은 재할당이 필요한 경우에 한정해서 사용하는 것이 좋다. 원시값의 경우,가급적 상수를 사용하는 것이 좋다. 그리고 객체를 재할당하는 경우는 생각보다 흔하지않다. const 키워드를 사용하면 의도치 않은 재할당을 방지해주기때문이다.</p>
+<p>es6에서는 var을 사용하지않는다.<br>재할당이 필요한경우에는 한정해 letd을 사용한다. 이때 변수의 스코프는 최대한 좁게 만든다.<br>변경이 발생하지않는(재할당이 필요없는 상수)원시값과 객체에는 const키워드를 사용한다. const키워드는 재할당을 금지하므로 var,let보다 안전하다.</p>
+<p>변수를 선언하는 시점에는 재할다잉 필요할지 잘 모르는 경우가 많다. 그리고 객체는 의외로 재할당하는 경우가 드물다. 따라서 변수를 선언할때 일단 const 키워드로 사용하도록하자 .반드시 재할당이 필요하다면 그때 const를 let으로 변경하면 된다.</p>
+]]></content>
+      <tags>
+        <tag>let과 const 블록레벨 스코프에 대해</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>자바스크립트의 개발환경</title>
     <url>/2020/05/10/review3-md/</url>
     <content><![CDATA[<h2 id="1-자바스크립트-실행환경"><a href="#1-자바스크립트-실행환경" class="headerlink" title="1. 자바스크립트 실행환경"></a>1. 자바스크립트 실행환경</h2><hr>
@@ -515,6 +625,114 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>자바스크립트의 개발환경</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>스코프란?</title>
+    <url>/2020/06/02/scope-md/</url>
+    <content><![CDATA[<h1 id="1-스코프란"><a href="#1-스코프란" class="headerlink" title="1. 스코프란?"></a>1. 스코프란?</h1><p>스코프(유효범위)는 자바스크립트를 포함한 모든 프로그래밍 언어의 기본적이면 중요한 개념이다. 스코프의 이해가 부족하면 다른 개념을 이해하는데 어려울 수 있다. 더욱 자바스크립트의 스코프는 다른언어의 스코프와 구별되는 특징있다. 그리고 var 키워드로 선언한 변수와 let const로 선언한 변수의 스코프 또한 다르게 동작한다. </p>
+<p>함수의  매개변수는 함수 몸체 내부에서만 참조 할숭 있고 함수 몸체 외부에서는 참조 할 수  없다고 했다 이것은 애개변수를 참조 할 수 있는유효 범위, 즉 매개 변수릐 스코프가 함수 몸체 내부로 한정되기 때문이다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//매개변수는 함수 몸체 내부에서만 참조 할 수 있다.</span></span><br><span class="line">  <span class="comment">// 즉, 매개변수의 스코프(유효범위)는 함수 몸체 내부이다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(x,y); <span class="comment">//2 5</span></span><br><span class="line">  <span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">2</span>,<span class="number">5</span>);</span><br><span class="line"><span class="comment">//매개변수는 함수 몸체 내무에서만 참조 할 수 있다.</span></span><br><span class="line"><span class="built_in">console</span>.log(x,y) <span class="comment">// Reference Error: x isnot defined</span></span><br></pre></td></tr></table></figure>
+
+<p>변수의 코드의 가장 바깥 영역 뿐 아니라 코드 블록이나 함수 몸체에서도 선언 할 수 있다. 이때 코들 블록이나 함수는 중첩될 수있다. </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> var1  =<span class="number">1</span>; <span class="comment">//코드의 가자 바깥 영역에서 선언된 변수</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> var2 = <span class="number">2</span> <span class="comment">//코드 블록 내에서 선언된 변수</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> var3 = <span class="number">3</span>; <span class="comment">//중첩된 코드 내에서 선언된 변수</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> var4 = <span class="number">4</span><span class="comment">//함수 내에서 선언된 변수</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> var5 = <span class="number">5</span> <span class="comment">//중첩된 함수 내에서 선언된 함수</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(var1); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(var2); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(var3); <span class="comment">// 3</span></span><br><span class="line"><span class="built_in">console</span>.log(var4); <span class="comment">// ReferenceError: var4 is not defined</span></span><br><span class="line"><span class="built_in">console</span>.log(var5); <span class="comment">// ReferenceError: var5 is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>변수는 자신이 선언된 우치에 의해 자신이 유효한 범위, 즉 다른코드가 참조 할 수 있는 범위가 결정된다. 변수 뿐아니라 모든 식별자가 그렇다. 다시 말해 , <strong>모든 식별자(변수이름, 함수이름,클래스 이름 등) 는 자신이 선언된 위치에 의해 다른 코드가 식별자 자신을 참조 할 수 있는 유효범위가 결정 된다. 이를 스코프라한다. 즉 스코프는 식별자가 유효한 범위를 말한다.</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="string">'global'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x =<span class="string">'local'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(x) <span class="comment">//x= 'local' -1</span></span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br><span class="line"><span class="built_in">console</span>.log(x) <span class="comment">//'global' -2</span></span><br></pre></td></tr></table></figure>
+
+<p>코드의 가장 바깥 영역과 foo 함수내에는 같은 이름을 갖는 변수x를 선언했고 1,2에서 변수 x을 참조한다. 이때 자바스크립트엔진은 이름이 같은 두개의 변수중에서 어떤 변수응 참조해야 할 것인지 결정(식별자 결정)해야한다. 자바스크립트 엔진은 스코프를 통해 어떤 변수를 참조 해야 할 것인지 결정한다. 따라서 스코프란 자바스크립트 엔진이 <strong>식별자를 검색할 때 사용하는 규칙</strong>이라고 할수 있다.</p>
+<p>위의 예제에서 코드의 가장 바깥에 영역에 선언된 x변수는 어디서든 참조가 가능하다. 하지만foo함수 내부에서 선언된 x변수는 내부에서만 참조 가능하고 바깥에서 참조할 수 없다. 이때 두 식별자 이름은 동일 하지만 자신이 가진 유효한 범위 , 즉 스코프가 다른 변수이다. </p>
+<hr>
+코드의 문맥과 환경 - "코드가 어디서 실행되면 어떤 코드가 있는지"를 환경이라 부른다. 즉 코드의 문맥은 환경으로 이뤄진다. 이를 구현한 것이 "실행 컨텍스트"이며, 모든 코드는 실행컨택스트에서 평가 되고 실행된다. 스코프는 실행 컨택스트와 깊은 관련이있다.
+
+<hr>
+
+<p>만역 스코프라는 개념이 없으면 같은 이름을 갖는 변수는 충돌을 일으키므로 프로그램 전체에서 하나 밖에 사용 할 수 없다.</p>
+<p>변수나 함수의 이름과 같은 식별자는 어떤값을 구별해서 식별해 낼 수있는 고유한 이름을 말한다. 사람을 고유한 이름으로 구별 하듯이 갑도 사람이 이해할 수 있는 언어로 지정한 고유한 식별자인 변수이름에 의해 구별해서 참조 할 수있다.</p>
+<p>식별자는 어떤 값을 구별 할 수있어야 하므로 유일해야 한다. 따라서 식별자인 변수 이름은 중복될수 없다. 즉 하나의 유일한 식별자에 연결해야한다.<br>예를 들어 파일이름은 하나의 파일응ㄹ 구별해서 식별 할 수있는 식별자다.  식별자인 파일은 이름은 유일해야한다. 하지만 우리는 컴퓨터를 사용할때 하나의파일 이름만 사용하지 않는다. 식별자인 파일이름을 중복해야 한다면 파일이름을 만드는 것이 무척 번거로울 것이다.<br>이와 마찬가지로 프로그래밍 언어에서는 스코프를 통해 식별자인 변수의 이름의 충돌을 방지해서 같은 이름의 변수를 사용할수있게 한다. 스코프 내에서 식별자는 유일해야 하지만 다른 스코프에는 같은 이름의 식별자를 사용할 수 있다. </p>
+<hr>
+**var 키워드로 선언한 변수는 같은 스코프 내에서 중목선어이 가능하다. 이는 의도치 않게 변수값이 재할당되어 변경되는 부작용을 일으킨다.**
+
+<hr>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x =<span class="number">1</span>;</span><br><span class="line">  <span class="comment">//var 키워드로 선언한 변수는 같은 스코프 내에서 중복선어이 허용된다.</span></span><br><span class="line">  <span class="comment">// 아래의 변수 선언문은 자바스크립트 엔진에 의해ㅓ var 키워드가 없는것 처럼 동작한다</span></span><br><span class="line">  <span class="keyword">var</span> x =<span class="number">2</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(x) <span class="comment">//2</span></span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+
+<p><strong>하지만 let이나  const 키워드는 선언되 변수는 같은 스코프 내에서 중복 선언을 허용하지 않는다.</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> x =<span class="number">1</span>;</span><br><span class="line">   <span class="comment">//let 이나 const로 선언한 변수는 같은 스코프 내에서 중복이 불가하다.</span></span><br><span class="line">  <span class="keyword">let</span> x =<span class="number">2</span>;</span><br><span class="line">  <span class="comment">//SyntaxError: Identifier 'x' has already been declared</span></span><br><span class="line">&#125;</span><br><span class="line">bar();</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-스코프의-종류"><a href="#2-스코프의-종류" class="headerlink" title="2. 스코프의 종류"></a>2. 스코프의 종류</h1><p>코드는 전역과 지역으로 구분 할 수 있다. </p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>설명</th>
+<th>스코프</th>
+<th>변수</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>전역</td>
+<td>코드의 가장 바깥 영역</td>
+<td>전역 스코프</td>
+<td>전역변수</td>
+</tr>
+<tr>
+<td>지역</td>
+<td>함수 몸체의 내부</td>
+<td>지역 스코프</td>
+<td>지역 변수</td>
+</tr>
+</tbody></table>
+<p>이때  변수는 자신이 선언된 위치(전역 똔느 지역)에 의해 자신이 유효한 범위인 스코프가 결정 된다. 즉 전역에서 선언된 변수는 전역 스코프를 갖는 전역변수가 되고 , 지역에선 지역 스코프를 갖는 지역 변수다.</p>
+<h2 id="2-1-전역과-전역-스코프"><a href="#2-1-전역과-전역-스코프" class="headerlink" title="2.1. 전역과 전역 스코프"></a>2.1. 전역과 전역 스코프</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="string">'globalx'</span>;</span><br><span class="line"><span class="keyword">var</span> y =<span class="string">'globaly'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> z = <span class="string">"outer's local z"</span> </span><br><span class="line">  <span class="built_in">console</span>.log(x); <span class="comment">//'globalx'; -1</span></span><br><span class="line">  <span class="built_in">console</span>.log(y); <span class="comment">//'globaly';  -2</span></span><br><span class="line">  <span class="built_in">console</span>.log(z); <span class="comment">//"outer's local z" -3</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="string">"inner's local x"</span>;</span><br><span class="line">    </span><br><span class="line">  <span class="built_in">console</span>.log(x); <span class="comment">//"inner's local x"; -4</span></span><br><span class="line">  <span class="built_in">console</span>.log(y); <span class="comment">//'globaly'; -5</span></span><br><span class="line">  <span class="built_in">console</span>.log(z); <span class="comment">//"outer's local z" -6</span></span><br><span class="line">  &#125;</span><br><span class="line">  inner();</span><br><span class="line">&#125;</span><br><span class="line">outer();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(x); <span class="comment">//'globalx'; -7</span></span><br><span class="line"><span class="built_in">console</span>.log(z); <span class="comment">// Reference Error -8</span></span><br></pre></td></tr></table></figure>
+
+<p>전역이란 코드의 가장 바깥 영역을 말한다.  전역은 전역 스코프를 만든다. 저역에 젼수를 선언하면 스코프를 갖는 전역 변수가 된다. <strong>전역 변수는 언디서든 참조가 가능하다.</strong> </p>
+<p>위 에제에서 코드의 가장 바깥 영역인 전역에서 선언된 변수 x  와 y변수는 전역변수이다. 전역변수는 어디서든 참조 할 수있으므로 함수 내부에서도 참조할 수 있다.</p>
+<h2 id="2-2-지역과-지역-스코드"><a href="#2-2-지역과-지역-스코드" class="headerlink" title="2.2. 지역과 지역 스코드"></a>2.2. 지역과 지역 스코드</h2><p>지역이란 함수 몸체 내부를 말한다. 지역은 지역 스코프를 만든다. 지역에 젼수를 선언하면 지역스코프를 작는 지역변수가 된다. 지역변수는 자신이 선언되 지역과 하위 지역(중첩 함수)에서만 참조 할 수있다. 다시말해 <strong>지역변수는 자신의 지역스코프와 하위지역 스코프에서 유효하다.</strong><br>위 예제에서 oute함수 내부에서 선언된 변수z는 지역변수이다. 지역변수 z는 자신의 지역 스코프인 outer함수 내부와 하위 지역 스코프린 inner함수 내부에서 참조할 수 있다. 하지만 지역 변수z를 전역에서 ㅍ참조하면 에러가 발생한다.<br>inner함수 내부에서 선언된 x면수도 지역 변수이다. 지역변수 x는 자신의 지역 스코프인 함수inner 내부에서만 참조가 가능하다. 하지만 지역 변수x 을 전역 또는 innerㅎ마수 내부 이외의 지역에서 참조하면 참조 에러가 발생한다.<br>그런데 inner함수 내부에서 선언된 x변수 이외에 이름이 같은 전역변수가 존재한다. 이때 inner 함수 내부에서 x변수를 참조하면 전역변수x을 참조하는 것이 아니라 inner함수 내부에서 선언된 x변수를  참조한다. 이는 자바스크립트 엔진이 스코프 체인을 통해 참조할 변수를 검색했기 때문이다.  </p>
+<h1 id="3-스코프-체인"><a href="#3-스코프-체인" class="headerlink" title="3. 스코프 체인"></a>3. 스코프 체인</h1><p>함수는 전역에서 정의할 수도 있고 함수 내부에서 정의할 수 도 있다 . 함수 몸체에서 함수가 정의된 것을 “함수의 중첩”이라 한다. 그리고 함수 몸체 내부에서 정의한 함수를 ‘중첩함수’, 중첩 함수를  포함하는 ‘외부함수’라 한다.<br>함수는 중첩될 수 있으므로 함수의 지역 스코프도 중첩 될 수 있다. 이는 스코프가 함수의 중첩에의핸 곚층적 구조를 갖는다는 것을 의미한다. 다시 말해 중첩함수의 지역 스코프는 중첩 함수를 포함하는 외부함수의 지역 스코프와 계층적 구조를 갖는다. 이때 외부의 지역 스코프를 중첩함수의 상위 스코프라 한다. </p>
+<p>위 예제에서 지역은 outer 함수의 지역과 inner함수의 지역이있다. inner함수는 outer함수의 중첩함수이다. 이때 outer함수가 만든 outer함수의 지역 스코프는 inner 함수가 만든 inner 함수의 지역 스코프의 사우이 스코프이다. 그리고outer 함수의 지역 스코프의 샹위 스코프는 전역 스코프이다. 이러한 계층 구조를 그림으로 표현하면 다음과 같다. </p>
+<p><img src="https://poiemaweb.com/assets/fs-images/13-3.png" alt="13-3"></p>
+<p>이 처럼 모든 스코프는 하나의 계층적 구조로 연결이 되며, 모든 지역 스코프 최상위 스코프는 전역스코프이다. 이렇게 스코프가 계층적으로 연결된것을 스코프 체인이라고 한다. 위 그림에서 스코프 체인은 최상위 스코프인 전역 스코프 , 전역에서 선언된  outer 함수의 지역 스코프 ,outer 함수 내부에서 선언된 inner 함수의 지역 스코프로 이뤄진다.</p>
+<p>변수를 참조할 때 자바스크립트 엔진은 스코프 체인을 통해 변수를 참조하는 코드의 스코프에서 시작하여 상위 스코프 빙향으로 이동하며 선언된 변수를 검색한다. 이를 통해 상위 스코프에서 선언한 변수를 하위 스코프에서도 참조 할 수 있다.</p>
+<p>스코프 체인은 물리적인 실체로 존재한다. 자바스크립트엔진은 코드(전역 코드와 함수코드)를 실행하기에 앞서 위 그림과 유사한 자료구조인 레시컬 환경을 실제로 생성한다. 변수 선언이 실행되면 변수 식별자가 이 자료구조(렉시커 환경)에 등록 되고 , 변수 할당이 일어나면 이 자료구조의 변수 식별자에 해당하는 값을 변경한다. 변수의 검색도 이 자료구조 상에서 이뤄진다. </p>
+<hr>
+
+<p><strong>렉시컬 환경</strong>- 스코프 체인은 실행 컨택스트의 렉시컬 환경을 단방향으로 열결한 것이다. 전역 렉시컬 환경은 ㄷ코드가 로드되면 곧바로 생성되고 함수의 렉시컬 환경은 함수가 호출되면 곧바로 생성된다. </p>
+<hr>
+
+<h2 id="3-1-스코프-체인에-의한-변수-검색"><a href="#3-1-스코프-체인에-의한-변수-검색" class="headerlink" title="3.1. 스코프 체인에 의한 변수 검색"></a>3.1. 스코프 체인에 의한 변수 검색</h2><p>위 예제 의 4,5,6을 살펴 보자 . 이를 통해 자바스크립으 엔진이 스코프 체인을 통해 어떻게 변수를 찾아 내는지 이해 할 수 있다.<br> 4 x변수를 참조하는 코드의 스코프인 inner 함수 의 지역 스코프에서 선언됐는지 검색한다. inner 함수 내에는 선언된 x변수가 존재한다. 따라서 검색된 변수를 참조하고 검색을 종료한다. </p>
+<p>5  y변수를 참조하는 코드의 스코프인 inner함수의 지역 스코프에서 y변수가 선언됐는지 검색한다. inner 함수 내에는 y변수가 선언이 존해하지 않으므로 상위 스코프인 outer함수릐 지역 스코프로 이동한다. outer 함수 내에도 y 젼수 선언이 존재 하지않으므로 또 다시 상위 스코프인 전역 스코프로 이동한다. 전역 스코프에는 y변수의 선언이 존재한다. 따라서 검색된 변수를 참조하고 검색을 종료한다. </p>
+<p>6 z변수를 참조하는 코드의 스코프인 inner함수의 지역스코프에서 z변수가 선언 됐는지 검ㅅ개한다. inner함수 내에 z변수 선언이 존재 하지 않으므로 상위 스코프인 outer함수의 지역 스코프로 이동한다. outer함수 내에는 z변수 선언이  존재한다. 따라서 검색된 변수를 참조하고 검색을 종료한다.<br>이처럼 자바스크립트엔진은 스코프체인을 따라 변수를 참조하는 코드의 스코프에서 시작해서 상위 스코프 방향으로 이동하면 선언된 변수를 검색한다. 절대 하위 스코프로 내려가면 식졀자를 검색하는 일은 없다. 이는 <strong>상위 스코프에서 유효한 변수는 하위 스코프에서 자유롭게 참조 할 수있지만 하위 스코프에서 유효한 변수를 상위 스코프에서 참조 할 수 없다는 것을 의미한다.</strong></p>
+<h2 id="3-2-스코프-체인에-의한-함수-검색"><a href="#3-2-스코프-체인에-의한-함수-검색" class="headerlink" title="3.2. 스코프 체인에 의한 함수 검색"></a>3.2. 스코프 체인에 의한 함수 검색</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//전역함수 </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'global fucntion foo'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//중첩함수 </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'local functino foo'</span>);</span><br><span class="line">&#125;</span><br><span class="line">  foo(); <span class="number">-1</span></span><br><span class="line">&#125;</span><br><span class="line">bar();</span><br></pre></td></tr></table></figure>
+
+<p>함수선언문으로 함수를 정의하면 자바스크립트 엔진에 의해 다른 코드가 실행되기 이전에 함수 객체가 먼저 생성이 된다. 그리고 자바스크립트 엔진은 함수 이름과 동일한 이름의 식별자를 암묵적으로 선언하고 생성된 함수 객체를 할당한다.<br>따라서 위 에제의 모든 함수는 <strong>자바스크립트 엔진에 의해 암묵적으로 생성된 함수 이름과 동일한 이름의 식별자에 할당된다.</strong> </p>
+<p>1에서 함수를 호출하면 자바스크립트 엔진은 함수를 호출하기 위해 먼저 함수를 가리키는 식별자 foo를 검색한다.<br>이처럼 함수도 식별자에 할당되기 때문에 스코프르 갖는다. 사실 함수는 식별자에 함수 객체가 할당된 것 외에는 일반 변수와 다를바 없다. 따라서 스코프를 “변수를 검색할 때 사용되는 규칙”이라고 표횬하기 보다는 “ <strong>식별자를 검색하는 규칙</strong>“이라고 표현하는 편이 좀더 적합하다.</p>
+<h1 id="4-함수-레벨-스코프"><a href="#4-함수-레벨-스코프" class="headerlink" title="4. 함수 레벨 스코프"></a>4. 함수 레벨 스코프</h1><p>지역은 함수 몸체 내부를 말하고 지역은 지역 스코프를 만든다고 했다. 이는 모드 블록이 아닌 함수에 의해서만 지역스코프가 생성된다는 의미이다.</p>
+<p>C나 자바 등 대부분의 프로그래밍 언어는 함수 몸체만이 아니라 모든 모드블록(if,for,while,try/catch)등 이 지역 스코프를 만든다. 이러한 특성을 <strong>블록레벨 스코프라</strong> 한다. 하지만 <strong>var 키워드로 선언된 변수는 오로지 함수의 코드블록만을 지역 스코프로 인정한다</strong>. 이러한 특성을 <strong>함수레벨 스코프라한다</strong>. </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"> <span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">   <span class="comment">//var 키워드로 선언된 변수는 함수의 코드 블록만을 지역스코프로 인정한다. </span></span><br><span class="line">   <span class="comment">//함수밖에서 var키워드로 선언된 변수는 코드블록 내에서 선언됐다 할지라도 모두 전역 변수이ㅏㄷ. </span></span><br><span class="line">   <span class="comment">//따라서 x는 전역변수이다. 이미 선언한 전역변수x 가 있으므로 x면수는 중복선언된다. </span></span><br><span class="line">   <span class="comment">//이는 의도치않게 변수값이 변경되는 부작용을 발생시킨다. </span></span><br><span class="line">   <span class="keyword">var</span> x =<span class="number">10</span>;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="built_in">console</span>.log(x) <span class="comment">//10;</span></span><br></pre></td></tr></table></figure>
+
+<p>전역변수 x가 선언되었고 if문의 코드 블록내에도 x변수가 선언되었다. 이때 if문의 코들블록 내에서 선언된 x변수는 전역 변수이다. var키워드로 선언된 변수는 블록레벨 스코프를 인정하기 땨ㅐ문에 함수 밖에서 var키워드로 선언된 변수는 코드블록 내에서 선언되었다 할지라도 모두 전역변수이다. 따라서 전역변수 x 는 중복 선언되고 그 결과 의도치 않은 전역 변수의 값이 재할당된다. </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">19</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//for 문에서 선언한 i는 전역변수이다. 이미 선언한 전역변수 i가 있으므로 중복선언된다.</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> ui =<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i) <span class="comment">// 0 1 2 3 4</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//의도치 않게 변수의값이 변경되었다. </span></span><br><span class="line"><span class="built_in">console</span>.log(i) <span class="comment">//5</span></span><br></pre></td></tr></table></figure>
+
+<p>블록 레벨 스코프를 지원하는 프로그래밍 언어에서는 for 문에서 반복을 위해 선언된 i 변수가 for문의 코드블록 내에서만 유효한 지역변수다.이 변수를 for문 외부에서 사용할 일은 없기 때문이다. 하지만 var키워드로 선언도니 변수를 블록 레벨 스코프를 인정하지않기 때문에 i 변수는 전역변수가 된다. 따라서 전역 변수 i 는 중복 선언되고 그 결과 의도치 않은 전역 변수의 값이 재할당된다. </p>
+<p>var키워드로 선언된 변수는 오로지 함수의 코드블록 만을 지역 스코프로 인정하지만 ,eS6에서 도입된 let, const키워드는 블록레벨 스코프를 지원한다. </p>
+<p>(<strong>var 함수레벨 스코프,let,const 블록레벨 스코프)</strong></p>
+<h1 id="5-렉시컬-스코프"><a href="#5-렉시컬-스코프" class="headerlink" title="5. 렉시컬 스코프"></a>5. 렉시컬 스코프</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">fucntion foo()&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line">  bar();</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line">fucntion bar()&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x);</span><br><span class="line">&#125;</span><br><span class="line">foo(); <span class="comment">// 1</span></span><br><span class="line">bar(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<p> 위 에제의 실행결과 bar함수의 상위 스코프가 부엇인지에 따라 결정된다. 두가지 패펀을 예측할수있다. </p>
+<ol>
+<li>함수를 어디에서 호출했는지에 따라 함수의 상위 스코프를 결정한다. </li>
+<li>함수를 어디에서 정의했는지에 따다 함수의 사우이 스코프를 결정한다. </li>
+</ol>
+<p>첫번째 방식으로 함수의 상위 스코프를 결정한다면 bar 함수의  상위 스코프는 foo함수와 전역 일것이다. 두번째 방식으로 함수의 상위 스코프를 결정한다면 bar함수의 상위 스코프는 전역일 것이다.</p>
+<p>프로그래밍언어는 일반적으로 이 두가지 방식 중 한가지 방식의 상위 스코프를 결정한다. </p>
+<p>첫번째 방식을 종적 스코프라 한다. 함수를 정의하는 시점에서 함수가 어디에서 호출 될지 알 수 없다. 따라서 함수가 호출 되는 시점에 동적으로 상위 스코프를 결정해야하기 때문에 동적 스코프라 부른다.<br>두번째 방식을 렉시컬 스코프 또는 정적 스코프 라한다. 동적 스코프 방식처럼 스코프가 동저긍로 변하지않고 함수 정의가 평가 되는 시점에 상위 스코프가 정적으로 결정되기 때문에 정적 스코프라고 부른다.<br>자바스크립트를 비롯한 대부분의 프로그래밍 언어는 렉시컬 스코프를 따른다. </p>
+<p>자바스크립트는 렉시컬 스코프를 따르므로 <strong>함수를 어디에서 호출했는지가 아니라 함수를 어디에서 정의 했는지에 따라 상위 스코프를 결정한다</strong> 즉, 모든 함수 정의(함수 선언문 또는 함수 표현식)는 평가 되어 함수 객체를 생성할때 , 자신이 정의된 스코프를 상위 스코프로서 기억한다. 그리고 함수가 호출되면 언제나 자신이 기억하고 있는 정의된 스코프를 상위 스코프로 사용한다. 함수가 호출되 위치는 함수 자신이 기억하고 있는 스코프, 즉 상위 스코프 결정에 어떠한 영향도 주지않느낟. </p>
+<p>위의 졔제의 bar는 함수는 전역에서 정의된 함수이다. 함수 선언문으로 정의된 bar 함수는 전역 코드가 실행되기 전에 먼저 평가되어 함수 객체를 생성한다. 이때 생성된 bar함수 객체는 자신이 정의된 스코프. 즉 전역 스코프를 기억한다. 그리고  bar함수가 호출되면 호출된 곳이 어디인지 관계없이 언제나 자신이 기억하고 있는 전역 스코프를 상위 스코프로 사용한다 .따라서 위 에제를 실행하면 전역 변수 x 의 값의 값 1을 두번 출력한다. </p>
+<p>레시컬 스코프는 클로저와 깊은 관계가 있다.</p>
+]]></content>
+      <tags>
+        <tag>스코프란?</tag>
       </tags>
   </entry>
   <entry>
@@ -859,24 +1077,6 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
       </tags>
   </entry>
   <entry>
-    <title>반응형웹 수업내용 간단한 정리</title>
-    <url>/2019/09/22/%EB%B0%98%EC%9D%91%ED%98%95%EC%9B%B9%EC%88%98%EC%97%85%EB%82%B4%EC%9A%A9%EC%A0%95%EB%A6%AC/</url>
-    <content><![CDATA[<p>반응형 웹 디자인(responsive Web design) 모바일디바이스와 타블렛 같은 다양한 디바이스들이 등장하게 되었고, 그에 환경에 따른 별도의 대응이 필요하게 되었다.</p>
-<p> RWD vs AWD(적응형):view port에 따라 증가하다가 특정 크기에서 고정형(데스크탑 +모바일)<br>반응형 웹의 100(width를  특정한 너비를 설정하지 않는다.)</p>
-<p>컨텐츠는 물과 같다.용기는 다르더라도 내용물은 물은 그대로다.</p>
-<p>미디어 쿼리 배치중요하다. 추천하는 방법은 모바일 환경에 대한 선형 디자인을 처음으로 고려하고 brekpoint를 추가하면서 너비나 상황 변하였을때의 값을 설정해주는 것이 좋은 방법이 된다.(모바일에서 데스크탑으로)<br> mobile first:컨텐츠 전략 선택 선형적인 기본작업을 모바일에서 만들고 그것을 데스크탑 컨텐츠로 순서로 최적화를 한다.</p>
-<p>max-width:너비를 자신의 이상으로 안하겠다.너비가 줄수도 있지만 증가하진않는다.<br>height:auto:높이를 너비가 변호하는 것에 따에 자동으로 맞춘다.</p>
-<p><picture>&lt;source min-width:40em srcset:big-jpg 1x:big -jpg 2x&gt;최소의 너비에서 다음으로 srcset의 값을 보여주겠다. 배율이 1일때와 2배율일때 각각 상황에 맞게 사용하겠다.<picture>은 재사용과 수정에 용이하다.<br></picture><br></picture></p>
-<p>10vh(view height)화면 view port의 1/10을 높이로 정하겠다. 앞에서 이야기했듯이 모바일 first 선형화</p>
-<p>display:flex 의 order속성은 기본 값이 :0 기본 값보다 작으면 -1이면 기본 보다 먼저 값은 값이 있으면 순서대로 정의 한다.</p>
-<p>flex-flow:row wrap은 축은 바꾸지 않고 wrap 을 사용함으로서 줄을 바꿈.</p>
-<p>breakpoint는 쉽게 생각하면 추가될때 바뀌는 구간이라고 생각하면 된다.<br>@media screen and (min-width:801px)::801이 되면서 내용을 덮어씌우겠다.</p>
-]]></content>
-      <tags>
-        <tag>반응형 웹 수업내용</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>타입변환과 단축평가</title>
     <url>/2020/05/16/typechange/</url>
     <content><![CDATA[<h1 id="1-타입변환이란"><a href="#1-타입변환이란" class="headerlink" title="1. 타입변환이란?"></a>1. 타입변환이란?</h1><p>자바스크립트의 모든 값은 카입이 있다. 값의 타입은 개발자의 의도에 의해 다른 타입으로 변환될 수 있다. 개발자가 의도적으로 값의 타입을 변환하는 것을 명시적 타입변환 또는 타입캐스팅이라 한다.</p>
@@ -1019,6 +1219,24 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
       </tags>
   </entry>
   <entry>
+    <title>반응형웹 수업내용 간단한 정리</title>
+    <url>/2019/09/22/%EB%B0%98%EC%9D%91%ED%98%95%EC%9B%B9%EC%88%98%EC%97%85%EB%82%B4%EC%9A%A9%EC%A0%95%EB%A6%AC/</url>
+    <content><![CDATA[<p>반응형 웹 디자인(responsive Web design) 모바일디바이스와 타블렛 같은 다양한 디바이스들이 등장하게 되었고, 그에 환경에 따른 별도의 대응이 필요하게 되었다.</p>
+<p> RWD vs AWD(적응형):view port에 따라 증가하다가 특정 크기에서 고정형(데스크탑 +모바일)<br>반응형 웹의 100(width를  특정한 너비를 설정하지 않는다.)</p>
+<p>컨텐츠는 물과 같다.용기는 다르더라도 내용물은 물은 그대로다.</p>
+<p>미디어 쿼리 배치중요하다. 추천하는 방법은 모바일 환경에 대한 선형 디자인을 처음으로 고려하고 brekpoint를 추가하면서 너비나 상황 변하였을때의 값을 설정해주는 것이 좋은 방법이 된다.(모바일에서 데스크탑으로)<br> mobile first:컨텐츠 전략 선택 선형적인 기본작업을 모바일에서 만들고 그것을 데스크탑 컨텐츠로 순서로 최적화를 한다.</p>
+<p>max-width:너비를 자신의 이상으로 안하겠다.너비가 줄수도 있지만 증가하진않는다.<br>height:auto:높이를 너비가 변호하는 것에 따에 자동으로 맞춘다.</p>
+<p><picture>&lt;source min-width:40em srcset:big-jpg 1x:big -jpg 2x&gt;최소의 너비에서 다음으로 srcset의 값을 보여주겠다. 배율이 1일때와 2배율일때 각각 상황에 맞게 사용하겠다.<picture>은 재사용과 수정에 용이하다.<br></picture><br></picture></p>
+<p>10vh(view height)화면 view port의 1/10을 높이로 정하겠다. 앞에서 이야기했듯이 모바일 first 선형화</p>
+<p>display:flex 의 order속성은 기본 값이 :0 기본 값보다 작으면 -1이면 기본 보다 먼저 값은 값이 있으면 순서대로 정의 한다.</p>
+<p>flex-flow:row wrap은 축은 바꾸지 않고 wrap 을 사용함으로서 줄을 바꿈.</p>
+<p>breakpoint는 쉽게 생각하면 추가될때 바뀌는 구간이라고 생각하면 된다.<br>@media screen and (min-width:801px)::801이 되면서 내용을 덮어씌우겠다.</p>
+]]></content>
+      <tags>
+        <tag>반응형 웹 수업내용</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>메모리,참조,키워드,변수,선언,할당,재할당,호이스팅</title>
     <url>/2019/10/04/%EB%A9%94%EB%AA%A8%EB%A6%AC%EC%B0%B8%EC%A1%B0%ED%82%A4%EC%9B%8C%EB%93%9C/</url>
     <content><![CDATA[<p><strong>변수</strong>-값을 다룬다.(데이터를 다룬다.)</p>
@@ -1118,6 +1336,27 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>스코프</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>웹접근성과 WAI-ARIA</title>
+    <url>/2019/09/17/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1/</url>
+    <content><![CDATA[<p> 웹 접근성이란 웹 사이트에서 제공하는 정보를 차별없이 동등하게 이용 할 수 있도록하는 보장하는 것을 말한다. 신제적(고령층 ,장애인,비장애인 ) 환경적 요건(다양한 플랫폼,웹 브라우져,장치)을 모두 포함한다.</p>
+<p>WAI ; Web Accessibility InitiativeWAI는 시각·청각 기능 등에 장애를 지닌 사람도 일반인과 동등하게 웹에 접근하여 이용할 수 있도록 관련 지침을 개발하고 웹 접근성 향상을 위한 노력을 기울이는 W3C의 산하 단체를 말한다</p>
+<p>ARIA:Accessible Rich Internet Applications’의 약자로 리치 인터넷을 위한 W3C 접근성 명세입니다.</p>
+<p>RIA:정적인 HTMl과 단순한 자바스크립트 환경의 웹이 아닌 동적인 자바스크립트와 Ajax와 같은 기술을 사용한 환경에서 수준 높은 UX(User eXperience)를 제공하는 웹 애플리케이션을 의미한다.</p>
+<p>WAI-ARIA는 RIA에서 스크린 리더기 및 보조기기 등에서 접근성 및 운용성을 향상시키기 위한 목적으로 탄생했으며 웹 애플리케이션에 역할,속성,상태 정보를 추가하여 이를 개선 할 수 있도록 제공하고 있다.</p>
+<p>1)대표적인 역할( role):tablist,button,tab,tooltip,list,</p>
+<p>application,abnner,navigation,form,search..</p>
+<p>2)Property &amp; State:(상태와 속성):aria-labelledby=”” : 레이블 제공을 위한 aria-속성. 상태 값은 연결시킬 레이블 id를 입력한다.</p>
+<p>aria-haspopup=”” : 팝업요소가 하위에 존재하고 있다는걸 인식 시켜주는 aria-속성. 상태 값은 false(default) / true / menu / listbox / tree / gird / dialog</p>
+<p>aria-live : 페이지의 어떤 위치에 있든 업데이트된 정보를 사용자에게 알려주는 aria-속성. 상태 값은 assertive / off(default) / polite</p>
+<p>aria-labelledby=”” : 레이블 제공을 위한 aria-속성. 상태 값은 연결시킬 레이블 id를 입력한다.</p>
+<p>aria-selected=”” : 탭메뉴 선택 유무를 알려준다. 상태 값은 선택되었을 때 true / 선택되지 않았을 때 false 입력</p>
+<p>ria-controls=”” : 현재 요소가 제어하는 대상을 명시하는 속성으로 탭메뉴와 본문을 연결시켜준다. 상태 값은 tabpanel의 id명 입력</p>
+]]></content>
+      <tags>
+        <tag>웹 접근성과 WAI-ARIA</tag>
       </tags>
   </entry>
   <entry>
@@ -1230,27 +1469,6 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
 ]]></content>
       <tags>
         <tag>변수 뒷부분 + 1.데이터타입 2.연산자</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>웹접근성과 WAI-ARIA</title>
-    <url>/2019/09/17/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1/</url>
-    <content><![CDATA[<p> 웹 접근성이란 웹 사이트에서 제공하는 정보를 차별없이 동등하게 이용 할 수 있도록하는 보장하는 것을 말한다. 신제적(고령층 ,장애인,비장애인 ) 환경적 요건(다양한 플랫폼,웹 브라우져,장치)을 모두 포함한다.</p>
-<p>WAI ; Web Accessibility InitiativeWAI는 시각·청각 기능 등에 장애를 지닌 사람도 일반인과 동등하게 웹에 접근하여 이용할 수 있도록 관련 지침을 개발하고 웹 접근성 향상을 위한 노력을 기울이는 W3C의 산하 단체를 말한다</p>
-<p>ARIA:Accessible Rich Internet Applications’의 약자로 리치 인터넷을 위한 W3C 접근성 명세입니다.</p>
-<p>RIA:정적인 HTMl과 단순한 자바스크립트 환경의 웹이 아닌 동적인 자바스크립트와 Ajax와 같은 기술을 사용한 환경에서 수준 높은 UX(User eXperience)를 제공하는 웹 애플리케이션을 의미한다.</p>
-<p>WAI-ARIA는 RIA에서 스크린 리더기 및 보조기기 등에서 접근성 및 운용성을 향상시키기 위한 목적으로 탄생했으며 웹 애플리케이션에 역할,속성,상태 정보를 추가하여 이를 개선 할 수 있도록 제공하고 있다.</p>
-<p>1)대표적인 역할( role):tablist,button,tab,tooltip,list,</p>
-<p>application,abnner,navigation,form,search..</p>
-<p>2)Property &amp; State:(상태와 속성):aria-labelledby=”” : 레이블 제공을 위한 aria-속성. 상태 값은 연결시킬 레이블 id를 입력한다.</p>
-<p>aria-haspopup=”” : 팝업요소가 하위에 존재하고 있다는걸 인식 시켜주는 aria-속성. 상태 값은 false(default) / true / menu / listbox / tree / gird / dialog</p>
-<p>aria-live : 페이지의 어떤 위치에 있든 업데이트된 정보를 사용자에게 알려주는 aria-속성. 상태 값은 assertive / off(default) / polite</p>
-<p>aria-labelledby=”” : 레이블 제공을 위한 aria-속성. 상태 값은 연결시킬 레이블 id를 입력한다.</p>
-<p>aria-selected=”” : 탭메뉴 선택 유무를 알려준다. 상태 값은 선택되었을 때 true / 선택되지 않았을 때 false 입력</p>
-<p>ria-controls=”” : 현재 요소가 제어하는 대상을 명시하는 속성으로 탭메뉴와 본문을 연결시켜준다. 상태 값은 tabpanel의 id명 입력</p>
-]]></content>
-      <tags>
-        <tag>웹 접근성과 WAI-ARIA</tag>
       </tags>
   </entry>
 </search>

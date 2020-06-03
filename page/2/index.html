@@ -176,6 +176,184 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/05/06/symbol-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -JH- World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/06/symbol-md/" class="post-title-link" itemprop="url">Symbol 타입</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-06 14:14:53 / Modified: 17:56:41" itemprop="dateCreated datePublished" datetime="2020-05-06T14:14:53+09:00">2020-05-06</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/05/06/symbol-md/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/06/symbol-md/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-Symbol-이란"><a href="#1-Symbol-이란" class="headerlink" title="1.Symbol 이란?"></a>1.Symbol 이란?</h1><p>1997년 자바스크립트의 ECAMScript로 처음 표준화된 이래로 자바스크립트에는 6개의 타입 즉 String,Number,boolean,undefined,null,Object가 있었다. </p>
+<p>심볼은(symbol)은 es6에서 새롭게 추가된 7번째 타입으로 변경이 불가능한 원시타입이다. <strong>다른 값과 중복되지 않는 유일무이한 값이다.</strong> 따라서 주로 이름의 충돌 위험이 없는 유일한 프로퍼티 키를 만들기 위해 사용된다.</p>
+<p>객체의 프로퍼티 키로 사용할 수 있는 값은 빈 문자열을 포함한 모든 문자열 또는 심볼값이다.</p>
+<h1 id="2-Symbol의-생성"><a href="#2-Symbol의-생성" class="headerlink" title="2.Symbol의 생성"></a>2.Symbol의 생성</h1><p>##2.1. Symbol 함수</p>
+<p>심볼 값은 Symbol 함수를 호출하여 생성한다. 다른 원시 값은, 즉 문자열,숫자,불리언 ,undefined,null은 타입의 값은 리터럴 표기법을 통해 값을 생성할 수 있지만 심볼값은 심볼을 함수를 호출해야 생성해야한다. 이<u>때 생성된 심볼 값은 노출 되지 않으며 다른 값과 절대 중복 되지 않는 유일무이한 값이다.</u></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Symbol 함수를 호출하여 유일무이한 심볼값을 생성한다.</span></span><br><span class="line"><span class="keyword">const</span> mySymbol = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//심볼 값은 노출되지 않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol) <span class="comment">// Symbol();</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> mySymbol) <span class="comment">//symbol</span></span><br></pre></td></tr></table></figure>
+
+<p> 언뜻 보면 생성자 함수로 객체를 생성하는 것 처럼 보이지만 Symbol함수는 String, number, Boolean 생성자 함수와는 달리 new 연산자를 사용하지 않는다. new연산자와 함께 생성자 함수 또는 클래스를 호출하면 객체 (인스턴스)가 생성되지만 심볼 값은 변경이 불가능한 원시 값 이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Symbol</span>();  <span class="comment">//TypeError: Symbol is not a constructor</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/06/symbol-md/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/05/05/generator-aync-await-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -JH- World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/05/generator-aync-await-md/" class="post-title-link" itemprop="url">제너레이터와 async-await</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-05 14:06:50 / Modified: 22:08:48" itemprop="dateCreated datePublished" datetime="2020-05-05T14:06:50+09:00">2020-05-05</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/05/05/generator-aync-await-md/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/05/generator-aync-await-md/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-제네레이터"><a href="#1-제네레이터" class="headerlink" title="1.제네레이터"></a>1.제네레이터</h1><p>es6에서 도입된 제너레이터 함수는  이터러블을 생성하는 함수이다. 제너레이터 함수를 사용하면 이터레이션 프로토콜을 준수해 이터러블을 생성하는 방식보다 간편하게 이터러블을 구현 할 수 있다. 또한 제너레이터 함수는 비동기 처리에 유용하게 사용된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//이터레이션 ㅍ,로토콜을 구현하여 무한 이터러블을 생성하는 함수</span></span><br><span class="line"><span class="keyword">const</span> createInfinittbyIteration = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> i =<span class="number">0</span>;<span class="comment">//자유 변수</span></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    [<span class="built_in">Symbol</span>.iterator]()&#123;<span class="keyword">return</span> <span class="keyword">this</span>;&#125;,</span><br><span class="line">    next()&#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;<span class="attr">value</span>:++i&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> n <span class="keyword">of</span> createInfinitbyIteration())&#123;</span><br><span class="line">  <span class="keyword">if</span>(n&gt;<span class="number">5</span>)<span class="keyword">break</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(n)<span class="comment">//1 2 3 4 5</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//무한 이터러블을 생성하는 제너레이터 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">createInfinittbyIteration</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> i =<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>)&#123;<span class="keyword">yield</span> ++i;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> n <span class="keyword">of</span> createInfinittbyIteration())&#123;</span><br><span class="line">  <span class="keyword">if</span>(n&gt;<span class="number">5</span>) <span class="keyword">break</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(n) <span class="comment">// 1 2 3 4 5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>제너레이터 함수는 일반 함수와는 다른 독특한 동작을 한다. 제너레이터 함수는 일반 함수와 같이 함수의 코드 블로그을 한번에 실행하지 않고 함수 코드 블록의 실행을 일시 중단했다가 필요한 시점에 재시작 할 수 있는 특수한 함수이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">counter</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'첫번째 호출'</span>);</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span>;								<span class="comment">//첫번째 호출시에 이 지점까지 실행된다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'두 번째 호출'</span>);</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">2</span>;								<span class="comment">//두번째 호출 시에 이 지점까지 실행된다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'세번째 호출'</span>)<span class="comment">// 세번째 호출 시에 이 지점까지 실행한다</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> generatorObj = counter();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next());<span class="comment">//첫번째 호출 &#123;value:1,done:false&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next());<span class="comment">//두번째 호출 &#123;value:2,done:false&#125;;</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next());<span class="comment">//세번째 호출 &#123;value:undefined,done:true&#125;;</span></span><br></pre></td></tr></table></figure>
+
+<p>일반 함수를 호출하면 return 문으로 반환값을 리턴하지만 제너레이터 함수를 호출하면 제너레이터를 반환한다. 이 제너레이터는 이터러블이면서 동시에 이터레이터인 객체이다. 다시 말해 제너레이터 함수가 생성한 제너레이터는 Symbol.iterator메소드를 소유한 이터러블이다. 그리고 제너레이터는 next()메소드를 소유하며 next메소드를 호출하면 value,done 프로퍼티를 갖는 이터레이터 객체를 반환하는 이터레이터이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//제너레이터 함수 정의</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">counter</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">const</span> v <span class="keyword">of</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])<span class="keyword">yield</span> v;</span><br><span class="line">  <span class="comment">//=&gt;yield* [1,2,3];</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//제너레이터 함수를 호출하면 제너레이터를 반환한다.</span></span><br><span class="line"><span class="keyword">let</span> generatorObj = counter();</span><br><span class="line"></span><br><span class="line"><span class="comment">//제너레이터는 이터러블이다.</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Symbol</span>.iterator <span class="keyword">in</span> generatorObj) <span class="comment">//true;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> i int generatorObj)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i)<span class="comment">// 1 2 3 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">generatorObj = counter();</span><br><span class="line"></span><br><span class="line"><span class="comment">//제너레이터는 이터레이터이다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'next'</span> <span class="keyword">in</span> generatoroBJ)	<span class="comment">//true;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next()) <span class="comment">//&#123;value:1,done:false&#125;;</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next()) <span class="comment">//&#123;value:2,done:false&#125;;</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next()) <span class="comment">//&#123;value:3,done:false&#125;;</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next()) <span class="comment">//&#123;value:undefined,done:true&#125;;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="2-제너레이터-함수의-정의"><a href="#2-제너레이터-함수의-정의" class="headerlink" title="2.제너레이터 함수의 정의"></a>2.제너레이터 함수의 정의</h1><p>제너레이터 함수는 function* 키워드로 선언을 한다. 그리고 하나 이상의 yield문을 포함한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//제너레이터 함수 선언문</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">genDecFunc</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> generatorObj = genDecFunc();</span><br><span class="line"></span><br><span class="line"><span class="comment">//제너레이터 함수 표현식</span></span><br><span class="line"><span class="keyword">const</span> genExpFunc = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//제너레이터 메소드 </span></span><br><span class="line"><span class="keyword">const</span> obj =&#123;</span><br><span class="line">  *generatorObjMethod()&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">generatorObj = obj.generatorObjMethod();</span><br><span class="line"></span><br><span class="line"><span class="comment">//제너레이터 클래스 메소드</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span></span>&#123;</span><br><span class="line">  *generatorClsMethod()&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> myClass = <span class="keyword">new</span> MyClass();</span><br><span class="line">generatorObj = myClass.generatorClsMethod();</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/05/generator-aync-await-md/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/05/04/setandmap-md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -325,7 +503,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-04 20:20:14" itemprop="dateModified" datetime="2020-05-04T20:20:14+09:00">2020-05-04</time>
+                <time title="Modified: 2020-06-02 10:52:45" itemprop="dateModified" datetime="2020-06-02T10:52:45+09:00">2020-06-02</time>
               </span>
 
           
@@ -946,192 +1124,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2019/09/22/반응형웹수업내용정리/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello -JH- World">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/22/반응형웹수업내용정리/" class="post-title-link" itemprop="url">반응형웹 수업내용 간단한 정리</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-09-22 17:24:41" itemprop="dateCreated datePublished" datetime="2019-09-22T17:24:41+09:00">2019-09-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-04 20:40:42" itemprop="dateModified" datetime="2020-05-04T20:40:42+09:00">2020-05-04</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/09/22/반응형웹수업내용정리/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/22/반응형웹수업내용정리/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>반응형 웹 디자인(responsive Web design) 모바일디바이스와 타블렛 같은 다양한 디바이스들이 등장하게 되었고, 그에 환경에 따른 별도의 대응이 필요하게 되었다.</p>
-<p> RWD vs AWD(적응형):view port에 따라 증가하다가 특정 크기에서 고정형(데스크탑 +모바일)<br>반응형 웹의 100(width를  특정한 너비를 설정하지 않는다.)</p>
-<p>컨텐츠는 물과 같다.용기는 다르더라도 내용물은 물은 그대로다.</p>
-<p>미디어 쿼리 배치중요하다. 추천하는 방법은 모바일 환경에 대한 선형 디자인을 처음으로 고려하고 brekpoint를 추가하면서 너비나 상황 변하였을때의 값을 설정해주는 것이 좋은 방법이 된다.(모바일에서 데스크탑으로)<br> mobile first:컨텐츠 전략 선택 선형적인 기본작업을 모바일에서 만들고 그것을 데스크탑 컨텐츠로 순서로 최적화를 한다.</p>
-<p>max-width:너비를 자신의 이상으로 안하겠다.너비가 줄수도 있지만 증가하진않는다.<br>height:auto:높이를 너비가 변호하는 것에 따에 자동으로 맞춘다.</p>
-<p><picture>&lt;source min-width:40em srcset:big-jpg 1x:big -jpg 2x&gt;최소의 너비에서 다음으로 srcset의 값을 보여주겠다. 배율이 1일때와 2배율일때 각각 상황에 맞게 사용하겠다.<picture>은 재사용과 수정에 용이하다.<br></picture><br></picture></p>
-<p>10vh(view height)화면 view port의 1/10을 높이로 정하겠다. 앞에서 이야기했듯이 모바일 first 선형화</p>
-<p>display:flex 의 order속성은 기본 값이 :0 기본 값보다 작으면 -1이면 기본 보다 먼저 값은 값이 있으면 순서대로 정의 한다.</p>
-<p>flex-flow:row wrap은 축은 바꾸지 않고 wrap 을 사용함으로서 줄을 바꿈.</p>
-<p>breakpoint는 쉽게 생각하면 추가될때 바뀌는 구간이라고 생각하면 된다.<br>@media screen and (min-width:801px)::801이 되면서 내용을 덮어씌우겠다.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/09/22/반응형웹수업내용정리/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2019/09/22/tabindex을이용한키보드접근성/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello -JH- World">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/22/tabindex을이용한키보드접근성/" class="post-title-link" itemprop="url">tabindex을 이용한 키보드 접근성</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-09-22 17:21:35" itemprop="dateCreated datePublished" datetime="2019-09-22T17:21:35+09:00">2019-09-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-04 20:40:22" itemprop="dateModified" datetime="2020-05-04T20:40:22+09:00">2020-05-04</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/09/22/tabindex을이용한키보드접근성/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/22/tabindex을이용한키보드접근성/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>키보드의 접근성을 고려한 tabindex의 사용.</p>
-<p>tabindex는 기본적으로  키보드의 tab키를 눌렀을 때 이동순서를 임의로 조정 할 수 있는 html의 속성 입니다. tabindex의 포커스의 순서를 부여하는 방식을 tabintdex 값에 양의정수를 넣어주면 됩니다. 예를 들어 어떤 html요소에 taindex=”1”을 주었다면 해당 웹 페이지 상에서 tab키를 눌렀을때 tabindex=”1”이 부여하는 요소가 가장 먼저 포커스 됩니다. 그러나 taindex는 신중하게 사용해야 할 필 요가 있습니다. 일반적으로 키보드의  tab키를 눌렀을때 포커스는 html의 마크업 순서를 따르며 링크요소 또는 폼 요소등 tab키로 포커스를 가질 수  있는 요소에 마크업 순서에 따라 자연스럽게 이동합니다. 기본적으로 마크업이 논리적으로 이루어져 있다면 굳이 tabindex을 사용할 이유가 없습니다. 오히려 잘못된 tabindex를 사용함으로써 스크린 리더 사용자가 웹 페이지의 구조를 이해하는데 어려움으로 작용하게 될 수 있습니다.</p>
-<p>tabindex는 위에서 설명한것 같이 마크업 순서가 논리적으로 잘 구성되어있다면 대체로 사용할 필요가 없습니다. 임의의 페이지에 처음  접속하는 필수 회원 로그인을 행하는 경우 폼 요소에 tabindex를 부여하여 먼저 회원 로그인을 유도하는등의 이유로 사용할 수는 있습니다. 그러나 이러한 경우에도 페이지 로딩 시autofocus기능을 사용하여 회원 로그인을 유도하는 것이 바람직하다고 생각합니다. 그럼 tabindex는 언제 사용할까요?</p>
-<p>웹페이지를 구성하다 보면 페이지 탐색에 논리적 순서를 부여하는 사용자가 자연스럽게 페이지를 탐색할 수 있도록합니다.</p>
-<p>tabindex속성은 양의정수값 이외에 0과 -1의 값을 가질 수도 있습니다. 먼저 tabindex=”0”은 tab키를 눌렀을때 포커스를 받을 수없는 요소 이를테면 <span>등의 요소에 포커스를 받게 할 수 있습니다.  반면 -1은 기본적으로 tab키를 눌렀을때 포커스받을 수있는 폼 요소나 링크 요소를 강제로  포커스 받지 못하도록 하는 값입니다. </span></p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/09/22/tabindex을이용한키보드접근성/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1201,12 +1193,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

@@ -176,6 +176,195 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/06/03/html-contents-model-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -JH- World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/03/html-contents-model-md/" class="post-title-link" itemprop="url">HTML콘텐츠 모델과 다양한 API</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-06-03 14:51:59 / Modified: 14:54:38" itemprop="dateCreated datePublished" datetime="2020-06-03T14:51:59+09:00">2020-06-03</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/03/html-contents-model-md/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/03/html-contents-model-md/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>HTML5는 html4.01,xHTML1.0과 도입한 마크업 언어입니다. 기존 HTML과 HTML5의 차이점은 새롭게 도입된 콘텐츠 모델이라는 개념과 구조관련 요소가 추가 되었다는 점을 들을수 있습니다. 또한 기존에 사용했던 요소중에서 의미가 변한 요소도 있습니다. </p>
+<hr>
+
+<h2 id="콘텐츠-모델-Contents-Model"><a href="#콘텐츠-모델-Contents-Model" class="headerlink" title="콘텐츠 모델(Contents Model)"></a>콘텐츠 모델(Contents Model)</h2><p>기존 HTML기반의 마크업에서 일잔적인 인라인 요소와 블록 요소로 구분하는정도의 개념만 존재하였지만 ,HTML15에서는 좀더 명확한 정보 구조 설계 및 구성을 위해 카테고리를 정의하여 각 요소별로 비슷한 성격을 가지고 있는 것들끼리 그룹화 하였는데 이를 HTML5의 콘텐츠 모델이라고 합니다. </p>
+<p>특히 HTML5에 추가된 콘텐츠 모델이란 ,’어떤 요소에 어떤 콘텐츠를 포함해야하는지’,’어떤 요소가 어떤요소를 포함할 수있는지’를 정의한 것을 말합니다. 이 콘텐츠 모델이라는 개념을 통해 자식 요소로 포함 할 수이쓴느 카테고리에 제한을 두었으며 , 이와 반대로 자식 요소가 작성 될 수 있는 카테고리를 제한하였스빈다. 이런 HTML5의 콘텐츠 모델은 단순히 기존 HTML 에서의 문법적인 변화만을 의미하는 것으로 그치지 않고 구조와 구성을 중시하는 마크업으로 진화했다는 점을 이해할수있습니다. </p>
+<p>HTML5의 카테고리(Category)에는 Sectioning Root, Metadata Content, Flow Content, Sectioning Content, Heading Content, Phrasing Content, Embedded Content, Interactive Content, Palpable Content, Script-supporting Elements, Transparent Content 등의 그룹이 있으며, 하나의 요소가 여러 그룹에 속해 있을 수도 있고, 그렇지 않을 수도 있습니다.</p>
+<p>![콘텐츠 모델](/Users/pokeoseu/Desktop/콘텐츠 모델.png)</p>
+<ul>
+<li><strong>섹셔닝 루트(Sectioning Root)</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span>, <span class="tag">&lt;<span class="name">body</span>&gt;</span>, <span class="tag">&lt;<span class="name">detail</span>&gt;</span>, <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span>, <span class="tag">&lt;<span class="name">figure</span>&gt;</span>, <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>몇몇 요소는 섹셔닝 루트라는 그룹으로 구분합니다. 섹셔닝 루트에 속하는 요소는 section이나 article 요소와 같이 장이나 절과 같은 계층 구조로 구분되지 않고 독립적인 콘텐츠로 분리되기 때문에 아웃라인에 영향을 주지 않습니다.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/03/html-contents-model-md/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/06/02/scope-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -JH- World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/scope-md/" class="post-title-link" itemprop="url">스코프란?</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-06-02 10:52:43" itemprop="dateCreated datePublished" datetime="2020-06-02T10:52:43+09:00">2020-06-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-03 14:52:03" itemprop="dateModified" datetime="2020-06-03T14:52:03+09:00">2020-06-03</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/02/scope-md/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/02/scope-md/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-스코프란"><a href="#1-스코프란" class="headerlink" title="1. 스코프란?"></a>1. 스코프란?</h1><p>스코프(유효범위)는 자바스크립트를 포함한 모든 프로그래밍 언어의 기본적이면 중요한 개념이다. 스코프의 이해가 부족하면 다른 개념을 이해하는데 어려울 수 있다. 더욱 자바스크립트의 스코프는 다른언어의 스코프와 구별되는 특징있다. 그리고 var 키워드로 선언한 변수와 let const로 선언한 변수의 스코프 또한 다르게 동작한다. </p>
+<p>함수의  매개변수는 함수 몸체 내부에서만 참조 할숭 있고 함수 몸체 외부에서는 참조 할 수  없다고 했다 이것은 애개변수를 참조 할 수 있는유효 범위, 즉 매개 변수릐 스코프가 함수 몸체 내부로 한정되기 때문이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//매개변수는 함수 몸체 내부에서만 참조 할 수 있다.</span></span><br><span class="line">  <span class="comment">// 즉, 매개변수의 스코프(유효범위)는 함수 몸체 내부이다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(x,y); <span class="comment">//2 5</span></span><br><span class="line">  <span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">2</span>,<span class="number">5</span>);</span><br><span class="line"><span class="comment">//매개변수는 함수 몸체 내무에서만 참조 할 수 있다.</span></span><br><span class="line"><span class="built_in">console</span>.log(x,y) <span class="comment">// Reference Error: x isnot defined</span></span><br></pre></td></tr></table></figure>
+
+<p>변수의 코드의 가장 바깥 영역 뿐 아니라 코드 블록이나 함수 몸체에서도 선언 할 수 있다. 이때 코들 블록이나 함수는 중첩될 수있다. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> var1  =<span class="number">1</span>; <span class="comment">//코드의 가자 바깥 영역에서 선언된 변수</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> var2 = <span class="number">2</span> <span class="comment">//코드 블록 내에서 선언된 변수</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> var3 = <span class="number">3</span>; <span class="comment">//중첩된 코드 내에서 선언된 변수</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> var4 = <span class="number">4</span><span class="comment">//함수 내에서 선언된 변수</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> var5 = <span class="number">5</span> <span class="comment">//중첩된 함수 내에서 선언된 함수</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(var1); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(var2); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(var3); <span class="comment">// 3</span></span><br><span class="line"><span class="built_in">console</span>.log(var4); <span class="comment">// ReferenceError: var4 is not defined</span></span><br><span class="line"><span class="built_in">console</span>.log(var5); <span class="comment">// ReferenceError: var5 is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>변수는 자신이 선언된 우치에 의해 자신이 유효한 범위, 즉 다른코드가 참조 할 수 있는 범위가 결정된다. 변수 뿐아니라 모든 식별자가 그렇다. 다시 말해 , <strong>모든 식별자(변수이름, 함수이름,클래스 이름 등) 는 자신이 선언된 위치에 의해 다른 코드가 식별자 자신을 참조 할 수 있는 유효범위가 결정 된다. 이를 스코프라한다. 즉 스코프는 식별자가 유효한 범위를 말한다.</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="string">'global'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x =<span class="string">'local'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(x) <span class="comment">//x= 'local' -1</span></span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br><span class="line"><span class="built_in">console</span>.log(x) <span class="comment">//'global' -2</span></span><br></pre></td></tr></table></figure>
+
+<p>코드의 가장 바깥 영역과 foo 함수내에는 같은 이름을 갖는 변수x를 선언했고 1,2에서 변수 x을 참조한다. 이때 자바스크립트엔진은 이름이 같은 두개의 변수중에서 어떤 변수응 참조해야 할 것인지 결정(식별자 결정)해야한다. 자바스크립트 엔진은 스코프를 통해 어떤 변수를 참조 해야 할 것인지 결정한다. 따라서 스코프란 자바스크립트 엔진이 <strong>식별자를 검색할 때 사용하는 규칙</strong>이라고 할수 있다.</p>
+<p>위의 예제에서 코드의 가장 바깥에 영역에 선언된 x변수는 어디서든 참조가 가능하다. 하지만foo함수 내부에서 선언된 x변수는 내부에서만 참조 가능하고 바깥에서 참조할 수 없다. 이때 두 식별자 이름은 동일 하지만 자신이 가진 유효한 범위 , 즉 스코프가 다른 변수이다. </p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/02/scope-md/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/05/23/aboutSet-md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -201,7 +390,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-05-23 20:36:29 / Modified: 21:02:48" itemprop="dateCreated datePublished" datetime="2020-05-23T20:36:29+09:00">2020-05-23</time>
+              <time title="Created: 2020-05-23 20:36:29 / Modified: 21:04:14" itemprop="dateCreated datePublished" datetime="2020-05-23T20:36:29+09:00">2020-05-23</time>
             </span>
 
           
@@ -897,184 +1086,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/05/06/symbol-md/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello -JH- World">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/06/symbol-md/" class="post-title-link" itemprop="url">Symbol 타입</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-05-06 14:14:53 / Modified: 17:56:41" itemprop="dateCreated datePublished" datetime="2020-05-06T14:14:53+09:00">2020-05-06</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/05/06/symbol-md/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/06/symbol-md/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-Symbol-이란"><a href="#1-Symbol-이란" class="headerlink" title="1.Symbol 이란?"></a>1.Symbol 이란?</h1><p>1997년 자바스크립트의 ECAMScript로 처음 표준화된 이래로 자바스크립트에는 6개의 타입 즉 String,Number,boolean,undefined,null,Object가 있었다. </p>
-<p>심볼은(symbol)은 es6에서 새롭게 추가된 7번째 타입으로 변경이 불가능한 원시타입이다. <strong>다른 값과 중복되지 않는 유일무이한 값이다.</strong> 따라서 주로 이름의 충돌 위험이 없는 유일한 프로퍼티 키를 만들기 위해 사용된다.</p>
-<p>객체의 프로퍼티 키로 사용할 수 있는 값은 빈 문자열을 포함한 모든 문자열 또는 심볼값이다.</p>
-<h1 id="2-Symbol의-생성"><a href="#2-Symbol의-생성" class="headerlink" title="2.Symbol의 생성"></a>2.Symbol의 생성</h1><p>##2.1. Symbol 함수</p>
-<p>심볼 값은 Symbol 함수를 호출하여 생성한다. 다른 원시 값은, 즉 문자열,숫자,불리언 ,undefined,null은 타입의 값은 리터럴 표기법을 통해 값을 생성할 수 있지만 심볼값은 심볼을 함수를 호출해야 생성해야한다. 이<u>때 생성된 심볼 값은 노출 되지 않으며 다른 값과 절대 중복 되지 않는 유일무이한 값이다.</u></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Symbol 함수를 호출하여 유일무이한 심볼값을 생성한다.</span></span><br><span class="line"><span class="keyword">const</span> mySymbol = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//심볼 값은 노출되지 않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol) <span class="comment">// Symbol();</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> mySymbol) <span class="comment">//symbol</span></span><br></pre></td></tr></table></figure>
-
-<p> 언뜻 보면 생성자 함수로 객체를 생성하는 것 처럼 보이지만 Symbol함수는 String, number, Boolean 생성자 함수와는 달리 new 연산자를 사용하지 않는다. new연산자와 함께 생성자 함수 또는 클래스를 호출하면 객체 (인스턴스)가 생성되지만 심볼 값은 변경이 불가능한 원시 값 이다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Symbol</span>();  <span class="comment">//TypeError: Symbol is not a constructor</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/06/symbol-md/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/05/05/generator-aync-await-md/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello -JH- World">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/05/generator-aync-await-md/" class="post-title-link" itemprop="url">제너레이터와 async-await</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-05-05 14:06:50 / Modified: 22:08:48" itemprop="dateCreated datePublished" datetime="2020-05-05T14:06:50+09:00">2020-05-05</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/05/05/generator-aync-await-md/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/05/generator-aync-await-md/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-제네레이터"><a href="#1-제네레이터" class="headerlink" title="1.제네레이터"></a>1.제네레이터</h1><p>es6에서 도입된 제너레이터 함수는  이터러블을 생성하는 함수이다. 제너레이터 함수를 사용하면 이터레이션 프로토콜을 준수해 이터러블을 생성하는 방식보다 간편하게 이터러블을 구현 할 수 있다. 또한 제너레이터 함수는 비동기 처리에 유용하게 사용된다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//이터레이션 ㅍ,로토콜을 구현하여 무한 이터러블을 생성하는 함수</span></span><br><span class="line"><span class="keyword">const</span> createInfinittbyIteration = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> i =<span class="number">0</span>;<span class="comment">//자유 변수</span></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    [<span class="built_in">Symbol</span>.iterator]()&#123;<span class="keyword">return</span> <span class="keyword">this</span>;&#125;,</span><br><span class="line">    next()&#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;<span class="attr">value</span>:++i&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> n <span class="keyword">of</span> createInfinitbyIteration())&#123;</span><br><span class="line">  <span class="keyword">if</span>(n&gt;<span class="number">5</span>)<span class="keyword">break</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(n)<span class="comment">//1 2 3 4 5</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//무한 이터러블을 생성하는 제너레이터 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">createInfinittbyIteration</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> i =<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>)&#123;<span class="keyword">yield</span> ++i;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> n <span class="keyword">of</span> createInfinittbyIteration())&#123;</span><br><span class="line">  <span class="keyword">if</span>(n&gt;<span class="number">5</span>) <span class="keyword">break</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(n) <span class="comment">// 1 2 3 4 5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>제너레이터 함수는 일반 함수와는 다른 독특한 동작을 한다. 제너레이터 함수는 일반 함수와 같이 함수의 코드 블로그을 한번에 실행하지 않고 함수 코드 블록의 실행을 일시 중단했다가 필요한 시점에 재시작 할 수 있는 특수한 함수이다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">counter</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'첫번째 호출'</span>);</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span>;								<span class="comment">//첫번째 호출시에 이 지점까지 실행된다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'두 번째 호출'</span>);</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">2</span>;								<span class="comment">//두번째 호출 시에 이 지점까지 실행된다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'세번째 호출'</span>)<span class="comment">// 세번째 호출 시에 이 지점까지 실행한다</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> generatorObj = counter();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next());<span class="comment">//첫번째 호출 &#123;value:1,done:false&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next());<span class="comment">//두번째 호출 &#123;value:2,done:false&#125;;</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next());<span class="comment">//세번째 호출 &#123;value:undefined,done:true&#125;;</span></span><br></pre></td></tr></table></figure>
-
-<p>일반 함수를 호출하면 return 문으로 반환값을 리턴하지만 제너레이터 함수를 호출하면 제너레이터를 반환한다. 이 제너레이터는 이터러블이면서 동시에 이터레이터인 객체이다. 다시 말해 제너레이터 함수가 생성한 제너레이터는 Symbol.iterator메소드를 소유한 이터러블이다. 그리고 제너레이터는 next()메소드를 소유하며 next메소드를 호출하면 value,done 프로퍼티를 갖는 이터레이터 객체를 반환하는 이터레이터이다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//제너레이터 함수 정의</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">counter</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">const</span> v <span class="keyword">of</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])<span class="keyword">yield</span> v;</span><br><span class="line">  <span class="comment">//=&gt;yield* [1,2,3];</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//제너레이터 함수를 호출하면 제너레이터를 반환한다.</span></span><br><span class="line"><span class="keyword">let</span> generatorObj = counter();</span><br><span class="line"></span><br><span class="line"><span class="comment">//제너레이터는 이터러블이다.</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Symbol</span>.iterator <span class="keyword">in</span> generatorObj) <span class="comment">//true;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> i int generatorObj)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i)<span class="comment">// 1 2 3 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">generatorObj = counter();</span><br><span class="line"></span><br><span class="line"><span class="comment">//제너레이터는 이터레이터이다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'next'</span> <span class="keyword">in</span> generatoroBJ)	<span class="comment">//true;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next()) <span class="comment">//&#123;value:1,done:false&#125;;</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next()) <span class="comment">//&#123;value:2,done:false&#125;;</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next()) <span class="comment">//&#123;value:3,done:false&#125;;</span></span><br><span class="line"><span class="built_in">console</span>.log(generatorObj.next()) <span class="comment">//&#123;value:undefined,done:true&#125;;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="2-제너레이터-함수의-정의"><a href="#2-제너레이터-함수의-정의" class="headerlink" title="2.제너레이터 함수의 정의"></a>2.제너레이터 함수의 정의</h1><p>제너레이터 함수는 function* 키워드로 선언을 한다. 그리고 하나 이상의 yield문을 포함한다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//제너레이터 함수 선언문</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">genDecFunc</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> generatorObj = genDecFunc();</span><br><span class="line"></span><br><span class="line"><span class="comment">//제너레이터 함수 표현식</span></span><br><span class="line"><span class="keyword">const</span> genExpFunc = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//제너레이터 메소드 </span></span><br><span class="line"><span class="keyword">const</span> obj =&#123;</span><br><span class="line">  *generatorObjMethod()&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">generatorObj = obj.generatorObjMethod();</span><br><span class="line"></span><br><span class="line"><span class="comment">//제너레이터 클래스 메소드</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span></span>&#123;</span><br><span class="line">  *generatorClsMethod()&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> myClass = <span class="keyword">new</span> MyClass();</span><br><span class="line">generatorObj = myClass.generatorClsMethod();</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/05/generator-aync-await-md/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1144,12 +1155,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

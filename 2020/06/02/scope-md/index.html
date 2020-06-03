@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zg78899.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="1. 스코프란?스코프(유효범위)는 자바스크립트를 포함한 모든 프로그래밍 언어의 기본적이면 중요한 개념이다. 스코프의 이해가 부족하면 다른 개념을 이해하는데 어려울 수 있다. 더욱 자바스크립트의 스코프는 다른언어의 스코프와 구별되는 특징있다. 그리고 var 키워드로 선언한 변수와 let const로 선언한 변수의 스코프 또한 다르게 동작한다.  함수의  매개">
+<meta name="keywords" content="스코프란?">
+<meta property="og:type" content="article">
+<meta property="og:title" content="스코프란?">
+<meta property="og:url" content="https://zg78899.github.io/2020/06/02/scope-md/index.html">
+<meta property="og:site_name" content="Hello -JH- World">
+<meta property="og:description" content="1. 스코프란?스코프(유효범위)는 자바스크립트를 포함한 모든 프로그래밍 언어의 기본적이면 중요한 개념이다. 스코프의 이해가 부족하면 다른 개념을 이해하는데 어려울 수 있다. 더욱 자바스크립트의 스코프는 다른언어의 스코프와 구별되는 특징있다. 그리고 var 키워드로 선언한 변수와 let const로 선언한 변수의 스코프 또한 다르게 동작한다.  함수의  매개">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://poiemaweb.com/assets/fs-images/13-3.png">
+<meta property="og:updated_time" content="2020-06-03T05:52:03.857Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="스코프란?">
+<meta name="twitter:description" content="1. 스코프란?스코프(유효범위)는 자바스크립트를 포함한 모든 프로그래밍 언어의 기본적이면 중요한 개념이다. 스코프의 이해가 부족하면 다른 개념을 이해하는데 어려울 수 있다. 더욱 자바스크립트의 스코프는 다른언어의 스코프와 구별되는 특징있다. 그리고 var 키워드로 선언한 변수와 let const로 선언한 변수의 스코프 또한 다르게 동작한다.  함수의  매개">
+<meta name="twitter:image" content="https://poiemaweb.com/assets/fs-images/13-3.png">
+
+<link rel="canonical" href="https://zg78899.github.io/2020/06/02/scope-md/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>스코프란? | Hello -JH- World</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hello -JH- World</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">daily 개발 study</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/zg78899" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/06/02/scope-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -JH- World">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          스코프란?
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-06-02 10:52:43" itemprop="dateCreated datePublished" datetime="2020-06-02T10:52:43+09:00">2020-06-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-03 14:52:03" itemprop="dateModified" datetime="2020-06-03T14:52:03+09:00">2020-06-03</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/02/scope-md/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/02/scope-md/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-스코프란"><a href="#1-스코프란" class="headerlink" title="1. 스코프란?"></a>1. 스코프란?</h1><p>스코프(유효범위)는 자바스크립트를 포함한 모든 프로그래밍 언어의 기본적이면 중요한 개념이다. 스코프의 이해가 부족하면 다른 개념을 이해하는데 어려울 수 있다. 더욱 자바스크립트의 스코프는 다른언어의 스코프와 구별되는 특징있다. 그리고 var 키워드로 선언한 변수와 let const로 선언한 변수의 스코프 또한 다르게 동작한다. </p>
+<p>함수의  매개변수는 함수 몸체 내부에서만 참조 할숭 있고 함수 몸체 외부에서는 참조 할 수  없다고 했다 이것은 애개변수를 참조 할 수 있는유효 범위, 즉 매개 변수릐 스코프가 함수 몸체 내부로 한정되기 때문이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//매개변수는 함수 몸체 내부에서만 참조 할 수 있다.</span></span><br><span class="line">  <span class="comment">// 즉, 매개변수의 스코프(유효범위)는 함수 몸체 내부이다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(x,y); <span class="comment">//2 5</span></span><br><span class="line">  <span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">2</span>,<span class="number">5</span>);</span><br><span class="line"><span class="comment">//매개변수는 함수 몸체 내무에서만 참조 할 수 있다.</span></span><br><span class="line"><span class="built_in">console</span>.log(x,y) <span class="comment">// Reference Error: x isnot defined</span></span><br></pre></td></tr></table></figure>
+
+<p>변수의 코드의 가장 바깥 영역 뿐 아니라 코드 블록이나 함수 몸체에서도 선언 할 수 있다. 이때 코들 블록이나 함수는 중첩될 수있다. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> var1  =<span class="number">1</span>; <span class="comment">//코드의 가자 바깥 영역에서 선언된 변수</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> var2 = <span class="number">2</span> <span class="comment">//코드 블록 내에서 선언된 변수</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> var3 = <span class="number">3</span>; <span class="comment">//중첩된 코드 내에서 선언된 변수</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> var4 = <span class="number">4</span><span class="comment">//함수 내에서 선언된 변수</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> var5 = <span class="number">5</span> <span class="comment">//중첩된 함수 내에서 선언된 함수</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(var1); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(var2); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(var3); <span class="comment">// 3</span></span><br><span class="line"><span class="built_in">console</span>.log(var4); <span class="comment">// ReferenceError: var4 is not defined</span></span><br><span class="line"><span class="built_in">console</span>.log(var5); <span class="comment">// ReferenceError: var5 is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>변수는 자신이 선언된 우치에 의해 자신이 유효한 범위, 즉 다른코드가 참조 할 수 있는 범위가 결정된다. 변수 뿐아니라 모든 식별자가 그렇다. 다시 말해 , <strong>모든 식별자(변수이름, 함수이름,클래스 이름 등) 는 자신이 선언된 위치에 의해 다른 코드가 식별자 자신을 참조 할 수 있는 유효범위가 결정 된다. 이를 스코프라한다. 즉 스코프는 식별자가 유효한 범위를 말한다.</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="string">'global'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x =<span class="string">'local'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(x) <span class="comment">//x= 'local' -1</span></span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br><span class="line"><span class="built_in">console</span>.log(x) <span class="comment">//'global' -2</span></span><br></pre></td></tr></table></figure>
+
+<p>코드의 가장 바깥 영역과 foo 함수내에는 같은 이름을 갖는 변수x를 선언했고 1,2에서 변수 x을 참조한다. 이때 자바스크립트엔진은 이름이 같은 두개의 변수중에서 어떤 변수응 참조해야 할 것인지 결정(식별자 결정)해야한다. 자바스크립트 엔진은 스코프를 통해 어떤 변수를 참조 해야 할 것인지 결정한다. 따라서 스코프란 자바스크립트 엔진이 <strong>식별자를 검색할 때 사용하는 규칙</strong>이라고 할수 있다.</p>
+<p>위의 예제에서 코드의 가장 바깥에 영역에 선언된 x변수는 어디서든 참조가 가능하다. 하지만foo함수 내부에서 선언된 x변수는 내부에서만 참조 가능하고 바깥에서 참조할 수 없다. 이때 두 식별자 이름은 동일 하지만 자신이 가진 유효한 범위 , 즉 스코프가 다른 변수이다. </p>
+<hr>
+코드의 문맥과 환경 - "코드가 어디서 실행되면 어떤 코드가 있는지"를 환경이라 부른다. 즉 코드의 문맥은 환경으로 이뤄진다. 이를 구현한 것이 "실행 컨텍스트"이며, 모든 코드는 실행컨택스트에서 평가 되고 실행된다. 스코프는 실행 컨택스트와 깊은 관련이있다.
+
+<hr>
+
+<p>만역 스코프라는 개념이 없으면 같은 이름을 갖는 변수는 충돌을 일으키므로 프로그램 전체에서 하나 밖에 사용 할 수 없다.</p>
+<p>변수나 함수의 이름과 같은 식별자는 어떤값을 구별해서 식별해 낼 수있는 고유한 이름을 말한다. 사람을 고유한 이름으로 구별 하듯이 갑도 사람이 이해할 수 있는 언어로 지정한 고유한 식별자인 변수이름에 의해 구별해서 참조 할 수있다.</p>
+<p>식별자는 어떤 값을 구별 할 수있어야 하므로 유일해야 한다. 따라서 식별자인 변수 이름은 중복될수 없다. 즉 하나의 유일한 식별자에 연결해야한다.<br>예를 들어 파일이름은 하나의 파일응ㄹ 구별해서 식별 할 수있는 식별자다.  식별자인 파일은 이름은 유일해야한다. 하지만 우리는 컴퓨터를 사용할때 하나의파일 이름만 사용하지 않는다. 식별자인 파일이름을 중복해야 한다면 파일이름을 만드는 것이 무척 번거로울 것이다.<br>이와 마찬가지로 프로그래밍 언어에서는 스코프를 통해 식별자인 변수의 이름의 충돌을 방지해서 같은 이름의 변수를 사용할수있게 한다. 스코프 내에서 식별자는 유일해야 하지만 다른 스코프에는 같은 이름의 식별자를 사용할 수 있다. </p>
+<hr>
+**var 키워드로 선언한 변수는 같은 스코프 내에서 중목선어이 가능하다. 이는 의도치 않게 변수값이 재할당되어 변경되는 부작용을 일으킨다.**
+
+<hr>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x =<span class="number">1</span>;</span><br><span class="line">  <span class="comment">//var 키워드로 선언한 변수는 같은 스코프 내에서 중복선어이 허용된다.</span></span><br><span class="line">  <span class="comment">// 아래의 변수 선언문은 자바스크립트 엔진에 의해ㅓ var 키워드가 없는것 처럼 동작한다</span></span><br><span class="line">  <span class="keyword">var</span> x =<span class="number">2</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(x) <span class="comment">//2</span></span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+
+<p><strong>하지만 let이나  const 키워드는 선언되 변수는 같은 스코프 내에서 중복 선언을 허용하지 않는다.</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> x =<span class="number">1</span>;</span><br><span class="line">   <span class="comment">//let 이나 const로 선언한 변수는 같은 스코프 내에서 중복이 불가하다.</span></span><br><span class="line">  <span class="keyword">let</span> x =<span class="number">2</span>;</span><br><span class="line">  <span class="comment">//SyntaxError: Identifier 'x' has already been declared</span></span><br><span class="line">&#125;</span><br><span class="line">bar();</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-스코프의-종류"><a href="#2-스코프의-종류" class="headerlink" title="2. 스코프의 종류"></a>2. 스코프의 종류</h1><p>코드는 전역과 지역으로 구분 할 수 있다. </p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>설명</th>
+<th>스코프</th>
+<th>변수</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>전역</td>
+<td>코드의 가장 바깥 영역</td>
+<td>전역 스코프</td>
+<td>전역변수</td>
+</tr>
+<tr>
+<td>지역</td>
+<td>함수 몸체의 내부</td>
+<td>지역 스코프</td>
+<td>지역 변수</td>
+</tr>
+</tbody></table>
+<p>이때  변수는 자신이 선언된 위치(전역 똔느 지역)에 의해 자신이 유효한 범위인 스코프가 결정 된다. 즉 전역에서 선언된 변수는 전역 스코프를 갖는 전역변수가 되고 , 지역에선 지역 스코프를 갖는 지역 변수다.</p>
+<h2 id="2-1-전역과-전역-스코프"><a href="#2-1-전역과-전역-스코프" class="headerlink" title="2.1. 전역과 전역 스코프"></a>2.1. 전역과 전역 스코프</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="string">'globalx'</span>;</span><br><span class="line"><span class="keyword">var</span> y =<span class="string">'globaly'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> z = <span class="string">"outer's local z"</span> </span><br><span class="line">  <span class="built_in">console</span>.log(x); <span class="comment">//'globalx'; -1</span></span><br><span class="line">  <span class="built_in">console</span>.log(y); <span class="comment">//'globaly';  -2</span></span><br><span class="line">  <span class="built_in">console</span>.log(z); <span class="comment">//"outer's local z" -3</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="string">"inner's local x"</span>;</span><br><span class="line">    </span><br><span class="line">  <span class="built_in">console</span>.log(x); <span class="comment">//"inner's local x"; -4</span></span><br><span class="line">  <span class="built_in">console</span>.log(y); <span class="comment">//'globaly'; -5</span></span><br><span class="line">  <span class="built_in">console</span>.log(z); <span class="comment">//"outer's local z" -6</span></span><br><span class="line">  &#125;</span><br><span class="line">  inner();</span><br><span class="line">&#125;</span><br><span class="line">outer();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(x); <span class="comment">//'globalx'; -7</span></span><br><span class="line"><span class="built_in">console</span>.log(z); <span class="comment">// Reference Error -8</span></span><br></pre></td></tr></table></figure>
+
+<p>전역이란 코드의 가장 바깥 영역을 말한다.  전역은 전역 스코프를 만든다. 저역에 젼수를 선언하면 스코프를 갖는 전역 변수가 된다. <strong>전역 변수는 언디서든 참조가 가능하다.</strong> </p>
+<p>위 에제에서 코드의 가장 바깥 영역인 전역에서 선언된 변수 x  와 y변수는 전역변수이다. 전역변수는 어디서든 참조 할 수있으므로 함수 내부에서도 참조할 수 있다.</p>
+<h2 id="2-2-지역과-지역-스코드"><a href="#2-2-지역과-지역-스코드" class="headerlink" title="2.2. 지역과 지역 스코드"></a>2.2. 지역과 지역 스코드</h2><p>지역이란 함수 몸체 내부를 말한다. 지역은 지역 스코프를 만든다. 지역에 젼수를 선언하면 지역스코프를 작는 지역변수가 된다. 지역변수는 자신이 선언되 지역과 하위 지역(중첩 함수)에서만 참조 할 수있다. 다시말해 <strong>지역변수는 자신의 지역스코프와 하위지역 스코프에서 유효하다.</strong><br>위 예제에서 oute함수 내부에서 선언된 변수z는 지역변수이다. 지역변수 z는 자신의 지역 스코프인 outer함수 내부와 하위 지역 스코프린 inner함수 내부에서 참조할 수 있다. 하지만 지역 변수z를 전역에서 ㅍ참조하면 에러가 발생한다.<br>inner함수 내부에서 선언된 x면수도 지역 변수이다. 지역변수 x는 자신의 지역 스코프인 함수inner 내부에서만 참조가 가능하다. 하지만 지역 변수x 을 전역 또는 innerㅎ마수 내부 이외의 지역에서 참조하면 참조 에러가 발생한다.<br>그런데 inner함수 내부에서 선언된 x변수 이외에 이름이 같은 전역변수가 존재한다. 이때 inner 함수 내부에서 x변수를 참조하면 전역변수x을 참조하는 것이 아니라 inner함수 내부에서 선언된 x변수를  참조한다. 이는 자바스크립트 엔진이 스코프 체인을 통해 참조할 변수를 검색했기 때문이다.  </p>
+<h1 id="3-스코프-체인"><a href="#3-스코프-체인" class="headerlink" title="3. 스코프 체인"></a>3. 스코프 체인</h1><p>함수는 전역에서 정의할 수도 있고 함수 내부에서 정의할 수 도 있다 . 함수 몸체에서 함수가 정의된 것을 “함수의 중첩”이라 한다. 그리고 함수 몸체 내부에서 정의한 함수를 ‘중첩함수’, 중첩 함수를  포함하는 ‘외부함수’라 한다.<br>함수는 중첩될 수 있으므로 함수의 지역 스코프도 중첩 될 수 있다. 이는 스코프가 함수의 중첩에의핸 곚층적 구조를 갖는다는 것을 의미한다. 다시 말해 중첩함수의 지역 스코프는 중첩 함수를 포함하는 외부함수의 지역 스코프와 계층적 구조를 갖는다. 이때 외부의 지역 스코프를 중첩함수의 상위 스코프라 한다. </p>
+<p>위 예제에서 지역은 outer 함수의 지역과 inner함수의 지역이있다. inner함수는 outer함수의 중첩함수이다. 이때 outer함수가 만든 outer함수의 지역 스코프는 inner 함수가 만든 inner 함수의 지역 스코프의 사우이 스코프이다. 그리고outer 함수의 지역 스코프의 샹위 스코프는 전역 스코프이다. 이러한 계층 구조를 그림으로 표현하면 다음과 같다. </p>
+<p><img src="https://poiemaweb.com/assets/fs-images/13-3.png" alt="13-3"></p>
+<p>이 처럼 모든 스코프는 하나의 계층적 구조로 연결이 되며, 모든 지역 스코프 최상위 스코프는 전역스코프이다. 이렇게 스코프가 계층적으로 연결된것을 스코프 체인이라고 한다. 위 그림에서 스코프 체인은 최상위 스코프인 전역 스코프 , 전역에서 선언된  outer 함수의 지역 스코프 ,outer 함수 내부에서 선언된 inner 함수의 지역 스코프로 이뤄진다.</p>
+<p>변수를 참조할 때 자바스크립트 엔진은 스코프 체인을 통해 변수를 참조하는 코드의 스코프에서 시작하여 상위 스코프 빙향으로 이동하며 선언된 변수를 검색한다. 이를 통해 상위 스코프에서 선언한 변수를 하위 스코프에서도 참조 할 수 있다.</p>
+<p>스코프 체인은 물리적인 실체로 존재한다. 자바스크립트엔진은 코드(전역 코드와 함수코드)를 실행하기에 앞서 위 그림과 유사한 자료구조인 레시컬 환경을 실제로 생성한다. 변수 선언이 실행되면 변수 식별자가 이 자료구조(렉시커 환경)에 등록 되고 , 변수 할당이 일어나면 이 자료구조의 변수 식별자에 해당하는 값을 변경한다. 변수의 검색도 이 자료구조 상에서 이뤄진다. </p>
+<hr>
+
+<p><strong>렉시컬 환경</strong>- 스코프 체인은 실행 컨택스트의 렉시컬 환경을 단방향으로 열결한 것이다. 전역 렉시컬 환경은 ㄷ코드가 로드되면 곧바로 생성되고 함수의 렉시컬 환경은 함수가 호출되면 곧바로 생성된다. </p>
+<hr>
+
+<h2 id="3-1-스코프-체인에-의한-변수-검색"><a href="#3-1-스코프-체인에-의한-변수-검색" class="headerlink" title="3.1. 스코프 체인에 의한 변수 검색"></a>3.1. 스코프 체인에 의한 변수 검색</h2><p>위 예제 의 4,5,6을 살펴 보자 . 이를 통해 자바스크립으 엔진이 스코프 체인을 통해 어떻게 변수를 찾아 내는지 이해 할 수 있다.<br> 4 x변수를 참조하는 코드의 스코프인 inner 함수 의 지역 스코프에서 선언됐는지 검색한다. inner 함수 내에는 선언된 x변수가 존재한다. 따라서 검색된 변수를 참조하고 검색을 종료한다. </p>
+<p>5  y변수를 참조하는 코드의 스코프인 inner함수의 지역 스코프에서 y변수가 선언됐는지 검색한다. inner 함수 내에는 y변수가 선언이 존해하지 않으므로 상위 스코프인 outer함수릐 지역 스코프로 이동한다. outer 함수 내에도 y 젼수 선언이 존재 하지않으므로 또 다시 상위 스코프인 전역 스코프로 이동한다. 전역 스코프에는 y변수의 선언이 존재한다. 따라서 검색된 변수를 참조하고 검색을 종료한다. </p>
+<p>6 z변수를 참조하는 코드의 스코프인 inner함수의 지역스코프에서 z변수가 선언 됐는지 검ㅅ개한다. inner함수 내에 z변수 선언이 존재 하지 않으므로 상위 스코프인 outer함수의 지역 스코프로 이동한다. outer함수 내에는 z변수 선언이  존재한다. 따라서 검색된 변수를 참조하고 검색을 종료한다.<br>이처럼 자바스크립트엔진은 스코프체인을 따라 변수를 참조하는 코드의 스코프에서 시작해서 상위 스코프 방향으로 이동하면 선언된 변수를 검색한다. 절대 하위 스코프로 내려가면 식졀자를 검색하는 일은 없다. 이는 <strong>상위 스코프에서 유효한 변수는 하위 스코프에서 자유롭게 참조 할 수있지만 하위 스코프에서 유효한 변수를 상위 스코프에서 참조 할 수 없다는 것을 의미한다.</strong></p>
+<h2 id="3-2-스코프-체인에-의한-함수-검색"><a href="#3-2-스코프-체인에-의한-함수-검색" class="headerlink" title="3.2. 스코프 체인에 의한 함수 검색"></a>3.2. 스코프 체인에 의한 함수 검색</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//전역함수 </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'global fucntion foo'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//중첩함수 </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'local functino foo'</span>);</span><br><span class="line">&#125;</span><br><span class="line">  foo(); <span class="number">-1</span></span><br><span class="line">&#125;</span><br><span class="line">bar();</span><br></pre></td></tr></table></figure>
+
+<p>함수선언문으로 함수를 정의하면 자바스크립트 엔진에 의해 다른 코드가 실행되기 이전에 함수 객체가 먼저 생성이 된다. 그리고 자바스크립트 엔진은 함수 이름과 동일한 이름의 식별자를 암묵적으로 선언하고 생성된 함수 객체를 할당한다.<br>따라서 위 에제의 모든 함수는 <strong>자바스크립트 엔진에 의해 암묵적으로 생성된 함수 이름과 동일한 이름의 식별자에 할당된다.</strong> </p>
+<p>1에서 함수를 호출하면 자바스크립트 엔진은 함수를 호출하기 위해 먼저 함수를 가리키는 식별자 foo를 검색한다.<br>이처럼 함수도 식별자에 할당되기 때문에 스코프르 갖는다. 사실 함수는 식별자에 함수 객체가 할당된 것 외에는 일반 변수와 다를바 없다. 따라서 스코프를 “변수를 검색할 때 사용되는 규칙”이라고 표횬하기 보다는 “ <strong>식별자를 검색하는 규칙</strong>“이라고 표현하는 편이 좀더 적합하다.</p>
+<h1 id="4-함수-레벨-스코프"><a href="#4-함수-레벨-스코프" class="headerlink" title="4. 함수 레벨 스코프"></a>4. 함수 레벨 스코프</h1><p>지역은 함수 몸체 내부를 말하고 지역은 지역 스코프를 만든다고 했다. 이는 모드 블록이 아닌 함수에 의해서만 지역스코프가 생성된다는 의미이다.</p>
+<p>C나 자바 등 대부분의 프로그래밍 언어는 함수 몸체만이 아니라 모든 모드블록(if,for,while,try/catch)등 이 지역 스코프를 만든다. 이러한 특성을 <strong>블록레벨 스코프라</strong> 한다. 하지만 <strong>var 키워드로 선언된 변수는 오로지 함수의 코드블록만을 지역 스코프로 인정한다</strong>. 이러한 특성을 <strong>함수레벨 스코프라한다</strong>. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"> <span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">   <span class="comment">//var 키워드로 선언된 변수는 함수의 코드 블록만을 지역스코프로 인정한다. </span></span><br><span class="line">   <span class="comment">//함수밖에서 var키워드로 선언된 변수는 코드블록 내에서 선언됐다 할지라도 모두 전역 변수이ㅏㄷ. </span></span><br><span class="line">   <span class="comment">//따라서 x는 전역변수이다. 이미 선언한 전역변수x 가 있으므로 x면수는 중복선언된다. </span></span><br><span class="line">   <span class="comment">//이는 의도치않게 변수값이 변경되는 부작용을 발생시킨다. </span></span><br><span class="line">   <span class="keyword">var</span> x =<span class="number">10</span>;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="built_in">console</span>.log(x) <span class="comment">//10;</span></span><br></pre></td></tr></table></figure>
+
+<p>전역변수 x가 선언되었고 if문의 코드 블록내에도 x변수가 선언되었다. 이때 if문의 코들블록 내에서 선언된 x변수는 전역 변수이다. var키워드로 선언된 변수는 블록레벨 스코프를 인정하기 땨ㅐ문에 함수 밖에서 var키워드로 선언된 변수는 코드블록 내에서 선언되었다 할지라도 모두 전역변수이다. 따라서 전역변수 x 는 중복 선언되고 그 결과 의도치 않은 전역 변수의 값이 재할당된다. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">19</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//for 문에서 선언한 i는 전역변수이다. 이미 선언한 전역변수 i가 있으므로 중복선언된다.</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> ui =<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i) <span class="comment">// 0 1 2 3 4</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//의도치 않게 변수의값이 변경되었다. </span></span><br><span class="line"><span class="built_in">console</span>.log(i) <span class="comment">//5</span></span><br></pre></td></tr></table></figure>
+
+<p>블록 레벨 스코프를 지원하는 프로그래밍 언어에서는 for 문에서 반복을 위해 선언된 i 변수가 for문의 코드블록 내에서만 유효한 지역변수다.이 변수를 for문 외부에서 사용할 일은 없기 때문이다. 하지만 var키워드로 선언도니 변수를 블록 레벨 스코프를 인정하지않기 때문에 i 변수는 전역변수가 된다. 따라서 전역 변수 i 는 중복 선언되고 그 결과 의도치 않은 전역 변수의 값이 재할당된다. </p>
+<p>var키워드로 선언된 변수는 오로지 함수의 코드블록 만을 지역 스코프로 인정하지만 ,eS6에서 도입된 let, const키워드는 블록레벨 스코프를 지원한다. </p>
+<p>(<strong>var 함수레벨 스코프,let,const 블록레벨 스코프)</strong></p>
+<h1 id="5-렉시컬-스코프"><a href="#5-렉시컬-스코프" class="headerlink" title="5. 렉시컬 스코프"></a>5. 렉시컬 스코프</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">fucntion foo()&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line">  bar();</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line">fucntion bar()&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x);</span><br><span class="line">&#125;</span><br><span class="line">foo(); <span class="comment">// 1</span></span><br><span class="line">bar(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<p> 위 에제의 실행결과 bar함수의 상위 스코프가 부엇인지에 따라 결정된다. 두가지 패펀을 예측할수있다. </p>
+<ol>
+<li>함수를 어디에서 호출했는지에 따라 함수의 상위 스코프를 결정한다. </li>
+<li>함수를 어디에서 정의했는지에 따다 함수의 사우이 스코프를 결정한다. </li>
+</ol>
+<p>첫번째 방식으로 함수의 상위 스코프를 결정한다면 bar 함수의  상위 스코프는 foo함수와 전역 일것이다. 두번째 방식으로 함수의 상위 스코프를 결정한다면 bar함수의 상위 스코프는 전역일 것이다.</p>
+<p>프로그래밍언어는 일반적으로 이 두가지 방식 중 한가지 방식의 상위 스코프를 결정한다. </p>
+<p>첫번째 방식을 종적 스코프라 한다. 함수를 정의하는 시점에서 함수가 어디에서 호출 될지 알 수 없다. 따라서 함수가 호출 되는 시점에 동적으로 상위 스코프를 결정해야하기 때문에 동적 스코프라 부른다.<br>두번째 방식을 렉시컬 스코프 또는 정적 스코프 라한다. 동적 스코프 방식처럼 스코프가 동저긍로 변하지않고 함수 정의가 평가 되는 시점에 상위 스코프가 정적으로 결정되기 때문에 정적 스코프라고 부른다.<br>자바스크립트를 비롯한 대부분의 프로그래밍 언어는 렉시컬 스코프를 따른다. </p>
+<p>자바스크립트는 렉시컬 스코프를 따르므로 <strong>함수를 어디에서 호출했는지가 아니라 함수를 어디에서 정의 했는지에 따라 상위 스코프를 결정한다</strong> 즉, 모든 함수 정의(함수 선언문 또는 함수 표현식)는 평가 되어 함수 객체를 생성할때 , 자신이 정의된 스코프를 상위 스코프로서 기억한다. 그리고 함수가 호출되면 언제나 자신이 기억하고 있는 정의된 스코프를 상위 스코프로 사용한다. 함수가 호출되 위치는 함수 자신이 기억하고 있는 스코프, 즉 상위 스코프 결정에 어떠한 영향도 주지않느낟. </p>
+<p>위의 졔제의 bar는 함수는 전역에서 정의된 함수이다. 함수 선언문으로 정의된 bar 함수는 전역 코드가 실행되기 전에 먼저 평가되어 함수 객체를 생성한다. 이때 생성된 bar함수 객체는 자신이 정의된 스코프. 즉 전역 스코프를 기억한다. 그리고  bar함수가 호출되면 호출된 곳이 어디인지 관계없이 언제나 자신이 기억하고 있는 전역 스코프를 상위 스코프로 사용한다 .따라서 위 에제를 실행하면 전역 변수 x 의 값의 값 1을 두번 출력한다. </p>
+<p>레시컬 스코프는 클로저와 깊은 관계가 있다.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/스코프란/" rel="tag"># 스코프란?</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/23/aboutSet-md/" rel="prev" title="Set을 사용한 교집합, 합집합, 차집합, 상위">
+      <i class="fa fa-chevron-left"></i> Set을 사용한 교집합, 합집합, 차집합, 상위
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/03/html-contents-model-md/" rel="next" title="HTML콘텐츠 모델과 다양한 API">
+      HTML콘텐츠 모델과 다양한 API <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-스코프란"><span class="nav-number">1.</span> <span class="nav-text">1. 스코프란?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-스코프의-종류"><span class="nav-number">2.</span> <span class="nav-text">2. 스코프의 종류</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-전역과-전역-스코프"><span class="nav-number">2.1.</span> <span class="nav-text">2.1. 전역과 전역 스코프</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-지역과-지역-스코드"><span class="nav-number">2.2.</span> <span class="nav-text">2.2. 지역과 지역 스코드</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-스코프-체인"><span class="nav-number">3.</span> <span class="nav-text">3. 스코프 체인</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-스코프-체인에-의한-변수-검색"><span class="nav-number">3.1.</span> <span class="nav-text">3.1. 스코프 체인에 의한 변수 검색</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-스코프-체인에-의한-함수-검색"><span class="nav-number">3.2.</span> <span class="nav-text">3.2. 스코프 체인에 의한 함수 검색</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-함수-레벨-스코프"><span class="nav-number">4.</span> <span class="nav-text">4. 함수 레벨 스코프</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-렉시컬-스코프"><span class="nav-number">5.</span> <span class="nav-text">5. 렉시컬 스코프</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zg78899" title="GitHub → https://github.com/zg78899" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zg788990@gmail.com" title="E-Mail → mailto:zg788990@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/zg788990" title="YouTube → https://youtube.com/zg788990" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://https-zg78899-github-io.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://zg78899.github.io/2020/06/02/scope-md/";
+    this.page.identifier = "2020/06/02/scope-md/";
+    this.page.title = "스코프란?";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-zg78899-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
