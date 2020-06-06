@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zg78899.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="1. 소개인터페이스는 일반적으로 타입체크를 위해 사용되며 변수,함수,클래스에 사용할 수 있다.여러가지 타입을 갖는 프로터피로 이루어진 새로운 타입을 정의하는 것과 유사하다. 인터페이스는 선언된 프로퍼티 또는 메소드의 구현을 강제하여 일관성을 유지할 수 있도록 하는것이다. ES6 인터페이스는 지원을 지원하지 않지만 TypeScript는 인터페이스를 지원한다">
+<meta name="keywords" content="타입스크립트 -인터페이스에 대해">
+<meta property="og:type" content="article">
+<meta property="og:title" content="타입스크립트 인터페이스">
+<meta property="og:url" content="https://zg78899.github.io/2020/06/06/typescript-interface-md/index.html">
+<meta property="og:site_name" content="Hello -JH- World">
+<meta property="og:description" content="1. 소개인터페이스는 일반적으로 타입체크를 위해 사용되며 변수,함수,클래스에 사용할 수 있다.여러가지 타입을 갖는 프로터피로 이루어진 새로운 타입을 정의하는 것과 유사하다. 인터페이스는 선언된 프로퍼티 또는 메소드의 구현을 강제하여 일관성을 유지할 수 있도록 하는것이다. ES6 인터페이스는 지원을 지원하지 않지만 TypeScript는 인터페이스를 지원한다">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://zg78899.github.io/Users/pokeoseu/Desktop/1_vK1lTdXqCjv7ob_j0TePLQ.png">
+<meta property="og:updated_time" content="2020-06-06T07:40:48.451Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="타입스크립트 인터페이스">
+<meta name="twitter:description" content="1. 소개인터페이스는 일반적으로 타입체크를 위해 사용되며 변수,함수,클래스에 사용할 수 있다.여러가지 타입을 갖는 프로터피로 이루어진 새로운 타입을 정의하는 것과 유사하다. 인터페이스는 선언된 프로퍼티 또는 메소드의 구현을 강제하여 일관성을 유지할 수 있도록 하는것이다. ES6 인터페이스는 지원을 지원하지 않지만 TypeScript는 인터페이스를 지원한다">
+<meta name="twitter:image" content="https://zg78899.github.io/Users/pokeoseu/Desktop/1_vK1lTdXqCjv7ob_j0TePLQ.png">
+
+<link rel="canonical" href="https://zg78899.github.io/2020/06/06/typescript-interface-md/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>타입스크립트 인터페이스 | Hello -JH- World</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hello -JH- World</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">daily 개발 study</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/zg78899" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/06/06/typescript-interface-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -JH- World">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          타입스크립트 인터페이스
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-06-06 15:27:05 / Modified: 16:40:48" itemprop="dateCreated datePublished" datetime="2020-06-06T15:27:05+09:00">2020-06-06</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/06/typescript-interface-md/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/06/typescript-interface-md/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="/Users/pokeoseu/Desktop/1_vK1lTdXqCjv7ob_j0TePLQ.png" alt="1_vK1lTdXqCjv7ob_j0TePLQ"></p>
+<h1 id="1-소개"><a href="#1-소개" class="headerlink" title="1. 소개"></a>1. 소개</h1><p>인터페이스는 일반적으로 <strong>타입체크를 위해 사용되며 변수,함수,클래스에 사용할 수 있다</strong>.여러가지 타입을 갖는 프로터피로 이루어진 새로운 타입을 정의하는 것과 유사하다. 인터페이스는 선언된 프로퍼티 또는 메소드의 구현을 강제하여 일관성을 유지할 수 있도록 하는것이다. ES6 인터페이스는 지원을 지원하지 않지만 TypeScript는 인터페이스를 지원한다. </p>
+<p>인터페이스는  프로퍼티와 메소드를 가질수 있다는 점에서 클래스와 유사하나 직접 인스턴스를 생성 할 수없고 모든 메소드는 추상 메소드이다. 단 추상 클래스의 추상 메소드와 달리 abstarct 키워드를 사용하지 않는다.  </p>
+<h1 id="2-변수와-인터페이스"><a href="#2-변수와-인터페이스" class="headerlink" title="2. 변수와 인터페이스"></a>2. 변수와 인터페이스</h1><p>인터페이스는 변수의 타입으로 사용할 수 있다. 이때 인터페이스를 타입로 선언한 변수는 해당  인터페이스를 준수 하여야한다. 이서은 새로운 타입을 정의하는것과 유사하다.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//인터페이스의 정의 </span></span><br><span class="line"><span class="keyword">interface</span> Todo&#123;</span><br><span class="line">  id:<span class="built_in">number</span>;</span><br><span class="line">  content:<span class="built_in">string</span>;</span><br><span class="line">  completed:<span class="built_in">boolean</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//변수의 todo 타입으로 Todo 인터페이스를 선언하였다.</span></span><br><span class="line"><span class="keyword">let</span> todo = Todo;</span><br><span class="line"></span><br><span class="line"><span class="comment">//변수 todo는 Todo 인터페이스를 준수해야한다. </span></span><br><span class="line">todo = &#123;id:<span class="number">1</span>,content:<span class="string">'typescript'</span>,completed:<span class="literal">false</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>인터페이스를 사용하여 함수 파라미터의 타입을 선언할 수있다. 이때 해당 함수에는 파리미터의 타입으로 지정한 인터페이스를 준수하는 인수를 전달하여 야한다. 함수의 객체를 전달할 때 복잡한 매개변수 체크가 필요없어 매우 유용하다.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//인터페이스의 정의 </span></span><br><span class="line"><span class="keyword">interface</span> Todo &#123;</span><br><span class="line">  id:<span class="built_in">number</span>;</span><br><span class="line">  content:<span class="built_in">string</span>;</span><br><span class="line">  completed:<span class="built_in">boolean</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> todos = Todo:[] =[];</span><br><span class="line"></span><br><span class="line"><span class="comment">//파라미터 todo의 타입으로 Todo 인터페이스를 선언하였다.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTodo</span>(<span class="params">todo:Todo</span>)</span>&#123;</span><br><span class="line">  todos = [...todos,todo];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//파라니터 todo는 Todo 인터페이스를 준수해야한다. </span></span><br><span class="line"><span class="keyword">const</span> newTodo = &#123;id:<span class="number">1</span>,content:<span class="string">'typescript'</span>,completed:<span class="literal">false</span>&#125;;</span><br><span class="line">addTodo(newTodo);</span><br><span class="line"><span class="built_in">console</span>.log(todos);</span><br><span class="line"><span class="comment">//// [ &#123; id: 1, content: 'typescript', completed: false &#125; ]</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-함수와-인터페이스"><a href="#3-함수와-인터페이스" class="headerlink" title="3.  함수와 인터페이스"></a>3.  함수와 인터페이스</h1><p>인터페이스는 함수의 타입으로 사용할수있다. 이때 함수의 인터페이스에는 타입이 선언된 파라미터 리스트와 리턴 타입으로 정의한다. 함수 인터페이스를 구현하는 함수는 인터페이스를 준수해야한다.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//함수 인터페이스의 정의 </span></span><br><span class="line"><span class="keyword">interface</span> SpuareFunc &#123;</span><br><span class="line">  (num:<span class="built_in">number</span>):<span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//함수 인터페이스를 구현하는 함수는 인터페이스를 준수해야한다.</span></span><br><span class="line"><span class="keyword">const</span> squareFunc :SquareFunc = <span class="function"><span class="keyword">function</span> (<span class="params">num:<span class="built_in">number</span></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num * num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(squareFunc(<span class="number">10</span>)) <span class="comment">// 100;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="4-클래스와-인터페이스"><a href="#4-클래스와-인터페이스" class="headerlink" title="4.  클래스와 인터페이스"></a>4.  클래스와 인터페이스</h1><p>클래스이 선언문의 implements 뒤에 인터페이스를 선언하면 해당 클래스는 인터페이스를 반드시 구현해야한다. 이는 인터페이스를 구현하는 클래스의 일관성을 유지할 수있는 장점을 갖는다.인터페이스는 프로퍼티와 메소드를 가질수 있다는 점에서 클래스와 유사하나 직접 인스턴스를 생성 할 수없다.  </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//인터페이스의 정의</span></span><br><span class="line"><span class="keyword">interface</span> ITodo&#123;</span><br><span class="line">  id:<span class="built_in">number</span>;</span><br><span class="line">  content:<span class="built_in">string</span>;</span><br><span class="line">  compelted:<span class="built_in">boolean</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Todo 클래스의 ITodo 인터페이스를 구현해야한다.</span></span><br><span class="line"><span class="keyword">class</span> Todo <span class="keyword">implements</span> ITodo&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">  <span class="keyword">public</span> id:<span class="built_in">number</span>,</span></span><br><span class="line"><span class="params">  <span class="keyword">public</span> content:<span class="built_in">string</span>,</span></span><br><span class="line"><span class="params">  <span class="keyword">public</span> completed:<span class="built_in">boolean</span></span></span><br><span class="line"><span class="params">  </span>)&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> todo = <span class="keyword">new</span> Todo(<span class="number">1</span>,<span class="string">'Typescript'</span>,<span class="literal">false</span>);</span><br><span class="line"><span class="built_in">console</span>.log(todo);</span><br></pre></td></tr></table></figure>
+
+<p>인터페이스는 프로퍼티 뿐만이 아니라 메소드도 포함 할 수있다. 단 모든 메소드는 추상 메소드이어야한다. 인터페이스는 구현하는 클래스는 인터페이스에서 정의한 프로퍼티와 추상 메소드를 반드시 구현해야한다. </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//인터페이스의 정의</span></span><br><span class="line"><span class="keyword">interface</span> IPerson&#123;</span><br><span class="line">  name:<span class="built_in">string</span>;</span><br><span class="line">  sayHello():<span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//인터페이스를 구현하는 클래스는 인터페이스에서 정의한 프로퍼티와 추상 메소드를 반드시 구현해야한다.</span></span><br><span class="line"><span class="keyword">class</span> Person <span class="keyword">implements</span> IPerson&#123;</span><br><span class="line">  <span class="comment">//인터페이스에서 정의한 프로퍼티 구현</span></span><br><span class="line">  contructor(<span class="keyword">public</span> name:<span class="built_in">string</span>)&#123;&#125;</span><br><span class="line">  <span class="comment">//인터페이스에서 정의한 추상 메소드의 구현</span></span><br><span class="line">  sayHello()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`Hello <span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greeter</span>(<span class="params">person:IPerson</span>):<span class="title">void</span></span>&#123;</span><br><span class="line">  person.syaHello();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> me = <span class="keyword">new</span> Person(<span class="string">'kim'</span>);</span><br><span class="line">greeter(me) <span class="comment">// Hello kim;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="5-덕-타이핑-Duck-typing"><a href="#5-덕-타이핑-Duck-typing" class="headerlink" title="5. 덕 타이핑 (Duck typing)"></a>5. 덕 타이핑 (Duck typing)</h1><p>주의 해야 할것은 인터페이스를 구현하였다는 것 만이 카입 체크를 통과하는 유일한 방법은 아니다. 타입체크에서 중요한것은 값을 실제로 가지고 있는 것이다. </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> IDuck&#123;<span class="comment">//1</span></span><br><span class="line">  quack():<span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> MallardDuck <span class="keyword">implements</span> IDuck&#123;<span class="comment">//3</span></span><br><span class="line">  quack()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Quack~'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> ReadheadDuck&#123;<span class="comment">//4</span></span><br><span class="line">  quack()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'q~~uak'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeNoise</span>(<span class="params">duck:IDuck</span>):<span class="title">void</span></span>&#123;<span class="comment">//2</span></span><br><span class="line">  duck.quack();</span><br><span class="line">&#125;</span><br><span class="line">makeNoise(<span class="keyword">new</span> MallarDuck()); <span class="comment">//Quack~</span></span><br><span class="line">makeNoise(<span class="keyword">new</span> MallarDuck()); <span class="comment">//q~~uack //5</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>인터페이스 IDuck을 quck 메소드로 정의하였다. </li>
+<li>makeNoise 함수는 인터페이스 IDuck을 구현한 클래스의 인스턴스 duck을 인자로 전달 받는다.</li>
+<li>클래스 MallardDuck은 인터페이스 IDuck을 구현하였다.</li>
+<li>클래스 RedheadDuck은 인터페이스 IDuck을 구현하지않았지만 quak메소드를 갖는다. </li>
+<li>makeNoise 함수에 인터페이스에서 정의한 프로퍼티나 메소드를 가지고 있다면 그 인터페이스를 구현한 것으로 인정한다. 이것을 덕 타이핑 또는 구조적 타이핑이라고 한다.</li>
+</ol>
+<p>인터페이스를 변수에 사용할 경우에도 덕 타이핑은 적용된다.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> IPerson&#123;</span><br><span class="line">  name:<span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params">person:IPerson</span>):<span class="title">void</span></span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Hello <span class="subst">$&#123;person.name&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> me = &#123;name:<span class="string">'kim'</span>,age:<span class="number">20</span>&#125;;</span><br><span class="line">sayHello(me) <span class="comment">// Hello kim;</span></span><br></pre></td></tr></table></figure>
+
+<p>변수 me 는 인터페이스 IPerson과 일치 하지않는다. 하지만 IPerson의 name 프로퍼티를 가지고 있으면 인터페이스에 부합하는것으로 인정한다. </p>
+<p>인터페이스는 개발 단계에서 도움을 주기위해 제공되는 기능으로 자바스크립트의 표준이 아니다. 따라서 위 예제의 TypeScript 파일을 자바스크립트의 파일로 트랜스파일링 하면 다음과 같이 삭제된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params">person</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello'</span>+person.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> me = &#123;<span class="attr">name</span>:<span class="string">'kim'</span>,<span class="attr">age</span>:<span class="number">20</span>&#125;;</span><br><span class="line">sayHello(me); <span class="comment">//Hello kim;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="6-선택적-프로퍼티"><a href="#6-선택적-프로퍼티" class="headerlink" title="6. 선택적 프로퍼티"></a>6. 선택적 프로퍼티</h1><p>인터페이스의 프로퍼티는 반드시 구현되어야한다. 하지만 인터페이스의 프로퍼티가 선택적으로 필요한 경우가 있을수 있다. 선택적으로 프로퍼티는 프로퍼티명 뒤에 ? 를 붙이며 생략하여도 에러가 발생하지않는다. </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> UserInfo&#123;</span><br><span class="line">  username:<span class="built_in">string</span>;</span><br><span class="line">  password:<span class="built_in">string</span>;</span><br><span class="line">  age? :<span class="built_in">number</span>;</span><br><span class="line">  address:<span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> userInfo:Userinfo = &#123;</span><br><span class="line">  username:<span class="string">'kim@gmail.com'</span>,</span><br><span class="line">  passowrd:<span class="string">'12345'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(userInfo);</span><br></pre></td></tr></table></figure>
+
+<p>선택적 프로퍼티를 사용하면 사용 가능한 프로퍼티를 파악 할 수있어서 코드를 이해하지 쉬워진다. </p>
+<h1 id="7-인터페이스의-상속"><a href="#7-인터페이스의-상속" class="headerlink" title="7. 인터페이스의 상속"></a>7. 인터페이스의 상속</h1><p>인터페이스는 extends 키워드를 사용하여 인터페이스 또는 클래스의 상속을 받을 수있다. </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person&#123;</span><br><span class="line">  name:<span class="built_in">string</span>;</span><br><span class="line">  age?:<span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> Student <span class="keyword">extends</span> Person&#123;</span><br><span class="line">  grade:<span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> student :Student = &#123;</span><br><span class="line">  name:<span class="string">'kim'</span>,</span><br><span class="line">  age:<span class="number">20</span>,</span><br><span class="line">  age:<span class="number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>복수의 인터페이스를 상속받을 수도 있다.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person&#123;</span><br><span class="line">  name:<span class="built_in">string</span>;</span><br><span class="line">  age? :<span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> Developer &#123;</span><br><span class="line">  skills:<span class="built_in">string</span>[];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> WebDeveloper <span class="keyword">extends</span> Person,Developer&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> webDeveloper :WebDeveloper = &#123;</span><br><span class="line">  name:<span class="string">'kim'</span>,</span><br><span class="line">  age:<span class="number">20</span>,</span><br><span class="line">  skills:[<span class="string">'HTML'</span>,<span class="string">'CSS'</span>,<span class="string">'JAVASCRIPT'</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>인터페이스는 인터페이스 뿐만이 아니라 클래스도 상속받을수 있다. 단 클래스의 모든 멤버(public,private,protected)가 상속되지만 구현까지 상속하지는 않는다.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">public</span> name:<span class="built_in">string</span>, <span class="keyword">public</span> age:<span class="built_in">number</span></span>)&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> Developer <span class="keyword">extends</span> Person&#123;</span><br><span class="line">  skills:<span class="built_in">string</span>[];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> developer : Developer = &#123;</span><br><span class="line">  name:<span class="string">'kim'</span>,</span><br><span class="line">  age:<span class="number">20</span>,</span><br><span class="line">  skills:[<span class="string">'HTML'</span>,<span class="string">'CSS'</span>,<span class="string">'JavaScript'</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/타입스크립트-인터페이스에-대해/" rel="tag"># 타입스크립트 -인터페이스에 대해</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/03/html-contents-model-md/" rel="prev" title="HTML콘텐츠 모델과 다양한 API">
+      <i class="fa fa-chevron-left"></i> HTML콘텐츠 모델과 다양한 API
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-소개"><span class="nav-number">1.</span> <span class="nav-text">1. 소개</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-변수와-인터페이스"><span class="nav-number">2.</span> <span class="nav-text">2. 변수와 인터페이스</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-함수와-인터페이스"><span class="nav-number">3.</span> <span class="nav-text">3.  함수와 인터페이스</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-클래스와-인터페이스"><span class="nav-number">4.</span> <span class="nav-text">4.  클래스와 인터페이스</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-덕-타이핑-Duck-typing"><span class="nav-number">5.</span> <span class="nav-text">5. 덕 타이핑 (Duck typing)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-선택적-프로퍼티"><span class="nav-number">6.</span> <span class="nav-text">6. 선택적 프로퍼티</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-인터페이스의-상속"><span class="nav-number">7.</span> <span class="nav-text">7. 인터페이스의 상속</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zg78899" title="GitHub → https://github.com/zg78899" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zg788990@gmail.com" title="E-Mail → mailto:zg788990@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/zg788990" title="YouTube → https://youtube.com/zg788990" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://https-zg78899-github-io.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://zg78899.github.io/2020/06/06/typescript-interface-md/";
+    this.page.identifier = "2020/06/06/typescript-interface-md/";
+    this.page.title = "타입스크립트 인터페이스";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-zg78899-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
