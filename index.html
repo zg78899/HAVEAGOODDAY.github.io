@@ -176,6 +176,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/06/14/type-alias-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -JH- World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/14/type-alias-md/" class="post-title-link" itemprop="url">타입 엘리어스(타입별칭)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-06-14 23:30:50 / Modified: 23:56:37" itemprop="dateCreated datePublished" datetime="2020-06-14T23:30:50+09:00">2020-06-14</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/14/type-alias-md/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/14/type-alias-md/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>타입 엘리어스는 새로운 타입을 정의한다. 타입으로 사용할 수 다는 점에서 타입 엘리어스는 인터페이스와 유사하다.  인터페이스는 다음과 같이 타입으로 사용할 수 있다. </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person&#123;</span><br><span class="line">  name:<span class="built_in">string</span>;</span><br><span class="line">  age?:<span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//빈객체를 Person타입으로 지정</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;&#125; <span class="keyword">as</span> Person;</span><br><span class="line">person.name = <span class="string">'kim'</span>;</span><br><span class="line">person.age = <span class="number">20</span>;</span><br><span class="line">person.address = <span class="string">'Seoul'</span> <span class="comment">//Error;</span></span><br></pre></td></tr></table></figure>
+
+<p>타입 엘리어스도 인터페이스와 마찬가지로 타입으로 사용할 수있다. </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//타입 엘리어스</span></span><br><span class="line"><span class="keyword">type</span> Person&#123;</span><br><span class="line">name:<span class="built_in">string</span>,</span><br><span class="line">age?:<span class="built_in">number</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//빈 객체를 Person타입으로 지정</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;&#125; <span class="keyword">as</span> Person;</span><br><span class="line">person.name = <span class="string">'kim'</span>;</span><br><span class="line">person.age = <span class="number">20</span>;</span><br><span class="line">person.address = <span class="string">'Seoul'</span> <span class="comment">//Error;</span></span><br></pre></td></tr></table></figure>
+
+<p>하지만 타입 엘리어스는  원시값, 유니온 타입 ,튜플 등도 타입으로 지정 할 수 있다. </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//문자열 리터럴로 타입 지정</span></span><br><span class="line"><span class="keyword">type</span> Str = <span class="string">'kim'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//유니온 타입으로 타입 지정</span></span><br><span class="line"><span class="keyword">type</span> Union = <span class="built_in">string</span> | <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//문자열 유니온 타입으로 타입 지정</span></span><br><span class="line">typ Name = <span class="string">'kim'</span>| <span class="string">'lee'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//숫자 리터럴로 유니온 타입으로 타입 지정</span></span><br><span class="line"><span class="keyword">type</span> Num = <span class="number">1</span>| <span class="number">2</span> | <span class="number">3</span> | <span class="number">4</span> | <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//객체 리터럴 유니온 타닙으로 타입 지정</span></span><br><span class="line">typs Obj = &#123;a:<span class="number">1</span>&#125; | &#123;b:<span class="number">2</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//함수 유니온 타입으로 타입지정</span></span><br><span class="line"><span class="keyword">type</span> Fuc = <span class="function">(<span class="params">(<span class="params"></span>)=&gt;<span class="built_in">string</span></span>) | (<span class="params">(<span class="params"></span>)=&gt; <span class="built_in">void</span></span>);</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">                           </span></span><br><span class="line"><span class="function">//인터페이스 유니온 타입으로 타입 지정</span></span><br><span class="line"><span class="function"><span class="params">type</span> <span class="params">Shape</span> = <span class="params">Square</span> | <span class="params">Rectangle</span> | <span class="params">Circle</span>;</span></span><br><span class="line"><span class="function">                           </span></span><br><span class="line"><span class="function">//튜플로 타입지정</span></span><br><span class="line"><span class="function"><span class="params">type</span> <span class="params">Tuple</span> = [<span class="params">string</span> ,<span class="params">boolean</span>];</span></span><br><span class="line"><span class="function"><span class="params">const</span> <span class="params">t</span>:<span class="params">Tuple</span> = ['',1]</span></span><br><span class="line"><span class="function"><span class="params">const</span> <span class="params">f</span>:<span class="params">Tuple</span> = ['',''] //<span class="params">Error</span> 지정한 타입만 가능하다.</span></span><br></pre></td></tr></table></figure>
+
+<p>인터페이스는 extends 또는 implements 될 수 있지만 타입 엘리어스는 extends , implements 될 수 없다. 즉 상속을 통해 확장이 필요하다면 타입 엘리어스보다는 인터페이스가 유리하다. 하지만 인터 페이스로 표현 할 수없거나 유니온 타입 또는튜플을 사용해야한다면 타입 엘리어스를 사용하는 것이 유리하다. </p>
+<p><strong><u>그러나 현시점에서는 type도 extends , implements 모두 사용 가능하도록 변경 되었다.</u></strong> </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> test = &#123;</span><br><span class="line">  a:<span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> inter <span class="keyword">extends</span> test&#123; <span class="comment">//ok</span></span><br><span class="line">  b:<span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> Test <span class="keyword">implements</span> inter&#123;<span class="comment">// ok</span></span><br><span class="line"> <span class="keyword">public</span> a = <span class="number">1</span>;</span><br><span class="line"> <span class="keyword">public</span> b = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> Test2 <span class="keyword">implements</span> test&#123; <span class="comment">//ok</span></span><br><span class="line">  <span class="keyword">public</span> a = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/14/type-alias-md/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/06/11/class-md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -301,10 +394,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-06-06 15:27:05 / Modified: 17:01:41" itemprop="dateCreated datePublished" datetime="2020-06-06T15:27:05+09:00">2020-06-06</time>
+              <time title="Created: 2020-06-06 15:27:05" itemprop="dateCreated datePublished" datetime="2020-06-06T15:27:05+09:00">2020-06-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-14 14:41:11" itemprop="dateModified" datetime="2020-06-14T14:41:11+09:00">2020-06-14</time>
+              </span>
 
           
   
@@ -1012,95 +1111,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/05/10/review3-md/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello -JH- World">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/10/review3-md/" class="post-title-link" itemprop="url">자바스크립트의 개발환경</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-05-10 23:27:10 / Modified: 23:29:05" itemprop="dateCreated datePublished" datetime="2020-05-10T23:27:10+09:00">2020-05-10</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/05/10/review3-md/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/10/review3-md/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="1-자바스크립트-실행환경"><a href="#1-자바스크립트-실행환경" class="headerlink" title="1. 자바스크립트 실행환경"></a>1. 자바스크립트 실행환경</h2><hr>
-
-<p>모든 브라우저는 자바스크립트를 해석하고 실행할 수 있는 자바스크립트 엔진을 내장하고 있다. node.js  또한 자바스크립트엔진을 내장하고 있으며, 자바스크립트는 nodejs 와 브라우저환경에서 실행 할 수 있다.<br>브라우저에서  자바스크립트의 목적은 html,css,자바스크립트를 실행하여 웹에 보여주는 것이 주된 목적이고,  node.js는 서버 개발 환경을 제공하는 목적을 가진다.<br>또한 모두 자바스크립트의 코어인 ECMAScript를 실행할 수 있지만 ECMAScript의 추가적으로 제공하는 기능은 호환 불가능하다.<br>브라우저에서는 DOM API를 기본적으로 제공하지만 , node.js 에서는 DOM API를 제공하지 않는다.</p>
-<h2 id="2-웹"><a href="#2-웹" class="headerlink" title="2. 웹"></a>2. 웹</h2><hr>
-
-<p>자바스크립트가 가장 많이 사용되는 분야는 웹페이지와 웹 애플리케이션이다. 웹 애플리케이션은 웹 브라우저 에서 html과css와 자바스크립트가  함께 실행된다.</p>
-<p>웹 브라우저 환경을 고려할 때, 보다 효율적인 자바스크립트 프로그래밍이 가능하다.<br>자바스크립트는 렌더링 엔진이 아닌 자바스크립트 엔진이 처리를 한다,html파서는 script태그를 만나면 자바 스크립트 코드를 실행하기 위해서 DOM생성 프로세스를 중지하고 자바 스크립트 엔진으로 제어권한을 넘긴다.제어 권한을 넘겨받은 자바 스크립트엔진은 script태그의 자바스크립트 파일을 파싱한다. </p>
-<p>자바스크립트는 명시적인 컴파일러 단계를 거치지 않지만 인터프리터 언어의 장점인 동적기능지원을 살리면서 실행속도가 느리다는 단점을 극복한다.</p>
-<p>head 요소 내부에 script 태그를 위치시키면 HTML 요소가 파싱되어 DOM 객체로 변환되기 이전에 자바스크립트가 실행된다. 따라서 body태그 아래에 script태그를 두는것이 바람직하다.</p>
-<p><strong>async</strong> : 웹 페이지 파싱과 외부 스크립트 파일의 다운로드가 동시에 진행된다. 스크립트는 다운로드 완료직후 실행된다.<br><strong>defer</strong> : 웹페이지 파싱과 외부 스크립트 파일의 다운로드가 동시에 진행된다.스크립트는 웹페이지 파싱완료 직후 실행된다. 두개의 차이점은 스크립트의 실행 시점이다르다.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/10/review3-md/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1170,12 +1180,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
