@@ -176,6 +176,98 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/06/15/typescript-generic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -JH- World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/15/typescript-generic/" class="post-title-link" itemprop="url">타입 스크립트 제네릭</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-06-15 00:10:04 / Modified: 01:00:12" itemprop="dateCreated datePublished" datetime="2020-06-15T00:10:04+09:00">2020-06-15</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/15/typescript-generic/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/15/typescript-generic/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://user-images.githubusercontent.com/54792457/84598149-89061180-aea3-11ea-9583-a101f61fb876.png" alt="typescript-generics"></p>
+<p>Typescript 는 정적 타입 언어이기 때문이 함수 또는 클래스를 정의하는 시점에 매개변수나 반환값의 타입을 선언 해야한다. 그런데 함수 또는 클래스를 정의하는 시점에 매개변수나 반환값의 타입을 선언하기 어려운 경우가 있다  </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Queue&#123;</span><br><span class="line">  <span class="keyword">protected</span> data = []; <span class="comment">// data :any[]</span></span><br><span class="line">  push(item)&#123;</span><br><span class="line">    <span class="keyword">this</span>.data.push(item);</span><br><span class="line">  &#125;</span><br><span class="line">  pop()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.data.shift();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> queue = <span class="keyword">new</span> Queue();</span><br><span class="line"></span><br><span class="line">queue.push(<span class="number">0</span>);</span><br><span class="line">queue.push(<span class="string">'0'</span>)<span class="comment">//의도치 않은 실수</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(queue.pop().toFixed())<span class="comment">// 0;</span></span><br><span class="line"><span class="built_in">console</span>.log(queue.pop().toFixed())<span class="comment">// 런타임 에러</span></span><br></pre></td></tr></table></figure>
+
+<p>Queue 클래스의 data 프로터티는 타입 선언을 생략 하였기 때문에 any[]타입이 된다. any[]타입은 어떤 타입의 요소도 가질 수 있는 배열을 의미한다. any[]타입은 배열의 요소의 타입이 모두 같지 않다는 문제를 가지게 된다. 위 예제의 경우 data 프로퍼티는 number 타입만을 포함하는 배열이라는 기대 하에 각 요소에 대해<br>Number.prototype.toFixed를 사용하였다. 따라서 number 타입이 아닌 요소의 경우 런타입 에러가 발생한다.<br>위와 같은 문제를 해결하기 위해 Queue 클래스를 상속하여  number 타입 전용 NumberQueue 클래스를 정의 해보자</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Queue&#123;</span><br><span class="line">  <span class="keyword">protected</span> data = [];</span><br><span class="line">  </span><br><span class="line">  push(item)&#123;</span><br><span class="line">    <span class="keyword">this</span>.data.push(item)</span><br><span class="line">  &#125;</span><br><span class="line">  pop()&#123;</span><br><span class="line">    <span class="keyword">this</span>.data.shift();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Queue 클래스를 상속하여 number 타입 전용 NumberQueue 클래스 정의</span></span><br><span class="line"><span class="keyword">class</span> NumberQueue <span class="keyword">extends</span> Queue&#123;</span><br><span class="line">  <span class="comment">//number타입의 요소만을 push한다.</span></span><br><span class="line">  push(item:<span class="built_in">number</span>)&#123;</span><br><span class="line">    <span class="keyword">super</span>.push(item);</span><br><span class="line">  &#125;</span><br><span class="line">  pop():<span class="built_in">number</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">super</span>.pop();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> queue = <span class="keyword">new</span> NumberQueue();</span><br><span class="line">queue.push(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// 의도하지 않은 실수를 사전 검출 가능</span></span><br><span class="line"><span class="comment">// [ts] Argument of type '"1"' is not assignable to parameter of type 'number'.</span></span><br><span class="line"><span class="comment">//quueue.push('0')</span></span><br><span class="line">queue.push(+<span class="string">'0'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(queue.pop().toFixed()); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+
+<p>이와 같이 number 타입전용 NumberQueue 클래스를 정의하면  number 타입이외의 요소 추가(push)되었을 때 , 런타임 에러 이전에 에러를 사전에 감지 할 수 있다.</p>
+<p>하지만 다양한 타입을 지원해야 한다면 타입 별로 클래스를 상속받아 추가 해야하므로 이 또한 좋은 방법은 아니다.  </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Queue&lt;T&gt;&#123;</span><br><span class="line">  <span class="keyword">protected</span> data :<span class="built_in">Array</span>&lt;T&gt; = [];</span><br><span class="line">  push(item:T)&#123;</span><br><span class="line">    <span class="keyword">this</span>.data.push(item);</span><br><span class="line">  &#125;</span><br><span class="line">  pop():T&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.data.shift()p;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//number 전용 Queue</span></span><br><span class="line"><span class="keyword">const</span> numberQueue = <span class="keyword">new</span> Queue&lt;<span class="built_in">number</span>&gt;();</span><br><span class="line">numberQueue.push(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// numberQueue.push('1'); // 의도하지 않은 실수를 사전 검출 가능</span></span><br><span class="line">numberQueue.push(+<span class="string">'1'</span>);   <span class="comment">// 실수를 사전 인지하고 수정할 수 있다</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(numberQueue.pop().toFixed()); <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(numberQueue.pop().toFixed()); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//string 전용 Queue</span></span><br><span class="line"><span class="keyword">const</span> stringQueue = <span class="keyword">new</span> Queue&lt;<span class="built_in">string</span>&gt;();</span><br><span class="line"></span><br><span class="line">stringQueue.push(<span class="string">'Hello'</span>);</span><br><span class="line">stringQueue.push(<span class="string">'World'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(stringQueue.pop().toUpperCase()); <span class="comment">// HELLO</span></span><br><span class="line"><span class="built_in">console</span>.log(stringQueue.pop().toUpperCase()); <span class="comment">// WORLD</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//커스텀 객체 전용 Queue </span></span><br><span class="line"><span class="keyword">const</span> myQueue = <span class="keyword">new</span> Queue&lt;&#123;name:<span class="built_in">string</span>,age:<span class="built_in">number</span>&#125;&gt;();</span><br><span class="line">myQueue.push(&#123;name:<span class="string">'kim'</span>,age:<span class="number">25</span>&#125;);</span><br><span class="line">myQueue.push(&#123;name:<span class="string">'park'</span>,age:<span class="number">20</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(myQueue.pop()); <span class="comment">// &#123;name:'kim',age:25&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(myQueue.pop()); <span class="comment">// &#123;name:'park',age:20&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>제네릭은 선언 시점이 아니라 생성 시점에 타입을 명시하여 하나의 타입이 아닌 다양한 타입을 사용할 수 있도록</strong> <strong>하는 기법이다. 한 번의 선언으로 다양한 타입에 재사용이 가능하다는 장점이 있다.</strong> </p>
+<p><strong>T는 제네릭을 선언할 때 관용적으로 사용되는 식별자로 타입 파라미터라 한다.</strong> T는 Type의 약자로 반드시 T을 사용해야하는 것은 아니다. 또한 함수에도 제네릭을 사용할 수 있다. 제네릭을 사용하면 하나의 타입이 아닌 다양한 타입의 매개 변수와 리턴 값을 사용할 수 있다. </p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/15/typescript-generic/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/06/14/type-alias-md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -199,10 +291,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-06-14 23:30:50 / Modified: 23:56:37" itemprop="dateCreated datePublished" datetime="2020-06-14T23:30:50+09:00">2020-06-14</time>
+              <time title="Created: 2020-06-14 23:30:50" itemprop="dateCreated datePublished" datetime="2020-06-14T23:30:50+09:00">2020-06-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-15 00:10:24" itemprop="dateModified" datetime="2020-06-15T00:10:24+09:00">2020-06-15</time>
+              </span>
 
           
   
@@ -1023,94 +1121,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/05/12/control-flow-statement-md/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello -JH- World">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/12/control-flow-statement-md/" class="post-title-link" itemprop="url">제어문</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-05-12 13:32:41 / Modified: 16:14:26" itemprop="dateCreated datePublished" datetime="2020-05-12T13:32:41+09:00">2020-05-12</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/05/12/control-flow-statement-md/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/12/control-flow-statement-md/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-블록문"><a href="#1-블록문" class="headerlink" title="1. 블록문"></a>1. 블록문</h1><p>블록문는 0개이 상의 문을 중괄호로 묶은것으로 콛블록 또는 블록이라고 부르기도 한다. 자바스크립트는 블ㄹ고문을 하나의 시랳아 단위로 취급한다. 블록문은 단독으로 사용할 수도 있으나 일반적으로 제어문이나 함수를 정의할때 상요하는 것이 일반적이다.<br>블록문이 사용되는 다양한 예제가 있다. 문의 끝에는 세미 콜론을 붙이는 것이 일반적이다. 하지만 블록 문은 언제나 문의 종료를 의미하는 자체 종결성을 갖기 때문에 블록문의 끝에는 세미콜론을 붙이지 않는다는 것에 주의하자.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//블록문</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">var</span> foo = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//제어문</span></span><br><span class="line"><span class="keyword">var</span> x =<span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span>(x&lt;<span class="number">10</span>)&#123;</span><br><span class="line">  x++</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//함수 선언문</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="2-조건문"><a href="#2-조건문" class="headerlink" title="2. 조건문"></a>2. 조건문</h1><p>조건문은 주어진 조건식의 평가 결과에 따라 코드블록의(블록문)의 실행을  결정한다. 조건식은 불리언 값으로 평가 될 수있는 표현식이다. 자바스크립트는 2가지의 조건문 if …else if 문과 switch문을 제공한다.</p>
-<h2 id="2-1-if-…-else-if-문"><a href="#2-1-if-…-else-if-문" class="headerlink" title="2.1. if … else if 문"></a>2.1. if … else if 문</h2><p>if .. else  문은 주언진 조건식(불리언 값으로 평가 될수 있는 표현식)의 평가 결과,즉 놀리적 참 또는 거짓에 따라 실행할 코드 블록을 결정한다. 조건식의 평가 결과가 참일 경우,if 문 다음의 코들 블록이 실행되고 거짓일 경우 else일경우 다음의 코드 블록이 실행된다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(조건식)&#123;</span><br><span class="line">  <span class="comment">//조건식이  참이면 이 코드 블록이 실행된다.</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  <span class="comment">//조건식이 거짓이면 이 코드 블록리 실행된다.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>if의 조건식은 불리언 값으로 평가 되어야한다. 만약if문의 조건식이 불리언값이 아닌 다른 값으로 평가 되면 자바스크립트 엔진에 의해서 암묵적으로 데이터 타입이 불리언 값으로 강제로 변환이 되어 실행할 코드 블록을 결정한다.<br>조건식을 추가하여 조건에 따라 실행될 코드 블록을 늘리고 싶으면 else if문을 사용한다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(조건식)&#123;</span><br><span class="line">  <span class="comment">//조건식1이 참이면 이 코드 블록을 실행</span></span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(조건식)&#123;</span><br><span class="line">  <span class="comment">//조건식2이 참이면 이 코드블록을 실행</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  <span class="comment">//조건식1과 조건식2가 모두 거짓이면 이 코들 블록을 실행</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/12/control-flow-statement-md/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1180,12 +1190,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
