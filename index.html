@@ -176,6 +176,96 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/06/15/typescript-class/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -JH- World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/15/typescript-class/" class="post-title-link" itemprop="url">타입 스크립트 클래스</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-06-15 15:13:02 / Modified: 16:29:16" itemprop="dateCreated datePublished" datetime="2020-06-15T15:13:02+09:00">2020-06-15</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/15/typescript-class/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/15/typescript-class/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-타입-스크립트-클래스의-정의-class-Definition"><a href="#1-타입-스크립트-클래스의-정의-class-Definition" class="headerlink" title="1.  타입 스크립트 클래스의 정의(class Definition)"></a>1.  타입 스크립트 클래스의 정의(class Definition)</h1><p>ES6 클래스는 클래스 몸체에 메소드 만을 포함할 수 있다. 클래스 몸체에 클래스 프로퍼티를 선언 할 수 없고 반드시 생성자 내부에 클래스 프로퍼티를 선언하고 초기화 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//person.js</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name)&#123;</span><br><span class="line">    <span class="comment">//클래스 프로퍼티의 선언과 포기화</span></span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">  &#125;</span><br><span class="line">  walk()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> is Walking`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  위 예제의 Es6에서의 문제없이 실행되는 토드이지만 위 파일의 확장자를 ts로 바꿔 TypeScript 파일로 변경항 후 , 컴파일하면 아래와 같이 컴파일 에러가 발생한다. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">person.ts(4,10): error TS2339: Property &apos;name&apos; does not exist on type &apos;Person&apos;.</span><br><span class="line">person.ts(8,25): error TS2339: Property &apos;name&apos; does not exist on type &apos;Person&apos;.</span><br></pre></td></tr></table></figure>
+
+<p> TypeScript 클래스는 클래스 몸체에 클래스 프로퍼티를 사전 선언하여여한다 </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person&#123;</span><br><span class="line">  <span class="comment">//클래스 프로퍼티를 사전 선언해야 힌다.</span></span><br><span class="line">  name:<span class="built_in">string</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name</span>)&#123;</span><br><span class="line">    <span class="comment">//클래스 프로퍼티수에 값을 할당</span></span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  walk()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> is Walking`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> Person(<span class="string">'kim'</span>)</span><br><span class="line">person.walk(); <span class="comment">// kim is Walking</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="2-접근제한자"><a href="#2-접근제한자" class="headerlink" title="2. 접근제한자"></a>2. 접근제한자</h1><p>TypeScript 클래스는 클래스 기반 객체 지향언어가 지원하는 접근제한자 public , private,proteted를 지워하며 의미 또하 기본적으로 동일 하다.</p>
+<p>단 , 접근제한자를  명시하지 않았을때 , 다른  클래스 기반의 언어의 경우 , 암묵적으로 protected 로 지정 되어 패키지 레벨로 공개되지만 TypeScript의 경우 , 접근 제한자르르 생략한 클래스 프로퍼티와 메소드는 암묵적으로 public 이 선언 된다. 따라서 public으로 지정 하고자하는 멤버 변수와 메소드는 접근자 제한자를 생략한다 .</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/15/typescript-class/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/06/15/typescript-generic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -201,7 +291,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-06-15 00:10:04 / Modified: 01:00:12" itemprop="dateCreated datePublished" datetime="2020-06-15T00:10:04+09:00">2020-06-15</time>
+              <time title="Created: 2020-06-15 00:10:04 / Modified: 16:28:18" itemprop="dateCreated datePublished" datetime="2020-06-15T00:10:04+09:00">2020-06-15</time>
             </span>
 
           
@@ -1030,97 +1120,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/05/15/ecmascript-and-javascript-md/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello -JH- World">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/15/ecmascript-and-javascript-md/" class="post-title-link" itemprop="url">ECMAScript와 Javascript의 차이</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-05-15 13:27:28" itemprop="dateCreated datePublished" datetime="2020-05-15T13:27:28+09:00">2020-05-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-06 17:00:40" itemprop="dateModified" datetime="2020-06-06T17:00:40+09:00">2020-06-06</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/05/15/ecmascript-and-javascript-md/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/15/ecmascript-and-javascript-md/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="ECMAScript-와-JavaScript"><a href="#ECMAScript-와-JavaScript" class="headerlink" title="ECMAScript  와 JavaScript"></a>ECMAScript  와 JavaScript</h1><p><img src="https://user-images.githubusercontent.com/54792457/83939299-db499180-a816-11ea-8cd9-d469f3090c1e.jpg" alt="vrr5uvt5vp"></p>
-<p><strong><u>ECMAScript는 자바스크립트의 표준사양인 ECMA-262를 말하며</u></strong> 프로그래밍 언어의 타입 , 값,객체와 프로퍼티,함수,표준 빌트인 객체 등 핵심 문법을 규정한다. 각 브라우저 제조사는 ECAMScript를 준수하여 브라우저에 내장되어있는 자바스크립트 엔진을 구현한다.<br><strong><u>자바스크립트는 일반적으로 프로그래밍 언어</u></strong>로서 기본 뼈대를 이루는 ECMAScript와 브라우저가 별도 지원하는 클라이언트 사이드 WEB API,즉 DOM ,BOM, Canvas ,XMLHttpRequest, Fetch, requestAnimationFrame, SVG, Web Storage, Web Component, Web worker등을 아우르는 개념이다.<br> 즉 Javascript &gt; Ecmascript (자바스크립가 더 큰 개념이다.)<br>클라이언트 사이드 WEB API는 ECMAScript와는 별도로 World Wide Web Consortium(W3C)에서도 별도로 명세로 관리하고 있다.</p>
-<p>요약하자면 ECMAScript는 ecma 인터내셔녈에 의해 정의된 ECMA -262 기술규격에 의해 정의된 범용 자바스크립트 언어를 뜻합니다. ‘ECMAScript 사양’입니다.<br>ECMA -262 는 표준의 이름이고, ECMAScript는 ECMA -262에서 정의된 하나의 사양을 의미합니다. ECMAScript는 스크립트언어가 준수해야하는 규칙,세부사항 및 지침을 제공합니다.</p>
-<p>JavaScript는 ECMAScript가 사양을 준수하는 범용 스크립트팅 언어 입니다. 자바스크립트느 ECMAScript아우르는 개념입니다..</p>
-<p>또한 JavaScripts는 1996년에 반들어 졌고 , 그 다음 해에 JavaScriptd를 표준화하기 위해서 1997년 ECMAScript가 만들어졌습니다. JavaScript는 ECMAScript 사양을 준수하는 언어이며 , JavaScript가  ECMAScript을 기반하는 동시에 ECMAScript도 JavaScript를 기반으로 한다. </p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/15/ecmascript-and-javascript-md/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1190,12 +1189,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
