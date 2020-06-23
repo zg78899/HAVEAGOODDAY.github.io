@@ -176,6 +176,120 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/06/23/dom/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -JH- World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/23/dom/" class="post-title-link" itemprop="url">DOM(DOCUMENT OBJECT MODEL)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-06-23 14:55:28 / Modified: 20:26:00" itemprop="dateCreated datePublished" datetime="2020-06-23T14:55:28+09:00">2020-06-23</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/23/dom/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/23/dom/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>#DOM</p>
+<p>DOM(DOCUMENT OBJECT MODEL)은  HTML문서의 계층적 구조와 정보를 표현하며 이를 제어할 수있는 API,프로퍼티와 메소드를 제공하는 트리 자료 구조이다.</p>
+<p>HTML 문서는 HTML요소들의 집합으로 이루어지며 , html요소는 중첩 관계를 갖는다. html콘텐츠 영역에는 텍스트 뿐아니라 다른 html 요소도 포함 될수 있다. 이때 html요소들 간의 계증적인 관계가 형성이 된다.</p>
+<p>이러한 HTML 요소 간의 부자 관계를 반영하여 HTML 문서의 구성 요소인 HTML 요소를 객체화한 모든 노드 객체들을 트리 자료 구조로 구성한다.</p>
+<p>노드 객테들로 구성된 트리자료 구조를 DOM이라한다. 노드객체의 트리로 구조화되었기 때문에 dom을 dom트리라고 한다.</p>
+<p> DOM은 노드 객체의 계층적인 구조로 구성된다. 노드 객체는 종류가 있고 상속 구조를 갖는다. 노드 객체는 총 12개의 종류(노드 타입)가 있다. 이 중에서 중요한 노드 타입은 아래와 같이 4가지이다.</p>
+<ul>
+<li><ul>
+<li><p><strong>문서 노드</strong></p>
+<p>문서 노드(document node)는 DOM 트리의 최상위에 존재하는 루트 노드로서 document 객체를 가리킨다. document 객체는 브라우저가 렌더링한 HTML 문서 전체를 가리키는 객체로서 전역 객체 window의 document 프로퍼티에 바인딩되어 있다. 따라서 window.document 또는 document로 참조할 수 있다.브라우저 환경의 모든 자바스크립트 코드는 script 태그에 의해 분리되어 있어도 하나의 전역 객체 window를 공유한다. 따라서 모든 자바스크립트 코드는 전역 객체 window의 document 프로퍼티에 바인딩되어 있는 하나의 document 객체를 바라본다. 즉, HTML 문서 당 document 객체는 유일하다.문서 노드, 즉 document 객체는 DOM 트리의 루트 노드이므로 DOM 트리의 노드들에 접근하기 위한 진입점(entry point) 역할을 담당한다. 즉, 요소, 어트리뷰트, 텍스트 노드에 접근하려면 문서 노드를 통해야 한다.</p>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><p><strong>요소 노드</strong></p>
+<p>요소 노드(element node)는 HTML 요소를 가리키는 객체이다. 요소 노드는 HTML 요소 간의 중첩에 의해 부자 관계를 가지며 이 부자 관계를 통해 정보를 구조화한다. 따라서 요소 노드는 문서의 구조를 표현한다고 할 수 있다.</p>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><p><strong>어트리뷰트 노드</strong></p>
+<p>어트리뷰트 노드(attribute node)는 HTML 요소의 어트리뷰트를 가리키는 객체이다. 어트리뷰트 노드는 어트리뷰트가 지정된 HTML 요소의 요소 노드와 형제(sibling) 관계를 갖는다. 따라서 요소 노드에 접근하면 어트리뷰트 노드에 접근하여 어트리뷰트를 참조하거나 변경할 수 있다.</p>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><p><strong>텍스트 노드</strong></p>
+<p>텍스트 노드(text node)는 HTML 요소의 텍스트를 가리키는 객체이다. 텍스트 노드는 요소 노드의 자식 노드이며 자신의 자식 노드를 가질 수 없는 리프 노드(leaf node)이다. 즉, 텍스트 노드는 DOM 트리의 최종단이다. 요소 노드가 문서의 구조를 표현한다면 텍스트 노드는 문서의 정보를 표현한다고 할 수 있다.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>위 4가지 노드 타입 이외에도 주석을 위한 Comment 노드, DOCTYPE을 위한 DocumentType 노드, 복수의 노드를 생성하여 추가할 때 사용하는 DocumentFragment 노드 등 총 12개의 타입이 있다. </p>
+<p><strong>노드 객체로 자바스트립트의 객체이므로 프로토타입에 의한 상속에 으한 상속구조를 가진다.</strong> </p>
+<p><img src="https://poiemaweb.com/assets/fs-images/39-4.png" alt="39-4"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/23/dom/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/06/17/type-declaration/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1113,93 +1227,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/05/23/aboutSet-md/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello -JH- World">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/23/aboutSet-md/" class="post-title-link" itemprop="url">Set을 사용한 교집합, 합집합, 차집합, 상위</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-05-23 20:36:29 / Modified: 21:04:14" itemprop="dateCreated datePublished" datetime="2020-05-23T20:36:29+09:00">2020-05-23</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/05/23/aboutSet-md/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/23/aboutSet-md/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-Set의-사용한-교집합-합집합-차집합-상위"><a href="#1-Set의-사용한-교집합-합집합-차집합-상위" class="headerlink" title="1.Set의 사용한 교집합 , 합집합 , 차집합 , 상위"></a>1.Set의 사용한 교집합 , 합집합 , 차집합 , 상위</h1><p>Set은 중복값을 제외한 유일한 값을 저장한다. 그렇기에 교집합, 합집합 , 차집합, 상위 등을 나타내는데 사용하기 에 용이하다.</p>
-<h2 id="1-1-교집합"><a href="#1-1-교집합" class="headerlink" title="1.1. 교집합"></a>1.1. 교집합</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//첫번째 방법</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.intersaction = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">const</span> value <span class="keyword">of</span> <span class="keyword">set</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.has(value))</span><br><span class="line">      result.add(value)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(setA.intersaction(setB)) <span class="comment">// [2,4];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//두번째 방법</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.intersaction = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [...this].filter(<span class="function"><span class="params">v</span>=&gt;</span> <span class="keyword">set</span>.has(v));</span><br><span class="line">&#125;</span><br><span class="line">const setA = new Set([1,2,3,4]);</span><br><span class="line">const seB = new Set([2,4]);</span><br><span class="line"></span><br><span class="line">console.log(setA.intersaction(setB)) // [2,4];</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-합집합"><a href="#1-2-합집합" class="headerlink" title="1.2. 합집합"></a>1.2. 합집합</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//첫번째 방법</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Set</span>.prototype.union = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="built_in">Set</span>(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">const</span> value <span class="keyword">of</span> <span class="keyword">set</span>)&#123;</span><br><span class="line">    result.add(value);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(setA.union(setB)) <span class="comment">//[1,2,3,4];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 두번째 방법</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Set</span>.prototype.union = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="built_in">Set</span>([...this,...set])</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(setA.union(setB)) <span class="comment">//[1,2,3,4];</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="1-3-차집합"><a href="#1-3-차집합" class="headerlink" title="1.3 차집합"></a>1.3 차집합</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//첫번째 방법</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.differnce = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="built_in">Set</span>(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">const</span> value <span class="keyword">of</span> <span class="keyword">set</span>)&#123;</span><br><span class="line">    result.delete(value);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(setA.difference(setB)) <span class="comment">//[1,3];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//두번째 방법</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Set</span>.prototype.difference = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [...this].filter(<span class="function"><span class="params">v</span>=&gt;</span> !<span class="keyword">set</span>.has(v));</span><br><span class="line">&#125;</span><br><span class="line">const setA = new Set([1,2,3,4]);</span><br><span class="line">const setB = new Set([2,4]);</span><br><span class="line"></span><br><span class="line">consoel.log(setA.differnce(setB)) //[1,3];</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-4-상위"><a href="#1-4-상위" class="headerlink" title="1.4. 상위"></a>1.4. 상위</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//첫번째 방법</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.isSuperset = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> value <span class="keyword">of</span> subset)&#123;</span><br><span class="line">  <span class="keyword">if</span>(!<span class="keyword">this</span>.has(value))<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> setA = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(setA.isSuperset(setB)) <span class="comment">// true;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//두번째 방법</span></span><br><span class="line"><span class="built_in">Set</span>.prototype.isSuperset = <span class="function"><span class="keyword">function</span> (<span class="params">set</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> superArr = [...this];</span><br><span class="line">  <span class="keyword">return</span> [...superArr].every(<span class="function"><span class="params">v</span> =&gt;</span> superArr.includes(v));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> setA =<span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="keyword">const</span> setB = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(setA.isSuperset(setB)) <span class="comment">// true;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/23/aboutSet-md/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1269,12 +1296,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
