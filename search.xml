@@ -2147,7 +2147,7 @@ script태그가 돔 구성보다 먼저 등장해서  cssom tree,dom tree의 돔
       </tags>
   </entry>
   <entry>
-    <title>DOM(DOCUMENT OBJECT MODEL)</title>
+    <title>DOM(DOCUMENT OBJECT MODEL)에 대해</title>
     <url>/2020/06/23/dom/</url>
     <content><![CDATA[<h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><p>DOM(DOCUMENT OBJECT MODEL)은  HTML문서의 계층적 구조와 정보를 표현하며 이를 제어할 수있는 API,프로퍼티와 메소드를 제공하는 트리 자료 구조이다.</p>
 <p>HTML 문서는 HTML요소들의 집합으로 이루어지며 , html요소는 중첩 관계를 갖는다. html콘텐츠 영역에는 텍스트 뿐아니라 다른 html 요소도 포함 될수 있다. 이때 html요소들 간의 계증적인 관계가 형성이 된다.</p>
