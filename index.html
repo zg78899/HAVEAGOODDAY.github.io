@@ -176,6 +176,101 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/12/21/lazy-loading/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -JH- World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/21/lazy-loading/" class="post-title-link" itemprop="url">lazy-loading</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-12-21 21:31:59 / Modified: 22:12:01" itemprop="dateCreated datePublished" datetime="2020-12-21T21:31:59+09:00">2020-12-21</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/12/21/lazy-loading/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/12/21/lazy-loading/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong><h1>Image lazy loading 기법</h1></strong></p>
+<hr>
+
+<p><strong>lazy Loading 기법</strong></p>
+<p>사용자가 웹 페이지를 열면 전체 페이지의 내용이 다운로드 되어 단일 이동으로 렌더링 됩니다. 이를  통해 브라우저를 캐시할 수 있지만 사용자가 다운로드한 모든 컨텐츠를 실제로 볼 수 있다는 보장은 없습니다.<br>예를 들어 전체 사진 갤러리를 다운로드 했지만 사용자가 첫번째 이미지만 본 후 사용자가 나갔을 때 웹 페이지에서는 메모리 및 대역폭 낭비로인해 발생합니다.<br>페이지에 액세스할때 모든 콘텐츠를 대량으로 로드하는 대신 사용자가 필요 할때만 시렞 콘텐츠로 대체 됩니다.</p>
+<p>lazy-laodingd을 사용하면 페이지가 placeholder 콘텐츠로 작성이 되며 , 사용자가 필요할때만 실제 콘텐츠로 대체 된다.<br>last-loading은 페이지를 일겅들이는 시점에 중요하지 안흥ㄴ 리소스를 로딩을 추 후에 하는 기술입니다. ㅇ대신에  이 중요하지 않은 리소스들은 필요할때 로드 되어야합니다.<br>이미지와 관련된 경우에는 중요하지 않은 리소스들은 ‘off-screen’와 함께 동기화됩니다.<br>누군가가 웹 페이지(이미지 , 비디오 등)에 리소스를 추가할때 , 리소스는 small placeholder를 참조합니다. 사용자가 웹페이지를 검색할때 실제 리소스는 브라우저에 의해 캐시되고 ㅇ리소스가 사용다 화면에 표시될때 placeholder을 대체합니다.  예를 들어 , 사용자가 웹페이지를 로드하고 즉시 남겨 두면 웹 페이지의 맨 위 부분 이외의 항복이 로드 되지 않습니다.<br><u>이미지, 비디오를 그냥 로딩하지 않고 lazy loading을 사뇬하는 이유는 사용자가 볼 수 없는 것들을 로딩할 가능성이 있기 때문입니다.</u></p>
+<p>사용자가 보고 있지 않은 것들을 로딩할 때  데이터가 낭비가 됩니다.<br>미디어 리소스를 다운로드한 후 브라우저는 이를 디 코딩하여 화면에 렌더링 합니다.</p>
+<p><strong>SEO에 미치는 영향</strong></p>
+<p>lazy loading은 검색 엔진 순위에 영향을 미치낟. 리소스는 placeholder 콘텐츠여서 웹 사이트를 크롤링하는 검색엔진은 리소소의 내용을 잘못 해석하거나 무시할수 있습니다.<br>블로그 게시물과 같은 웹페이지의 전체 구성요소를 느리게 로드하면 검색엔진이 해당 구성요소을 우회하여 콘텐츠가 인덱싱 되지 않아 검색엔진 결과가 줄어들수 있습니다.<br>이러한 문제를 극복하는 한가지 방법은 lazy load하는 콘텐츠에 대한 링크를 제공하는 것 입니다.  이렇게하면  기본적으로 검색엔진 크롤러가 엑세스 할 수 있는 콘텐츠에서 웹페이지를 만듭니다. 검색엔진이 웹사이트를 index하면 이러한 링크를 따라가며 검색한 내용을 색인화 합니다. 이 방법은 기존저긍로 사용자가 콘텐츠를 동적으로 로드할 수 있데 하면서 lazy load도 웹 사이트를 전톤적인 웹사이트로 구성합니다.</p>
+<p><strong>장점</strong></p>
+<ol>
+<li>lazy-loading은 콘텐츠 전달 최적화와 최종 사용자 간의 경험을 간소화하는 균형을 맞춥니다. </li>
+<li>사용자가 처음 열 때 웹 사이트의 일부만 다운로드 해야하므로 사용자에게 콘텐츠를 더 빨리 제공합니다.</li>
+<li>콘텐츠가 지속적ㅇ르로 사용자에게 공급되므로 사용자가 웹 사이트를 이탈할 확률을 낮출 수 있습니다.</li>
+<li>사용자가 한번에 필요한 경우에만 콘텐츠를 불러오므로 리소스 사용(사용자의 배터리 , 시스템 간, 시스템 리소스)이 낮아진다.</li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/21/lazy-loading/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/06/23/dom/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1123,103 +1218,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/06/02/scope-md/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello -JH- World">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/02/scope-md/" class="post-title-link" itemprop="url">스코프란?</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-06-02 10:52:43" itemprop="dateCreated datePublished" datetime="2020-06-02T10:52:43+09:00">2020-06-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-03 14:52:03" itemprop="dateModified" datetime="2020-06-03T14:52:03+09:00">2020-06-03</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/06/02/scope-md/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/02/scope-md/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-스코프란"><a href="#1-스코프란" class="headerlink" title="1. 스코프란?"></a>1. 스코프란?</h1><p>스코프(유효범위)는 자바스크립트를 포함한 모든 프로그래밍 언어의 기본적이면 중요한 개념이다. 스코프의 이해가 부족하면 다른 개념을 이해하는데 어려울 수 있다. 더욱 자바스크립트의 스코프는 다른언어의 스코프와 구별되는 특징있다. 그리고 var 키워드로 선언한 변수와 let const로 선언한 변수의 스코프 또한 다르게 동작한다. </p>
-<p>함수의  매개변수는 함수 몸체 내부에서만 참조 할숭 있고 함수 몸체 외부에서는 참조 할 수  없다고 했다 이것은 애개변수를 참조 할 수 있는유효 범위, 즉 매개 변수릐 스코프가 함수 몸체 내부로 한정되기 때문이다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//매개변수는 함수 몸체 내부에서만 참조 할 수 있다.</span></span><br><span class="line">  <span class="comment">// 즉, 매개변수의 스코프(유효범위)는 함수 몸체 내부이다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(x,y); <span class="comment">//2 5</span></span><br><span class="line">  <span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">2</span>,<span class="number">5</span>);</span><br><span class="line"><span class="comment">//매개변수는 함수 몸체 내무에서만 참조 할 수 있다.</span></span><br><span class="line"><span class="built_in">console</span>.log(x,y) <span class="comment">// Reference Error: x isnot defined</span></span><br></pre></td></tr></table></figure>
-
-<p>변수의 코드의 가장 바깥 영역 뿐 아니라 코드 블록이나 함수 몸체에서도 선언 할 수 있다. 이때 코들 블록이나 함수는 중첩될 수있다. </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> var1  =<span class="number">1</span>; <span class="comment">//코드의 가자 바깥 영역에서 선언된 변수</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> var2 = <span class="number">2</span> <span class="comment">//코드 블록 내에서 선언된 변수</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> var3 = <span class="number">3</span>; <span class="comment">//중첩된 코드 내에서 선언된 변수</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> var4 = <span class="number">4</span><span class="comment">//함수 내에서 선언된 변수</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> var5 = <span class="number">5</span> <span class="comment">//중첩된 함수 내에서 선언된 함수</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(var1); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(var2); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(var3); <span class="comment">// 3</span></span><br><span class="line"><span class="built_in">console</span>.log(var4); <span class="comment">// ReferenceError: var4 is not defined</span></span><br><span class="line"><span class="built_in">console</span>.log(var5); <span class="comment">// ReferenceError: var5 is not defined</span></span><br></pre></td></tr></table></figure>
-
-<p>변수는 자신이 선언된 우치에 의해 자신이 유효한 범위, 즉 다른코드가 참조 할 수 있는 범위가 결정된다. 변수 뿐아니라 모든 식별자가 그렇다. 다시 말해 , <strong>모든 식별자(변수이름, 함수이름,클래스 이름 등) 는 자신이 선언된 위치에 의해 다른 코드가 식별자 자신을 참조 할 수 있는 유효범위가 결정 된다. 이를 스코프라한다. 즉 스코프는 식별자가 유효한 범위를 말한다.</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="string">'global'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x =<span class="string">'local'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(x) <span class="comment">//x= 'local' -1</span></span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br><span class="line"><span class="built_in">console</span>.log(x) <span class="comment">//'global' -2</span></span><br></pre></td></tr></table></figure>
-
-<p>코드의 가장 바깥 영역과 foo 함수내에는 같은 이름을 갖는 변수x를 선언했고 1,2에서 변수 x을 참조한다. 이때 자바스크립트엔진은 이름이 같은 두개의 변수중에서 어떤 변수응 참조해야 할 것인지 결정(식별자 결정)해야한다. 자바스크립트 엔진은 스코프를 통해 어떤 변수를 참조 해야 할 것인지 결정한다. 따라서 스코프란 자바스크립트 엔진이 <strong>식별자를 검색할 때 사용하는 규칙</strong>이라고 할수 있다.</p>
-<p>위의 예제에서 코드의 가장 바깥에 영역에 선언된 x변수는 어디서든 참조가 가능하다. 하지만foo함수 내부에서 선언된 x변수는 내부에서만 참조 가능하고 바깥에서 참조할 수 없다. 이때 두 식별자 이름은 동일 하지만 자신이 가진 유효한 범위 , 즉 스코프가 다른 변수이다. </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/02/scope-md/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1289,12 +1287,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zg78899.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Image lazy loading 기법   lazy Loading 기법 사용자가 웹 페이지를 열면 전체 페이지의 내용이 다운로드 되어 단일 이동으로 렌더링 됩니다. 이를  통해 브라우저를 캐시할 수 있지만 사용자가 다운로드한 모든 컨텐츠를 실제로 볼 수 있다는 보장은 없습니다.예를 들어 전체 사진 갤러리를 다운로드 했지만 사용자가 첫번째 이미지만 본 후 사">
+<meta name="keywords" content="lazy loading에 대해">
+<meta property="og:type" content="article">
+<meta property="og:title" content="lazy-loading">
+<meta property="og:url" content="https://zg78899.github.io/2020/12/21/lazy-loading/index.html">
+<meta property="og:site_name" content="Hello -JH- World">
+<meta property="og:description" content="Image lazy loading 기법   lazy Loading 기법 사용자가 웹 페이지를 열면 전체 페이지의 내용이 다운로드 되어 단일 이동으로 렌더링 됩니다. 이를  통해 브라우저를 캐시할 수 있지만 사용자가 다운로드한 모든 컨텐츠를 실제로 볼 수 있다는 보장은 없습니다.예를 들어 전체 사진 갤러리를 다운로드 했지만 사용자가 첫번째 이미지만 본 후 사">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-12-21T13:12:01.403Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="lazy-loading">
+<meta name="twitter:description" content="Image lazy loading 기법   lazy Loading 기법 사용자가 웹 페이지를 열면 전체 페이지의 내용이 다운로드 되어 단일 이동으로 렌더링 됩니다. 이를  통해 브라우저를 캐시할 수 있지만 사용자가 다운로드한 모든 컨텐츠를 실제로 볼 수 있다는 보장은 없습니다.예를 들어 전체 사진 갤러리를 다운로드 했지만 사용자가 첫번째 이미지만 본 후 사">
+
+<link rel="canonical" href="https://zg78899.github.io/2020/12/21/lazy-loading/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>lazy-loading | Hello -JH- World</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hello -JH- World</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">daily 개발 study</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/zg78899" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/12/21/lazy-loading/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -JH- World">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          lazy-loading
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-12-21 21:31:59 / Modified: 22:12:01" itemprop="dateCreated datePublished" datetime="2020-12-21T21:31:59+09:00">2020-12-21</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/12/21/lazy-loading/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/12/21/lazy-loading/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong><h1>Image lazy loading 기법</h1></strong></p>
+<hr>
+
+<p><strong>lazy Loading 기법</strong></p>
+<p>사용자가 웹 페이지를 열면 전체 페이지의 내용이 다운로드 되어 단일 이동으로 렌더링 됩니다. 이를  통해 브라우저를 캐시할 수 있지만 사용자가 다운로드한 모든 컨텐츠를 실제로 볼 수 있다는 보장은 없습니다.<br>예를 들어 전체 사진 갤러리를 다운로드 했지만 사용자가 첫번째 이미지만 본 후 사용자가 나갔을 때 웹 페이지에서는 메모리 및 대역폭 낭비로인해 발생합니다.<br>페이지에 액세스할때 모든 콘텐츠를 대량으로 로드하는 대신 사용자가 필요 할때만 시렞 콘텐츠로 대체 됩니다.</p>
+<p>lazy-laodingd을 사용하면 페이지가 placeholder 콘텐츠로 작성이 되며 , 사용자가 필요할때만 실제 콘텐츠로 대체 된다.<br>last-loading은 페이지를 일겅들이는 시점에 중요하지 안흥ㄴ 리소스를 로딩을 추 후에 하는 기술입니다. ㅇ대신에  이 중요하지 않은 리소스들은 필요할때 로드 되어야합니다.<br>이미지와 관련된 경우에는 중요하지 않은 리소스들은 ‘off-screen’와 함께 동기화됩니다.<br>누군가가 웹 페이지(이미지 , 비디오 등)에 리소스를 추가할때 , 리소스는 small placeholder를 참조합니다. 사용자가 웹페이지를 검색할때 실제 리소스는 브라우저에 의해 캐시되고 ㅇ리소스가 사용다 화면에 표시될때 placeholder을 대체합니다.  예를 들어 , 사용자가 웹페이지를 로드하고 즉시 남겨 두면 웹 페이지의 맨 위 부분 이외의 항복이 로드 되지 않습니다.<br><u>이미지, 비디오를 그냥 로딩하지 않고 lazy loading을 사뇬하는 이유는 사용자가 볼 수 없는 것들을 로딩할 가능성이 있기 때문입니다.</u></p>
+<p>사용자가 보고 있지 않은 것들을 로딩할 때  데이터가 낭비가 됩니다.<br>미디어 리소스를 다운로드한 후 브라우저는 이를 디 코딩하여 화면에 렌더링 합니다.</p>
+<p><strong>SEO에 미치는 영향</strong></p>
+<p>lazy loading은 검색 엔진 순위에 영향을 미치낟. 리소스는 placeholder 콘텐츠여서 웹 사이트를 크롤링하는 검색엔진은 리소소의 내용을 잘못 해석하거나 무시할수 있습니다.<br>블로그 게시물과 같은 웹페이지의 전체 구성요소를 느리게 로드하면 검색엔진이 해당 구성요소을 우회하여 콘텐츠가 인덱싱 되지 않아 검색엔진 결과가 줄어들수 있습니다.<br>이러한 문제를 극복하는 한가지 방법은 lazy load하는 콘텐츠에 대한 링크를 제공하는 것 입니다.  이렇게하면  기본적으로 검색엔진 크롤러가 엑세스 할 수 있는 콘텐츠에서 웹페이지를 만듭니다. 검색엔진이 웹사이트를 index하면 이러한 링크를 따라가며 검색한 내용을 색인화 합니다. 이 방법은 기존저긍로 사용자가 콘텐츠를 동적으로 로드할 수 있데 하면서 lazy load도 웹 사이트를 전톤적인 웹사이트로 구성합니다.</p>
+<p><strong>장점</strong></p>
+<ol>
+<li>lazy-loading은 콘텐츠 전달 최적화와 최종 사용자 간의 경험을 간소화하는 균형을 맞춥니다. </li>
+<li>사용자가 처음 열 때 웹 사이트의 일부만 다운로드 해야하므로 사용자에게 콘텐츠를 더 빨리 제공합니다.</li>
+<li>콘텐츠가 지속적ㅇ르로 사용자에게 공급되므로 사용자가 웹 사이트를 이탈할 확률을 낮출 수 있습니다.</li>
+<li>사용자가 한번에 필요한 경우에만 콘텐츠를 불러오므로 리소스 사용(사용자의 배터리 , 시스템 간, 시스템 리소스)이 낮아진다.</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">data-src</span>=<span class="string">"https://ik.imagekit/demo/default-image.jpg"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>src 대신 data-src을 사용한다. 이미지가 로드되는 것을 막을 것이므로 브라우저에 로드할 시기를 알려줘야한다.이를 위해 이미지가 뷰포트에 입력되는 즉시 트리거 하는지 확인한다. 이미지가 뷰 포트에 들어갈때 확인하는 방법은 두가지 방법이 있다.</p>
+<ol>
+<li><p>Javascript 이벤트를 통한 방법 </p>
+<ul>
+<li>브라우저에서 이벤트 리스너를 resize,scroll 및 orientationChnge 이벤트에 사용한다.  스크롤 이벤트는  스크롤이 발생할때 사용자가 페이지에 는 위치를 감시하므로 매우 명확하다.<br>resize 및 orientationChange 이벤트도 똑같이 중요하다. 브라우저 창 크기가 변경되면 resize 이벤트가 발생하지만 장치가 가로 방향에서 세로방향으로 회전할때 orientaionChange가 트리거 되거나 그 반대의 경우에도 orientationChange가 트리거 된다. 우리는 화면의 변화에 인식하고 화면에 표시 될 이미지의 수를 결정하고 그에 따라 로드를 실행하는데 세가지 이벤트를 사용할 수 있다.<br>스크롤 할때  스크롤 이벤트가 여러번 빠르게 트리거 된다. 따라서 성능을 위해 자연로드 기능 실행을 제한하는 스크립트에 작은 시간 초과를 추가하여 브라우저의 동일한 스레드에서 실행중인 다른 작업을 차단하지 않는다.</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image1.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image2.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image3.jpg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy"</span> <span class="attr">data-src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy"</span> <span class="attr">data-src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image5.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy"</span> <span class="attr">data-src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image6.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy"</span> <span class="attr">data-src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image7.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy"</span> <span class="attr">data-src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image8.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy"</span> <span class="attr">data-src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image9.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy"</span> <span class="attr">data-src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image10.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#F1F1FA</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> auto;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventlistener(<span class="string">'DOMContentLoaded'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> lazyloadImages = <span class="built_in">document</span>.querySelector(<span class="string">'img .lzy '</span>);</span><br><span class="line">  <span class="keyword">var</span> lazyloadThrottleTimeout;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">lazyload</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(lazyloadThrottleTimeout)&#123;</span><br><span class="line">      cleartimeOut(lazyloadThrottleTimeout);</span><br><span class="line">    &#125;</span><br><span class="line">   lazyloadThrottleTimeout = setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">     <span class="keyword">var</span> scrollTop=  <span class="built_in">window</span>.pageyOffset;</span><br><span class="line">     lazyloadImages.forEach(<span class="function">(<span class="params">img</span>)=&gt;</span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(img.offsetTop&lt; (<span class="built_in">window</span>.innerHeight + scrollTop))&#123;</span><br><span class="line">         img.src = img.dataset.src;</span><br><span class="line">         </span><br><span class="line">         img.classList.remove(<span class="string">'lazy'</span>);</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;);</span><br><span class="line">     <span class="keyword">if</span>(lazyloadImages.length === <span class="number">0</span>)&#123;</span><br><span class="line">       <span class="built_in">document</span>.removeEventListener(<span class="string">'scroll'</span>,lazyload);</span><br><span class="line">     </span><br><span class="line">       <span class="built_in">window</span>.removeEventListener(<span class="string">'resize'</span>,lazyload);</span><br><span class="line">       <span class="built_in">window</span>.removeEventListener(<span class="string">'orientationChange'</span>,lazyload);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;,<span class="number">20</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">document</span>.addEventListener(<span class="string">'scroll'</span>lazyload);</span><br><span class="line">  <span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>,lazyload);</span><br><span class="line">  <span class="built_in">window</span>.addEventListener(<span class="string">'orientationChange'</span>lazyload);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>이 예제에서 처음의 세개의 이미지는 앞에 로드됩니다. URL은 data-src 속성대신 src속성에 직접 표시한다.이는 우수한 사용자 경험을 위해서 필수적이다. 이러한 이미지는 페이지 상단에 있으므로 최대한 빨리 표시해야한다. javascript을 로드할때 까지 기다릴 필요가 없다.</p>
+</li>
+</ol>
+<p>   2.Insersection Observer API 사용</p>
+<p>   엘리먼트가 뷰포트로 들어갔을때 감지하고 엘리먼트가 뷰포트에 있을때 액션을 취하는 것을 간단하게 한다.<br>   이전 방법에서는 이벤트를 바인딩하고 성능을 염두에 두고 요소가 뷰포트에 있는지를 여부를 계산하는 방법으로 구현해야했다. intersection observer API는 계산을 피하고 뛰어난 성능을 제공함으로써 오버헤드를 모두 제거합니다.  isIntersecting 속성을 사용하여 요소가 뷰포트에 들어간 것을 감지하면 data-src 특성에서 URL을 선택하고 브라우저의 src 특성으로 이동하여 이미지로드를 트리거 합니다.<br>   이것이 끝나면 이미지에서 lazy-loading 클래스를 제거하고 해당이미지에서 observer를 제거합니다.</p>
+   <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image1.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image2.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image3.jpg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy"</span> <span class="attr">data-src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy"</span> <span class="attr">data-src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image5.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy"</span> <span class="attr">data-src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image6.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy"</span> <span class="attr">data-src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image7.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy"</span> <span class="attr">data-src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image8.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy"</span> <span class="attr">data-src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image9.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy"</span> <span class="attr">data-src</span>=<span class="string">"https://ik.imagekit.io/demo/img/image10.jpeg?tr=w-400,h-300"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+   <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#F1F1FA</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> auto;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>,()=&gt;&#123;</span><br><span class="line">  <span class="keyword">var</span> lazyloadImages;</span><br><span class="line">  <span class="keyword">if</span>(<span class="string">"InsersectionObserver"</span> <span class="keyword">in</span> <span class="built_in">window</span>)&#123;</span><br><span class="line">    lazyloadImages = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.lazy'</span>);</span><br><span class="line">    <span class="keyword">var</span> imageObserver = <span class="keyword">new</span> IntersectionObserver(<span class="function">(<span class="params">entries,observer</span>)=&gt;</span>&#123;</span><br><span class="line">      entries.forEach(<span class="function"><span class="params">entry</span>=&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(entry.isintersecting)&#123;</span><br><span class="line">          <span class="keyword">var</span> image = entry.target;</span><br><span class="line">          image.src = image.dataset.src;</span><br><span class="line">          images.classList.remove(<span class="string">'lazy'</span>);</span><br><span class="line">          imageObserver.unobserve(image);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    lazyloadImages.forEach(<span class="function">(<span class="params">image</span>)=&gt;</span>&#123;</span><br><span class="line">      imageObserver.observe(image);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> lazyloadTrottleTimeout;</span><br><span class="line">    laztloadImages = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.lazy'</span>);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">lazyload</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(lazyloadThrottleTimeout)&#123;</span><br><span class="line">        clearTimeout(lazyloadThrottleTimeout)</span><br><span class="line">      &#125;</span><br><span class="line">      lazyloadThrottleTimeout = setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> scrollTop = <span class="built_in">window</span>.pageYOffset;</span><br><span class="line">        lazyloadImages.forEach(<span class="function">(<span class="params">img</span>)=&gt;</span>&#123;</span><br><span class="line">          <span class="keyword">if</span>(img.offsetTop &lt; <span class="built_in">window</span>.innerHeight +scrollTop)&#123;</span><br><span class="line">            img.src = img.dataset.src;</span><br><span class="line">            img.classList.remove(<span class="string">'lazy'</span>);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">if</span>(lazyloadImages.length ==== <span class="number">0</span>)&#123;</span><br><span class="line">          <span class="built_in">document</span>.removeEventListener(<span class="string">'scroll'</span>, lazyload);</span><br><span class="line">          <span class="built_in">window</span>.removeEventListenr(<span class="string">'resize'</span>,lazyload);</span><br><span class="line">          <span class="built_in">window</span>.removeEventListener(<span class="string">'orientationChange'</span>,lazyload);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,<span class="number">20</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'scroll'</span>,lazyload);</span><br><span class="line">    <span class="built_in">window</span>.addeEventListenr(<span class="string">'resize'</span>,lazyload);</span><br><span class="line">    <span class="built_in">window</span>.addEventListner(<span class="string">'orientationChange'</span>,lazyload);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>   두가지 방법의 이미지로드 시간을 비교하면 intersection Observer API를 사용하여 이미지 로드가 훨씬 빨리지고 작업이 더 빨리 시작된다는것을 알 수 있습니다.<br>   이벤트 리스너가 포함된 메서드에서는 성능을 높이기 위해 시간 제한을 추가해야했지만  이미지 로드가 약간 지연이 되면서 사용자 환경에 약간 부정적인 영향을 줍니다. 하지만 모든 브라우저에서 지원하는것은 아닙니다.<br>   따라서 intersection Observer API가 지원되지 않는 브라우저에서 이벤트 리스너 메소드로 폴백해야합니다. 우리는 위의 예제에서 이것을 고려해서 if else문으로 나눴습니다.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/lazy-loading에-대해/" rel="tag"># lazy loading에 대해</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/23/dom/" rel="prev" title="DOM(DOCUMENT OBJECT MODEL)에 대해">
+      <i class="fa fa-chevron-left"></i> DOM(DOCUMENT OBJECT MODEL)에 대해
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Image lazy loading 기법</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zg78899" title="GitHub → https://github.com/zg78899" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zg788990@gmail.com" title="E-Mail → mailto:zg788990@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/zg788990" title="YouTube → https://youtube.com/zg788990" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://https-zg78899-github-io.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://zg78899.github.io/2020/12/21/lazy-loading/";
+    this.page.identifier = "2020/12/21/lazy-loading/";
+    this.page.title = "lazy-loading";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-zg78899-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
