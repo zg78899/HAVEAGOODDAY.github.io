@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zg78899.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Github Action이란? CI(Continuous Integration)서버란 ?App 개발자라면 App 소스코드를 짠 후 Build하고, 여러가지 Test도 하고, 그리고 최종 결과물을 특정 장소에 저장하는 Deployment(배포) 를 하곤 한다. 한마디로 개발자들은 코딩한 다음 Build, Test, Deploy 작업을 수행하는데 이를 자동으로">
+<meta name="keywords" content="github action 사용해보기">
+<meta property="og:type" content="article">
+<meta property="og:title" content="github action 사용하기">
+<meta property="og:url" content="https://zg78899.github.io/2021/01/18/github-action-사용하기/index.html">
+<meta property="og:site_name" content="Hello -JH- World">
+<meta property="og:description" content="Github Action이란? CI(Continuous Integration)서버란 ?App 개발자라면 App 소스코드를 짠 후 Build하고, 여러가지 Test도 하고, 그리고 최종 결과물을 특정 장소에 저장하는 Deployment(배포) 를 하곤 한다. 한마디로 개발자들은 코딩한 다음 Build, Test, Deploy 작업을 수행하는데 이를 자동으로">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/54792457/104870249-6123e280-598b-11eb-8a9b-876d84ffe68b.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/54792457/104870629-5453be80-598c-11eb-9f95-ae74fa9b000e.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/54792457/104870737-8e24c500-598c-11eb-810d-09f82798c8e4.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/54792457/104871801-65ea9580-598f-11eb-9b0c-6338caabb0b2.png">
+<meta property="og:updated_time" content="2021-01-18T04:34:33.551Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="github action 사용하기">
+<meta name="twitter:description" content="Github Action이란? CI(Continuous Integration)서버란 ?App 개발자라면 App 소스코드를 짠 후 Build하고, 여러가지 Test도 하고, 그리고 최종 결과물을 특정 장소에 저장하는 Deployment(배포) 를 하곤 한다. 한마디로 개발자들은 코딩한 다음 Build, Test, Deploy 작업을 수행하는데 이를 자동으로">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/54792457/104870249-6123e280-598b-11eb-8a9b-876d84ffe68b.png">
+
+<link rel="canonical" href="https://zg78899.github.io/2021/01/18/github-action-사용하기/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>github action 사용하기 | Hello -JH- World</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hello -JH- World</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">daily 개발 study</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/zg78899" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2021/01/18/github-action-사용하기/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -JH- World">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          github action 사용하기
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-18 12:35:57 / Modified: 13:34:33" itemprop="dateCreated datePublished" datetime="2021-01-18T12:35:57+09:00">2021-01-18</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/01/18/github-action-사용하기/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/01/18/github-action-사용하기/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong><u>Github Action이란?</u></strong></p>
+<p><strong><u>CI(Continuous Integration)서버란 ?</u></strong><br>App 개발자라면 App 소스코드를 짠 후 Build하고, 여러가지 Test도 하고, 그리고 최종 결과물을 특정 장소에 저장하는 Deployment(배포) 를 하곤 한다. 한마디로 개발자들은 코딩한 다음 Build, Test, Deploy 작업을 수행하는데 이를 자동으로 해주는 프로그램이 CI서버이다. 배포서버는 최종결과물을 저장하는 컴퓨터이다. CI서버가 빌드, Test 후에 배포서버로 최종 배포를 하는 것이다.</p>
+<p>CI는 Continuous Integration의 약자로 지속적인 통합이라는 뜻이다. 지속적이라는 뜻은 늘 작동 대기 중이라는 뜻이다. 지속적으로 서비스를 한다라는 뜻이다. 통합이라는 뜻은 기본적으로 소스코드를 통합한다라는 뜻이다. 여러사람들이 GIt 같은 버전관리툴에 올린 내용들을 하나로 다운받아서 통합해서 빌드한다.</p>
+<p><img src="https://user-images.githubusercontent.com/54792457/104870249-6123e280-598b-11eb-8a9b-876d84ffe68b.png" alt="image"></p>
+<p><a href="https://github.com/features/actions" target="_blank" rel="noopener">GitHub Actions</a>는 GitHub에서 제공하는 워크플로우(Workflow) 자동화 도구다. 워크플로우라는 단어가 의미하듯 테스트, 빌드, 배포 뿐 아니라 다양한 작업을 만들어서 자동으로 실행하게 할 수 있다. PR에 특정 코멘트를 남기면 자동으로 머지를 하게 만들 수 있고, 데이터를 수집하는 데에 이용할 수도 있다.</p>
+<ul>
+<li>개발 과정에서 발생하는 워크 플로우를 자동화 할 수 있는도구</li>
+<li>빌드 / 테스트 /커버리지 /배포가지 진행 할 수 있다.</li>
+</ul>
+<p><strong><u>사용법</u></strong></p>
+<ul>
+<li>.github/workflows 아래에 action이 작성된 xxx.yml 파일을 추가한다.</li>
+<li>github의 tab에서 action으로 확인 할 수 있다.<img src="https://user-images.githubusercontent.com/54792457/104870629-5453be80-598c-11eb-9f95-ae74fa9b000e.png" alt="스크린샷 2021-01-18 오후 12 54 23"></li>
+</ul>
+<p><strong><u>Action과 Workflow</u></strong></p>
+<p>Action은 사용자가 작성하는 실행가능한 코드 덩어리 이다. 하나의 작업을 설명한다.<br>Workflow는 Action을 실행하는 환경 단계를 서술한다. 하나의 Workflow는 여러개의 Action을 실행할 수 있다. 그래서 이름이 GitHub Actions다. Actions 페이지에 들어가 보면 저장소에서 사용하는 기술에 맞는 Workflow 템플릿을 추천 해준다(다양한 예제 제공).</p>
+<p><img src="https://user-images.githubusercontent.com/54792457/104870737-8e24c500-598c-11eb-810d-09f82798c8e4.png" alt="스크린샷 2021-01-18 오후 12 56 02"></p>
+<p>Workflow 파일은 .github/workflows 디렉터리에 위치한다. 화면에 보이는 것처럼 GitHub의 Actions 탭에서 직접 작성할 수 있다. 로컬에서 소스 코드처럼 작성하고 GitHub 원격 저장소로 Push를 할 수도 있다.</p>
+<p>Action을 npm 패키지처럼 Marketplace에 배포를 하면 우측의 <a href="https://github.com/marketplace" target="_blank" rel="noopener">GitHub Marketplace</a>에 노출되어 다른 사용자와 공유할 수 있다. 물론 다른 사람이 작성한 Action을 이용하는 것도 가능.</p>
+<p>1)워크 플로우의 이름</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">CI</span> <span class="string">Build</span> <span class="string">//name은</span> <span class="string">워크</span> <span class="string">플로우의</span> <span class="string">이름을</span> <span class="string">의미한다.</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>실행 시점</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">on:</span> <span class="string">[pull_request]</span> <span class="string">//on은</span> <span class="string">이</span> <span class="string">워크</span> <span class="string">플로우를</span> <span class="string">실행</span> <span class="string">할</span> <span class="string">시점을</span> <span class="string">설정pull_request는</span> <span class="string">GitHub로</span> <span class="string">PR을</span> <span class="string">보낼때,</span> <span class="string">PR에</span> <span class="string">커밋을</span> <span class="string">추가할</span> <span class="string">때마다</span> <span class="string">실행하라는</span> <span class="string">뜻이다.</span> <span class="string">Webhook</span> <span class="string">처럼</span> <span class="string">이벤트</span> <span class="string">시점을</span> <span class="string">등록할</span> <span class="string">수</span> <span class="string">있고,</span> <span class="string">POSIX</span> <span class="string">cron</span> <span class="string">문법으로</span> <span class="string">직접</span> <span class="string">스케줄을</span> <span class="string">정의할</span> <span class="string">수도</span> <span class="string">있다.</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line"><span class="attr">  schedule:</span></span><br><span class="line"><span class="attr">    - cron:</span>  <span class="string">'*/15 * * * *'</span></span><br></pre></td></tr></table></figure>
+
+<p>3)머지 브랜치 체크 아웃</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">- uses:</span> <span class="string">actions/checkout@v1</span></span><br><span class="line"><span class="string">//use는</span> <span class="string">사용할</span> <span class="string">패키지</span> <span class="string">이름</span> <span class="string">지정</span> <span class="string">actions/checkout@v1은</span> <span class="string">저장소를</span> <span class="string">설정하고</span> <span class="string">PR의</span> <span class="string">머지</span> <span class="string">브랜치를</span> <span class="string">체크아웃한다.</span></span><br><span class="line"><span class="string">사용할</span> <span class="string">수</span> <span class="string">있는</span> <span class="string">Action은</span> <span class="string">Marketplace에서</span> <span class="string">검색할</span> <span class="string">수</span> <span class="string">있다.</span> <span class="string">npm</span> <span class="string">package</span> <span class="string">registry와</span> <span class="string">비슷한</span> <span class="string">친구다.</span> <span class="string">직접</span> <span class="string">로컬에</span> <span class="string">Action을</span> <span class="string">작성한</span> <span class="string">경우에는</span> <span class="string">로컬</span> <span class="string">디렉터리를</span> <span class="string">지정해줄</span> <span class="string">수도</span> <span class="string">있다.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">- uses:</span> <span class="string">./.github/actions/coverage-commenter</span></span><br><span class="line"></span><br><span class="line"><span class="string">//사용자</span> <span class="string">정의</span> <span class="string">Action을</span> <span class="string">만들려면</span> <span class="string">GitHub이</span> <span class="string">안내하는</span> <span class="string">방식을</span> <span class="string">따라야</span> <span class="string">한다.(https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="comment"># Push 될때마다</span></span><br><span class="line"><span class="attr">  push:</span></span><br><span class="line"><span class="attr">    branches:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">master</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">release/*</span></span><br><span class="line">  <span class="comment"># PR 조건</span></span><br><span class="line"><span class="attr">  pull_request:</span></span><br><span class="line"><span class="attr">    branches:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">master</span></span><br><span class="line">  <span class="comment"># 스켸줄링도 가능</span></span><br><span class="line"><span class="attr">  schedule:</span></span><br><span class="line"><span class="attr">    - cron:</span> <span class="string">"0 2 * * 1-5"</span></span><br></pre></td></tr></table></figure>
+
+<p><u><strong>다양한 환경 제공</strong></u></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">jobs:</span></span><br><span class="line"><span class="attr">  my_job:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">deploy</span> <span class="string">to</span> <span class="string">staging</span></span><br><span class="line"><span class="attr">    runs-on:</span> <span class="string">ubuntu-18.04</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><u>외부 Action도 재사용 가능</u></strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">- name:</span> <span class="string">Setup</span> <span class="string">Node</span></span><br><span class="line"><span class="attr">  uses:</span> <span class="string">actions/setup-node@v1</span></span><br><span class="line"><span class="attr">  with:</span></span><br><span class="line"><span class="attr">    node-version:</span> <span class="string">"12"</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><u>변수 행렬화하여 사용가능</u></strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">jobs:</span></span><br><span class="line"><span class="attr">  test:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">Test</span> <span class="string">on</span> <span class="string">node</span> <span class="string">$</span> <span class="string">and</span> <span class="string">$</span></span><br><span class="line"><span class="attr">    runs-on:</span> <span class="string">$</span></span><br><span class="line"><span class="attr">    strategy:</span></span><br><span class="line"><span class="attr">      matrix:</span></span><br><span class="line"><span class="attr">        node_version:</span> <span class="string">["8",</span> <span class="string">"10"</span><span class="string">,</span> <span class="string">"12"</span><span class="string">]</span></span><br><span class="line"><span class="attr">        os:</span> <span class="string">[ubuntu-latest,</span> <span class="string">windows-latest,</span> <span class="string">macOS-latest]</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"><span class="attr">      - uses:</span> <span class="string">actions/checkout@v1</span></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">Use</span> <span class="string">Node.js</span> <span class="string">$</span></span><br><span class="line"><span class="attr">        uses:</span> <span class="string">actions/setup-node@v1</span></span><br><span class="line"><span class="attr">        with:</span></span><br><span class="line"><span class="attr">          node-version:</span> <span class="string">$</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">npm</span> <span class="string">install,</span> <span class="string">build</span> <span class="string">and</span> <span class="string">test</span></span><br><span class="line"><span class="attr">        run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          npm install</span></span><br><span class="line"><span class="string">          npm run build --if-present</span></span><br><span class="line"><span class="string">          npm test</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><u>Secret Key 사용 방법</u></strong></p>
+<ul>
+<li>Settings -Secret 에 등록하여 사용하면 된다.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/54792457/104871801-65ea9580-598f-11eb-9b0c-6338caabb0b2.png" alt="스크린샷 2021-01-18 오후 1 16 09"></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">- name:</span> <span class="string">Deploy</span> <span class="string">and</span> <span class="string">Firebase</span></span><br><span class="line"><span class="attr">        uses:</span> <span class="string">w9jds/firebase-action@master</span></span><br><span class="line"><span class="attr">        with:</span></span><br><span class="line"><span class="attr">          args:</span> <span class="string">deploy</span> <span class="bullet">--only</span> <span class="string">hosting</span></span><br><span class="line"><span class="attr">        env:</span></span><br><span class="line"><span class="attr">          FIREBASE_TOKEN:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.FIREBASE_TOKEN</span> <span class="string">&#125;&#125;</span> <span class="string">//$&#123;&#123;</span> <span class="string">...</span> <span class="string">&#125;&#125;은</span> <span class="string">Runner를</span> <span class="string">실행하는</span> <span class="string">문맥(Contexts)에</span> <span class="string">대한</span> <span class="string">정보나</span> <span class="string">환경</span> <span class="string">변수(Environment</span> <span class="string">Variables)를</span> <span class="string">참조할</span> <span class="string">때</span> <span class="string">이용하는</span> <span class="string">표현식이다.</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><u>Example (npm , Firebase Deployment)</u></strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Firebase</span> <span class="string">Deployment</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line"><span class="attr">  push:</span></span><br><span class="line"><span class="attr">    branches:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">master</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line"><span class="attr">  deploy:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">Build</span> <span class="string">&amp;</span> <span class="string">Deployment</span></span><br><span class="line"><span class="attr">    runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line"></span><br><span class="line"><span class="attr">    steps:</span></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">get</span> <span class="string">the</span> <span class="string">source</span> <span class="string">code</span></span><br><span class="line"><span class="attr">        uses:</span> <span class="string">actions/checkout@v2</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">install</span> <span class="string">node</span></span><br><span class="line"><span class="attr">        uses:</span> <span class="string">actions/setup-node@v2</span></span><br><span class="line"><span class="attr">        with:</span></span><br><span class="line"><span class="attr">          node-version:</span> <span class="string">"12"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">install</span> <span class="string">node</span> <span class="string">packages</span></span><br><span class="line"><span class="attr">        run:</span> <span class="string">npm</span> <span class="string">i</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">Build</span></span><br><span class="line"><span class="attr">        run:</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">build</span></span><br><span class="line"><span class="attr">        env:</span></span><br><span class="line"><span class="attr">          CI:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">Deploy</span> <span class="string">and</span> <span class="string">Firebase</span></span><br><span class="line"><span class="attr">        uses:</span> <span class="string">w9jds/firebase-action@master</span></span><br><span class="line"><span class="attr">        with:</span></span><br><span class="line"><span class="attr">          args:</span> <span class="string">deploy</span> <span class="bullet">--only</span> <span class="string">hosting</span></span><br><span class="line"><span class="attr">        env:</span></span><br><span class="line"><span class="attr">          FIREBASE_TOKEN:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.FIREBASE_TOKEN</span> <span class="string">&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><u>reference:</u></strong><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener">https://docs.github.com/en/actions</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/github-action-사용해보기/" rel="tag"># github action 사용해보기</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/12/21/lazy-loading/" rel="prev" title="lazy-loading">
+      <i class="fa fa-chevron-left"></i> lazy-loading
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zg78899" title="GitHub → https://github.com/zg78899" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zg788990@gmail.com" title="E-Mail → mailto:zg788990@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/zg788990" title="YouTube → https://youtube.com/zg788990" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://https-zg78899-github-io.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://zg78899.github.io/2021/01/18/github-action-사용하기/";
+    this.page.identifier = "2021/01/18/github-action-사용하기/";
+    this.page.title = "github action 사용하기";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-zg78899-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -176,6 +176,101 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2021/01/18/github-action-사용하기/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello -JH- World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/18/github-action-사용하기/" class="post-title-link" itemprop="url">github action 사용하기</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-18 12:35:57 / Modified: 13:34:33" itemprop="dateCreated datePublished" datetime="2021-01-18T12:35:57+09:00">2021-01-18</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/01/18/github-action-사용하기/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/01/18/github-action-사용하기/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong><u>Github Action이란?</u></strong></p>
+<p><strong><u>CI(Continuous Integration)서버란 ?</u></strong><br>App 개발자라면 App 소스코드를 짠 후 Build하고, 여러가지 Test도 하고, 그리고 최종 결과물을 특정 장소에 저장하는 Deployment(배포) 를 하곤 한다. 한마디로 개발자들은 코딩한 다음 Build, Test, Deploy 작업을 수행하는데 이를 자동으로 해주는 프로그램이 CI서버이다. 배포서버는 최종결과물을 저장하는 컴퓨터이다. CI서버가 빌드, Test 후에 배포서버로 최종 배포를 하는 것이다.</p>
+<p>CI는 Continuous Integration의 약자로 지속적인 통합이라는 뜻이다. 지속적이라는 뜻은 늘 작동 대기 중이라는 뜻이다. 지속적으로 서비스를 한다라는 뜻이다. 통합이라는 뜻은 기본적으로 소스코드를 통합한다라는 뜻이다. 여러사람들이 GIt 같은 버전관리툴에 올린 내용들을 하나로 다운받아서 통합해서 빌드한다.</p>
+<p><img src="https://user-images.githubusercontent.com/54792457/104870249-6123e280-598b-11eb-8a9b-876d84ffe68b.png" alt="image"></p>
+<p><a href="https://github.com/features/actions" target="_blank" rel="noopener">GitHub Actions</a>는 GitHub에서 제공하는 워크플로우(Workflow) 자동화 도구다. 워크플로우라는 단어가 의미하듯 테스트, 빌드, 배포 뿐 아니라 다양한 작업을 만들어서 자동으로 실행하게 할 수 있다. PR에 특정 코멘트를 남기면 자동으로 머지를 하게 만들 수 있고, 데이터를 수집하는 데에 이용할 수도 있다.</p>
+<ul>
+<li>개발 과정에서 발생하는 워크 플로우를 자동화 할 수 있는도구</li>
+<li>빌드 / 테스트 /커버리지 /배포가지 진행 할 수 있다.</li>
+</ul>
+<p><strong><u>사용법</u></strong></p>
+<ul>
+<li>.github/workflows 아래에 action이 작성된 xxx.yml 파일을 추가한다.</li>
+<li>github의 tab에서 action으로 확인 할 수 있다.<img src="https://user-images.githubusercontent.com/54792457/104870629-5453be80-598c-11eb-9f95-ae74fa9b000e.png" alt="스크린샷 2021-01-18 오후 12 54 23"></li>
+</ul>
+<p><strong><u>Action과 Workflow</u></strong></p>
+<p>Action은 사용자가 작성하는 실행가능한 코드 덩어리 이다. 하나의 작업을 설명한다.<br>Workflow는 Action을 실행하는 환경 단계를 서술한다. 하나의 Workflow는 여러개의 Action을 실행할 수 있다. 그래서 이름이 GitHub Actions다. Actions 페이지에 들어가 보면 저장소에서 사용하는 기술에 맞는 Workflow 템플릿을 추천 해준다(다양한 예제 제공).</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/18/github-action-사용하기/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/12/21/lazy-loading/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1119,104 +1214,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zg78899.github.io/2020/06/03/html-contents-model-md/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello -JH- World">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/03/html-contents-model-md/" class="post-title-link" itemprop="url">HTML콘텐츠 모델과 다양한 API</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-06-03 14:51:59" itemprop="dateCreated datePublished" datetime="2020-06-03T14:51:59+09:00">2020-06-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-06 16:56:37" itemprop="dateModified" datetime="2020-06-06T16:56:37+09:00">2020-06-06</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/06/03/html-contents-model-md/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/03/html-contents-model-md/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>HTML5는 html4.01,xHTML1.0과 도입한 마크업 언어입니다. 기존 HTML과 HTML5의 차이점은 새롭게 도입된 콘텐츠 모델이라는 개념과 구조관련 요소가 추가 되었다는 점을 들을수 있습니다. 또한 기존에 사용했던 요소중에서 의미가 변한 요소도 있습니다. </p>
-<hr>
-
-<h2 id="콘텐츠-모델-Contents-Model"><a href="#콘텐츠-모델-Contents-Model" class="headerlink" title="콘텐츠 모델(Contents Model)"></a>콘텐츠 모델(Contents Model)</h2><p>기존 HTML기반의 마크업에서 일잔적인 인라인 요소와 블록 요소로 구분하는정도의 개념만 존재하였지만 ,HTML15에서는 좀더 명확한 정보 구조 설계 및 구성을 위해 카테고리를 정의하여 각 요소별로 비슷한 성격을 가지고 있는 것들끼리 그룹화 하였는데 이를 HTML5의 콘텐츠 모델이라고 합니다. </p>
-<p>특히 HTML5에 추가된 콘텐츠 모델이란 ,’어떤 요소에 어떤 콘텐츠를 포함해야하는지’,’어떤 요소가 어떤요소를 포함할 수있는지’를 정의한 것을 말합니다. 이 콘텐츠 모델이라는 개념을 통해 자식 요소로 포함 할 수이쓴느 카테고리에 제한을 두었으며 , 이와 반대로 자식 요소가 작성 될 수 있는 카테고리를 제한하였스빈다. 이런 HTML5의 콘텐츠 모델은 단순히 기존 HTML 에서의 문법적인 변화만을 의미하는 것으로 그치지 않고 구조와 구성을 중시하는 마크업으로 진화했다는 점을 이해할수있습니다. </p>
-<p>HTML5의 카테고리(Category)에는 Sectioning Root, Metadata Content, Flow Content, Sectioning Content, Heading Content, Phrasing Content, Embedded Content, Interactive Content, Palpable Content, Script-supporting Elements, Transparent Content 등의 그룹이 있으며, 하나의 요소가 여러 그룹에 속해 있을 수도 있고, 그렇지 않을 수도 있습니다.</p>
-<p><img src="https://user-images.githubusercontent.com/54792457/83939268-a2112180-a816-11ea-9605-8715918241c9.png" alt="콘텐츠 모델"></p>
-<ul>
-<li><strong>섹셔닝 루트(Sectioning Root)</strong></li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span>, <span class="tag">&lt;<span class="name">body</span>&gt;</span>, <span class="tag">&lt;<span class="name">detail</span>&gt;</span>, <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span>, <span class="tag">&lt;<span class="name">figure</span>&gt;</span>, <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>몇몇 요소는 섹셔닝 루트라는 그룹으로 구분합니다. 섹셔닝 루트에 속하는 요소는 section이나 article 요소와 같이 장이나 절과 같은 계층 구조로 구분되지 않고 독립적인 콘텐츠로 분리되기 때문에 아웃라인에 영향을 주지 않습니다.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/03/html-contents-model-md/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1286,12 +1283,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-count">34</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -1329,7 +1326,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
